@@ -1,0 +1,24 @@
+import os
+
+
+location = lambda x: os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), '../..', x
+)
+
+EXTRA_APPS = []
+EXTRA_MIDDLEWARE_CLASSES = []
+
+# Django settings for project ----------------------------------------------
+
+SECRET_KEY = None  # You need to change this and replace it for your own one
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
+EXTRA_APPS = tuple(EXTRA_APPS)
+EXTRA_MIDDLEWARE_CLASSES = tuple(EXTRA_MIDDLEWARE_CLASSES)
