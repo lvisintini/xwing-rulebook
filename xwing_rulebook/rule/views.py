@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from .models import RuleBook
 
-# Create your views here.
+
+def rulebook(request):
+    context = {
+        'rl': RuleBook.objects.first()
+    }
+
+    return render(request, 'rulebook.html', context)

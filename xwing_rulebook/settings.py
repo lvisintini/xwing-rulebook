@@ -1,11 +1,11 @@
 import os
 
 # Import default settings for the project
-from xwing_rulebook.conf.default import *
+from conf.default import *
 
 # We use an environmental variable to indicate the, erm, environment
 # This block writes all settings to the local namespace
-module_path = os.environ.get('DJANGO_CONF', 'xwing_rulebook.conf.environment')
+module_path = os.environ.get('DJANGO_CONF', 'conf.environment')
 
 try:
     module = __import__(module_path, globals(), locals(), ['*'])

@@ -1,2 +1,4 @@
+markdown2==2.3.2
 Django==1.10.4
+django-nested-admin==3.0.12
 psycopg2==2.6.2

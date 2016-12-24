@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title></title>
+    <meta name="description" content="">
+    {% block meta %}
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <!--<link rel="shortcut icon" href="{%  static 'tego/images/favicon.ico' %}">-->
+    {% endblock %}
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    <div id="page-wrapper" class="{% block page_wapper_class %}{% endblock %}">
+
+      {% block header %}{% endblock %}
+      {% block content %}{% endblock %}
+      {% block footer %}{% endblock %}
+
+    </div>
+
+    {% block scripts %}{% endblock %}
+    {% block analytics %}{% endblock %}
+
+  </body>
+</html>

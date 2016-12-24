@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'xwing_rulebook.rule',
+    'nested_admin',
+    'rule',
+    'page',
+    'util',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'xwing_rulebook.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -65,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'xwing_rulebook.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
