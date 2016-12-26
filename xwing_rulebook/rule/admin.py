@@ -13,14 +13,14 @@ class SourceAdmin(admin.ModelAdmin):
 
 class ReferenceInline(nested_admin.NestedTabularInline):
     model = models.Reference
-    extra = 1
+    extra = 0
 
 
 class ParagraphInline(nested_admin.NestedTabularInline):
     model = models.Paragraph
     inlines = (ReferenceInline, )
     sortable_field_name = 'order'
-    extra = 1
+    extra = 0
 
 
 class RuleAdminForm(forms.ModelForm):
@@ -38,7 +38,7 @@ class RuleAdmin(nested_admin.NestedModelAdmin):
 class RuleBookRuleInline(nested_admin.NestedTabularInline):
     model = models.RuleBookRule
     sortable_field_name = 'order'
-    extra = 1
+    extra = 0
 
 
 @admin.register(models.RuleBook)

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load markdown %}
+{% load xwing_icons %}
+
+{% block meta-title  %}{{ rl.name }}{% endblock %}
+
+{% block content %}
+  <h1>{{ rl.name }}</h1>
+  {{ rl.description | md2html | xwing_icons  }}
+
+  {% for rule in rl.rules.all %}
+    {% include 'html/includes/_rule.html' %}
+  {% endfor %}
+
+  {{'    '}}
+{% endblock %}

@@ -1,16 +1,18 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title></title>
-    <meta name="description" content="">
+    <title>{% block meta-title %}{% endblock %}</title>
+    <meta name="description" content="{% block meta-description %}{% endblock %}">
     {% block meta %}
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <!--<link rel="shortcut icon" href="{%  static 'tego/images/favicon.ico' %}">-->
     {% endblock %}
-    {% block styles %}{% endblock %}
+    {% block styles %}
+      <link rel="stylesheet" href="{% static 'tego/css/normalise.scss' %}">
+    {% endblock %}
   </head>
   <body>
     <div id="page-wrapper" class="{% block page_wapper_class %}{% endblock %}">

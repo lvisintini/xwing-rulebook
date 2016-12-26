@@ -1,6 +1,8 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 
+from util.lib import render_template
+
 
 class Source(models.Model):
     name = models.CharField(max_length=125)
@@ -20,6 +22,12 @@ class Rule(models.Model):
     def __str__(self):
         return self.name
 
+    def to_markdown(self):
+        context = {
+            'rule': self,
+        }
+        return render_template('markdown/rule.md', context).strip()
+
 
 class Paragraph(models.Model):
     rule = models.ForeignKey('rule.Rule', related_name='paragraphs')
@@ -32,6 +40,9 @@ class Paragraph(models.Model):
 
     def __str__(self):
         return 'Rule "{}" Paragraph {}'.format(self.rule, self.order)
+
+    def to_markdown(self):
+        pass
 
 
 class Reference(models.Model):

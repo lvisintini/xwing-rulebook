@@ -1,0 +1,6 @@
+[submodule "xwing_rulebook/external/xwing-data"]
+	path = xwing_rulebook/external/xwing-data
+	url = https://github.com/lvisintini/xwing-data.git
+[submodule "xwing_rulebook/external/xwing-data-integration"]
+	path = xwing_rulebook/external/xwing-data-integration
+	url = https://github.com/lvisintini/xwing-data-integration.git

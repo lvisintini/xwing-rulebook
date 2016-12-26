@@ -15,3 +15,9 @@ def md2html(subject):
     return mark_safe(markdown.convert(subject))
 
 register.filter('md2html', md2html)
+
+
+def indentation(level):
+    return mark_safe('    ' * level)
+
+register.filter('indentation', indentation)
