@@ -1,0 +1,28 @@
+.u {
+  &-text {
+    &-left {
+      text-align: right;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-bold {
+      font-weight: bold;
+    }
+  }
+
+  &-background {
+    &-dark {
+      background-color: val($palette, bg-dark);
+    }
+    &-light {
+      background-color: val($palette, bg-light);
+    }
+  }
+}

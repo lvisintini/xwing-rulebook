@@ -1,0 +1,58 @@
+@include skel-breakpoints((
+  xlarge: '(max-width: ' + val($breakpoints, xlarge) + ')',
+  large: '(max-width: ' + val($breakpoints, large) + ')',
+  medium: '(max-width: ' + val($breakpoints, medium) + ')',
+  small: '(max-width: ' + val($breakpoints, small) + ')',
+  xsmall: '(max-width: ' + val($breakpoints, xsmall) + ')',
+));
+
+
+.PageWrapper {
+  @include vendor('display', 'flex');
+  @include vendor('flex-direction', 'column');
+  @include vendor('align-items', 'center');
+
+  margin: 0 auto;
+  min-height: 100vh;
+
+  &--breakpoints {
+    @include breakpoint(xlarge) {
+      background-color: red;
+    }
+    @include breakpoint(large) {
+      background-color: yellow;
+    }
+    @include breakpoint(medium) {
+      background-color: green;
+    }
+    @include breakpoint(small) {
+      background-color: blue;
+    }
+    @include breakpoint(xsmall) {
+      background-color: orange;
+    }
+  }
+
+  &__Header,
+  &__Content,
+  &__Footer {
+    width: val($sizes, normal-content-width);
+  }
+
+  &__Content {
+    @include vendor('flex', '1');
+  }
+}
+
+.Section {
+  @include vendor('display', 'flex');
+  @include vendor('justify-content', 'center');
+
+  &__Inner {
+    width: val($sizes, normal-content-width);;
+
+    &--padded {
+      padding: val($padding, large) val($padding, normal);
+    }
+  }
+}

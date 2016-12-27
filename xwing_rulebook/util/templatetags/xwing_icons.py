@@ -20,11 +20,8 @@ for dirpath, _, filenames in os.walk(ASSETS_DIR):
             for key, classes in icon_class_mapping.items():
                 ICONS[key] = "<i class=\"{}\"></i>".format(classes)
 
-regex = r'\[(' + '|'.join([i.strip('[]') for i in ICONS.keys()]) + r')\]'
 
-print(ICONS,ASSETS_DIR, regex)
-
-automata = re.compile(regex)
+automata = re.compile(r'\[(' + '|'.join([i.strip('[]') for i in ICONS.keys()]) + r')\]')
 
 def xwing_icons(text):
     result = automata.sub(lambda x: ICONS[x.group()], text)

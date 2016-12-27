@@ -4,13 +4,21 @@
 
 {% block meta-title  %}{{ rl.name }}{% endblock %}
 
+{% block page_wapper_class %} u-background-dark{% endblock %}
+
 {% block content %}
-  <h1>{{ rl.name }}</h1>
-  {{ rl.description | md2html | xwing_icons  }}
+  <div class="RuleBook">
+    <div class="RuleBook__Inner RuleBook__Inner--fancy-border">
+      <h1>{{ rl.name }}</h1>
 
-  {% for rule in rl.rules.all %}
-    {% include 'html/includes/_rule.html' %}
-  {% endfor %}
+      {{ rl.description | md2html | xwing_icons  }}
 
-  {{'    '}}
+      {% for rule in rl.rules.all %}
+        {% include 'html/includes/_rule.html' %}
+      {% endfor %}
+
+       {{ '[Epic]' | xwing_icons  }}
+      <div>
+    <div>
+  </div>
 {% endblock %}
