@@ -1,7 +1,7 @@
 body {
   font-family: Eurostile;
   font-style: normal;
-  font-size: val($font, base-size);
+  font-size: val($font-size, base-size);
   margin: 0;
 }
 
@@ -11,4 +11,34 @@ h1 {
 
 h2 {
   font-family: BankGothic;
+}
+
+h2,
+h3,
+h4 {
+  position: relative;
+}
+
+p {
+  position: relative;
+}
+
+
+ol {
+  list-style-type: decimal;
+  ol {
+    list-style-type: lower-alpha;
+  }
+}
+
+
+ol,
+ul {
+  margin: 0;
+  padding: 0 0 0 val($padding, x-large);
+
+}
+
+li {
+  position: relative;
 }

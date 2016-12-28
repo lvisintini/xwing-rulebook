@@ -26,7 +26,7 @@
     "style-loader": "^0.13.1",
     "node-sass": "^4.1.1",
     "webpack": "^1.13.1",
-    "normalize-scss":"^6.0.0"
+    "normalize.css":"^5.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

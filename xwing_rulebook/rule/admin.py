@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-
+from django.forms import formset_factory
 import nested_admin
 
 from rule import models
@@ -16,8 +16,18 @@ class ReferenceInline(nested_admin.NestedTabularInline):
     extra = 0
 
 
+class ParagraphAdminForm(forms.ModelForm):
+
+    def has_changed(self):
+        return True
+
+    def clean_text(self):
+        return ' '.join(self.cleaned_data['text'].strip().splitlines())
+
+
 class ParagraphInline(nested_admin.NestedTabularInline):
     model = models.Paragraph
+    form = ParagraphAdminForm
     inlines = (ReferenceInline, )
     sortable_field_name = 'order'
     extra = 0

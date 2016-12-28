@@ -8,6 +8,7 @@ class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField()
     version = models.CharField(max_length=25)
+    code = models.CharField(max_length=25, default='')
     description = models.TextField(default='')
 
     def __str__(self):
@@ -19,14 +20,19 @@ class Rule(models.Model):
     related_topics = models.ForeignKey('rule.Rule', null=True, blank=True)
     expansion_rule = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.name
+    @property
+    def anchor_id(self):
+        return '-'.join(self.name.lower().split())
 
     def to_markdown(self):
         context = {
             'rule': self,
+            'add_anchors': True
         }
         return render_template('markdown/rule.md', context).strip()
+
+    def __str__(self):
+        return self.name
 
 
 class Paragraph(models.Model):
@@ -38,11 +44,23 @@ class Paragraph(models.Model):
         'rule.Source', related_name='paragraphs', through='rule.Reference'
     )
 
+    class Meta:
+        ordering = ['order', ]
+        unique_together = ("rule", "order")
+
+    @property
+    def anchor_id(self):
+        return '{}-{}'.format(self.rule.anchor_id, self.order)
+
+    @property
+    def reference_text(self):
+        return ', '.join([
+            '{} (Page {})'.format(ref.source.code, ref.page)
+            for ref in self.reference_set.all()
+        ])
+
     def __str__(self):
         return 'Rule "{}" Paragraph {}'.format(self.rule, self.order)
-
-    def to_markdown(self):
-        pass
 
 
 class Reference(models.Model):

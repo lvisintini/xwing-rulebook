@@ -9,9 +9,23 @@ $padding: (
   x-large: 2em
 );
 
-$font: (
+$font-size: (
   base-size: 16px,
-  normal: 1em
+  x-small: 0.5em,
+  small: 0.75em,
+  normal: 1em,
+  medium: 1.5em,
+  large: 2em,
+  x-large: 3em
+);
+
+$line-heights: (
+  x-small: 1em,
+  small: 1.5em,
+  normal: 2em,
+  medium: 3em,
+  large: 4em,
+  x-large: 5em
 );
 
 $breakpoints: (
@@ -36,4 +50,13 @@ $palette: (
   border-bg: #4A4A4A,
   border2: #A1A1A1,
   border2-bg: #616263
+);
+
+$duration: (
+  x-short: 0.2s,
+  short: 0.5s,
+  medium: 1s,
+  long: 3s,
+  x-long: 4s
+
 );

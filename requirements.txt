@@ -1,4 +1,5 @@
 Django==1.10.4
 django-nested-admin==3.0.12
+ipdb==0.10.1
 markdown2==2.3.2
 psycopg2==2.6.2
