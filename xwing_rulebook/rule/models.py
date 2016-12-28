@@ -17,7 +17,7 @@ class Source(models.Model):
 
 class Rule(models.Model):
     name = models.CharField(max_length=125)
-    related_topics = models.ForeignKey('rule.Rule', null=True, blank=True)
+    related_topics = models.ManyToManyField('self', blank=True)
     expansion_rule = models.BooleanField(default=False)
 
     @property
