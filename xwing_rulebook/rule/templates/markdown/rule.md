@@ -1,5 +1,5 @@
 {% load markdown %}
-## {% if add_anchors %}<a id="p.anchor_id"></a>{% endif %}{{ rule.name }}{% if p.expansion_rule %} †{% endif %}
+## {% if add_anchors %}<a id="{{ rule.anchor_id }}"></a>{% endif %}{{ rule.name }}{% if p.expansion_rule %} †{% endif %}
 
 {% for p in rule.paragraphs.all %}
 
