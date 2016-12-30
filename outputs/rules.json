@@ -1,9 +1,9 @@
 [
   {
-    "id": 2,
-    "name": "Card interpretations",
+    "id": 1,
+    "name": "Golden rules",
     "expansion_rule": false,
-    "markdown": "## Card interpretations\n\nMany Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
+    "markdown": "## Golden rules\n\nIf a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.\n\nCard abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.\n\nIf a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
     "references": [
       {
         "code": "RR-SWX36",
@@ -13,10 +13,10 @@
     "related_rules": []
   },
   {
-    "id": 1,
-    "name": "Golden rules",
+    "id": 2,
+    "name": "Card interpretations",
     "expansion_rule": false,
-    "markdown": "## Golden rules\n\nIf a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.\n\nCard abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.\n\nIf a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
+    "markdown": "## Card interpretations\n\nMany Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
     "references": [
       {
         "code": "RR-SWX36",
@@ -42,98 +42,205 @@
     "id": 4,
     "name": "Acquire a target lock",
     "expansion_rule": false,
-    "markdown": "## Acquire a target lock\n\nShips with the [Target Lock] icon in their action bar may perform the acquire a target lock action to acquire a target lock on an enemy ship at Range 1–3. While attacking, a ship can spend a target lock that it has on the defender to reroll any number of its attack dice.\n\nA target lock consists of a red target lock token and a blue target lock token displaying the same letter. When a target lock is acquired, assign the blue target lock token to the ship performing the action (the locking ship), and assign the red target lock token on the target (the locked ship).\n\nTarget locks are not removed during the End phase.\n\nA ship can maintain one target lock. If a ship acquires a new target lock, it must remove its old target lock.\n\n- A ship that does not have the [Target Lock] icon in its action bar can acquire and maintain a target lock granted by another game effect.\n\n- If a ship spends a target lock as part of the cost of an ability, that target lock does not also allow the ship to reroll attack dice.\n\n- If a player declares an acquire a target lock action for his ship and the enemy ship he wants to lock is not at range, he may choose a different ship to lock or a different action entirely.\n\n- If an ability instructs a ship to “acquire a target lock,” this is different than performing an acquire a target lock action. The ship acquires the target lock without performing an action, and it may do so even if it has already performed the acquire a target lock action this round.\n\n- A ship can acquire a new target lock on a ship that it already has locked; the old target lock is removed.\n\n- A ship can spend a target lock and choose not to reroll any dice.\n\n- If an effect removes a blue or red target lock token from a ship, the matching red or blue target lock token is also removed (unless the blue target lock is assigned to another ship).\n\n- A ship can be locked by more than one enemy ship.",
+    "markdown": "## Acquire a target lock\n\nShips with the [Target Lock] icon in their action bar may perform the acquire a target lock action to acquire a target lock on an enemy ship at Range 1–3. While attacking, a ship can spend a target lock that it has on the defender to reroll any number of its attack dice.\n\nA target lock consists of a red target lock token and a blue target lock token displaying the same letter. When a target lock is acquired, assign the blue target lock token to the ship performing the action (the locking ship), and assign the red target lock token on the target (the locked ship).\n\nTarget locks are not removed during the End phase.\n\nA ship can maintain one target lock. If a ship acquires a new target lock, it must remove its old target lock.\n\n- A ship that does not have the [Target Lock] icon in its action bar can acquire and maintain a target lock granted by another game effect.\n\n- If a ship spends a target lock as part of the cost of an ability, that target lock does not also allow the ship to reroll attack dice.\n\n- If a player declares an acquire a target lock action for his ship and the enemy ship he wants to lock is not at range, he may choose a different ship to lock or a different action entirely.\n\n- If an ability instructs a ship to “acquire a target lock,” this is different than performing an acquire a target lock action. The ship acquires the target lock without performing an action, and it may do so even if it has already performed the acquire a target lock action this round.\n\n- A ship can acquire a new target lock on a ship that it already has locked; the old target lock is removed.\n\n- A ship can spend a target lock and choose not to reroll any dice.\n\n- If an effect removes a blue or red target lock token from a ship, the matching red or blue target lock token is also removed (unless the blue target lock is assigned to another ship).\n\n- A ship can be locked by more than one enemy ship.\n\n\n**Related Topics:** Actions, Attack, Modifying dice, Target lock",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 3
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 80,
+        "name": "Target lock"
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Actions",
     "expansion_rule": false,
-    "markdown": "## Actions\n\nThe active ship can perform one standard action during the “Perform Action” step of the Activation phase. Ships can also perform free actions as instructed by cards or mission rules. The actions available to each ship are listed in that ship’s action bar.\n\n- As an action, a ship may resolve an ability beginning with the “**Action:**” header on one of its Upgrade or Damage cards.\n\n- A ship cannot perform actions, even free actions, while stressed.\n\n- A ship must skip its “Perform Action” step if it overlapped another ship while executing a maneuver.\n\n- A ship cannot perform the same action more than once during a single round, even if one or more of the actions are free actions.\n\n    - If a ship has more than one copy of the same Damage or Upgrade card, it still cannot perform the action described on those cards more than once per round.\n\n- If a card ability or mission effect grants a ship a free action for which it does not have the matching action icon in its action bar, it may still perform that action.\n\n- A ship can choose not to perform an action during the “Perform Action” step or when granted a free action.",
+    "markdown": "## Actions\n\nThe active ship can perform one standard action during the “Perform Action” step of the Activation phase. Ships can also perform free actions as instructed by cards or mission rules. The actions available to each ship are listed in that ship’s action bar.\n\n- As an action, a ship may resolve an ability beginning with the “**Action:**” header on one of its Upgrade or Damage cards.\n\n- A ship cannot perform actions, even free actions, while stressed.\n\n- A ship must skip its “Perform Action” step if it overlapped another ship while executing a maneuver.\n\n- A ship cannot perform the same action more than once during a single round, even if one or more of the actions are free actions.\n\n    - If a ship has more than one copy of the same Damage or Upgrade card, it still cannot perform the action described on those cards more than once per round.\n\n- If a card ability or mission effect grants a ship a free action for which it does not have the matching action icon in its action bar, it may still perform that action.\n\n- A ship can choose not to perform an action during the “Perform Action” step or when granted a free action.\n\n\n**Related Topics:** Acquire a target lock, Activation phase, Barrel roll, Boost, Cloak†, Evade, Focus, Free actions, Overlapping ships, Stress",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 3
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 6,
     "name": "Activation phase",
     "expansion_rule": false,
-    "markdown": "## Activation phase\n\nDuring the Activation phase, each ship is activated one at a time, starting with the ship with the lowest pilot skill and continuing in ascending order. Each ship resolves the following steps in order:\n\n1. **Reveal Dial:** Reveal the ship’s dial and take the maneuver template that matches the chosen maneuver.\n\n1. **Execute Maneuver:** Resolve the following substeps in order:\n\n    1. **Move Ship:** Slide the maneuver template between the front guides of the ship’s base so that it is flush against the base. Then pick up the ship and place it at the opposite end of the template, sliding the rear guides of the base into the opposite end of the template.\n\n    1. **Check Pilot Stress:** If the maneuver is red, assign one stress token to the ship; if the maneuver is green, remove one stress token from the ship.\n\n    1. **Clean Up:** Return the maneuver template to the pile of maneuver templates. Place the revealed dial outside the play area next to the ship’s Ship card.\n\n1. **Perform Action:** The ship may perform one action.\n\n- If a player has multiple ships with the same pilot skill value, he can activate them in any order.\n\n- If both players have ships with the same pilot skill value, the player with initiative activates all of his ships first.\n\n- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver, the opposing player chooses any non-red maneuver on that ship’s dial for that ship to execute.\n\n- When an ability instructs a ship to execute a specific maneuver, it resolves only the “Execute Maneuver” step.\n\n- Each ship becomes the active ship only once during this phase.\n\n- When a ship executes a maneuver, it is picked up from its starting position and placed in its final position. The full width of the ship’s base is ignored except in its starting and final positions.\n\n- If a ship does not reveal a maneuver dial when it becomes the active ship during this phase, such as due to the effect of being ionized, it does not trigger any abilities related to maneuver dials.",
+    "markdown": "## Activation phase\n\nDuring the Activation phase, each ship is activated one at a time, starting with the ship with the lowest pilot skill and continuing in ascending order. Each ship resolves the following steps in order:\n\n1. **Reveal Dial:** Reveal the ship’s dial and take the maneuver template that matches the chosen maneuver.\n\n1. **Execute Maneuver:** Resolve the following substeps in order:\n\n    1. **Move Ship:** Slide the maneuver template between the front guides of the ship’s base so that it is flush against the base. Then pick up the ship and place it at the opposite end of the template, sliding the rear guides of the base into the opposite end of the template.\n\n    1. **Check Pilot Stress:** If the maneuver is red, assign one stress token to the ship; if the maneuver is green, remove one stress token from the ship.\n\n    1. **Clean Up:** Return the maneuver template to the pile of maneuver templates. Place the revealed dial outside the play area next to the ship’s Ship card.\n\n1. **Perform Action:** The ship may perform one action.\n\n- If a player has multiple ships with the same pilot skill value, he can activate them in any order.\n\n- If both players have ships with the same pilot skill value, the player with initiative activates all of his ships first.\n\n- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver, the opposing player chooses any non-red maneuver on that ship’s dial for that ship to execute.\n\n- When an ability instructs a ship to execute a specific maneuver, it resolves only the “Execute Maneuver” step.\n\n- Each ship becomes the active ship only once during this phase.\n\n- When a ship executes a maneuver, it is picked up from its starting position and placed in its final position. The full width of the ship’s base is ignored except in its starting and final positions.\n\n- If a ship does not reveal a maneuver dial when it becomes the active ship during this phase, such as due to the effect of being ionized, it does not trigger any abilities related to maneuver dials.\n\n\n**Related Topics:** Actions, Active ship, Bearing, Difficulty, Free actions, Initiative, Ion token†, Maneuver, Moving through, Obstacles, Overlapping ships, Pilot skill, Round, Stress",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 4
       }
     ],
-    "related_rules": []
-  },
-  {
-    "id": 8,
-    "name": "Agility",
-    "expansion_rule": false,
-    "markdown": "## Agility\n\nA ship’s agility is the green number on its Ship card. It indicates the number of defense dice the ship rolls when defending.\n\n- A ship with an agility value of “0” can still roll additional defense dice granted by range combat bonuses, obstructed attacks, card abilities, etc.\n\n- All modifiers to agility are cumulative. After all modifiers have been applied, if a ship’s agility value is less than “0,” it is treated as “0.”",
-    "references": [
+    "related_rules": [
       {
-        "code": "RR-SWX36",
-        "page": 4
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 7,
+        "name": "Active ship"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
       }
-    ],
-    "related_rules": []
+    ]
   },
   {
     "id": 7,
     "name": "Active ship",
     "expansion_rule": false,
-    "markdown": "## Active ship\n\nThe ship that is currently resolving the Activation or Combat phase is the active ship.",
+    "markdown": "## Active ship\n\nThe ship that is currently resolving the Activation or Combat phase is the active ship.\n\n\n**Related Topics:** Activation phase, Combat phase",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 4
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      }
+    ]
   },
   {
-    "id": 10,
-    "name": "Attacker",
+    "id": 8,
+    "name": "Agility",
     "expansion_rule": false,
-    "markdown": "## Attacker\n\nThe ship that is performing an attack is the attacker.",
+    "markdown": "## Agility\n\nA ship’s agility is the green number on its Ship card. It indicates the number of defense dice the ship rolls when defending.\n\n- A ship with an agility value of “0” can still roll additional defense dice granted by range combat bonuses, obstructed attacks, card abilities, etc.\n\n- All modifiers to agility are cumulative. After all modifiers have been applied, if a ship’s agility value is less than “0,” it is treated as “0.”\n\n\n**Related Topics:** Attack, Cloak†",
     "references": [
       {
         "code": "RR-SWX36",
-        "page": 5
+        "page": 4
       }
     ],
-    "related_rules": []
-  },
-  {
-    "id": 11,
-    "name": "Auxiliary firing arc",
-    "expansion_rule": true,
-    "markdown": "## Auxiliary firing arc †\n\nSome ships have an auxiliary firing arc identified by dotted lines printed on its ship token. These ships also have a unique primary weapon icon printed on their Ship cards. When attacking with its primary weapon, a ship with this icon may attack an enemy ship that is at Range 1–3 and inside its standard or auxiliary firing arc.\n\n- When attacking with a secondary weapon, the ship must still target an enemy ship inside its standard firing arc (unless otherwise specified on the Upgrade card).",
-    "references": [
+    "related_rules": [
       {
-        "code": "RR-SWX36",
-        "page": 5
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
       }
-    ],
-    "related_rules": []
+    ]
   },
   {
     "id": 9,
     "name": "Attack",
     "expansion_rule": false,
-    "markdown": "## Attack\n\nA ship can perform one attack when it becomes the active ship during the Combat phase. To perform an attack, the ship resolves the following steps in order:\n\n1. **Declare Target:** The attacker may measure range to any number of enemy ships and check which enemy ships are inside his firing arc. Then the attacker chooses one of his weapons to attack with. Then he chooses one enemy ship to be the target and pays any costs required for the attack.\n\n    - If attacking with a primary weapon, the target must be inside the attacker’s firing arc and at Range 1–3.\n\n    - If attacking with a turret primary weapon, the target must be at Range 1–3 but does not need to be inside firing arc.\n\n    - If attacking with a secondary weapon, the target must be inside the attacker’s firing arc (unless otherwise specified) and at the weapon range indicated on the weapon’s Upgrade card.\n\n    - If there is no valid target for the chosen weapon, or if the attacker cannot pay any costs required for the attack, the attacker may choose a different weapon and target.\n\n    - After a valid weapon and target are chosen and any indicated costs are paid, the target is considered to be the defender.\n\n1. **Roll Attack Dice:** The attacker rolls a number of attack dice equal to its primary weapon value; if it is attacking with a secondary weapon, it rolls attack dice equal to the attack value on that weapon’s Upgrade card instead.\n\n    - The attacker resolves any card abilities that allow him to roll additional or fewer attack dice.\n\n    - If attacking at Range 1 with its primary weapon, the attacker rolls one additional attack die.\n\n    - All additions or subtractions to the number of attack dice being rolled occur before the player rolls the attack dice.\n\n1. **Modify Attack Dice:** The defender can resolve any card abilities that allow him to modify the attack dice. Then the attacker can modify his attack dice in one or more of the following ways as many times as possible:\n\n    - **Focus:** The attacker can spend a focus token to change all of his [Focus] results to [Hit] results.\n\n    - **Target Lock:** The attacker can spend a target lock he has on the defender to reroll any number of his attack dice.\n\n    - **Card Ability:** The attacker can resolve a card ability that modifies attack dice and that he has not already resolved during this attack.\n\n1. **Roll Defense Dice:** The defender rolls a number of defense dice equal to its agility value.\n\n    - The defender resolves any card abilities that allow him to roll additional or fewer defense dice.\n\n    - If defending at Range 3 against a primary weapon attack, the defender rolls one additional defense die.\n\n    - If the attack is obstructed, the defender rolls one additional defense die.\n\n    - All additions or subtractions to the number of defense dice being rolled occur before the player rolls the defense dice.\n\n1. **Modify Defense Dice:** The attacker can resolve any card abilities that allow him to modify the defense dice. Then the defender can modify his defense dice in one or more of the following ways as many times as possible:\n\n    - **Focus:** The defender can spend a focus token to change all of his [Focus] results to [Evade] results.\n\n    - **Evade:** The defender can spend an evade token to add one [Evade] result to his defense roll.\n\n    - **Card Ability:** The defender can resolve a card ability that modifies defense dice and that he has not already resolved during this attack.\n\n1. **Compare Results:** For each [Evade] result, the defender cancels one [Hit] or [Critical Hit] result. All [Hit] results must be canceled before any [Critical Hit] results may be canceled. If at least one [Hit] or [Critical Hit] result remains uncanceled, the defender is hit by the attack; otherwise, the attack misses.\n\n1. **Deal Damage:** If the defender was hit, it suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result. All damage must be suffered before any critical damage may be suffered.\n\n- A ship cannot attack a friendly ship.\n\n- A ship may choose not to perform its attack during the Combat phase, but during an attack, a ship cannot choose to roll no dice when it is supposed to roll dice.\n\n- If players would roll more dice than the maximum number that they have available, keep track of the rolled results and reroll the dice necessary to equal the total number of dice the player would have rolled all at once. Note that these dice are not considered rerolled for the purposes of modifying dice.",
+    "markdown": "## Attack\n\nA ship can perform one attack when it becomes the active ship during the Combat phase. To perform an attack, the ship resolves the following steps in order:\n\n1. **Declare Target:** The attacker may measure range to any number of enemy ships and check which enemy ships are inside his firing arc. Then the attacker chooses one of his weapons to attack with. Then he chooses one enemy ship to be the target and pays any costs required for the attack.\n\n    - If attacking with a primary weapon, the target must be inside the attacker’s firing arc and at Range 1–3.\n\n    - If attacking with a turret primary weapon, the target must be at Range 1–3 but does not need to be inside firing arc.\n\n    - If attacking with a secondary weapon, the target must be inside the attacker’s firing arc (unless otherwise specified) and at the weapon range indicated on the weapon’s Upgrade card.\n\n    - If there is no valid target for the chosen weapon, or if the attacker cannot pay any costs required for the attack, the attacker may choose a different weapon and target.\n\n    - After a valid weapon and target are chosen and any indicated costs are paid, the target is considered to be the defender.\n\n1. **Roll Attack Dice:** The attacker rolls a number of attack dice equal to its primary weapon value; if it is attacking with a secondary weapon, it rolls attack dice equal to the attack value on that weapon’s Upgrade card instead.\n\n    - The attacker resolves any card abilities that allow him to roll additional or fewer attack dice.\n\n    - If attacking at Range 1 with its primary weapon, the attacker rolls one additional attack die.\n\n    - All additions or subtractions to the number of attack dice being rolled occur before the player rolls the attack dice.\n\n1. **Modify Attack Dice:** The defender can resolve any card abilities that allow him to modify the attack dice. Then the attacker can modify his attack dice in one or more of the following ways as many times as possible:\n\n    - **Focus:** The attacker can spend a focus token to change all of his [Focus] results to [Hit] results.\n\n    - **Target Lock:** The attacker can spend a target lock he has on the defender to reroll any number of his attack dice.\n\n    - **Card Ability:** The attacker can resolve a card ability that modifies attack dice and that he has not already resolved during this attack.\n\n1. **Roll Defense Dice:** The defender rolls a number of defense dice equal to its agility value.\n\n    - The defender resolves any card abilities that allow him to roll additional or fewer defense dice.\n\n    - If defending at Range 3 against a primary weapon attack, the defender rolls one additional defense die.\n\n    - If the attack is obstructed, the defender rolls one additional defense die.\n\n    - All additions or subtractions to the number of defense dice being rolled occur before the player rolls the defense dice.\n\n1. **Modify Defense Dice:** The attacker can resolve any card abilities that allow him to modify the defense dice. Then the defender can modify his defense dice in one or more of the following ways as many times as possible:\n\n    - **Focus:** The defender can spend a focus token to change all of his [Focus] results to [Evade] results.\n\n    - **Evade:** The defender can spend an evade token to add one [Evade] result to his defense roll.\n\n    - **Card Ability:** The defender can resolve a card ability that modifies defense dice and that he has not already resolved during this attack.\n\n1. **Compare Results:** For each [Evade] result, the defender cancels one [Hit] or [Critical Hit] result. All [Hit] results must be canceled before any [Critical Hit] results may be canceled. If at least one [Hit] or [Critical Hit] result remains uncanceled, the defender is hit by the attack; otherwise, the attack misses.\n\n1. **Deal Damage:** If the defender was hit, it suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result. All damage must be suffered before any critical damage may be suffered.\n\n- A ship cannot attack a friendly ship.\n\n- A ship may choose not to perform its attack during the Combat phase, but during an attack, a ship cannot choose to roll no dice when it is supposed to roll dice.\n\n- If players would roll more dice than the maximum number that they have available, keep track of the rolled results and reroll the dice necessary to equal the total number of dice the player would have rolled all at once. Note that these dice are not considered rerolled for the purposes of modifying dice.\n\n\n**Related Topics:** Acquire a target lock, Agility, Attacker, Auxiliary firing arc†, Cancel, Card abilities, Combat phase, Critical damage, Damage, Defender, Destroying ships, Dice results, Enemy, Firing arc, Focus, Friendly, Hit, Hull, Modifying dice, Obstacles, Obstructed, Pilot skill, Primary weapon, Range, Range combat bonus, Secondary weapons, Shields, Simultaneous attack rule, Target, Turret primary weapon†, Weapon range",
     "references": [
       {
         "code": "RR-SWX36",
@@ -144,26 +251,240 @@
         "page": 5
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 8,
+        "name": "Agility"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 16,
+        "name": "Cancel"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      },
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 40,
+        "name": "Hit"
+      },
+      {
+        "id": 42,
+        "name": "Hull"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
+      {
+        "id": 79,
+        "name": "Target"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Attacker",
+    "expansion_rule": false,
+    "markdown": "## Attacker\n\nThe ship that is performing an attack is the attacker.\n\n\n**Related Topics:** Attack, Combat phase, Defender",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 5
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Auxiliary firing arc",
+    "expansion_rule": true,
+    "markdown": "## Auxiliary firing arc †\n\nSome ships have an auxiliary firing arc identified by dotted lines printed on its ship token. These ships also have a unique primary weapon icon printed on their Ship cards. When attacking with its primary weapon, a ship with this icon may attack an enemy ship that is at Range 1–3 and inside its standard or auxiliary firing arc.\n\n- When attacking with a secondary weapon, the ship must still target an enemy ship inside its standard firing arc (unless otherwise specified on the Upgrade card).\n\n\n**Related Topics:** Attack, Firing arc, Primary weapon, Range, Secondary weapons, Turret primary weapon†",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 5
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 12,
     "name": "Barrel roll",
     "expansion_rule": false,
-    "markdown": "## Barrel roll\n\nShips with the [Barrel Roll] icon in their action bar may perform the barrel roll action to move laterally and adjust their position. To perform a barrel roll with a small ship, follow these steps:\n\n1. Take the [[Straight] 1] maneuver template.\n\n1. Place one end of the template against the left or right side of the ship’s base. The template cannot be placed beyond the front or back edges of the base.\n\n1. Lift the ship off the play surface, then place the ship at the other end of the template. The template cannot be beyond the front or back edges of the ship’s base, and the ship must face in the same direction as before the barrel roll.\n\n- A ship cannot barrel roll if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot barrel roll if this would cause the ship to flee the battlefield.\n\n- When a player declares a barrel roll action for his ship, he must also declare whether the ship is barrel rolling to the left or to the right before placing the maneuver template on the play area.\n\n- If a player declares a barrel roll action for his ship and cannot complete the action in the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a barrel roll does not count as executing a maneuver.\n\n- Large ships barrel roll as described in the “Large Ship” glossary entry on page 13.",
+    "markdown": "## Barrel roll\n\nShips with the [Barrel Roll] icon in their action bar may perform the barrel roll action to move laterally and adjust their position. To perform a barrel roll with a small ship, follow these steps:\n\n1. Take the [[Straight] 1] maneuver template.\n\n1. Place one end of the template against the left or right side of the ship’s base. The template cannot be placed beyond the front or back edges of the base.\n\n1. Lift the ship off the play surface, then place the ship at the other end of the template. The template cannot be beyond the front or back edges of the ship’s base, and the ship must face in the same direction as before the barrel roll.\n\n- A ship cannot barrel roll if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot barrel roll if this would cause the ship to flee the battlefield.\n\n- When a player declares a barrel roll action for his ship, he must also declare whether the ship is barrel rolling to the left or to the right before placing the maneuver template on the play area.\n\n- If a player declares a barrel roll action for his ship and cannot complete the action in the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a barrel roll does not count as executing a maneuver.\n\n- Large ships barrel roll as described in the “Large Ship” glossary entry on page 13.\n\n\n**Related Topics:** Actions, Cloak†, Fleeing the battlefield, Large ship†, Maneuver, Obstacles",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 6
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      }
+    ]
   },
   {
     "id": 13,
     "name": "Bearing",
     "expansion_rule": false,
-    "markdown": "## Bearing\n\nBearing is indicated by the arrows on the maneuver dial. There are several bearings available to ships, though each ship has a different set of bearings available to it.\n\n- **Straight:** The straight ([Straight]) bearing advances a ship straight forward.\n\n- **Bank:** The left bank ([Bank Left]) and right bank ([Bank Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 45°.\n\n- **Turn:** The left turn ([Turn Left]) and right turn ([Turn Right]) bearings advance a ship at a tight curve to one side, changing its facing by 90°.\n\n- **Koiogran Turn:** The Koiogran turn ([Koiogran Turn]) bearing advances a ship straight forward, changing its facing by 180°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Segnor’s Loop:** The Segnor’s Loop left ([Segnor's Loop Left]) and Segnor’s Loop right ([Segnor's Loop Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 225°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Tallon Roll:** The Tallon Roll left ([Tallon Roll Left]) and Tallon Roll right ([Tallon Roll Right]) bearings advance a ship at a tight curve to one side, sharply changing its facing by 180°. To achieve this facing, before the player places the ship at the opposite end of the template, he rotates the ship 90° to the left for a Tallon Roll left, or 90° to the right for a Tallon Roll right. The side of the ship’s base must be placed flush against the end of the maneuver template, and the end of the template cannot extend beyond the front or back of the ship’s base.\n\n- **Stationary:** The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.\n\n- If a ship overlaps another ship while executing a Koiogran turn or a Segnor’s Loop, the ship does not rotate 180° at the opposite end of the template. The player places the ship using the rear guides instead of the front guides.\n\n- When a ship executes a Tallon Roll, it must avoid overlapping other ships if possible. If the ship cannot avoid overlapping another ship, it does not rotate 90° at the end of the template.\n\n- A ship that executes a stationary maneuver still counts as executing a maneuver even though it does not change position.",
+    "markdown": "## Bearing\n\nBearing is indicated by the arrows on the maneuver dial. There are several bearings available to ships, though each ship has a different set of bearings available to it.\n\n- **Straight:** The straight ([Straight]) bearing advances a ship straight forward.\n\n- **Bank:** The left bank ([Bank Left]) and right bank ([Bank Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 45°.\n\n- **Turn:** The left turn ([Turn Left]) and right turn ([Turn Right]) bearings advance a ship at a tight curve to one side, changing its facing by 90°.\n\n- **Koiogran Turn:** The Koiogran turn ([Koiogran Turn]) bearing advances a ship straight forward, changing its facing by 180°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Segnor’s Loop:** The Segnor’s Loop left ([Segnor's Loop Left]) and Segnor’s Loop right ([Segnor's Loop Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 225°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Tallon Roll:** The Tallon Roll left ([Tallon Roll Left]) and Tallon Roll right ([Tallon Roll Right]) bearings advance a ship at a tight curve to one side, sharply changing its facing by 180°. To achieve this facing, before the player places the ship at the opposite end of the template, he rotates the ship 90° to the left for a Tallon Roll left, or 90° to the right for a Tallon Roll right. The side of the ship’s base must be placed flush against the end of the maneuver template, and the end of the template cannot extend beyond the front or back of the ship’s base.\n\n- **Stationary:** The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.\n\n- If a ship overlaps another ship while executing a Koiogran turn or a Segnor’s Loop, the ship does not rotate 180° at the opposite end of the template. The player places the ship using the rear guides instead of the front guides.\n\n- When a ship executes a Tallon Roll, it must avoid overlapping other ships if possible. If the ship cannot avoid overlapping another ship, it does not rotate 90° at the end of the template.\n\n- A ship that executes a stationary maneuver still counts as executing a maneuver even though it does not change position.\n\n\n**Related Topics:** Activation phase, Difficulty, Koiogran turn, Maneuver, Segnor’s loop, Speed, Stress, Tallon roll",
     "references": [
       {
         "code": "RR-SWX36",
@@ -174,826 +495,2130 @@
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 46,
+        "name": "Koiogran turn"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 65,
+        "name": "Segnor’s loop"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      },
+      {
+        "id": 78,
+        "name": "Tallon roll"
+      }
+    ]
   },
   {
     "id": 14,
     "name": "Bombs",
     "expansion_rule": true,
-    "markdown": "## Bombs †\n\nEach Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb token and indicates when the bomb detonates. When a bomb detonates, it produces the effect indicated on its Bomb Token Reference card. To drop a bomb, follow the steps below:\n\n1. Take the [[Straight] 1] maneuver template and slide it between the rear guides of your ship.\n\n1. Place the bomb token indicated on the Upgrade card into the play area and slide the guides of the token into the opposite end of the template.\n\n- Bomb Upgrade cards are not secondary weapons.\n\n- Bomb tokens are not obstacles.\n\n- If a bomb token is dropped on a ship, it is placed under the ship’s base. The bomb does not immediately detonate unless the bomb’s Upgrade card specifies that it detonates when a ship overlaps it.\n\n- If a bomb token that detonates when overlapped is dropped under more than one ship’s base, the ship that dropped the bomb decides which of those ships detonates the bomb.\n\n- If a bomb’s effect specifies that it detonates when a ship or the ship’s maneuver template overlaps it, it detonates regardless of whether the ship was executing a maneuver, barrel rolling, or resolving any other effect or ability that changed its position.\n\n- The guides on a bomb token count as part of the bomb for the purposes of measuring range and overlapping.\n\n- A ship can only drop one bomb per round.\n\n- A bomb can be dropped with a portion of the token outside the play area. Ignore any portion of the token that is outside the play area.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n- The effects of each bomb are described on its Bomb Token Reference card and are reprinted below for convenience:\n\n    - **Proton Bomb:** When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.\n\n    - **Proximity Mine:** When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.\n\n    - **Seismic Charge:** When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.",
+    "markdown": "## Bombs †\n\nEach Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb token and indicates when the bomb detonates. When a bomb detonates, it produces the effect indicated on its Bomb Token Reference card. To drop a bomb, follow the steps below:\n\n1. Take the [[Straight] 1] maneuver template and slide it between the rear guides of your ship.\n\n1. Place the bomb token indicated on the Upgrade card into the play area and slide the guides of the token into the opposite end of the template.\n\n- Bomb Upgrade cards are not secondary weapons.\n\n- Bomb tokens are not obstacles.\n\n- If a bomb token is dropped on a ship, it is placed under the ship’s base. The bomb does not immediately detonate unless the bomb’s Upgrade card specifies that it detonates when a ship overlaps it.\n\n- If a bomb token that detonates when overlapped is dropped under more than one ship’s base, the ship that dropped the bomb decides which of those ships detonates the bomb.\n\n- If a bomb’s effect specifies that it detonates when a ship or the ship’s maneuver template overlaps it, it detonates regardless of whether the ship was executing a maneuver, barrel rolling, or resolving any other effect or ability that changed its position.\n\n- The guides on a bomb token count as part of the bomb for the purposes of measuring range and overlapping.\n\n- A ship can only drop one bomb per round.\n\n- A bomb can be dropped with a portion of the token outside the play area. Ignore any portion of the token that is outside the play area.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n- The effects of each bomb are described on its Bomb Token Reference card and are reprinted below for convenience:\n\n    - **Proton Bomb:** When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.\n\n    - **Proximity Mine:** When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.\n\n    - **Seismic Charge:** When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.\n\n\n**Related Topics:** Detonating a bomb†, Dropping a bomb†, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 25,
+        "name": "Detonating a bomb"
+      },
+      {
+        "id": 28,
+        "name": "Dropping a bomb"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 15,
     "name": "Boost",
     "expansion_rule": false,
-    "markdown": "## Boost\n\nShips with the [Boost] icon in their action bar may perform a boost action. To boost, follow these steps:\n\n1. Choose the [[Straight] 1], [[Bank Left] 1], or [[Bank Right] 1] maneuver template.\n\n1. Set the maneuver template between the ship’s front guides.\n\n1. Move the ship to the opposite end of the template and slide the rear guides of the ship into the template.\n\n- A ship cannot boost if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot boost if this would cause the ship to flee the battlefield.\n\n- When a player declares a boost action for his ship, he must also declare which direction he is boosting before determining if he can complete the boost in that direction.\n\n- If a player declares a boost action for his ship and cannot complete the action using the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a boost does not count as executing a maneuver.",
+    "markdown": "## Boost\n\nShips with the [Boost] icon in their action bar may perform a boost action. To boost, follow these steps:\n\n1. Choose the [[Straight] 1], [[Bank Left] 1], or [[Bank Right] 1] maneuver template.\n\n1. Set the maneuver template between the ship’s front guides.\n\n1. Move the ship to the opposite end of the template and slide the rear guides of the ship into the template.\n\n- A ship cannot boost if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot boost if this would cause the ship to flee the battlefield.\n\n- When a player declares a boost action for his ship, he must also declare which direction he is boosting before determining if he can complete the boost in that direction.\n\n- If a player declares a boost action for his ship and cannot complete the action using the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a boost does not count as executing a maneuver.\n\n\n**Related Topics:** Actions, Cloak†, Fleeing the battlefield, Maneuver, Obstacles",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      }
+    ]
   },
   {
     "id": 16,
     "name": "Cancel",
     "expansion_rule": false,
-    "markdown": "## Cancel\n\nWhen a die result is canceled, a player takes one die displaying the canceled result and physically removes the die from the common area. Players ignore all canceled results.",
+    "markdown": "## Cancel\n\nWhen a die result is canceled, a player takes one die displaying the canceled result and physically removes the die from the common area. Players ignore all canceled results.\n\n\n**Related Topics:** Attack",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 8
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      }
+    ]
   },
   {
     "id": 17,
     "name": "Card abilities",
     "expansion_rule": false,
-    "markdown": "## Card abilities\n\nCard abilities are resolved as instructed by the text on the card with the additional restrictions described below:\n\n- A card ability cannot be resolved more than once during the timing specified on the card. For example, a card with the timing of “when defending” cannot be resolved twice by the defender during a single attack.\n\n- The word “you” on a Ship card refers to the corresponding ship. Abilities on Ship cards cannot affect other ships unless the ability specifies otherwise.\n\n- The word “you” on Damage cards and Upgrade cards refers to the ship that has those cards. These cards only affect the ship that they are assigned to unless the card specifies otherwise.\n\n- Unless a card ability uses the word “may” or has the “**Action:**” or “**Attack:**” headers, the ability is mandatory and must be resolved.\n\n- If multiple abilities resolve at the same time, the player with initiative chooses which of his abilities to resolve and resolves them in the order of his choosing. Then the opposing player does the same for his own abilities.\n\n- If a ship is equipped with more than one copy of the same Upgrade card that does not require an action to trigger the card’s ability, it can trigger each copy of that card at the specified timing.\n\n- When a ship is destroyed, its card abilities are no longer active. The exceptions to this rule are card abilities whose effects have already been triggered and specify a time when the effect ends, such as “until the end of the Combat phase.”",
+    "markdown": "## Card abilities\n\nCard abilities are resolved as instructed by the text on the card with the additional restrictions described below:\n\n- A card ability cannot be resolved more than once during the timing specified on the card. For example, a card with the timing of “when defending” cannot be resolved twice by the defender during a single attack.\n\n- The word “you” on a Ship card refers to the corresponding ship. Abilities on Ship cards cannot affect other ships unless the ability specifies otherwise.\n\n- The word “you” on Damage cards and Upgrade cards refers to the ship that has those cards. These cards only affect the ship that they are assigned to unless the card specifies otherwise.\n\n- Unless a card ability uses the word “may” or has the “**Action:**” or “**Attack:**” headers, the ability is mandatory and must be resolved.\n\n- If multiple abilities resolve at the same time, the player with initiative chooses which of his abilities to resolve and resolves them in the order of his choosing. Then the opposing player does the same for his own abilities.\n\n- If a ship is equipped with more than one copy of the same Upgrade card that does not require an action to trigger the card’s ability, it can trigger each copy of that card at the specified timing.\n\n- When a ship is destroyed, its card abilities are no longer active. The exceptions to this rule are card abilities whose effects have already been triggered and specify a time when the effect ends, such as “until the end of the Combat phase.”\n\n\n**Related Topics:** Attack, Critical damage, Enemy, Free actions, Friendly, Initiative, Modifying dice, Secondary weapons, Spend, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 8
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 72,
+        "name": "Spend"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 18,
     "name": "Cloak",
     "expansion_rule": true,
-    "markdown": "## Cloak †\n\nShips with the [Cloak] icon in their action bar may perform a cloak action. When a ship performs the cloak action, assign one cloak token to that ship. A cloaked ship follows these rules:\n\n- The agility value of a ship with a cloak token is increased by 2.\n\n- While a ship has a cloak token, it cannot perform attacks.\n\n- A ship cannot perform the cloak action while it already has a cloak token.\n\n- Cloak tokens are not removed during the End phase.\n\nAt the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).\n\nWhen a ship decloaks, it must choose one of the following effects:\n\n1. Perform a barrel roll using the [[Straight] 2] maneuver template.\n\n1. Perform a boost using the [[Straight] 2] maneuver template.\n\nAfter all decloaking has been resolved, the Activation phase continues as normal.\n\n- Decloaking is not an action or a maneuver.\n\n- A ship can decloak even while stressed.\n\n- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.\n\n- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot decloak if this would cause the ship to flee the battlefield.\n\n- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.\n\n- If a ship cannot decloak in any direction, it cannot decloak.",
+    "markdown": "## Cloak †\n\nShips with the [Cloak] icon in their action bar may perform a cloak action. When a ship performs the cloak action, assign one cloak token to that ship. A cloaked ship follows these rules:\n\n- The agility value of a ship with a cloak token is increased by 2.\n\n- While a ship has a cloak token, it cannot perform attacks.\n\n- A ship cannot perform the cloak action while it already has a cloak token.\n\n- Cloak tokens are not removed during the End phase.\n\nAt the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).\n\nWhen a ship decloaks, it must choose one of the following effects:\n\n1. Perform a barrel roll using the [[Straight] 2] maneuver template.\n\n1. Perform a boost using the [[Straight] 2] maneuver template.\n\nAfter all decloaking has been resolved, the Activation phase continues as normal.\n\n- Decloaking is not an action or a maneuver.\n\n- A ship can decloak even while stressed.\n\n- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.\n\n- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot decloak if this would cause the ship to flee the battlefield.\n\n- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.\n\n- If a ship cannot decloak in any direction, it cannot decloak.\n\n\n**Related Topics:** Actions, Agility, Barrel roll, Boost, Decloak†, End phase, Fleeing the battlefield, Stress",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 8
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 8,
+        "name": "Agility"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 22,
+        "name": "Decloak"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 19,
     "name": "Combat phase",
     "expansion_rule": false,
-    "markdown": "## Combat phase\n\nDuring the Combat phase, each ship has an opportunity to perform one attack, starting with the ship with the highest pilot skill and continuing in descending order.\n\n- If a player has multiple ships with the same pilot skill value, he can attack with them in any order.\n\n- If both players have ships with the same pilot skill value, the player with initiative attacks with all of his ships of that pilot skill first.\n\n- Each ship becomes the active ship only once during this phase.\n\n- A ship may choose not to attack.",
+    "markdown": "## Combat phase\n\nDuring the Combat phase, each ship has an opportunity to perform one attack, starting with the ship with the highest pilot skill and continuing in descending order.\n\n- If a player has multiple ships with the same pilot skill value, he can attack with them in any order.\n\n- If both players have ships with the same pilot skill value, the player with initiative attacks with all of his ships of that pilot skill first.\n\n- Each ship becomes the active ship only once during this phase.\n\n- A ship may choose not to attack.\n\n\n**Related Topics:** Active ship, Attack, Attacker, Initiative, Pilot skill, Round",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 7,
+        "name": "Active ship"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
   },
   {
     "id": 20,
     "name": "Critical damage",
     "expansion_rule": false,
-    "markdown": "## Critical damage\n\nDuring an attack, a ship suffers one critical damage for each uncanceled [Critical Hit] result. If a ship is dealt a Damage card due to suffering critical damage, that card is dealt faceup and its text immediately resolves.\n\n- The effect of a faceup Damage card is ongoing until the card is discarded or flipped facedown.\n\n- When a ship is dealt a faceup Damage card, assign a critical hit token to that ship as a reminder of the card’s ongoing effect. That token is discarded if the card is discarded or flipped facedown.\n\n- Each faceup Damage card has either the **Ship** or **Pilot** trait. These traits have no inherent effect, but they may be referenced by other effects.",
+    "markdown": "## Critical damage\n\nDuring an attack, a ship suffers one critical damage for each uncanceled [Critical Hit] result. If a ship is dealt a Damage card due to suffering critical damage, that card is dealt faceup and its text immediately resolves.\n\n- The effect of a faceup Damage card is ongoing until the card is discarded or flipped facedown.\n\n- When a ship is dealt a faceup Damage card, assign a critical hit token to that ship as a reminder of the card’s ongoing effect. That token is discarded if the card is discarded or flipped facedown.\n\n- Each faceup Damage card has either the **Ship** or **Pilot** trait. These traits have no inherent effect, but they may be referenced by other effects.\n\n\n**Related Topics:** Attack, Card abilities, Damage",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      }
+    ]
   },
   {
     "id": 21,
     "name": "Damage",
     "expansion_rule": false,
-    "markdown": "## Damage\n\nDuring the “Deal Damage” step of an attack, a ship suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result.\n\nWhen a ship suffers a damage or critical damage, it loses one shield token. If it does not have any shield tokens to lose, it is dealt one Damage card instead. For normal damage, the Damage card is dealt facedown; for critical damage, the Damage card is dealt faceup and the text on the card immediately resolves.\n\nIf a ship has a number of Damage cards equal to its hull value, it is destroyed.\n\n- When a ship suffers damage or critical damage, its hull value is not reduced.\n\n- When a ship is destroyed, its Damage cards are discarded faceup to the discard pile.\n\n- Players can look at the Damage card discard pile at any time.\n\n- If the Damage deck is empty when a Damage card must be dealt or drawn, shuffle the discard pile to create a new Damage deck.\n\n- If both the Damage deck and discard pile are empty, players cannot draw Damage cards from the deck. If a Damage card must be dealt, the players should use a suitable counter (such as a coin or bead) in place of Damage cards until some Damage cards become available to create a deck at the end of the round. Treat all counters as facedown Damage cards.\n\n- If an effect instructs a player to deal a Damage card to a ship, this is different from the ship suffering damage. The card is dealt to the ship regardless of whether the ship has any shield tokens remaining.\n\n- If a ship would be dealt more Damage cards than are needed to destroy it, those cards are still dealt. A ship that is kept in the play area by the Simultaneous Attack Rule is affected by all of its faceup Damage cards regardless of whether they are excess.\n\n- If a Damage card is flipped faceup, it is not treated as being dealt. Flipping a Damage card faceup does not trigger abilities related to dealing a Damage card.\n\n- If the players have more than one Damage deck, they should not shuffle them together. Instead, each player uses his own Damage deck and discard pile and does not assign his own Damage cards to any enemy ships.\n\n- The Damage deck included in this box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.",
+    "markdown": "## Damage\n\nDuring the “Deal Damage” step of an attack, a ship suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result.\n\nWhen a ship suffers a damage or critical damage, it loses one shield token. If it does not have any shield tokens to lose, it is dealt one Damage card instead. For normal damage, the Damage card is dealt facedown; for critical damage, the Damage card is dealt faceup and the text on the card immediately resolves.\n\nIf a ship has a number of Damage cards equal to its hull value, it is destroyed.\n\n- When a ship suffers damage or critical damage, its hull value is not reduced.\n\n- When a ship is destroyed, its Damage cards are discarded faceup to the discard pile.\n\n- Players can look at the Damage card discard pile at any time.\n\n- If the Damage deck is empty when a Damage card must be dealt or drawn, shuffle the discard pile to create a new Damage deck.\n\n- If both the Damage deck and discard pile are empty, players cannot draw Damage cards from the deck. If a Damage card must be dealt, the players should use a suitable counter (such as a coin or bead) in place of Damage cards until some Damage cards become available to create a deck at the end of the round. Treat all counters as facedown Damage cards.\n\n- If an effect instructs a player to deal a Damage card to a ship, this is different from the ship suffering damage. The card is dealt to the ship regardless of whether the ship has any shield tokens remaining.\n\n- If a ship would be dealt more Damage cards than are needed to destroy it, those cards are still dealt. A ship that is kept in the play area by the Simultaneous Attack Rule is affected by all of its faceup Damage cards regardless of whether they are excess.\n\n- If a Damage card is flipped faceup, it is not treated as being dealt. Flipping a Damage card faceup does not trigger abilities related to dealing a Damage card.\n\n- If the players have more than one Damage deck, they should not shuffle them together. Instead, each player uses his own Damage deck and discard pile and does not assign his own Damage cards to any enemy ships.\n\n- The Damage deck included in this box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.\n\n\n**Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule, Suffer damage",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 42,
+        "name": "Hull"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
+      {
+        "id": 76,
+        "name": "Suffer damage"
+      }
+    ]
   },
   {
     "id": 22,
     "name": "Decloak",
     "expansion_rule": true,
-    "markdown": "## Decloak †\n\nSee “Cloak” on page 8.",
+    "markdown": "## Decloak †\n\nSee “Cloak” on page 8.\n\n\n**Related Topics:** Cloak†",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 18,
+        "name": "Cloak"
+      }
+    ]
   },
   {
     "id": 23,
     "name": "Defender",
     "expansion_rule": false,
-    "markdown": "## Defender\n\nThe ship that is successfully targeted during the “Declare Target” step of an attack is the defender.",
+    "markdown": "## Defender\n\nThe ship that is successfully targeted during the “Declare Target” step of an attack is the defender.\n\n\n**Related Topics:** Attack, Attacker, Target",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 79,
+        "name": "Target"
+      }
+    ]
   },
   {
     "id": 24,
     "name": "Destroying ships",
     "expansion_rule": false,
-    "markdown": "## Destroying ships\n\nA ship is destroyed when it has a number of Damage cards equal to its hull value or when it flees the battlefield. When a ship is destroyed, remove it from the play area, discard all of its Damage cards, and return all of its tokens to the supply.\n\n- If the Simultaneous Attack Rule delays a ship’s destruction, it is instead destroyed after it has had its opportunity to attack this round.\n\n- The “Direct Hit!” Damage card counts as two Damage cards for the purpose of determining if a ship is destroyed.",
+    "markdown": "## Destroying ships\n\nA ship is destroyed when it has a number of Damage cards equal to its hull value or when it flees the battlefield. When a ship is destroyed, remove it from the play area, discard all of its Damage cards, and return all of its tokens to the supply.\n\n- If the Simultaneous Attack Rule delays a ship’s destruction, it is instead destroyed after it has had its opportunity to attack this round.\n\n- The “Direct Hit!” Damage card counts as two Damage cards for the purpose of determining if a ship is destroyed.\n\n\n**Related Topics:** Attack, Damage, Fleeing the battlefield, Hull, Simultaneous attack rule, Winning the game",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 10
       }
     ],
-    "related_rules": []
-  },
-  {
-    "id": 26,
-    "name": "Dice results",
-    "expansion_rule": false,
-    "markdown": "## Dice results\n\nThe results on the attack dice are as follows:\n\n- **Hit ([Hit]):** If this result is not canceled, the defender suffers one damage.\n\n- **Critical ([Critical Hit]):** If this result is not canceled, the defender suffers one critical damage.\n\n- **Focus ([Focus]):** These results have no inherent effect, but the attacker may spend a focus token to change them to [Hit] results.\n\n- **Blank:** This result does not display any icons. It has no effect.\n\nThe results on the defense dice are as follows:\n\n- **Evade ([Evade]):** This result cancels one [Hit] or [Critical Hit] result.\n\n- **Focus ([Focus]):**These results have no inherent effect, but the defender may spend a focus token to change them to [Evade] results.\n\n- **Blank:** This result does not display any icons. It has no effect.\n\nWhen an effect instructs a player to roll dice for a purpose other than resolving an attack, the dice results have no inherent effect.",
-    "references": [
+    "related_rules": [
       {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 27,
-    "name": "Difficulty",
-    "expansion_rule": false,
-    "markdown": "## Difficulty\n\nThe difficulty of a maneuver is indicated by the color of the bearing icon. When a ship executes a red maneuver, it receives one stress token. When a ship executes a green maneuver, remove one stress token from it. White maneuvers have no inherent effect.\n\n- A ship cannot execute a red maneuver while it is stressed. If a stressed ship reveals a red maneuver, the opposing player chooses any non- red maneuver on that ship’s dial for the ship to execute.\n\n- A ship can have more than one stress token assigned to it.\n\n- If two game effects conflict in changing the difficulty of a maneuver, the effect that makes the maneuver more difficult takes priority. The other effect is ignored.",
-    "references": [
+        "id": 9,
+        "name": "Attack"
+      },
       {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 28,
-    "name": "Dropping a bomb",
-    "expansion_rule": true,
-    "markdown": "## Dropping a bomb †\n\nSee “Bombs” on page 7.",
-    "references": [
+        "id": 21,
+        "name": "Damage"
+      },
       {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 29,
-    "name": "End phase",
-    "expansion_rule": false,
-    "markdown": "## End phase\n\nDuring the End phase, players remove all focus and evade tokens from ships in the play area. Other tokens are not removed during this phase.",
-    "references": [
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
       {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 30,
-    "name": "Enemy",
-    "expansion_rule": false,
-    "markdown": "## Enemy\n\nAll ships controlled by the opposing player are enemy ships.",
-    "references": [
+        "id": 42,
+        "name": "Hull"
+      },
       {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 31,
-    "name": "Evade",
-    "expansion_rule": false,
-    "markdown": "## Evade\n\nShips with the evade ([Evade]) icon in their action bar may perform the evade action. To perform the action, assign one evade token to the ship. When defending, the ship may spend that token to add one additional evade ([Evade]) result to his defense roll. All unspent evade tokens are removed from ships during the End phase.\n\n- A ship can have more than one evade token.\n\n- If an ability instructs a player to assign an evade token to a ship, this is different than performing an evade action. The ship is assigned the token without performing an action and may still perform the evade action this round.",
-    "references": [
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
       {
-        "code": "RR-SWX36",
-        "page": 10
+        "id": 89,
+        "name": "Winning the game"
       }
-    ],
-    "related_rules": []
+    ]
   },
   {
     "id": 25,
     "name": "Detonating a bomb",
     "expansion_rule": true,
-    "markdown": "## Detonating a bomb †\n\nSee “Bombs” on page 7",
+    "markdown": "## Detonating a bomb †\n\nSee “Bombs” on page 7\n\n\n**Related Topics:** Bombs†",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Dice results",
+    "expansion_rule": false,
+    "markdown": "## Dice results\n\nThe results on the attack dice are as follows:\n\n- **Hit ([Hit]):** If this result is not canceled, the defender suffers one damage.\n\n- **Critical ([Critical Hit]):** If this result is not canceled, the defender suffers one critical damage.\n\n- **Focus ([Focus]):** These results have no inherent effect, but the attacker may spend a focus token to change them to [Hit] results.\n\n- **Blank:** This result does not display any icons. It has no effect.\n\nThe results on the defense dice are as follows:\n\n- **Evade ([Evade]):** This result cancels one [Hit] or [Critical Hit] result.\n\n- **Focus ([Focus]):**These results have no inherent effect, but the defender may spend a focus token to change them to [Evade] results.\n\n- **Blank:** This result does not display any icons. It has no effect.\n\nWhen an effect instructs a player to roll dice for a purpose other than resolving an attack, the dice results have no inherent effect.\n\n\n**Related Topics:** Attack, Hit, Modifying dice",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 40,
+        "name": "Hit"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Difficulty",
+    "expansion_rule": false,
+    "markdown": "## Difficulty\n\nThe difficulty of a maneuver is indicated by the color of the bearing icon. When a ship executes a red maneuver, it receives one stress token. When a ship executes a green maneuver, remove one stress token from it. White maneuvers have no inherent effect.\n\n- A ship cannot execute a red maneuver while it is stressed. If a stressed ship reveals a red maneuver, the opposing player chooses any non- red maneuver on that ship’s dial for the ship to execute.\n\n- A ship can have more than one stress token assigned to it.\n\n- If two game effects conflict in changing the difficulty of a maneuver, the effect that makes the maneuver more difficult takes priority. The other effect is ignored.\n\n\n**Related Topics:** Activation phase, Bearing, Ion token†, Maneuver, Speed, Stress",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Dropping a bomb",
+    "expansion_rule": true,
+    "markdown": "## Dropping a bomb †\n\nSee “Bombs” on page 7.\n\n\n**Related Topics:** Bombs†",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "End phase",
+    "expansion_rule": false,
+    "markdown": "## End phase\n\nDuring the End phase, players remove all focus and evade tokens from ships in the play area. Other tokens are not removed during this phase.\n\n\n**Related Topics:** Cloak†, Evade, Focus, Round",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Enemy",
+    "expansion_rule": false,
+    "markdown": "## Enemy\n\nAll ships controlled by the opposing player are enemy ships.\n\n\n**Related Topics:** Attack, Card abilities, Ship",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Evade",
+    "expansion_rule": false,
+    "markdown": "## Evade\n\nShips with the evade ([Evade]) icon in their action bar may perform the evade action. To perform the action, assign one evade token to the ship. When defending, the ship may spend that token to add one additional evade ([Evade]) result to his defense roll. All unspent evade tokens are removed from ships during the End phase.\n\n- A ship can have more than one evade token.\n\n- If an ability instructs a player to assign an evade token to a ship, this is different than performing an evade action. The ship is assigned the token without performing an action and may still perform the evade action this round.\n\n\n**Related Topics:** Actions, End phase, Modifying dice",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
   },
   {
     "id": 32,
     "name": "Faction",
     "expansion_rule": false,
-    "markdown": "## Faction\n\nThere are three primary factions in the game: Rebel (The Rebel Alliance and The Resistance), Imperial (The Galactic Empire and The First Order), and Scum (Scum and Villainy). All Ship cards and some Upgrade cards are aligned to one of these primary factions. A squad cannot contain cards from different primary factions.\n\n- Upgrade cards are neutral unless they have a trait that restricts them to a primary faction. Neutral Upgrade cards are not aligned to a faction and can be fielded in any squad.",
+    "markdown": "## Faction\n\nThere are three primary factions in the game: Rebel (The Rebel Alliance and The Resistance), Imperial (The Galactic Empire and The First Order), and Scum (Scum and Villainy). All Ship cards and some Upgrade cards are aligned to one of these primary factions. A squad cannot contain cards from different primary factions.\n\n- Upgrade cards are neutral unless they have a trait that restricts them to a primary faction. Neutral Upgrade cards are not aligned to a faction and can be fielded in any squad.\n\n\n**Related Topics:** Id tokens, Ship, Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 33,
     "name": "Firing arc",
     "expansion_rule": false,
-    "markdown": "## Firing arc\n\nA ship’s primary firing arc is the area formed by extending the firing arc lines printed on the front of the ship’s token. A firing arc extends across the play area. A ship is inside a firing arc if any part of its base falls inside the area formed by extending the firing-arc lines.\n\n- A ship’s primary firing arc is used for all attacks, including secondary weapon attacks, unless specified otherwise.\n\n- A ship’s auxiliary firing arc cannot be used for secondary weapon attacks.",
+    "markdown": "## Firing arc\n\nA ship’s primary firing arc is the area formed by extending the firing arc lines printed on the front of the ship’s token. A firing arc extends across the play area. A ship is inside a firing arc if any part of its base falls inside the area formed by extending the firing-arc lines.\n\n- A ship’s primary firing arc is used for all attacks, including secondary weapon attacks, unless specified otherwise.\n\n- A ship’s auxiliary firing arc cannot be used for secondary weapon attacks.\n\n\n**Related Topics:** Attack, Auxiliary firing arc†, Range, Secondary weapons, Turret primary weapon†",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 34,
     "name": "Fleeing the battlefield",
     "expansion_rule": false,
-    "markdown": "## Fleeing the battlefield\n\nWhen a ship executes a maneuver or performs an action that changes its position, if **any part** of its base is outside the play area, that ship has fled the battlefield. A ship that flees the battlefield is destroyed.\n\n- If a ship executes a maneuver or performs an action that changes its position, the ship is not destroyed if only its maneuver template is outside the play area.\n\n- If a ship is placed outside the play area as a result of executing a maneuver, the ship flees the battlefield and is immediately destroyed. It cannot perform an action or execute a maneuver to move back within the play area.\n\n- If a ship unexpectedly ends its maneuver outside the play area due to overlapping other ships, it still flees the battlefield and is destroyed.\n\n- When a ship flees the battlefield, it is immediately destroyed and removed from the play area. It cannot resolve any of its Ship or Upgrade card abilities.",
+    "markdown": "## Fleeing the battlefield\n\nWhen a ship executes a maneuver or performs an action that changes its position, if **any part** of its base is outside the play area, that ship has fled the battlefield. A ship that flees the battlefield is destroyed.\n\n- If a ship executes a maneuver or performs an action that changes its position, the ship is not destroyed if only its maneuver template is outside the play area.\n\n- If a ship is placed outside the play area as a result of executing a maneuver, the ship flees the battlefield and is immediately destroyed. It cannot perform an action or execute a maneuver to move back within the play area.\n\n- If a ship unexpectedly ends its maneuver outside the play area due to overlapping other ships, it still flees the battlefield and is destroyed.\n\n- When a ship flees the battlefield, it is immediately destroyed and removed from the play area. It cannot resolve any of its Ship or Upgrade card abilities.\n\n\n**Related Topics:** Barrel roll, Boost, Cloak†, Destroying ships, Maneuver, Overlapping ships, Play area",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      }
+    ]
   },
   {
     "id": 35,
     "name": "Focus",
     "expansion_rule": false,
-    "markdown": "## Focus\n\nShips with the focus ([Focus]) icon in their action bar may perform the focus action. To perform the action, assign one focus token to the ship. When attacking or defending, the ship may spend that token to change all of its [Focus] results to [Hit] results (on attack dice) or [Evade] results (on defense dice). All unspent focus tokens are removed from ships during the End phase.\n\n- A ship can have more than one focus token.\n\n- A ship can spend a focus token even if it did not roll any [Focus] results.\n\n- If a card ability instructs a player to assign a focus token to a ship, this is different than performing a focus action. The ship is assigned the token without performing an action and may still perform the focus action this round.",
+    "markdown": "## Focus\n\nShips with the focus ([Focus]) icon in their action bar may perform the focus action. To perform the action, assign one focus token to the ship. When attacking or defending, the ship may spend that token to change all of its [Focus] results to [Hit] results (on attack dice) or [Evade] results (on defense dice). All unspent focus tokens are removed from ships during the End phase.\n\n- A ship can have more than one focus token.\n\n- A ship can spend a focus token even if it did not roll any [Focus] results.\n\n- If a card ability instructs a player to assign a focus token to a ship, this is different than performing a focus action. The ship is assigned the token without performing an action and may still perform the focus action this round.\n\n\n**Related Topics:** Actions, Attack, End phase, Modifying dice",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
   },
   {
     "id": 36,
     "name": "Formats of play",
     "expansion_rule": false,
-    "markdown": "## Formats of play\n\nThere are three formats of play as described below.\n\n- **Standard Play:** This format is the standard dogfight with a recommended squad point total of 100 points.\n\n- **Cinematic Play:** This format uses missions to create scenarios with special objectives.\n\n- **Epic Play†:** This format increases the recommended squad point total to 300 and allows huge ships and cards with the epic icon ([Epic]) to be used.\n\nFor more information on Epic Play and tournament rules, visit [www.FantasyFlightGames.com](http://www.fantasyflightgames.com).",
+    "markdown": "## Formats of play\n\nThere are three formats of play as described below.\n\n- **Standard Play:** This format is the standard dogfight with a recommended squad point total of 100 points.\n\n- **Cinematic Play:** This format uses missions to create scenarios with special objectives.\n\n- **Epic Play†:** This format increases the recommended squad point total to 300 and allows huge ships and cards with the epic icon ([Epic]) to be used.\n\nFor more information on Epic Play and tournament rules, visit [www.FantasyFlightGames.com](http://www.fantasyflightgames.com).\n\n\n**Related Topics:** Huge ship†, Missions, Squad building",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 50,
+        "name": "Missions"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 37,
     "name": "Free actions",
     "expansion_rule": false,
-    "markdown": "## Free actions\n\nA free action is an action granted to a ship through a card ability or other effect. It does not count as the one standard action that a ship performs during the “Perform Action” step.\n\n- A stressed ship cannot perform free actions.\n\n- A ship can perform free actions even if it skipped its “Perform Action” step due to overlapping an asteroid obstacle or another game effect.\n\n- If a ship is specifically granted a free barrel roll action or a free boost action and cannot complete the action in the desired direction, it may choose a different direction. It cannot choose to perform a different action.",
+    "markdown": "## Free actions\n\nA free action is an action granted to a ship through a card ability or other effect. It does not count as the one standard action that a ship performs during the “Perform Action” step.\n\n- A stressed ship cannot perform free actions.\n\n- A ship can perform free actions even if it skipped its “Perform Action” step due to overlapping an asteroid obstacle or another game effect.\n\n- If a ship is specifically granted a free barrel roll action or a free boost action and cannot complete the action in the desired direction, it may choose a different direction. It cannot choose to perform a different action.\n\n\n**Related Topics:** Actions, Activation phase, Card abilities, Stress",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 38,
     "name": "Friendly",
     "expansion_rule": false,
-    "markdown": "## Friendly\n\nAll ships controlled by the same player are friendly ships.\n\n- Ships cannot attack or acquire target locks on friendly ships.\n\n- A ship is friendly to itself and can affect itself with any of its abilities that affect friendly ships unless those abilities explicitly affect “other” friendly ships.",
+    "markdown": "## Friendly\n\nAll ships controlled by the same player are friendly ships.\n\n- Ships cannot attack or acquire target locks on friendly ships.\n\n- A ship is friendly to itself and can affect itself with any of its abilities that affect friendly ships unless those abilities explicitly affect “other” friendly ships.\n\n\n**Related Topics:** Attack, Card abilities, Ship",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 39,
     "name": "Guides",
     "expansion_rule": false,
-    "markdown": "## Guides\n\nEach ship’s base has two pairs of movement guides, one pair on the front and one pair on the back. These guides are ignored for all purposes except executing maneuvers and overlapping obstacles and other ships. In those cases, the guides count as part of the base.",
+    "markdown": "## Guides\n\nEach ship’s base has two pairs of movement guides, one pair on the front and one pair on the back. These guides are ignored for all purposes except executing maneuvers and overlapping obstacles and other ships. In those cases, the guides count as part of the base.\n\n\n**Related Topics:** Maneuver, Obstacles, Overlapping ships",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      }
+    ]
   },
   {
     "id": 40,
     "name": "Hit",
     "expansion_rule": false,
-    "markdown": "## Hit\n\nDuring the “Compare Results” step of attack, a ship is hit if there are any [Hit] or [Critical Hit] results remaining after canceling dice.",
+    "markdown": "## Hit\n\nDuring the “Compare Results” step of attack, a ship is hit if there are any [Hit] or [Critical Hit] results remaining after canceling dice.\n\n\n**Related Topics:** Attack, Dice results",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      }
+    ]
   },
   {
     "id": 41,
     "name": "Huge ship",
     "expansion_rule": true,
-    "markdown": "## Huge ship †\n\nA ship with more than one plastic base is a huge ship. The rules for huge ships are included in those products.",
+    "markdown": "## Huge ship †\n\nA ship with more than one plastic base is a huge ship. The rules for huge ships are included in those products.\n\n\n**Related Topics:** Formats of play, Large ship†, Ship, Small ship, Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 36,
+        "name": "Formats of play"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 42,
     "name": "Hull",
     "expansion_rule": false,
-    "markdown": "## Hull\n\nThe yellow number on a ship’s Ship card is its hull value. The hull value indicates how many Damage cards must be dealt to it to destroy it.",
+    "markdown": "## Hull\n\nThe yellow number on a ship’s Ship card is its hull value. The hull value indicates how many Damage cards must be dealt to it to destroy it.\n\n\n**Related Topics:** Attack, Damage, Destroying ships",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      }
+    ]
   },
   {
     "id": 43,
     "name": "Id tokens",
     "expansion_rule": false,
-    "markdown": "## Id tokens\n\nID Tokens identify which ships in the play area correspond to which Ship card. If a player fields multiple copies of the same non-unique Ship card, he must assign a different set of ID tokens to each of those ships.\n\nTo assign an ID token to a ship, the player places one ID token on the ship’s Ship card. Then he inserts two more ID tokens into the tower of the ship’s base; the sides facing outward must match the color of the faceup token on the Ship card.\n\n- If both players field squads of the same faction, they are playing a mirror match. Before starting a mirror match, the players must assign ID tokens to each of their ships. One player displays his ID tokens with the white numbers facing outward; the other player displays his tokens with the black numbers facing outward.",
+    "markdown": "## Id tokens\n\nID Tokens identify which ships in the play area correspond to which Ship card. If a player fields multiple copies of the same non-unique Ship card, he must assign a different set of ID tokens to each of those ships.\n\nTo assign an ID token to a ship, the player places one ID token on the ship’s Ship card. Then he inserts two more ID tokens into the tower of the ship’s base; the sides facing outward must match the color of the faceup token on the Ship card.\n\n- If both players field squads of the same faction, they are playing a mirror match. Before starting a mirror match, the players must assign ID tokens to each of their ships. One player displays his ID tokens with the white numbers facing outward; the other player displays his tokens with the black numbers facing outward.\n\n\n**Related Topics:** Faction, Setup, Ship, Squad building",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 44,
     "name": "Initiative",
     "expansion_rule": false,
-    "markdown": "## Initiative\n\nThe player whose squad has the lowest total squad point cost chooses which player has initiative. If they are tied for squad point cost, one player rolls an attack die. On a [Hit] or [Critical Hit] result, that player chooses who has initiative. On a [Focus] or blank result, his opponent chooses who has initiative.\n\n- During the Activation phase, if both players have ships with the same pilot skill, all of those ships belonging to the player with initiative activate first.\n\n- During the Combat phase, if both players have ships with the same pilot skill, all of those ships belonging to the player with initiative resolve the phase first.\n\n- If both players have effects that resolve at the same time, the player with initiative resolves all of his effects first.",
+    "markdown": "## Initiative\n\nThe player whose squad has the lowest total squad point cost chooses which player has initiative. If they are tied for squad point cost, one player rolls an attack die. On a [Hit] or [Critical Hit] result, that player chooses who has initiative. On a [Focus] or blank result, his opponent chooses who has initiative.\n\n- During the Activation phase, if both players have ships with the same pilot skill, all of those ships belonging to the player with initiative activate first.\n\n- During the Combat phase, if both players have ships with the same pilot skill, all of those ships belonging to the player with initiative resolve the phase first.\n\n- If both players have effects that resolve at the same time, the player with initiative resolves all of his effects first.\n\n\n**Related Topics:** Activation phase, Card abilities, Combat phase, Pilot skill, Setup, Squad building, Squad points",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      }
+    ]
   },
   {
     "id": 45,
     "name": "Ion token",
     "expansion_rule": true,
-    "markdown": "## Ion token †\n\nSome card abilities can cause a ship to receive an ion token. A ship is ionized while it has an ion token assigned to it. An ionized ship follows special rules during the following phases:\n\n- **Planning Phase:** The owner does not assign a maneuver dial to this ship.\n\n- **Activation Phase:** The owner moves the ship as if it were assigned a white [[Straight] 1] maneuver. After executing this maneuver, remove all ion tokens from the ship. It may perform actions as normal.\n\n- **Combat Phase:** The ship may attack as normal.\n\n- Since an ionized ship is not assigned a maneuver dial, it is not treated as revealing a maneuver during the Activation phase.",
+    "markdown": "## Ion token †\n\nSome card abilities can cause a ship to receive an ion token. A ship is ionized while it has an ion token assigned to it. An ionized ship follows special rules during the following phases:\n\n- **Planning Phase:** The owner does not assign a maneuver dial to this ship.\n\n- **Activation Phase:** The owner moves the ship as if it were assigned a white [[Straight] 1] maneuver. After executing this maneuver, remove all ion tokens from the ship. It may perform actions as normal.\n\n- **Combat Phase:** The ship may attack as normal.\n\n- Since an ionized ship is not assigned a maneuver dial, it is not treated as revealing a maneuver during the Activation phase.\n\n\n**Related Topics:** Activation phase, Difficulty, Large ship†, Planning phase",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      }
+    ]
   },
   {
     "id": 46,
     "name": "Koiogran turn",
     "expansion_rule": false,
-    "markdown": "## Koiogran turn\n\nSee “Bearing” on page 6.",
+    "markdown": "## Koiogran turn\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 47,
     "name": "Large ship",
     "expansion_rule": true,
-    "markdown": "## Large ship †\n\nA large ship uses a plastic base that is about 3-1/8\" (8 cm) long. Large ships follow all of the rules of small ships with the following exceptions:\n\n- A large ship is unaffected by a single ion token; the ion token simply remains assigned to the ship. When a large ship has two or more ion tokens assigned to it, it suffers the ion token effect as normal and the player removes all ion tokens from the ship after it executes a maneuver.\n\n- When a large ship performs a barrel roll, instead of placing the end of the template against the ship’s base, place the long side of the template against the ship’s base. All other rules for performing a barrel roll apply as normal.\n\n- During setup, a large ship’s base may extend outside of Range 1 (or a mission’s specified setup area) as long as it fills the length of that area. A large ship cannot be placed with any portion of its base outside the play area.",
+    "markdown": "## Large ship †\n\nA large ship uses a plastic base that is about 3-1/8\" (8 cm) long. Large ships follow all of the rules of small ships with the following exceptions:\n\n- A large ship is unaffected by a single ion token; the ion token simply remains assigned to the ship. When a large ship has two or more ion tokens assigned to it, it suffers the ion token effect as normal and the player removes all ion tokens from the ship after it executes a maneuver.\n\n- When a large ship performs a barrel roll, instead of placing the end of the template against the ship’s base, place the long side of the template against the ship’s base. All other rules for performing a barrel roll apply as normal.\n\n- During setup, a large ship’s base may extend outside of Range 1 (or a mission’s specified setup area) as long as it fills the length of that area. A large ship cannot be placed with any portion of its base outside the play area.\n\n\n**Related Topics:** Barrel roll, Huge ship†, Ion token†, Setup, Ship, Small ship, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 48,
     "name": "Limited",
     "expansion_rule": true,
-    "markdown": "## Limited †\n\nA ship cannot equip more than one copy of the same card with the Limited trait.",
+    "markdown": "## Limited †\n\nA ship cannot equip more than one copy of the same card with the Limited trait.\n\n\n**Related Topics:** Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 49,
     "name": "Maneuver",
     "expansion_rule": false,
-    "markdown": "## Maneuver\n\nEach selection on the maneuver dial is a single maneuver, which consists of a speed (number), a bearing (arrow), and a difficulty (color). Ships execute maneuvers during the Activation phase by resolving the “Execute Maneuver” step.\n\n- When an ability instructs a ship to execute a specific maneuver, it resolves only the “Execute Maneuver” step of the Activation phase.\n\n- When a ship executes a maneuver, it is picked up from its starting position and placed in its final position. The full width of the ship’s base is ignored except in its starting and final positions.",
+    "markdown": "## Maneuver\n\nEach selection on the maneuver dial is a single maneuver, which consists of a speed (number), a bearing (arrow), and a difficulty (color). Ships execute maneuvers during the Activation phase by resolving the “Execute Maneuver” step.\n\n- When an ability instructs a ship to execute a specific maneuver, it resolves only the “Execute Maneuver” step of the Activation phase.\n\n- When a ship executes a maneuver, it is picked up from its starting position and placed in its final position. The full width of the ship’s base is ignored except in its starting and final positions.\n\n\n**Related Topics:** Activation phase, Barrel roll, Bearing, Boost, Difficulty, Fleeing the battlefield, Guides, Moving through, Obstacles, Overlapping ships, Planning phase, Speed, Stress, Touching",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      },
+      {
+        "id": 82,
+        "name": "Touching"
+      }
+    ]
   },
   {
     "id": 50,
     "name": "Missions",
     "expansion_rule": false,
-    "markdown": "## Missions\n\nMissions are an alternative mode of play. Three different missions and the basic rules for playing missions are described in the Mission Guide. Some expansion packs include additional missions.",
+    "markdown": "## Missions\n\nMissions are an alternative mode of play. Three different missions and the basic rules for playing missions are described in the Mission Guide. Some expansion packs include additional missions.\n\n\n**Related Topics:** Formats of play",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 36,
+        "name": "Formats of play"
+      }
+    ]
   },
   {
     "id": 51,
     "name": "Modifications",
     "expansion_rule": true,
-    "markdown": "## Modifications †\n\nModifications are special upgrades that do not appear in any ship’s upgrade bar. Any ship may equip a modification unless the card is restricted to a specific type of ship. Each ship is limited to one modification.",
+    "markdown": "## Modifications †\n\nModifications are special upgrades that do not appear in any ship’s upgrade bar. Any ship may equip a modification unless the card is restricted to a specific type of ship. Each ship is limited to one modification.\n\n\n**Related Topics:** Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 52,
     "name": "Modifying dice",
     "expansion_rule": false,
-    "markdown": "## Modifying dice\n\nPlayers can modify dice by spending focus, evade, and target lock tokens and by resolving card abilities. Dice can be modified in the following ways:\n\n- **Add:** To add a die result, place an unused die displaying the result next to the rolled dice. A die added in this way is treated as a normal die for all purposes and can be modified and canceled.\n\n- **Change:** To change a die result, rotate the die so that its faceup side displays the new result.\n\n- **Reroll:** To reroll a die result, pick up the die and roll it again.\n\n- Dice can be modified by multiple effects, but a die cannot be rerolled more than once.",
+    "markdown": "## Modifying dice\n\nPlayers can modify dice by spending focus, evade, and target lock tokens and by resolving card abilities. Dice can be modified in the following ways:\n\n- **Add:** To add a die result, place an unused die displaying the result next to the rolled dice. A die added in this way is treated as a normal die for all purposes and can be modified and canceled.\n\n- **Change:** To change a die result, rotate the die so that its faceup side displays the new result.\n\n- **Reroll:** To reroll a die result, pick up the die and roll it again.\n\n- Dice can be modified by multiple effects, but a die cannot be rerolled more than once.\n\n\n**Related Topics:** Acquire a target lock, Attack, Card abilities, Dice results, Evade, Focus",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      }
+    ]
   },
   {
     "id": 53,
     "name": "Moving through",
     "expansion_rule": false,
-    "markdown": "## Moving through\n\nWhen executing a maneuver, a ship moves through an obstacle or another ship if its maneuver template overlaps that obstacle token or that ship’s base. A ship can move through another ship without issue, but moving through an obstacles produces the effects described in the “Obstacles” section.\n\n- If a ship moves through another ship, the player should hold the maneuver template above the other ship and make his best estimation of where the moving ship should end its movement.\n\n    - If the players desire greater precision, they can mark the positions of intervening ships, remove those ships to complete the maneuver, then return those ships to their marked positions (maintaining facing).",
+    "markdown": "## Moving through\n\nWhen executing a maneuver, a ship moves through an obstacle or another ship if its maneuver template overlaps that obstacle token or that ship’s base. A ship can move through another ship without issue, but moving through an obstacles produces the effects described in the “Obstacles” section.\n\n- If a ship moves through another ship, the player should hold the maneuver template above the other ship and make his best estimation of where the moving ship should end its movement.\n\n    - If the players desire greater precision, they can mark the positions of intervening ships, remove those ships to complete the maneuver, then return those ships to their marked positions (maintaining facing).\n\n\n**Related Topics:** Activation phase, Maneuver, Obstacles, Overlapping ships, Ship",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 54,
     "name": "Obstacles",
     "expansion_rule": false,
-    "markdown": "## Obstacles\n\nObstacles acts as hazards that can disrupt and damage ships. When a ship executes a maneuver, if its base or maneuver template overlaps an obstacle token, it executes its maneuver as normal but suffers an effect based on the type of obstacle:\n\n- **Asteroid:** The ship must skip its “Perform Action” step this round. After skipping the “Perform Action” step, it rolls one attack die. On a [Hit] result, the ship suffers one damage; on a [Critical Hit] result, it suffers one critical damage. While a ship is overlapping an asteroid, it cannot perform any attacks.\n\n- **Debris Cloud†:** After the “Check Pilot Stress” step, the ship receives one stress token. After the “Perform Action” step, it rolls one attack die. On a [Critical Hit] result, the ship suffers one critical damage. The ship can still perform attacks.\n\nWhen a ship performs an attack, if it measures range through an obstacle, the attack is obstructed.\n\n- Obstacles are placed during the “Place Obstacles” step of setup.\n\n- If a ship moves through or overlaps an obstacle while executing a [Koiogran Turn], [Segnor's Loop Left], or [Segnor's Loop Right] maneuver, it still rotates 180° when placed.\n\n- If a ship moves through or overlaps an obstacle while executing a [Tallon Roll Left] or [Tallon Roll Right] maneuver, it still rotates 90° when placed.\n\n- A ship can still perform free actions even if it moved through or overlapped an obstacle, as long as the ship is not stressed.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final positions of the ship is counted for the purpose of overlapping obstacles. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n- If a ship moves through or overlaps more than one obstacle, it suffers the effects of each obstacle, starting with the obstacle that was closest to the ship in its starting position and proceeding outward.\n\n- If a ship is overlapping an obstacle at the start of its maneuver, it ignores that obstacle unless its maneuver template or final position overlaps that obstacle again.",
+    "markdown": "## Obstacles\n\nObstacles acts as hazards that can disrupt and damage ships. When a ship executes a maneuver, if its base or maneuver template overlaps an obstacle token, it executes its maneuver as normal but suffers an effect based on the type of obstacle:\n\n- **Asteroid:** The ship must skip its “Perform Action” step this round. After skipping the “Perform Action” step, it rolls one attack die. On a [Hit] result, the ship suffers one damage; on a [Critical Hit] result, it suffers one critical damage. While a ship is overlapping an asteroid, it cannot perform any attacks.\n\n- **Debris Cloud†:** After the “Check Pilot Stress” step, the ship receives one stress token. After the “Perform Action” step, it rolls one attack die. On a [Critical Hit] result, the ship suffers one critical damage. The ship can still perform attacks.\n\nWhen a ship performs an attack, if it measures range through an obstacle, the attack is obstructed.\n\n- Obstacles are placed during the “Place Obstacles” step of setup.\n\n- If a ship moves through or overlaps an obstacle while executing a [Koiogran Turn], [Segnor's Loop Left], or [Segnor's Loop Right] maneuver, it still rotates 180° when placed.\n\n- If a ship moves through or overlaps an obstacle while executing a [Tallon Roll Left] or [Tallon Roll Right] maneuver, it still rotates 90° when placed.\n\n- A ship can still perform free actions even if it moved through or overlapped an obstacle, as long as the ship is not stressed.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final positions of the ship is counted for the purpose of overlapping obstacles. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n- If a ship moves through or overlaps more than one obstacle, it suffers the effects of each obstacle, starting with the obstacle that was closest to the ship in its starting position and proceeding outward.\n\n- If a ship is overlapping an obstacle at the start of its maneuver, it ignores that obstacle unless its maneuver template or final position overlaps that obstacle again.\n\n\n**Related Topics:** Activation phase, Attack, Barrel roll, Boost, Damage, Guides, Maneuver, Moving through, Obstructed, Setup",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 55,
     "name": "Obstructed",
     "expansion_rule": false,
-    "markdown": "## Obstructed\n\nAn attack is obstructed if the attacker measures range through an obstacle. If an attack is obstructed, the defender rolls one additional defense die during the “Roll Defense Dice” step.\n\n- An attack is either obstructed or not obstructed; the number of obstructions does not change the number of additional defense dice rolled.\n\n- Small and large ships do not obstruct attacks.\n\n- The attacker cannot attempt to measure range to a point of the defender’s base that is not the closest point in order to avoid measuring through an obstacle. If multiple points are at equal distance from the attacker, he may choose one of those lines for measuring range.",
+    "markdown": "## Obstructed\n\nAn attack is obstructed if the attacker measures range through an obstacle. If an attack is obstructed, the defender rolls one additional defense die during the “Roll Defense Dice” step.\n\n- An attack is either obstructed or not obstructed; the number of obstructions does not change the number of additional defense dice rolled.\n\n- Small and large ships do not obstruct attacks.\n\n- The attacker cannot attempt to measure range to a point of the defender’s base that is not the closest point in order to avoid measuring through an obstacle. If multiple points are at equal distance from the attacker, he may choose one of those lines for measuring range.\n\n\n**Related Topics:** Attack, Obstacles, Range",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      }
+    ]
   },
   {
     "id": 56,
     "name": "Overlapping ships",
     "expansion_rule": false,
-    "markdown": "## Overlapping ships\n\nA ship overlaps another ship when executing a maneuver if its base overlaps the other ship’s base. If this happens, move the moving ship backward along the template until it is no longer overlapping another ship. While doing so, adjust the facing of the ship so that the template remains centered between both sets of guides on the ship’s base. Once the ship is no longer overlapping another ship, place it so that it is touching the last ship it overlapped. The ship must skip its “Perform Action” step this round.\n\n- While a ship is touching another ship, those ships cannot attack each other. They can still attack enemy ships that they are not touching.\n\n- A ship may still perform free actions even if it overlapped another ship.\n\n- When executing a maneuver, if a ship overlaps more than one ship, it is treated as having overlapped only the ship or ships that it is touching in its final position.",
+    "markdown": "## Overlapping ships\n\nA ship overlaps another ship when executing a maneuver if its base overlaps the other ship’s base. If this happens, move the moving ship backward along the template until it is no longer overlapping another ship. While doing so, adjust the facing of the ship so that the template remains centered between both sets of guides on the ship’s base. Once the ship is no longer overlapping another ship, place it so that it is touching the last ship it overlapped. The ship must skip its “Perform Action” step this round.\n\n- While a ship is touching another ship, those ships cannot attack each other. They can still attack enemy ships that they are not touching.\n\n- A ship may still perform free actions even if it overlapped another ship.\n\n- When executing a maneuver, if a ship overlaps more than one ship, it is treated as having overlapped only the ship or ships that it is touching in its final position.\n\n\n**Related Topics:** Actions, Activation phase, Fleeing the battlefield, Guides, Maneuver, Moving through, Touching",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 82,
+        "name": "Touching"
+      }
+    ]
   },
   {
     "id": 57,
     "name": "Pilot skill",
     "expansion_rule": false,
-    "markdown": "## Pilot skill\n\nA ship’s pilot skill is the orange number to the left of the ship’s name on its Ship card. Pilot skill determines the order in which ships move during the Activation phase and attack during the Combat phase, as well as the order in which ships are placed during setup.\n\n- If several game effects alter the pilot skill of a ship, only the most recent effect is applied.\n\n    - If the most recent game effect ends (such as “at the end of the Combat phase”), the ship’s pilot skill returns to the pilot skill established by the most recent effect that is still active.",
+    "markdown": "## Pilot skill\n\nA ship’s pilot skill is the orange number to the left of the ship’s name on its Ship card. Pilot skill determines the order in which ships move during the Activation phase and attack during the Combat phase, as well as the order in which ships are placed during setup.\n\n- If several game effects alter the pilot skill of a ship, only the most recent effect is applied.\n\n    - If the most recent game effect ends (such as “at the end of the Combat phase”), the ship’s pilot skill returns to the pilot skill established by the most recent effect that is still active.\n\n\n**Related Topics:** Activation phase, Attack, Combat phase, Initiative, Setup, Simultaneous attack rule",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      }
+    ]
   },
   {
     "id": 58,
     "name": "Planning phase",
     "expansion_rule": false,
-    "markdown": "## Planning phase\n\nDuring the Planning phase, each player secretly chooses a maneuver for each of his ships. To choose a maneuver, the player rotates the faceplate of the ship’s maneuver dial until the window shows only the desired maneuver. Then he assigns the maneuver by placing the dial facedown in the play area next to the matching ship.\n\nThe phase ends when each ship has a dial assigned to it and neither player wishes to change one of his chosen maneuvers.\n\n- Players are not allowed to look at each other’s facedown maneuver dials, but they may look at their own dials.\n\n- Players can assign their maneuver dials in any order, regardless of pilot skill.\n\n- Players are allowed to change their selections on their dials as long as the phase has not ended.",
+    "markdown": "## Planning phase\n\nDuring the Planning phase, each player secretly chooses a maneuver for each of his ships. To choose a maneuver, the player rotates the faceplate of the ship’s maneuver dial until the window shows only the desired maneuver. Then he assigns the maneuver by placing the dial facedown in the play area next to the matching ship.\n\nThe phase ends when each ship has a dial assigned to it and neither player wishes to change one of his chosen maneuvers.\n\n- Players are not allowed to look at each other’s facedown maneuver dials, but they may look at their own dials.\n\n- Players can assign their maneuver dials in any order, regardless of pilot skill.\n\n- Players are allowed to change their selections on their dials as long as the phase has not ended.\n\n\n**Related Topics:** Ion token†, Maneuver, Round",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
   },
   {
     "id": 59,
     "name": "Play area",
     "expansion_rule": false,
-    "markdown": "## Play area\n\nThe play area is the defined area on a flat surface in which the ships are placed and maneuvered. If any part of a ship’s base is outside the play area, that ship has fled the battlefield.\n\nThe recommended play area is 3' x 3' (0.9144 m) for a standard 100-point dogfight. If playing with squads greater or less than 100 squad points, the players can expand or contract the play area in one or both dimensions to create a suitable space for the game.\n\n- The play area for all missions is 3' x 3' unless the mission specifies otherwise.",
+    "markdown": "## Play area\n\nThe play area is the defined area on a flat surface in which the ships are placed and maneuvered. If any part of a ship’s base is outside the play area, that ship has fled the battlefield.\n\nThe recommended play area is 3' x 3' (0.9144 m) for a standard 100-point dogfight. If playing with squads greater or less than 100 squad points, the players can expand or contract the play area in one or both dimensions to create a suitable space for the game.\n\n- The play area for all missions is 3' x 3' unless the mission specifies otherwise.\n\n\n**Related Topics:** Fleeing the battlefield, Setup, Squad building",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 60,
     "name": "Primary weapon",
     "expansion_rule": false,
-    "markdown": "## Primary weapon\n\nA ship’s primary weapon value is the red number on its Ship card. This value indicates how many attack dice the ship rolls when attacking during the “Roll Attack Dice” step unless it is attacking with a secondary weapon.\n\n- During a primary weapon attack, the attacker or defender may add range combat bonuses.\n\n- A ship with a primary weapon value of “0” can still roll additional attack dice granted by range combat bonuses and card abilities.\n\n- All modifiers to a ship’s primary weapon value are cumulative. After all modifiers have been applied, if a ship’s primary weapon value is less than “0,” it is treated as “0.”",
+    "markdown": "## Primary weapon\n\nA ship’s primary weapon value is the red number on its Ship card. This value indicates how many attack dice the ship rolls when attacking during the “Roll Attack Dice” step unless it is attacking with a secondary weapon.\n\n- During a primary weapon attack, the attacker or defender may add range combat bonuses.\n\n- A ship with a primary weapon value of “0” can still roll additional attack dice granted by range combat bonuses and card abilities.\n\n- All modifiers to a ship’s primary weapon value are cumulative. After all modifiers have been applied, if a ship’s primary weapon value is less than “0,” it is treated as “0.”\n\n\n**Related Topics:** Attack, Auxiliary firing arc†, Range, Range combat bonus, Secondary weapons, Turret primary weapon†",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 61,
     "name": "Range",
     "expansion_rule": false,
-    "markdown": "## Range\n\nRange is the distance between two ships as measured by the range ruler, which is divided into three range bands. To measure range between two ships, place the range ruler over the point of the first ship that is closest to the second ship, then point the other end of the ruler toward the point of the second ship’s base that is closest to the first base. The range is the band of the range ruler that falls over the closest point of the second ship.\n\nWhen measuring range for an attack, the attacker measures to the closest point of the target ship that is **inside** the attacker’s firing arc.\n\n- The following terms are used concerning range:\n\n    - **Range #–#:** The range includes all of the range bands from the minimum to the maximum specified.\n\n    - **At:** A ship is at a specified range if the closest point of its base falls inside that range.\n\n    - **Within:** A ship is within a specified range if the entirety of its base falls inside that range.\n\n    - **Beyond:** A ship is beyond a specified range if no part of its base falls between Range 1 and the specified range.\n\n- If attacking with a turret primary weapon or a secondary weapon that may target a ship outside the attacker’s firing arc, the attacker **must** measure to the closest point of the target ship even if that point is outside its firing arc.\n\n- When measuring range to a token, measure to the point of that token that is closest to the ship’s base.\n\n- When measuring, players use a single edge of the range ruler; the width and thickness of the ruler are irrelevant.\n\n- A ship is at Range 1 of itself and any ships that it is touching.",
+    "markdown": "## Range\n\nRange is the distance between two ships as measured by the range ruler, which is divided into three range bands. To measure range between two ships, place the range ruler over the point of the first ship that is closest to the second ship, then point the other end of the ruler toward the point of the second ship’s base that is closest to the first base. The range is the band of the range ruler that falls over the closest point of the second ship.\n\nWhen measuring range for an attack, the attacker measures to the closest point of the target ship that is **inside** the attacker’s firing arc.\n\n- The following terms are used concerning range:\n\n    - **Range #–#:** The range includes all of the range bands from the minimum to the maximum specified.\n\n    - **At:** A ship is at a specified range if the closest point of its base falls inside that range.\n\n    - **Within:** A ship is within a specified range if the entirety of its base falls inside that range.\n\n    - **Beyond:** A ship is beyond a specified range if no part of its base falls between Range 1 and the specified range.\n\n- If attacking with a turret primary weapon or a secondary weapon that may target a ship outside the attacker’s firing arc, the attacker **must** measure to the closest point of the target ship even if that point is outside its firing arc.\n\n- When measuring range to a token, measure to the point of that token that is closest to the ship’s base.\n\n- When measuring, players use a single edge of the range ruler; the width and thickness of the ruler are irrelevant.\n\n- A ship is at Range 1 of itself and any ships that it is touching.\n\n\n**Related Topics:** Attack, Auxiliary firing arc†, Firing arc, Obstructed, Primary weapon, Range combat bonus, Secondary weapons, Setup, Turret primary weapon†, Weapon range",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 62,
     "name": "Range combat bonus",
     "expansion_rule": false,
-    "markdown": "## Range combat bonus\n\nWhen resolving a primary weapon attack, the attacker or defender may roll additional dice depending on the range of the attack. At Range 1, the attacker rolls one additional attack die during the “Roll Attack Dice” step. At Range 3, the defender rolls one additional defense die during the “Roll Defense Dice” step.\n\n- Range combat bonuses are not applied during a secondary weapon attack.",
+    "markdown": "## Range combat bonus\n\nWhen resolving a primary weapon attack, the attacker or defender may roll additional dice depending on the range of the attack. At Range 1, the attacker rolls one additional attack die during the “Roll Attack Dice” step. At Range 3, the defender rolls one additional defense die during the “Roll Defense Dice” step.\n\n- Range combat bonuses are not applied during a secondary weapon attack.\n\n\n**Related Topics:** Attack, Primary weapon, Range, Secondary weapons, Turret primary weapon†",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 63,
     "name": "Round",
     "expansion_rule": false,
-    "markdown": "## Round\n\nA single game round consists of four phases resolved in the following order: Planning phase, Activation phase, Combat phase, End phase. The first round begins after setup is completed.",
+    "markdown": "## Round\n\nA single game round consists of four phases resolved in the following order: Planning phase, Activation phase, Combat phase, End phase. The first round begins after setup is completed.\n\n\n**Related Topics:** Activation phase, Combat phase, End phase, Planning phase, Setup, Tracking tokens, Winning the game",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 83,
+        "name": "Tracking tokens"
+      },
+      {
+        "id": 89,
+        "name": "Winning the game"
+      }
+    ]
   },
   {
     "id": 64,
     "name": "Secondary weapons",
     "expansion_rule": false,
-    "markdown": "## Secondary weapons\n\nSecondary weapons are upgrades that feature the “**Attack:**” header in their card text. They provide additional types of attack other than a ship’s primary weapon.\n\nTo use a secondary weapon, the attacker must meet all requirements indicated in the card’s text, and the desired target must be inside the attacker’s firing arc and at the weapon range specified on the card. If all requirements are met, the attacker can declare that it is using the secondary weapon during the “Declare Target” step, and it rolls the number of attack dice indicated by the red attack value on the card during the “Roll Attack Dice” step.\n\n- Range combat bonuses do not apply during secondary weapon attacks.\n\n- Secondary weapons use the ship’s primary firing arc unless the card specifies otherwise.\n\n- The “**Attack (Target Lock):**” header indicates that the attacker must have a target lock on the defender. The attacker does not need to spend this target lock unless instructed by the Upgrade card.\n\n- The “**Attack (Focus):**” header indicates that the attacker must have a focus token. The attacker does not need to spend this focus token unless instructed by the Upgrade card.",
+    "markdown": "## Secondary weapons\n\nSecondary weapons are upgrades that feature the “**Attack:**” header in their card text. They provide additional types of attack other than a ship’s primary weapon.\n\nTo use a secondary weapon, the attacker must meet all requirements indicated in the card’s text, and the desired target must be inside the attacker’s firing arc and at the weapon range specified on the card. If all requirements are met, the attacker can declare that it is using the secondary weapon during the “Declare Target” step, and it rolls the number of attack dice indicated by the red attack value on the card during the “Roll Attack Dice” step.\n\n- Range combat bonuses do not apply during secondary weapon attacks.\n\n- Secondary weapons use the ship’s primary firing arc unless the card specifies otherwise.\n\n- The “**Attack (Target Lock):**” header indicates that the attacker must have a target lock on the defender. The attacker does not need to spend this target lock unless instructed by the Upgrade card.\n\n- The “**Attack (Focus):**” header indicates that the attacker must have a focus token. The attacker does not need to spend this focus token unless instructed by the Upgrade card.\n\n\n**Related Topics:** Attack, Auxiliary firing arc†, Card abilities, Firing arc, Primary weapon, Range, Range combat bonus, Turret primary weapon†, Upgrade cards, Weapon range",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 65,
     "name": "Segnor’s loop",
     "expansion_rule": false,
-    "markdown": "## Segnor’s loop\n\nSee “Bearing” on page 6.",
+    "markdown": "## Segnor’s loop\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 66,
     "name": "Setup",
     "expansion_rule": false,
-    "markdown": "## Setup\n\nBefore playing, set up the game as follows:\n\n1. **Gather Forces:** The players reveal their squads and gather all of the ships, cards, and other components necessary for their squads. Each ship in the squad must have the correct plastic ship, ship token, maneuver dial, Ship card, and any Upgrade cards chosen, as well as ID tokens if necessary.\n\n1. **Determine Initiative:** The player with the lowest squad point total chooses which player has initiative. If players are tied, the players randomly determine which player chooses who has initiative.\n\n1. **Establish Play Area:** Establish a 3' x 3' (0.9144 m) play area (or alternative size) on a flat surface such as a table or playmat.\n\n1. **Place Obstacles:** Starting with the player with initiative, each player chooses one obstacle token from the obstacles available and places it in the play area. The players place a total of six obstacle tokens. Obstacles cannot be placed at Range 1 of each other, or at Range 1–2 of an edge of the play area. After the sixth obstacle is placed, the player who does not have initiative chooses an edge of the play area to be his own; his opponent’s edge is the opposite side of the play area.\n\n1. **Place Forces:** The players place their ships into the play area in order from lowest pilot skill to highest pilot skill. If multiple ships tie in pilot skill, the player with initiative places his ships with that pilot skill first. Ships must be placed within Range 1 of their player’s edge.\n\n1. **Activate Shields:** Place a number of shield tokens on each Ship card equal to that card’s shield value.\n\n1. **Prepare Other Components:** Shuffle the Damage deck and place it facedown outside the play area within reach of both players along with the maneuver templates, dice, range ruler, and the remaining tokens.",
+    "markdown": "## Setup\n\nBefore playing, set up the game as follows:\n\n1. **Gather Forces:** The players reveal their squads and gather all of the ships, cards, and other components necessary for their squads. Each ship in the squad must have the correct plastic ship, ship token, maneuver dial, Ship card, and any Upgrade cards chosen, as well as ID tokens if necessary.\n\n1. **Determine Initiative:** The player with the lowest squad point total chooses which player has initiative. If players are tied, the players randomly determine which player chooses who has initiative.\n\n1. **Establish Play Area:** Establish a 3' x 3' (0.9144 m) play area (or alternative size) on a flat surface such as a table or playmat.\n\n1. **Place Obstacles:** Starting with the player with initiative, each player chooses one obstacle token from the obstacles available and places it in the play area. The players place a total of six obstacle tokens. Obstacles cannot be placed at Range 1 of each other, or at Range 1–2 of an edge of the play area. After the sixth obstacle is placed, the player who does not have initiative chooses an edge of the play area to be his own; his opponent’s edge is the opposite side of the play area.\n\n1. **Place Forces:** The players place their ships into the play area in order from lowest pilot skill to highest pilot skill. If multiple ships tie in pilot skill, the player with initiative places his ships with that pilot skill first. Ships must be placed within Range 1 of their player’s edge.\n\n1. **Activate Shields:** Place a number of shield tokens on each Ship card equal to that card’s shield value.\n\n1. **Prepare Other Components:** Shuffle the Damage deck and place it facedown outside the play area within reach of both players along with the maneuver templates, dice, range ruler, and the remaining tokens.\n\n\n**Related Topics:** Id tokens, Initiative, Large ship†, Obstacles, Pilot skill, Play area, Range, Round, Shields, Squad building, Tracking tokens",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 83,
+        "name": "Tracking tokens"
+      }
+    ]
   },
   {
     "id": 67,
     "name": "Shields",
     "expansion_rule": false,
-    "markdown": "## Shields\n\nShields allow a ship to suffer damage without the risk of being dealt faceup Damage cards. The blue number on a Ship card is the ship’s shield value, indicating how many shield tokens to place on the Ship card during setup.\n\n- A ship cannot have more shield tokens than its shield value. If a ship has a number of shield tokens equal to its shield value, it cannot recover shields.",
+    "markdown": "## Shields\n\nShields allow a ship to suffer damage without the risk of being dealt faceup Damage cards. The blue number on a Ship card is the ship’s shield value, indicating how many shield tokens to place on the Ship card during setup.\n\n- A ship cannot have more shield tokens than its shield value. If a ship has a number of shield tokens equal to its shield value, it cannot recover shields.\n\n\n**Related Topics:** Attack, Damage, Setup",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 68,
     "name": "Ship",
     "expansion_rule": false,
-    "markdown": "## Ship\n\nA ship is composed of a plastic figure, pegs, a base, and a ship token, plus ID tokens if necessary.\n\n- A ship’s plastic figure must match the ship’s type as indicated on the Ship card.\n\n- A ship must use the maneuver dial that matches the ship’s type.\n\n- Some plastic figures extend beyond the plastic base. For this reason, the plastic figure does not affect any game mechanics. It may overlap obstacles and hang over the edge of the play area without issue. If a ship’s plastic figure would touch another figure or obstruct its movement, the players should add or remove one peg from the base to prevent this overlap.",
+    "markdown": "## Ship\n\nA ship is composed of a plastic figure, pegs, a base, and a ship token, plus ID tokens if necessary.\n\n- A ship’s plastic figure must match the ship’s type as indicated on the Ship card.\n\n- A ship must use the maneuver dial that matches the ship’s type.\n\n- Some plastic figures extend beyond the plastic base. For this reason, the plastic figure does not affect any game mechanics. It may overlap obstacles and hang over the edge of the play area without issue. If a ship’s plastic figure would touch another figure or obstruct its movement, the players should add or remove one peg from the base to prevent this overlap.\n\n\n**Related Topics:** Enemy, Faction, Friendly, Huge ship†, Id tokens, Large ship†, Moving through, Small ship",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      }
+    ]
   },
   {
     "id": 69,
     "name": "Simultaneous attack rule",
     "expansion_rule": false,
-    "markdown": "## Simultaneous attack rule\n\nDuring the Combat phase, all ships with a pilot skill value equal to the active ship have the opportunity to attack before being destroyed. If a ship would be destroyed and it has the same pilot skill value as the active ship but has **not** had an opportunity to attack yet, it is not destroyed. Instead, it retains its Damage cards and continues to function as normal, suffering any effects on its Damage cards. After it has had its opportunity to attack, it is destroyed and removed from the play area.\n\n- Even if the ship did not have a valid target for an attack, it is removed after its opportunity to attack passes.\n\n- While the Simultaneous Attack Rule keeps a ship in the play area, that ship’s abilities and Damage cards remain active.\n\n- After a ship has resolved its opportunity to attack, before it is destroyed, it can resolve any abilities that trigger after performing an attack.",
+    "markdown": "## Simultaneous attack rule\n\nDuring the Combat phase, all ships with a pilot skill value equal to the active ship have the opportunity to attack before being destroyed. If a ship would be destroyed and it has the same pilot skill value as the active ship but has **not** had an opportunity to attack yet, it is not destroyed. Instead, it retains its Damage cards and continues to function as normal, suffering any effects on its Damage cards. After it has had its opportunity to attack, it is destroyed and removed from the play area.\n\n- Even if the ship did not have a valid target for an attack, it is removed after its opportunity to attack passes.\n\n- While the Simultaneous Attack Rule keeps a ship in the play area, that ship’s abilities and Damage cards remain active.\n\n- After a ship has resolved its opportunity to attack, before it is destroyed, it can resolve any abilities that trigger after performing an attack.\n\n\n**Related Topics:** Attack, Damage, Destroying ships, Pilot skill",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      }
+    ]
   },
   {
     "id": 70,
     "name": "Small ship",
     "expansion_rule": false,
-    "markdown": "## Small ship\n\nA small ship uses a plastic base that is about 1-9/16\" (4 cm) long. Small ships do not follow any special rules, though their size may be referred to by some card abilities.",
+    "markdown": "## Small ship\n\nA small ship uses a plastic base that is about 1-9/16\" (4 cm) long. Small ships do not follow any special rules, though their size may be referred to by some card abilities.\n\n\n**Related Topics:** Huge ship†, Large ship†, Ship",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 71,
     "name": "Speed",
     "expansion_rule": false,
-    "markdown": "## Speed\n\nThe speed of a maneuver is indicated by the number of the maneuver below the bearing arrow on the dial.\n\n- The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.",
+    "markdown": "## Speed\n\nThe speed of a maneuver is indicated by the number of the maneuver below the bearing arrow on the dial.\n\n- The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.\n\n\n**Related Topics:** Bearing, Difficulty, Maneuver",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      }
+    ]
   },
   {
     "id": 72,
     "name": "Spend",
     "expansion_rule": false,
-    "markdown": "## Spend\n\nWhen a ship spends a token or other component, that component is removed from the ship and returned to the supply. A ship cannot spend a component that is assigned to another ship unless an effect specifies otherwise.",
+    "markdown": "## Spend\n\nWhen a ship spends a token or other component, that component is removed from the ship and returned to the supply. A ship cannot spend a component that is assigned to another ship unless an effect specifies otherwise.\n\n\n**Related Topics:** Card abilities",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 17,
+        "name": "Card abilities"
+      }
+    ]
   },
   {
     "id": 73,
     "name": "Squad building",
     "expansion_rule": false,
-    "markdown": "## Squad building\n\nEach player builds a squad by choosing ships and upgrades whose total squad point cost does not exceed the total agreed upon by the players during the “Gather Forces” step of setup. The squad point cost of each ship and upgrade is printed in the lower- right corner of each card. The recommended squad point total for a standard dogfight is 100 points.\n\nA player can build a squad using any available ships and upgrades with the following restrictions:\n\n- A squad is aligned to one primary faction. It cannot field Ship cards from another primary faction or upgrades that are restricted to another primary faction.\n\n- Each ship is limited to one modification and one title.\n\n- A ship cannot equip an upgrade that is restricted to other types or sizes of ships.\n\n- A ship cannot equip more than one copy of the same Upgrade card with the “*Limited*” trait, though it may equip multiple different cards with the “*Limited*” trait.",
+    "markdown": "## Squad building\n\nEach player builds a squad by choosing ships and upgrades whose total squad point cost does not exceed the total agreed upon by the players during the “Gather Forces” step of setup. The squad point cost of each ship and upgrade is printed in the lower- right corner of each card. The recommended squad point total for a standard dogfight is 100 points.\n\nA player can build a squad using any available ships and upgrades with the following restrictions:\n\n- A squad is aligned to one primary faction. It cannot field Ship cards from another primary faction or upgrades that are restricted to another primary faction.\n\n- Each ship is limited to one modification and one title.\n\n- A ship cannot equip an upgrade that is restricted to other types or sizes of ships.\n\n- A ship cannot equip more than one copy of the same Upgrade card with the “*Limited*” trait, though it may equip multiple different cards with the “*Limited*” trait.\n\n\n**Related Topics:** Faction, Formats of play, Huge ship†, Id tokens, Initiative, Limited†, Modifications†, Play area, Setup, Squad points, Title†, Unique names, Upgrade cards, Upgrade icons",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 36,
+        "name": "Formats of play"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 48,
+        "name": "Limited"
+      },
+      {
+        "id": 51,
+        "name": "Modifications"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      },
+      {
+        "id": 81,
+        "name": "Title"
+      },
+      {
+        "id": 85,
+        "name": "Unique names"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 87,
+        "name": "Upgrade icons"
+      }
+    ]
   },
   {
     "id": 74,
     "name": "Squad points",
     "expansion_rule": false,
-    "markdown": "## Squad points\n\nEach Ship card and Upgrade card has a squad point cost printed in the lower-right corner of the card.\n\n- Some Upgrade cards have a negative squad point cost. These cards reduce the squad’s total squad point cost.",
+    "markdown": "## Squad points\n\nEach Ship card and Upgrade card has a squad point cost printed in the lower-right corner of the card.\n\n- Some Upgrade cards have a negative squad point cost. These cards reduce the squad’s total squad point cost.\n\n\n**Related Topics:** Initiative, Squad building, Upgrade cards, Winning the game",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 89,
+        "name": "Winning the game"
+      }
+    ]
   },
   {
     "id": 75,
     "name": "Stress",
     "expansion_rule": false,
-    "markdown": "## Stress\n\nA ship is stressed while it has a stress token assigned to it. A stressed ship cannot execute red maneuvers or perform actions, even free actions. A ship receives one stress token when it executes a red maneuver and removes one stress token when it executes a green maneuver.\n\n- A ship can have more than one stress token assigned to it.\n\n- Stress tokens are not removed during the End phase.\n\n- When a ship executes a green maneuver, it removes one stress token from itself even if it moves through or overlaps an obstacle or another ship.\n\n- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver, the opposing player chooses any non-red maneuver on that ship’s dial for that ship to execute.",
+    "markdown": "## Stress\n\nA ship is stressed while it has a stress token assigned to it. A stressed ship cannot execute red maneuvers or perform actions, even free actions. A ship receives one stress token when it executes a red maneuver and removes one stress token when it executes a green maneuver.\n\n- A ship can have more than one stress token assigned to it.\n\n- Stress tokens are not removed during the End phase.\n\n- When a ship executes a green maneuver, it removes one stress token from itself even if it moves through or overlaps an obstacle or another ship.\n\n- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver, the opposing player chooses any non-red maneuver on that ship’s dial for that ship to execute.\n\n\n**Related Topics:** Actions, Activation phase, Bearing, Cloak†, Difficulty, Free actions, Maneuver",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      }
+    ]
   },
   {
     "id": 76,
     "name": "Suffer damage",
     "expansion_rule": false,
-    "markdown": "## Suffer damage\n\nSee “Damage” on page 9.",
+    "markdown": "## Suffer damage\n\nSee “Damage” on page 9.\n\n\n**Related Topics:** Damage",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 21,
+        "name": "Damage"
+      }
+    ]
   },
   {
     "id": 77,
@@ -1012,157 +2637,337 @@
     "id": 78,
     "name": "Tallon roll",
     "expansion_rule": false,
-    "markdown": "## Tallon roll\n\nSee “Bearing” on page 6.",
+    "markdown": "## Tallon roll\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 79,
     "name": "Target",
     "expansion_rule": false,
-    "markdown": "## Target\n\nThe target of an attack is declared during the “Declare Target” step. A successfully targeted enemy ship is the defender.",
+    "markdown": "## Target\n\nThe target of an attack is declared during the “Declare Target” step. A successfully targeted enemy ship is the defender.\n\n\n**Related Topics:** Attack, Defender",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      }
+    ]
   },
   {
     "id": 80,
     "name": "Target lock",
     "expansion_rule": false,
-    "markdown": "## Target lock\n\nA target lock consists of a blue target lock token, which is assigned to the ship that acquires the lock (the locking ship), and a red target lock token, which is assigned to an enemy ship (the locked ship).",
+    "markdown": "## Target lock\n\nA target lock consists of a blue target lock token, which is assigned to the ship that acquires the lock (the locking ship), and a red target lock token, which is assigned to an enemy ship (the locked ship).\n\n\n**Related Topics:** Acquire a target lock",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      }
+    ]
   },
   {
     "id": 81,
     "name": "Title",
     "expansion_rule": true,
-    "markdown": "## Title †\n\nA title is a type of upgrade. Any ship can equip a title as long as the title is not restricted to a different type of ship. A ship cannot equip more than one title.",
+    "markdown": "## Title †\n\nA title is a type of upgrade. Any ship can equip a title as long as the title is not restricted to a different type of ship. A ship cannot equip more than one title.\n\n\n**Related Topics:** Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 82,
     "name": "Touching",
     "expansion_rule": false,
-    "markdown": "## Touching\n\nTwo ships are touching if one ship overlapped the other ship while executing a maneuver and their bases are touching as a result. A ship cannot attack another ship that it is touching.\n\n- If two ships are touching, they remain touching until one of the ships moves (executes a maneuver, decloaks, or performs an action) in a way that results in their bases no longer being in physical contact.\n\n    - Sometimes a round will end with two ships touching each other, parallel, and facing the same direction. After both ships execute a maneuver, boost, or barrel roll, they are not touching (even if their bases are still in physical contact) unless they overlapped.\n\n- A ship can be touching two or more ships if it overlaps those ships and its base remains in contact with them after pulling back along the maneuver template.",
+    "markdown": "## Touching\n\nTwo ships are touching if one ship overlapped the other ship while executing a maneuver and their bases are touching as a result. A ship cannot attack another ship that it is touching.\n\n- If two ships are touching, they remain touching until one of the ships moves (executes a maneuver, decloaks, or performs an action) in a way that results in their bases no longer being in physical contact.\n\n    - Sometimes a round will end with two ships touching each other, parallel, and facing the same direction. After both ships execute a maneuver, boost, or barrel roll, they are not touching (even if their bases are still in physical contact) unless they overlapped.\n\n- A ship can be touching two or more ships if it overlaps those ships and its base remains in contact with them after pulling back along the maneuver template.\n\n\n**Related Topics:** Maneuver, Overlapping ships",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      }
+    ]
   },
   {
     "id": 83,
     "name": "Tracking tokens",
     "expansion_rule": false,
-    "markdown": "## Tracking tokens\n\nTracking tokens are used to track the number of rounds played during a game. When tracking rounds, the players place one tracking token next to the play area during setup and at the end of each round. The number of tracking tokens next to the play area indicates the current round number.\n\n- Tracking tokens are not used unless the players are using the “Round Limit” optional rule or playing a mission that requires the number of rounds to be tracked.\n\n- Some missions may specify that tracking tokens are used for purposes other than tracking rounds.",
+    "markdown": "## Tracking tokens\n\nTracking tokens are used to track the number of rounds played during a game. When tracking rounds, the players place one tracking token next to the play area during setup and at the end of each round. The number of tracking tokens next to the play area indicates the current round number.\n\n- Tracking tokens are not used unless the players are using the “Round Limit” optional rule or playing a mission that requires the number of rounds to be tracked.\n\n- Some missions may specify that tracking tokens are used for purposes other than tracking rounds.\n\n\n**Related Topics:** Round, Setup",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 84,
     "name": "Turret primary weapon",
     "expansion_rule": true,
-    "markdown": "## Turret primary weapon †\n\nSome ships use a turret as their primary weapon. Each of these ships has a unique primary weapon icon, and each ship token shows a circular red arrow around the token’s center as a reminder. When attacking with a turret primary weapon, a ship may target an enemy ship inside or outside its firing arc.\n\n- A ship with a turret primary weapon still has a printed firing arc that is not 360°\n\n- When attacking with a secondary weapon, the ship must still target an enemy ship inside its firing arc (unless specified otherwise on its Upgrade card).",
+    "markdown": "## Turret primary weapon †\n\nSome ships use a turret as their primary weapon. Each of these ships has a unique primary weapon icon, and each ship token shows a circular red arrow around the token’s center as a reminder. When attacking with a turret primary weapon, a ship may target an enemy ship inside or outside its firing arc.\n\n- A ship with a turret primary weapon still has a printed firing arc that is not 360°\n\n- When attacking with a secondary weapon, the ship must still target an enemy ship inside its firing arc (unless specified otherwise on its Upgrade card).\n\n\n**Related Topics:** Attack, Auxiliary firing arc†, Firing arc, Primary weapon, Range, Range combat bonus, Secondary weapons",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      }
+    ]
   },
   {
     "id": 85,
     "name": "Unique names",
     "expansion_rule": false,
-    "markdown": "## Unique names\n\nSome Ship cards and Upgrade cards have unique names, which are identified by the bullet ([Unique]) to the left of the name. A player cannot field two or more cards that share the same unique name, even if those cards are of different types.",
+    "markdown": "## Unique names\n\nSome Ship cards and Upgrade cards have unique names, which are identified by the bullet ([Unique]) to the left of the name. A player cannot field two or more cards that share the same unique name, even if those cards are of different types.\n\n\n**Related Topics:** Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 86,
     "name": "Upgrade cards",
     "expansion_rule": false,
-    "markdown": "## Upgrade cards\n\nWhen building a squad, a player can field upgrades for his ships by paying their squad point cost, which is listed in the lower-right corner of each Upgrade card. The upgrade bar along the bottom of a Ship card displays icons that represent which upgrades that ship can equip. For each icon shown in the upgrade bar, the ship can equip one Upgrade card with the matching icon.\n\nSome Upgrade cards have one or more of the following traits in their card text:\n\n- **Modification:** These upgrades can be equipped to any ship, but a ship is limited to one modification.\n\n- **Title:** These upgrades can be equipped to any ship, but a ship is limited to one title.\n\n- **Limited:** A ship cannot equip more than one copy of the **same** card with this trait.\n\n- **Rebel/Imperial/Scum only:** This upgrade can only be equipped to a ship of the specified faction.\n\n- **Small/Large/Huge ship only:** This upgrade can only be equipped to a ship of the specified size.\n\n- **Ship-type only:** This upgrade can only be equipped to a ship of the specified type. If the ship’s type includes the entirety of the restricted type, it can equip that upgrade. For example, a TIE/fo fighter can equip an Upgrade card restricted to “TIE Fighter only.”\n\n- When an Upgrade card is discarded, it is flipped facedown. The card is out of play for all purposes except when determining the total squad point cost of the ship to which it was equipped. If an Upgrade card is flipped faceup by a game effect, it returns to play equipped to the same ship.",
+    "markdown": "## Upgrade cards\n\nWhen building a squad, a player can field upgrades for his ships by paying their squad point cost, which is listed in the lower-right corner of each Upgrade card. The upgrade bar along the bottom of a Ship card displays icons that represent which upgrades that ship can equip. For each icon shown in the upgrade bar, the ship can equip one Upgrade card with the matching icon.\n\nSome Upgrade cards have one or more of the following traits in their card text:\n\n- **Modification:** These upgrades can be equipped to any ship, but a ship is limited to one modification.\n\n- **Title:** These upgrades can be equipped to any ship, but a ship is limited to one title.\n\n- **Limited:** A ship cannot equip more than one copy of the **same** card with this trait.\n\n- **Rebel/Imperial/Scum only:** This upgrade can only be equipped to a ship of the specified faction.\n\n- **Small/Large/Huge ship only:** This upgrade can only be equipped to a ship of the specified size.\n\n- **Ship-type only:** This upgrade can only be equipped to a ship of the specified type. If the ship’s type includes the entirety of the restricted type, it can equip that upgrade. For example, a TIE/fo fighter can equip an Upgrade card restricted to “TIE Fighter only.”\n\n- When an Upgrade card is discarded, it is flipped facedown. The card is out of play for all purposes except when determining the total squad point cost of the ship to which it was equipped. If an Upgrade card is flipped faceup by a game effect, it returns to play equipped to the same ship.\n\n\n**Related Topics:** Bombs†, Card abilities, Faction, Huge ship†, Large ship†, Limited†, Modifications†, Secondary weapons, Squad building, Squad points, Title†, Unique names, Upgrade icons, Weapon range",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 48,
+        "name": "Limited"
+      },
+      {
+        "id": 51,
+        "name": "Modifications"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      },
+      {
+        "id": 81,
+        "name": "Title"
+      },
+      {
+        "id": 85,
+        "name": "Unique names"
+      },
+      {
+        "id": 87,
+        "name": "Upgrade icons"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 87,
     "name": "Upgrade icons",
     "expansion_rule": false,
-    "markdown": "## Upgrade icons\n\nEach upgrade icon uses the corresponding name listed below:\n\n|  |  |\r\n|-----|-----|\r\n| [Elite] Elite | [System] System |\r\n| [Astromech] Astromech | [Title] Title |\r\n| [Torpedo] Torpedoes | [Modification] Modification |\r\n| [Missile] Missiles | [Illicit] Illicit |\r\n| [Cannon] Cannon | [Cargo] Cargo |\r\n| [Turret] Turret | [Hardpoint] Hardpoint |\r\n| [Bomb] Bomb | [Team] Team |\r\n| [Crew] Crew | [Tech] Tech |\r\n| [Salvaged Astromech] Salvaged Astromech  |",
+    "markdown": "## Upgrade icons\n\nEach upgrade icon uses the corresponding name listed below:\n\n|  |  |\r\n|-----|-----|\r\n| [Elite] Elite | [System] System |\r\n| [Astromech] Astromech | [Title] Title |\r\n| [Torpedo] Torpedoes | [Modification] Modification |\r\n| [Missile] Missiles | [Illicit] Illicit |\r\n| [Cannon] Cannon | [Cargo] Cargo |\r\n| [Turret] Turret | [Hardpoint] Hardpoint |\r\n| [Bomb] Bomb | [Team] Team |\r\n| [Crew] Crew | [Tech] Tech |\r\n| [Salvaged Astromech] Salvaged Astromech  |\n\n\n**Related Topics:** Squad building, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 88,
     "name": "Weapon range",
     "expansion_rule": false,
-    "markdown": "## Weapon range\n\nEach secondary weapon has a weapon range indicated on its Upgrade card below the red attack value. A ship cannot attack with a secondary weapon unless the target is at the specified weapon range (e.g. if the weapon range is Range 2–3, the weapon cannot be used at Range 1).",
+    "markdown": "## Weapon range\n\nEach secondary weapon has a weapon range indicated on its Upgrade card below the red attack value. A ship cannot attack with a secondary weapon unless the target is at the specified weapon range (e.g. if the weapon range is Range 2–3, the weapon cannot be used at Range 1).\n\n\n**Related Topics:** Attack, Range, Secondary weapons, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 89,
     "name": "Winning the game",
     "expansion_rule": false,
-    "markdown": "## Winning the game\n\nThe game ends at the end of a round if all of a player’s ships are destroyed. The player with no ships remaining loses, and the player with at least one ship remaining wins. If both players’ last remaining ships are destroyed in the same round, the game ends in a draw.\n\n- If playing a mission, when one player achieves his objective for that mission, the game immediately ends and that player wins.",
+    "markdown": "## Winning the game\n\nThe game ends at the end of a round if all of a player’s ships are destroyed. The player with no ships remaining loses, and the player with at least one ship remaining wins. If both players’ last remaining ships are destroyed in the same round, the game ends in a draw.\n\n- If playing a mission, when one player achieves his objective for that mission, the game immediately ends and that player wins.\n\n\n**Related Topics:** Destroying ships, Round, Squad points",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      }
+    ]
   },
   {
     "id": 90,

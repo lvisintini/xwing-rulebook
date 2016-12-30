@@ -6,7 +6,7 @@ def rulebook(request):
     rl = RuleBook.objects.first()
 
     context = {
-        'rl': rl
+        'rl': rl,
     }
 
     return render(request, 'html/rulebook.html', context)

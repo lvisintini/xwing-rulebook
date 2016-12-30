@@ -20,6 +20,9 @@ class Rule(models.Model):
     related_topics = models.ManyToManyField('self', blank=True)
     expansion_rule = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['name', ]
+
     @property
     def anchor_id(self):
         return '-'.join(self.name.lower().split())

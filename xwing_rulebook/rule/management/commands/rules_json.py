@@ -20,7 +20,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         rules = []
-        for rule in Rule.objects.all():
+        for rule in Rule.objects.order_by('id').all():
             r = OrderedDict()
 
             r['id'] = rule.id

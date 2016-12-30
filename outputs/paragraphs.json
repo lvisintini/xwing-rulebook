@@ -1,127 +1,5 @@
 [
   {
-    "id": 2,
-    "name": "Card interpretations",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "Many Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 1,
-    "name": "Golden rules",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "If a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      },
-      {
-        "markdown": "Card abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      },
-      {
-        "markdown": "If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 3,
-    "name": "Expansion rules",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "This reference is intended to be a comprehensive document. It includes terms and concepts that were introduced in expansion packs. The dagger (**†**) character is used to indicate these terms; players can ignore the marked entries unless they are playing with expansion content that uses those terms.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
-  },
-  {
     "id": 4,
     "name": "Acquire a target lock",
     "expansion_rule": false,
@@ -325,7 +203,24 @@
         "page": 3
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 80,
+        "name": "Target lock"
+      }
+    ]
   },
   {
     "id": 5,
@@ -467,7 +362,48 @@
         "page": 3
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 6,
@@ -705,7 +641,103 @@
         "page": 4
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 7,
+        "name": "Active ship"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Active ship",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "The ship that is currently resolving the Activation or Combat phase is the active ship.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 4
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 4
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      }
+    ]
   },
   {
     "id": 8,
@@ -767,113 +799,16 @@
         "page": 4
       }
     ],
-    "related_rules": []
-  },
-  {
-    "id": 7,
-    "name": "Active ship",
-    "expansion_rule": false,
-    "paragraphs": [
+    "related_rules": [
       {
-        "markdown": "The ship that is currently resolving the Activation or Combat phase is the active ship.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 4
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 4
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 10,
-    "name": "Attacker",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "The ship that is performing an attack is the attacker.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 5
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 5
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 11,
-    "name": "Auxiliary firing arc",
-    "expansion_rule": true,
-    "paragraphs": [
-      {
-        "markdown": "Some ships have an auxiliary firing arc identified by dotted lines printed on its ship token. These ships also have a unique primary weapon icon printed on their Ship cards. When attacking with its primary weapon, a ship with this icon may attack an enemy ship that is at Range 1–3 and inside its standard or auxiliary firing arc.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": true,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 5
-          }
-        ]
+        "id": 9,
+        "name": "Attack"
       },
       {
-        "markdown": "When attacking with a secondary weapon, the ship must still target an enemy ship inside its standard firing arc (unless otherwise specified on the Upgrade card).",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": true,
-        "format": {
-          "level": 0,
-          "type": "item:ul"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 5
-          }
-        ]
+        "id": 18,
+        "name": "Cloak"
       }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 5
-      }
-    ],
-    "related_rules": []
+    ]
   },
   {
     "id": 9,
@@ -1355,7 +1290,246 @@
         "page": 5
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 8,
+        "name": "Agility"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 16,
+        "name": "Cancel"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      },
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 40,
+        "name": "Hit"
+      },
+      {
+        "id": 42,
+        "name": "Hull"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
+      {
+        "id": 79,
+        "name": "Target"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Attacker",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "The ship that is performing an attack is the attacker.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 5
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 5
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Auxiliary firing arc",
+    "expansion_rule": true,
+    "paragraphs": [
+      {
+        "markdown": "Some ships have an auxiliary firing arc identified by dotted lines printed on its ship token. These ships also have a unique primary weapon icon printed on their Ship cards. When attacking with its primary weapon, a ship with this icon may attack an enemy ship that is at Range 1–3 and inside its standard or auxiliary firing arc.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": true,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 5
+          }
+        ]
+      },
+      {
+        "markdown": "When attacking with a secondary weapon, the ship must still target an enemy ship inside its standard firing arc (unless otherwise specified on the Upgrade card).",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": true,
+        "format": {
+          "level": 0,
+          "type": "item:ul"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 5
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 5
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 12,
@@ -1529,7 +1703,32 @@
         "page": 6
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      }
+    ]
   },
   {
     "id": 13,
@@ -1723,7 +1922,40 @@
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 46,
+        "name": "Koiogran turn"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 65,
+        "name": "Segnor’s loop"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      },
+      {
+        "id": 78,
+        "name": "Tallon roll"
+      }
+    ]
   },
   {
     "id": 14,
@@ -1993,7 +2225,20 @@
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 25,
+        "name": "Detonating a bomb"
+      },
+      {
+        "id": 28,
+        "name": "Dropping a bomb"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 15,
@@ -2151,7 +2396,28 @@
         "page": 7
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      }
+    ]
   },
   {
     "id": 16,
@@ -2181,7 +2447,12 @@
         "page": 8
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      }
+    ]
   },
   {
     "id": 17,
@@ -2321,6 +2592,77 @@
       {
         "code": "RR-SWX36",
         "page": 8
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 72,
+        "name": "Spend"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Card interpretations",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Many Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 2
       }
     ],
     "related_rules": []
@@ -2609,7 +2951,40 @@
         "page": 8
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 8,
+        "name": "Agility"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 22,
+        "name": "Decloak"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 19,
@@ -2703,7 +3078,32 @@
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 7,
+        "name": "Active ship"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
   },
   {
     "id": 20,
@@ -2781,7 +3181,20 @@
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      }
+    ]
   },
   {
     "id": 21,
@@ -3003,7 +3416,40 @@
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 20,
+        "name": "Critical damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 42,
+        "name": "Hull"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
+      {
+        "id": 76,
+        "name": "Suffer damage"
+      }
+    ]
   },
   {
     "id": 22,
@@ -3033,7 +3479,12 @@
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 18,
+        "name": "Cloak"
+      }
+    ]
   },
   {
     "id": 23,
@@ -3063,7 +3514,20 @@
         "page": 9
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 10,
+        "name": "Attacker"
+      },
+      {
+        "id": 79,
+        "name": "Target"
+      }
+    ]
   },
   {
     "id": 24,
@@ -3125,7 +3589,67 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 42,
+        "name": "Hull"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      },
+      {
+        "id": 89,
+        "name": "Winning the game"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Detonating a bomb",
+    "expansion_rule": true,
+    "paragraphs": [
+      {
+        "markdown": "See “Bombs” on page 7",
+        "order": 0,
+        "needs_revision": true,
+        "expansion_rule_related": true,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 10
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 10
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
   },
   {
     "id": 26,
@@ -3299,7 +3823,20 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 40,
+        "name": "Hit"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
   },
   {
     "id": 27,
@@ -3377,7 +3914,32 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 28,
@@ -3407,7 +3969,12 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
   },
   {
     "id": 29,
@@ -3437,7 +4004,24 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
   },
   {
     "id": 30,
@@ -3467,7 +4051,20 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 31,
@@ -3529,18 +4126,31 @@
         "page": 10
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
   },
   {
-    "id": 25,
-    "name": "Detonating a bomb",
-    "expansion_rule": true,
+    "id": 3,
+    "name": "Expansion rules",
+    "expansion_rule": false,
     "paragraphs": [
       {
-        "markdown": "See “Bombs” on page 7",
+        "markdown": "This reference is intended to be a comprehensive document. It includes terms and concepts that were introduced in expansion packs. The dagger (**†**) character is used to indicate these terms; players can ignore the marked entries unless they are playing with expansion content that uses those terms.",
         "order": 0,
-        "needs_revision": true,
-        "expansion_rule_related": true,
+        "needs_revision": false,
+        "expansion_rule_related": false,
         "format": {
           "level": 0,
           "type": "text"
@@ -3548,7 +4158,7 @@
         "references": [
           {
             "code": "RR-SWX36",
-            "page": 10
+            "page": 2
           }
         ]
       }
@@ -3556,7 +4166,7 @@
     "references": [
       {
         "code": "RR-SWX36",
-        "page": 10
+        "page": 2
       }
     ],
     "related_rules": []
@@ -3605,7 +4215,24 @@
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 33,
@@ -3667,7 +4294,28 @@
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 34,
@@ -3761,7 +4409,36 @@
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      }
+    ]
   },
   {
     "id": 35,
@@ -3839,7 +4516,24 @@
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 52,
+        "name": "Modifying dice"
+      }
+    ]
   },
   {
     "id": 36,
@@ -3933,7 +4627,20 @@
         "page": 11
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 50,
+        "name": "Missions"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 37,
@@ -4011,7 +4718,24 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      }
+    ]
   },
   {
     "id": 38,
@@ -4073,6 +4797,81 @@
         "page": 12
       }
     ],
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Golden rules",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "If a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      },
+      {
+        "markdown": "Card abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      },
+      {
+        "markdown": "If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 2
+      }
+    ],
     "related_rules": []
   },
   {
@@ -4103,7 +4902,20 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      }
+    ]
   },
   {
     "id": 40,
@@ -4133,7 +4945,16 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      }
+    ]
   },
   {
     "id": 41,
@@ -4163,7 +4984,32 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 36,
+        "name": "Formats of play"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 42,
@@ -4193,7 +5039,20 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      }
+    ]
   },
   {
     "id": 43,
@@ -4255,7 +5114,24 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 44,
@@ -4333,7 +5209,36 @@
         "page": 12
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      }
+    ]
   },
   {
     "id": 45,
@@ -4427,7 +5332,24 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      }
+    ]
   },
   {
     "id": 46,
@@ -4457,7 +5379,12 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 47,
@@ -4535,7 +5462,36 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 48,
@@ -4565,7 +5521,16 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 49,
@@ -4627,7 +5592,64 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      },
+      {
+        "id": 71,
+        "name": "Speed"
+      },
+      {
+        "id": 75,
+        "name": "Stress"
+      },
+      {
+        "id": 82,
+        "name": "Touching"
+      }
+    ]
   },
   {
     "id": 50,
@@ -4657,7 +5679,12 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 36,
+        "name": "Formats of play"
+      }
+    ]
   },
   {
     "id": 51,
@@ -4687,7 +5714,16 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 52,
@@ -4781,7 +5817,32 @@
         "page": 13
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 26,
+        "name": "Dice results"
+      },
+      {
+        "id": 31,
+        "name": "Evade"
+      },
+      {
+        "id": 35,
+        "name": "Focus"
+      }
+    ]
   },
   {
     "id": 53,
@@ -4843,7 +5904,28 @@
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 54,
@@ -5033,7 +6115,48 @@
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 12,
+        "name": "Barrel roll"
+      },
+      {
+        "id": 15,
+        "name": "Boost"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 55,
@@ -5111,7 +6234,20 @@
         "page": 14
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      }
+    ]
   },
   {
     "id": 56,
@@ -5189,7 +6325,36 @@
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 39,
+        "name": "Guides"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 82,
+        "name": "Touching"
+      }
+    ]
   },
   {
     "id": 57,
@@ -5251,7 +6416,32 @@
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 69,
+        "name": "Simultaneous attack rule"
+      }
+    ]
   },
   {
     "id": 58,
@@ -5345,7 +6535,20 @@
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 45,
+        "name": "Ion token"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      }
+    ]
   },
   {
     "id": 59,
@@ -5407,7 +6610,20 @@
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 34,
+        "name": "Fleeing the battlefield"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      }
+    ]
   },
   {
     "id": 60,
@@ -5485,7 +6701,32 @@
         "page": 15
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 61,
@@ -5675,7 +6916,48 @@
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 55,
+        "name": "Obstructed"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 62,
@@ -5721,7 +7003,28 @@
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      }
+    ]
   },
   {
     "id": 63,
@@ -5749,6 +7052,97 @@
       {
         "code": "RR-SWX36",
         "page": 16
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 19,
+        "name": "Combat phase"
+      },
+      {
+        "id": 29,
+        "name": "End phase"
+      },
+      {
+        "id": 58,
+        "name": "Planning phase"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 83,
+        "name": "Tracking tokens"
+      },
+      {
+        "id": 89,
+        "name": "Winning the game"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Round limit and time limit",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Instead of playing a game until all of one player’s ships are destroyed, the players can use a round limit or time limit to restrict the length of a game.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "To use a round limit, the players agree on a number of rounds to play before setup. After the players play the number of rounds they agreed upon, the game ends. Similarly, the players can use a time limit instead by agreeing on an amount of time to play. When the predetermined length of time has elapsed, the players finish the current round and the game ends.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "To determine the winner of a round-limit or time-limit game, each player determines his score by summing the total squad point value of each **enemy** ship that was destroyed, including the cost of all Upgrade cards attached to those ships (even if they are discarded). The player with the highest score wins the game! If their scores are tied, the game ends in a draw.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 21
       }
     ],
     "related_rules": []
@@ -5861,7 +7255,48 @@
         "page": 16
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 84,
+        "name": "Turret primary weapon"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 65,
@@ -5891,7 +7326,12 @@
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 66,
@@ -6033,7 +7473,52 @@
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 54,
+        "name": "Obstacles"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 67,
+        "name": "Shields"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 83,
+        "name": "Tracking tokens"
+      }
+    ]
   },
   {
     "id": 67,
@@ -6079,7 +7564,20 @@
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 68,
@@ -6157,7 +7655,40 @@
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 30,
+        "name": "Enemy"
+      },
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 38,
+        "name": "Friendly"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 53,
+        "name": "Moving through"
+      },
+      {
+        "id": 70,
+        "name": "Small ship"
+      }
+    ]
   },
   {
     "id": 69,
@@ -6235,7 +7766,24 @@
         "page": 17
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 21,
+        "name": "Damage"
+      },
+      {
+        "id": 24,
+        "name": "Destroying ships"
+      },
+      {
+        "id": 57,
+        "name": "Pilot skill"
+      }
+    ]
   },
   {
     "id": 70,
@@ -6265,7 +7813,20 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 68,
+        "name": "Ship"
+      }
+    ]
   },
   {
     "id": 71,
@@ -6311,7 +7872,20 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      }
+    ]
   },
   {
     "id": 72,
@@ -6341,7 +7915,12 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 17,
+        "name": "Card abilities"
+      }
+    ]
   },
   {
     "id": 73,
@@ -6451,7 +8030,64 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 36,
+        "name": "Formats of play"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 43,
+        "name": "Id tokens"
+      },
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 48,
+        "name": "Limited"
+      },
+      {
+        "id": 51,
+        "name": "Modifications"
+      },
+      {
+        "id": 59,
+        "name": "Play area"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      },
+      {
+        "id": 81,
+        "name": "Title"
+      },
+      {
+        "id": 85,
+        "name": "Unique names"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 87,
+        "name": "Upgrade icons"
+      }
+    ]
   },
   {
     "id": 74,
@@ -6497,7 +8133,24 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 44,
+        "name": "Initiative"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      },
+      {
+        "id": 89,
+        "name": "Winning the game"
+      }
+    ]
   },
   {
     "id": 75,
@@ -6591,7 +8244,36 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 5,
+        "name": "Actions"
+      },
+      {
+        "id": 6,
+        "name": "Activation phase"
+      },
+      {
+        "id": 13,
+        "name": "Bearing"
+      },
+      {
+        "id": 18,
+        "name": "Cloak"
+      },
+      {
+        "id": 27,
+        "name": "Difficulty"
+      },
+      {
+        "id": 37,
+        "name": "Free actions"
+      },
+      {
+        "id": 49,
+        "name": "Maneuver"
+      }
+    ]
   },
   {
     "id": 76,
@@ -6621,7 +8303,12 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 21,
+        "name": "Damage"
+      }
+    ]
   },
   {
     "id": 77,
@@ -6681,7 +8368,12 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 13,
+        "name": "Bearing"
+      }
+    ]
   },
   {
     "id": 79,
@@ -6711,7 +8403,16 @@
         "page": 18
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 23,
+        "name": "Defender"
+      }
+    ]
   },
   {
     "id": 80,
@@ -6739,6 +8440,105 @@
       {
         "code": "RR-SWX36",
         "page": 19
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 4,
+        "name": "Acquire a target lock"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Team play",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Although a game of **X-Wing** always consists of two sides, it is possible to play the game with more than two players. To play with more than two players, the players divide themselves as equally as possible into two teams.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "It is recommended that players use the squad- building rules when playing with teams. Each team receives the same number of squad points regardless of the number of players on that team.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Each player takes ownership over a number of ships on his team, as agreed on by the other players on his team. Each player plans maneuvers for his own ships and makes all decisions for his actions and attacks. Abilities that affect ships belonging to the same team (for example, the ability of “Epsilon Leader”) affect all ships on that team, regardless of who the owner is.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Players win (and lose) together as a team. It is possible for all of one player’s ships to be destroyed, but for his team to win if his teammate manages to destroy all of the opposing team’s ships.",
+        "order": 3,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.",
+        "order": 4,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 21
       }
     ],
     "related_rules": []
@@ -6771,7 +8571,16 @@
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 82,
@@ -6849,7 +8658,16 @@
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 49,
+        "name": "Maneuver"
+      },
+      {
+        "id": 56,
+        "name": "Overlapping ships"
+      }
+    ]
   },
   {
     "id": 83,
@@ -6911,7 +8729,16 @@
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 63,
+        "name": "Round"
+      },
+      {
+        "id": 66,
+        "name": "Setup"
+      }
+    ]
   },
   {
     "id": 84,
@@ -6973,7 +8800,36 @@
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 11,
+        "name": "Auxiliary firing arc"
+      },
+      {
+        "id": 33,
+        "name": "Firing arc"
+      },
+      {
+        "id": 60,
+        "name": "Primary weapon"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 62,
+        "name": "Range combat bonus"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      }
+    ]
   },
   {
     "id": 85,
@@ -7003,7 +8859,16 @@
         "page": 19
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 86,
@@ -7161,7 +9026,64 @@
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      },
+      {
+        "id": 17,
+        "name": "Card abilities"
+      },
+      {
+        "id": 32,
+        "name": "Faction"
+      },
+      {
+        "id": 41,
+        "name": "Huge ship"
+      },
+      {
+        "id": 47,
+        "name": "Large ship"
+      },
+      {
+        "id": 48,
+        "name": "Limited"
+      },
+      {
+        "id": 51,
+        "name": "Modifications"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 74,
+        "name": "Squad points"
+      },
+      {
+        "id": 81,
+        "name": "Title"
+      },
+      {
+        "id": 85,
+        "name": "Unique names"
+      },
+      {
+        "id": 87,
+        "name": "Upgrade icons"
+      },
+      {
+        "id": 88,
+        "name": "Weapon range"
+      }
+    ]
   },
   {
     "id": 87,
@@ -7208,7 +9130,16 @@
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 73,
+        "name": "Squad building"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 88,
@@ -7238,7 +9169,24 @@
         "page": 20
       }
     ],
-    "related_rules": []
+    "related_rules": [
+      {
+        "id": 9,
+        "name": "Attack"
+      },
+      {
+        "id": 61,
+        "name": "Range"
+      },
+      {
+        "id": 64,
+        "name": "Secondary weapons"
+      },
+      {
+        "id": 86,
+        "name": "Upgrade cards"
+      }
+    ]
   },
   {
     "id": 89,
@@ -7284,162 +9232,19 @@
         "page": 20
       }
     ],
-    "related_rules": []
-  },
-  {
-    "id": 90,
-    "name": "Team play",
-    "expansion_rule": false,
-    "paragraphs": [
+    "related_rules": [
       {
-        "markdown": "Although a game of **X-Wing** always consists of two sides, it is possible to play the game with more than two players. To play with more than two players, the players divide themselves as equally as possible into two teams.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
+        "id": 24,
+        "name": "Destroying ships"
       },
       {
-        "markdown": "It is recommended that players use the squad- building rules when playing with teams. Each team receives the same number of squad points regardless of the number of players on that team.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
+        "id": 63,
+        "name": "Round"
       },
       {
-        "markdown": "Each player takes ownership over a number of ships on his team, as agreed on by the other players on his team. Each player plans maneuvers for his own ships and makes all decisions for his actions and attacks. Abilities that affect ships belonging to the same team (for example, the ability of “Epsilon Leader”) affect all ships on that team, regardless of who the owner is.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "Players win (and lose) together as a team. It is possible for all of one player’s ships to be destroyed, but for his team to win if his teammate manages to destroy all of the opposing team’s ships.",
-        "order": 3,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.",
-        "order": 4,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
+        "id": 74,
+        "name": "Squad points"
       }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 21
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 91,
-    "name": "Round limit and time limit",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "Instead of playing a game until all of one player’s ships are destroyed, the players can use a round limit or time limit to restrict the length of a game.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "To use a round limit, the players agree on a number of rounds to play before setup. After the players play the number of rounds they agreed upon, the game ends. Similarly, the players can use a time limit instead by agreeing on an amount of time to play. When the predetermined length of time has elapsed, the players finish the current round and the game ends.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "To determine the winner of a round-limit or time-limit game, each player determines his score by summing the total squad point value of each **enemy** ship that was destroyed, including the cost of all Upgrade cards attached to those ships (even if they are discarded). The player with the highest score wins the game! If their scores are tied, the game ends in a draw.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 21
-      }
-    ],
-    "related_rules": []
+    ]
   }
 ]

@@ -58,10 +58,12 @@ class RuleAdminForm(forms.ModelForm):
 
 @admin.register(models.Rule)
 class RuleAdmin(nested_admin.NestedModelAdmin):
-    list_display = ('id', 'name', )
+    list_display = ('name', 'id',)
     inlines = (ParagraphInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
+    filter_horizontal = ['related_topics', ]
+    save_on_top = True
 
 
 class RuleBookRuleInline(nested_admin.NestedTabularInline):

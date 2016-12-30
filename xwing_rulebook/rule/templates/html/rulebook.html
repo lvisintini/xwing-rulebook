@@ -13,8 +13,8 @@
 
       {{ rl.description | xwing_icons | md2html }}
 
-      {% for rule in rl.rules.all %}
-        {% include 'html/includes/_rule.html' %}
+      {% for rbr in rl.rulebookrule_set.all %}
+        {% include 'html/includes/_rule.html' with rule=rbr.rule %}
       {% endfor %}
 
        {{ '[Epic]' | xwing_icons  }}
