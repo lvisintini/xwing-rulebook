@@ -7,7 +7,7 @@ from rule.models import Rule
 
 
 class Command(BaseCommand):
-    help = 'Command to print all loaded rules as pdf'
+    help = 'Command to print all loaded rules as json'
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -29,22 +29,25 @@ class Command(BaseCommand):
 
             if options['separate_paragraphs']:
                 r['paragraphs'] = [
-                    OrderedDict(
-                        markdown=p.text,
-                        order=p.order,
-                        expansion_rule_related=p.format.get('expansion_rule', rule.expansion_rule),
-                        format=OrderedDict(sorted(
+                    OrderedDict([
+                        ('markdown', p.text),
+                        ('order', p.order),
+                        ('needs_revision', p.needs_revision),
+                        ('expansion_rule_related', p.format.get(
+                            'expansion_rule', rule.expansion_rule
+                        )),
+                        ('format', OrderedDict(sorted(
                             [(k, v) for k, v in p.format.items() if k != "expansion_rule"],
                             key=lambda x: x[0]
-                        )),
-                        references=[
-                            OrderedDict(
-                                code=reference.source.code,
-                                page=reference.page,
-                            )
+                        ))),
+                        ('references', [
+                            OrderedDict([
+                                ('code', reference.source.code),
+                                ('page', reference.page),
+                            ])
                             for reference in p.reference_set.all()
-                        ]
-                    )
+                        ])
+                    ])
                     for p in rule.paragraphs.order_by('order').all()
                 ]
             else:
@@ -56,18 +59,18 @@ class Command(BaseCommand):
                     references.add((reference.source.code, reference.page))
 
             r['references'] = [
-                OrderedDict(
-                    code=x,
-                    page=y
-                )
+                OrderedDict([
+                    ('code', x),
+                    ('page', y)
+                ])
                 for x, y in sorted(list(references))
             ]
 
             r['related_rules'] = [
-                OrderedDict(
-                    id=related.id,
-                    name=related.name,
-                )
+                OrderedDict([
+                    ('id', related.id),
+                    ('name', related.name),
+                ])
                 for related in rule.related_topics.all()
             ]
 
