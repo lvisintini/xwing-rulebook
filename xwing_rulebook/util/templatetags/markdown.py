@@ -7,7 +7,7 @@ register = Library()
 
 
 def md2html(subject):
-    markdown = Markdown()
+    markdown = Markdown(extras=["tables"])
 
     if hasattr(subject, 'to_markdown'):
         subject = subject.to_markdown()
@@ -21,3 +21,12 @@ def indentation(level):
     return mark_safe('    ' * level)
 
 register.filter('indentation', indentation)
+
+
+def format_paragraph(paragraph):
+    text = paragraph.text
+    if paragraph.format.get('expansion_rule', False):
+        text = text.replace(":**", "†:**", 1)
+    return mark_safe(text)
+
+register.filter('format_paragraph', format_paragraph)

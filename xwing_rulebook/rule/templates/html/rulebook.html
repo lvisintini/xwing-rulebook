@@ -11,7 +11,7 @@
     <div class="RuleBook__Inner RuleBook__Inner--fancy-border">
       <h1>{{ rl.name }}</h1>
 
-      {{ rl.description | md2html | xwing_icons  }}
+      {{ rl.description | xwing_icons | md2html }}
 
       {% for rule in rl.rules.all %}
         {% include 'html/includes/_rule.html' %}

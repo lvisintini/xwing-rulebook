@@ -8,7 +8,7 @@ class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField()
     version = models.CharField(max_length=25)
-    code = models.CharField(max_length=25, default='')
+    code = models.CharField(max_length=25, default='', unique=True)
     description = models.TextField(default='')
 
     def __str__(self):
@@ -24,10 +24,10 @@ class Rule(models.Model):
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
 
-    def to_markdown(self):
+    def to_markdown(self, add_anchors=True):
         context = {
             'rule': self,
-            'add_anchors': True
+            'add_anchors': add_anchors
         }
         return render_template('markdown/rule.md', context).strip()
 
@@ -43,6 +43,7 @@ class Paragraph(models.Model):
     sources = models.ManyToManyField(
         'rule.Source', related_name='paragraphs', through='rule.Reference'
     )
+    needs_revision = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['order', ]
@@ -68,12 +69,16 @@ class Reference(models.Model):
     paragraph = models.ForeignKey('rule.Paragraph')
     page = models.IntegerField(default=0)
 
+    class Meta:
+        ordering = ['source', 'page']
+
     def __str__(self):
         return 'Page {} - {}'.format(self.page, self.source)
 
 
 class RuleBook(models.Model):
     name = models.CharField(max_length=125)
+    code = models.CharField(max_length=25, default='', unique=True)
     version = models.CharField(max_length=25, null=True, blank=True)
     description = models.TextField(default='')
     rules = models.ManyToManyField(
@@ -91,3 +96,6 @@ class RuleBookRule(models.Model):
 
     class Meta:
         ordering = ['order', ]
+
+    def __str__(self):
+        return '{}:{}'.format(self.rule_book, self.rule)

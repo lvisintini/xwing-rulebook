@@ -13,16 +13,11 @@ h2 {
   font-family: BankGothic;
 }
 
-h2,
-h3,
-h4 {
-  position: relative;
+ol,
+ul {
+  margin: 0;
+  padding: 0 0 0 val($padding, x-large);
 }
-
-p {
-  position: relative;
-}
-
 
 ol {
   list-style-type: decimal;
@@ -31,14 +26,9 @@ ol {
   }
 }
 
-
-ol,
 ul {
-  margin: 0;
-  padding: 0 0 0 val($padding, x-large);
-
-}
-
-li {
-  position: relative;
+  list-style-type: disc;
+  ul {
+    list-style-type: circle;
+  }
 }
