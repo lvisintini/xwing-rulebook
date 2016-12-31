@@ -1,5 +1,127 @@
 [
   {
+    "id": 1,
+    "name": "Golden rules",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "If a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      },
+      {
+        "markdown": "Card abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      },
+      {
+        "markdown": "If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 2
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 2,
+    "name": "Card interpretations",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Many Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 2
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 3,
+    "name": "Expansion rules",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "This reference is intended to be a comprehensive document. It includes terms and concepts that were introduced in expansion packs. The dagger (**†**) character is used to indicate these terms; players can ignore the marked entries unless they are playing with expansion content that uses those terms.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 2
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 2
+      }
+    ],
+    "related_rules": []
+  },
+  {
     "id": 4,
     "name": "Acquire a target lock",
     "expansion_rule": false,
@@ -2638,36 +2760,6 @@
     ]
   },
   {
-    "id": 2,
-    "name": "Card interpretations",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "Many Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
-  },
-  {
     "id": 18,
     "name": "Cloak",
     "expansion_rule": true,
@@ -4142,36 +4234,6 @@
     ]
   },
   {
-    "id": 3,
-    "name": "Expansion rules",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "This reference is intended to be a comprehensive document. It includes terms and concepts that were introduced in expansion packs. The dagger (**†**) character is used to indicate these terms; players can ignore the marked entries unless they are playing with expansion content that uses those terms.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
-  },
-  {
     "id": 32,
     "name": "Faction",
     "expansion_rule": false,
@@ -4811,68 +4873,6 @@
         "name": "Ship"
       }
     ]
-  },
-  {
-    "id": 1,
-    "name": "Golden rules",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "If a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      },
-      {
-        "markdown": "Card abilities can override the rules listed in this guide. Mission rules can override both card abilities and rules from this guide.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      },
-      {
-        "markdown": "If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 2
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 2
-      }
-    ],
-    "related_rules": []
   },
   {
     "id": 39,
@@ -7086,68 +7086,6 @@
     ]
   },
   {
-    "id": 91,
-    "name": "Round limit and time limit",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "Instead of playing a game until all of one player’s ships are destroyed, the players can use a round limit or time limit to restrict the length of a game.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "To use a round limit, the players agree on a number of rounds to play before setup. After the players play the number of rounds they agreed upon, the game ends. Similarly, the players can use a time limit instead by agreeing on an amount of time to play. When the predetermined length of time has elapsed, the players finish the current round and the game ends.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "To determine the winner of a round-limit or time-limit game, each player determines his score by summing the total squad point value of each **enemy** ship that was destroyed, including the cost of all Upgrade cards attached to those ships (even if they are discarded). The player with the highest score wins the game! If their scores are tied, the game ends in a draw.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 21
-      }
-    ],
-    "related_rules": []
-  },
-  {
     "id": 64,
     "name": "Secondary weapons",
     "expansion_rule": false,
@@ -8450,100 +8388,6 @@
     ]
   },
   {
-    "id": 90,
-    "name": "Team play",
-    "expansion_rule": false,
-    "paragraphs": [
-      {
-        "markdown": "Although a game of **X-Wing** always consists of two sides, it is possible to play the game with more than two players. To play with more than two players, the players divide themselves as equally as possible into two teams.",
-        "order": 0,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "It is recommended that players use the squad- building rules when playing with teams. Each team receives the same number of squad points regardless of the number of players on that team.",
-        "order": 1,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "Each player takes ownership over a number of ships on his team, as agreed on by the other players on his team. Each player plans maneuvers for his own ships and makes all decisions for his actions and attacks. Abilities that affect ships belonging to the same team (for example, the ability of “Epsilon Leader”) affect all ships on that team, regardless of who the owner is.",
-        "order": 2,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "Players win (and lose) together as a team. It is possible for all of one player’s ships to be destroyed, but for his team to win if his teammate manages to destroy all of the opposing team’s ships.",
-        "order": 3,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      },
-      {
-        "markdown": "Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.",
-        "order": 4,
-        "needs_revision": false,
-        "expansion_rule_related": false,
-        "format": {
-          "level": 0,
-          "type": "text"
-        },
-        "references": [
-          {
-            "code": "RR-SWX36",
-            "page": 21
-          }
-        ]
-      }
-    ],
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 21
-      }
-    ],
-    "related_rules": []
-  },
-  {
     "id": 81,
     "name": "Title",
     "expansion_rule": true,
@@ -9246,5 +9090,161 @@
         "name": "Squad points"
       }
     ]
+  },
+  {
+    "id": 90,
+    "name": "Team play",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Although a game of **X-Wing** always consists of two sides, it is possible to play the game with more than two players. To play with more than two players, the players divide themselves as equally as possible into two teams.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "It is recommended that players use the squad- building rules when playing with teams. Each team receives the same number of squad points regardless of the number of players on that team.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Each player takes ownership over a number of ships on his team, as agreed on by the other players on his team. Each player plans maneuvers for his own ships and makes all decisions for his actions and attacks. Abilities that affect ships belonging to the same team (for example, the ability of “Epsilon Leader”) affect all ships on that team, regardless of who the owner is.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Players win (and lose) together as a team. It is possible for all of one player’s ships to be destroyed, but for his team to win if his teammate manages to destroy all of the opposing team’s ships.",
+        "order": 3,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.",
+        "order": 4,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 21
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 91,
+    "name": "Round limit and time limit",
+    "expansion_rule": false,
+    "paragraphs": [
+      {
+        "markdown": "Instead of playing a game until all of one player’s ships are destroyed, the players can use a round limit or time limit to restrict the length of a game.",
+        "order": 0,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "To use a round limit, the players agree on a number of rounds to play before setup. After the players play the number of rounds they agreed upon, the game ends. Similarly, the players can use a time limit instead by agreeing on an amount of time to play. When the predetermined length of time has elapsed, the players finish the current round and the game ends.",
+        "order": 1,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      },
+      {
+        "markdown": "To determine the winner of a round-limit or time-limit game, each player determines his score by summing the total squad point value of each **enemy** ship that was destroyed, including the cost of all Upgrade cards attached to those ships (even if they are discarded). The player with the highest score wins the game! If their scores are tied, the game ends in a draw.",
+        "order": 2,
+        "needs_revision": false,
+        "expansion_rule_related": false,
+        "format": {
+          "level": 0,
+          "type": "text"
+        },
+        "references": [
+          {
+            "code": "RR-SWX36",
+            "page": 21
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 21
+      }
+    ],
+    "related_rules": []
   }
 ]
