@@ -32,7 +32,7 @@ class Command(BaseCommand):
                     OrderedDict([
                         ('markdown', p.text),
                         ('order', p.order),
-                        ('needs_revision', p.needs_revision),
+                        #  ('needs_revision', p.needs_revision),
                         ('expansion_rule_related', p.format.get(
                             'expansion_rule', rule.expansion_rule
                         )),
