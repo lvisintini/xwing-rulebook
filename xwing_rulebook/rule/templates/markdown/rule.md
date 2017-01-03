@@ -1,4 +1,4 @@
-{% load markdown %}
+{% load clause %}
 ### {% if add_anchors %}<a id="{{ rule.anchor_id }}"></a>{% endif %}{{ rule.name }}{% if rule.expansion_rule %} †{% endif %}
 {% for c in rule.clauses.all %}
 {{ c|format_clause:add_anchors }}

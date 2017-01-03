@@ -34,7 +34,9 @@ class Command(BaseCommand):
 
         if rb:
             markdown = '\n\n\n'.join([
-                rbr.rule.to_markdown(False)
-                for rbr in rb.rulebookrule_set.order_by('order').all()
+                r.to_markdown(False)
+                for section in rb.booksection_set.all()
+                for r in section.rules.order_by('id').all()
+
             ])
             self.stdout.write(markdown)

@@ -5,11 +5,6 @@ import nested_admin
 from rule import models
 
 
-@admin.register(models.Source)
-class SourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'date', 'version')
-
-
 class ClauseContentAdminForm(forms.ModelForm):
     def has_changed(self):
         return True
@@ -20,22 +15,53 @@ class ClauseContentAdminForm(forms.ModelForm):
         return self.cleaned_data['content'].strip()
 
 
+class RuleAdminForm(forms.ModelForm):
+    def clean_name(self):
+        return self.cleaned_data['name'].capitalize()
+
+
+class ClauseContentVersionInline(nested_admin.NestedTabularInline):
+    model = models.ClauseContentVersion
+    extra = 0
+    raw_id_fields = ['content', ]
+
+
+class ClauseInline(nested_admin.NestedTabularInline):
+    model = models.Clause
+    inlines = (ClauseContentVersionInline, )
+    sortable_field_name = 'order'
+    extra = 0
+
+
 class ClauseContentInline(nested_admin.NestedTabularInline):
     model = models.ClauseContent
     extra = 0
     form = ClauseContentAdminForm
 
 
-class ClauseInline(nested_admin.NestedTabularInline):
-    model = models.Clause
-    inlines = (ClauseContentInline, )
+class SectionRuleInline(nested_admin.NestedTabularInline):
+    model = models.SectionRule
     sortable_field_name = 'order'
     extra = 0
 
 
-class RuleAdminForm(forms.ModelForm):
-    def clean_name(self):
-        return self.cleaned_data['name'].capitalize()
+class BookSectionInline(nested_admin.NestedTabularInline):
+    model = models.BookSection
+    sortable_field_name = 'order'
+    inlines = (SectionRuleInline, )
+    extra = 0
+
+
+@admin.register(models.Source)
+class SourceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'date', 'version')
+
+
+@admin.register(models.ClauseContent)
+class ClauseContentAdmin(nested_admin.NestedModelAdmin):
+    list_display = ('id', '__str__')
+    form = ClauseContentAdminForm
+    search_fields = ['id', 'content']
 
 
 @admin.register(models.Rule)
@@ -48,18 +74,6 @@ class RuleAdmin(nested_admin.NestedModelAdmin):
     save_on_top = True
 
 
-class SectionRuleInline(nested_admin.NestedTabularInline):
-    model = models.SectionRule
-    sortable_field_name = 'order'
-    extra = 0
-
-class BookSectionInline(nested_admin.NestedTabularInline):
-    model = models.BookSection
-    sortable_field_name = 'order'
-    inlines = (SectionRuleInline, )
-    extra = 0
-
-
 @admin.register(models.RuleBook)
 class RuleBookAdmin(nested_admin.NestedModelAdmin):
     list_display = ('name', 'code', 'version')
@@ -70,5 +84,4 @@ class RuleBookAdmin(nested_admin.NestedModelAdmin):
 class ClauseAdmin(nested_admin.NestedModelAdmin):
     list_display = ('__str__', 'needs_revision')
     list_filter = ['needs_revision', ]
-    search_fields = ['content', ]
-    inlines = (ClauseContentInline, )
+    inlines = (ClauseContentVersionInline, )

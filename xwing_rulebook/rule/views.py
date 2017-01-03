@@ -3,10 +3,10 @@ from .models import RuleBook
 
 
 def rulebook(request):
-    rl = RuleBook.objects.first()
+    rb = RuleBook.objects.first()
 
     context = {
-        'rl': rl,
+        'rb': rb,
     }
 
     return render(request, 'html/rulebook.html', context)

@@ -54,9 +54,8 @@ class Clause(models.Model):
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)
     needs_revision = models.BooleanField(default=False)
-    clause_content = models.ForeignKey(
-        'rule.ClauseContent', related_name='current_clauses', null=True
-    )
+    available_contents = models.ManyToManyField('rule.ClauseContent',
+                                                through='rule.ClauseContentVersion')
 
     class Meta:
         ordering = ['rule', 'order']
@@ -70,8 +69,16 @@ class Clause(models.Model):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)
 
 
+class ClauseContentVersion(models.Model):
+    clause = models.ForeignKey('rule.Clause')
+    content = models.ForeignKey('rule.ClauseContent')
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['active']
+
+
 class ClauseContent(models.Model):
-    clause = models.ForeignKey('rule.Clause', related_name='available_contents')
     title = models.CharField(max_length=125, null=True, blank=True)
     content = models.TextField(default='')
     source = models.ForeignKey('rule.Source')
@@ -79,9 +86,9 @@ class ClauseContent(models.Model):
     keep_line_breaks = models.BooleanField(default=False)
 
     def __str__(self):
-        if self.page is not None:
-            return '{} (Page {})'.format(self.source.code, self.page)
-        return self.source.code
+        if self.title:
+            return '{}: {}'.format(self.title, self.content)[:125]
+        return self.content[:125]
 
 
 class RuleBook(models.Model):

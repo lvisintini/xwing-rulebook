@@ -9,11 +9,11 @@
 {% block content %}
   <div class="RuleBook">
     <div class="RuleBook__Inner RuleBook__Inner--fancy-border">
-      <h1>{{ rl.name }}</h1>
+      <h1>{{ rb.name }}</h1>
 
-      {{ rl.content | xwing_icons | md2html }}
+      {{ rb.content | xwing_icons | md2html }}
 
-      {% for section in rl.booksection_set.all %}
+      {% for section in rb.booksection_set.all %}
         <h2>{{ section.title }}</h2>
         {{ section.content | xwing_icons | md2html }}
 
