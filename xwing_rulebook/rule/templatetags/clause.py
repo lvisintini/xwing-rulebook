@@ -22,7 +22,7 @@ def format_clause(clause, add_anchors):
 
     template = '{indentation}{prefix}{anchor}{title}{content}'
     anchor_template = '<a class="SourceReference" id="{anchor_id}">' \
-                      '{source_code} (Page {page})</a>'
+                      '{source_code} (Page {page}) [{clause}]</a>'
 
     res = template.format(
         indentation='    ' * clause.indentation,
@@ -33,7 +33,7 @@ def format_clause(clause, add_anchors):
             page=content.page,
             clause=clause.id
         ),
-        title='' if not content.title else '**{}{}:** '.format(
+        title='' if not content.title or clause.ignore_title else '**{}{}:** '.format(
             content.title, '†' if clause.expansion_related else ''
         ),
         content=content.content,

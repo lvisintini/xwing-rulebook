@@ -105,7 +105,7 @@ class BookSection(models.Model):
     rule_book = models.ForeignKey('rule.RuleBook')
     order = models.IntegerField(default=0)
     title = models.CharField(max_length=125, null=True, blank=True)
-    content = models.TextField(default='')
+    content = models.TextField(default='', blank=True)
     rules = models.ManyToManyField('rule.Rule', through='rule.SectionRule')
 
     class Meta:
