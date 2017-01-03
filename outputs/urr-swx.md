@@ -1,4 +1,4 @@
-## Golden rules
+### Golden rules
 
 If a rule in this guide contradicts the Learn to Play booklet, the rule in this guide takes priority.
 
@@ -7,17 +7,17 @@ Card abilities can override the rules listed in this guide. Mission rules can ov
 If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.
 
 
-## Card interpretations
+### Card interpretations
 
 Many Ship card abilities use the word “you” to refer to the corresponding ship. Upgrade and Damage cards that use the word “you” refer to the ship to which the card is assigned.
 
 
-## Expansion rules
+### Expansion rules
 
 This reference is intended to be a comprehensive document. It includes terms and concepts that were introduced in expansion packs. The dagger (**†**) character is used to indicate these terms; players can ignore the marked entries unless they are playing with expansion content that uses those terms.
 
 
-## Acquire a target lock
+### Acquire a target lock
 
 Ships with the [Target Lock] icon in their action bar may perform the acquire a target lock action to acquire a target lock on an enemy ship at Range 1–3. While attacking, a ship can spend a target lock that it has on the defender to reroll any number of its attack dice.
 
@@ -47,7 +47,7 @@ A ship can maintain one target lock. If a ship acquires a new target lock, it mu
 **Related Topics:** Actions, Attack, Modifying dice, Target lock
 
 
-## Actions
+### Actions
 
 The active ship can perform one standard action during the “Perform Action” step of the Activation phase. Ships can also perform free actions as instructed by cards or mission rules. The actions available to each ship are listed in that ship’s action bar.
 
@@ -69,7 +69,7 @@ The active ship can perform one standard action during the “Perform Action” 
 **Related Topics:** Acquire a target lock, Activation phase, Barrel roll, Boost, Cloak†, Evade, Focus, Free actions, Overlapping ships, Stress
 
 
-## Activation phase
+### Activation phase
 
 During the Activation phase, each ship is activated one at a time, starting with the ship with the lowest pilot skill and continuing in ascending order. Each ship resolves the following steps in order:
 
@@ -103,7 +103,7 @@ During the Activation phase, each ship is activated one at a time, starting with
 **Related Topics:** Actions, Active ship, Bearing, Difficulty, Free actions, Initiative, Ion token†, Maneuver, Moving through, Obstacles, Overlapping ships, Pilot skill, Round, Stress
 
 
-## Active ship
+### Active ship
 
 The ship that is currently resolving the Activation or Combat phase is the active ship.
 
@@ -111,7 +111,7 @@ The ship that is currently resolving the Activation or Combat phase is the activ
 **Related Topics:** Activation phase, Combat phase
 
 
-## Agility
+### Agility
 
 A ship’s agility is the green number on its Ship card. It indicates the number of defense dice the ship rolls when defending.
 
@@ -123,7 +123,7 @@ A ship’s agility is the green number on its Ship card. It indicates the number
 **Related Topics:** Attack, Cloak†
 
 
-## Attack
+### Attack
 
 A ship can perform one attack when it becomes the active ship during the Combat phase. To perform an attack, the ship resolves the following steps in order:
 
@@ -187,7 +187,7 @@ A ship can perform one attack when it becomes the active ship during the Combat 
 **Related Topics:** Acquire a target lock, Agility, Attacker, Auxiliary firing arc†, Cancel, Card abilities, Combat phase, Critical damage, Damage, Defender, Destroying ships, Dice results, Enemy, Firing arc, Focus, Friendly, Hit, Hull, Modifying dice, Obstacles, Obstructed, Pilot skill, Primary weapon, Range, Range combat bonus, Secondary weapons, Shields, Simultaneous attack rule, Target, Turret primary weapon†, Weapon range
 
 
-## Attacker
+### Attacker
 
 The ship that is performing an attack is the attacker.
 
@@ -195,7 +195,7 @@ The ship that is performing an attack is the attacker.
 **Related Topics:** Attack, Combat phase, Defender
 
 
-## Auxiliary firing arc †
+### Auxiliary firing arc †
 
 Some ships have an auxiliary firing arc identified by dotted lines printed on its ship token. These ships also have a unique primary weapon icon printed on their Ship cards. When attacking with its primary weapon, a ship with this icon may attack an enemy ship that is at Range 1–3 and inside its standard or auxiliary firing arc.
 
@@ -205,7 +205,7 @@ Some ships have an auxiliary firing arc identified by dotted lines printed on it
 **Related Topics:** Attack, Firing arc, Primary weapon, Range, Secondary weapons, Turret primary weapon†
 
 
-## Barrel roll
+### Barrel roll
 
 Ships with the [Barrel Roll] icon in their action bar may perform the barrel roll action to move laterally and adjust their position. To perform a barrel roll with a small ship, follow these steps:
 
@@ -231,7 +231,7 @@ Ships with the [Barrel Roll] icon in their action bar may perform the barrel rol
 **Related Topics:** Actions, Cloak†, Fleeing the battlefield, Large ship†, Maneuver, Obstacles
 
 
-## Bearing
+### Bearing
 
 Bearing is indicated by the arrows on the maneuver dial. There are several bearings available to ships, though each ship has a different set of bearings available to it.
 
@@ -259,7 +259,7 @@ Bearing is indicated by the arrows on the maneuver dial. There are several beari
 **Related Topics:** Activation phase, Difficulty, Koiogran turn, Maneuver, Segnor’s loop, Speed, Stress, Tallon roll
 
 
-## Bombs †
+### Bombs †
 
 Each Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb token and indicates when the bomb detonates. When a bomb detonates, it produces the effect indicated on its Bomb Token Reference card. To drop a bomb, follow the steps below:
 
@@ -297,7 +297,7 @@ Each Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb to
 **Related Topics:** Detonating a bomb†, Dropping a bomb†, Upgrade cards
 
 
-## Boost
+### Boost
 
 Ships with the [Boost] icon in their action bar may perform a boost action. To boost, follow these steps:
 
@@ -321,7 +321,7 @@ Ships with the [Boost] icon in their action bar may perform a boost action. To b
 **Related Topics:** Actions, Cloak†, Fleeing the battlefield, Maneuver, Obstacles
 
 
-## Cancel
+### Cancel
 
 When a die result is canceled, a player takes one die displaying the canceled result and physically removes the die from the common area. Players ignore all canceled results.
 
@@ -329,7 +329,7 @@ When a die result is canceled, a player takes one die displaying the canceled re
 **Related Topics:** Attack
 
 
-## Card abilities
+### Card abilities
 
 Card abilities are resolved as instructed by the text on the card with the additional restrictions described below:
 
@@ -351,7 +351,7 @@ Card abilities are resolved as instructed by the text on the card with the addit
 **Related Topics:** Attack, Critical damage, Enemy, Free actions, Friendly, Initiative, Modifying dice, Secondary weapons, Spend, Upgrade cards
 
 
-## Cloak †
+### Cloak †
 
 Ships with the [Cloak] icon in their action bar may perform a cloak action. When a ship performs the cloak action, assign one cloak token to that ship. A cloaked ship follows these rules:
 
@@ -391,7 +391,7 @@ After all decloaking has been resolved, the Activation phase continues as normal
 **Related Topics:** Actions, Agility, Barrel roll, Boost, Decloak†, End phase, Fleeing the battlefield, Stress
 
 
-## Combat phase
+### Combat phase
 
 During the Combat phase, each ship has an opportunity to perform one attack, starting with the ship with the highest pilot skill and continuing in descending order.
 
@@ -407,7 +407,7 @@ During the Combat phase, each ship has an opportunity to perform one attack, sta
 **Related Topics:** Active ship, Attack, Attacker, Initiative, Pilot skill, Round
 
 
-## Critical damage
+### Critical damage
 
 During an attack, a ship suffers one critical damage for each uncanceled [Critical Hit] result. If a ship is dealt a Damage card due to suffering critical damage, that card is dealt faceup and its text immediately resolves.
 
@@ -421,7 +421,7 @@ During an attack, a ship suffers one critical damage for each uncanceled [Critic
 **Related Topics:** Attack, Card abilities, Damage
 
 
-## Damage
+### Damage
 
 During the “Deal Damage” step of an attack, a ship suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result.
 
@@ -453,7 +453,7 @@ If a ship has a number of Damage cards equal to its hull value, it is destroyed.
 **Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule, Suffer damage
 
 
-## Decloak †
+### Decloak †
 
 See “Cloak” on page 8.
 
@@ -461,7 +461,7 @@ See “Cloak” on page 8.
 **Related Topics:** Cloak†
 
 
-## Defender
+### Defender
 
 The ship that is successfully targeted during the “Declare Target” step of an attack is the defender.
 
@@ -469,7 +469,7 @@ The ship that is successfully targeted during the “Declare Target” step of a
 **Related Topics:** Attack, Attacker, Target
 
 
-## Destroying ships
+### Destroying ships
 
 A ship is destroyed when it has a number of Damage cards equal to its hull value or when it flees the battlefield. When a ship is destroyed, remove it from the play area, discard all of its Damage cards, and return all of its tokens to the supply.
 
@@ -481,7 +481,7 @@ A ship is destroyed when it has a number of Damage cards equal to its hull value
 **Related Topics:** Attack, Damage, Fleeing the battlefield, Hull, Simultaneous attack rule, Winning the game
 
 
-## Detonating a bomb †
+### Detonating a bomb †
 
 See “Bombs” on page 7
 
@@ -489,7 +489,7 @@ See “Bombs” on page 7
 **Related Topics:** Bombs†
 
 
-## Dice results
+### Dice results
 
 The results on the attack dice are as follows:
 
@@ -505,7 +505,7 @@ The results on the defense dice are as follows:
 
 - **Evade ([Evade]):** This result cancels one [Hit] or [Critical Hit] result.
 
-- **Focus ([Focus]):**These results have no inherent effect, but the defender may spend a focus token to change them to [Evade] results.
+- **Focus ([Focus]):** These results have no inherent effect, but the defender may spend a focus token to change them to [Evade] results.
 
 - **Blank:** This result does not display any icons. It has no effect.
 
@@ -515,7 +515,7 @@ When an effect instructs a player to roll dice for a purpose other than resolvin
 **Related Topics:** Attack, Hit, Modifying dice
 
 
-## Difficulty
+### Difficulty
 
 The difficulty of a maneuver is indicated by the color of the bearing icon. When a ship executes a red maneuver, it receives one stress token. When a ship executes a green maneuver, remove one stress token from it. White maneuvers have no inherent effect.
 
@@ -529,7 +529,7 @@ The difficulty of a maneuver is indicated by the color of the bearing icon. When
 **Related Topics:** Activation phase, Bearing, Ion token†, Maneuver, Speed, Stress
 
 
-## Dropping a bomb †
+### Dropping a bomb †
 
 See “Bombs” on page 7.
 
@@ -537,7 +537,7 @@ See “Bombs” on page 7.
 **Related Topics:** Bombs†
 
 
-## End phase
+### End phase
 
 During the End phase, players remove all focus and evade tokens from ships in the play area. Other tokens are not removed during this phase.
 
@@ -545,7 +545,7 @@ During the End phase, players remove all focus and evade tokens from ships in th
 **Related Topics:** Cloak†, Evade, Focus, Round
 
 
-## Enemy
+### Enemy
 
 All ships controlled by the opposing player are enemy ships.
 
@@ -553,7 +553,7 @@ All ships controlled by the opposing player are enemy ships.
 **Related Topics:** Attack, Card abilities, Ship
 
 
-## Evade
+### Evade
 
 Ships with the evade ([Evade]) icon in their action bar may perform the evade action. To perform the action, assign one evade token to the ship. When defending, the ship may spend that token to add one additional evade ([Evade]) result to his defense roll. All unspent evade tokens are removed from ships during the End phase.
 
@@ -565,7 +565,7 @@ Ships with the evade ([Evade]) icon in their action bar may perform the evade ac
 **Related Topics:** Actions, End phase, Modifying dice
 
 
-## Faction
+### Faction
 
 There are three primary factions in the game: Rebel (The Rebel Alliance and The Resistance), Imperial (The Galactic Empire and The First Order), and Scum (Scum and Villainy). All Ship cards and some Upgrade cards are aligned to one of these primary factions. A squad cannot contain cards from different primary factions.
 
@@ -575,7 +575,7 @@ There are three primary factions in the game: Rebel (The Rebel Alliance and The 
 **Related Topics:** Id tokens, Ship, Squad building, Upgrade cards
 
 
-## Firing arc
+### Firing arc
 
 A ship’s primary firing arc is the area formed by extending the firing arc lines printed on the front of the ship’s token. A firing arc extends across the play area. A ship is inside a firing arc if any part of its base falls inside the area formed by extending the firing-arc lines.
 
@@ -587,7 +587,7 @@ A ship’s primary firing arc is the area formed by extending the firing arc lin
 **Related Topics:** Attack, Auxiliary firing arc†, Range, Secondary weapons, Turret primary weapon†
 
 
-## Fleeing the battlefield
+### Fleeing the battlefield
 
 When a ship executes a maneuver or performs an action that changes its position, if **any part** of its base is outside the play area, that ship has fled the battlefield. A ship that flees the battlefield is destroyed.
 
@@ -603,7 +603,7 @@ When a ship executes a maneuver or performs an action that changes its position,
 **Related Topics:** Barrel roll, Boost, Cloak†, Destroying ships, Maneuver, Overlapping ships, Play area
 
 
-## Focus
+### Focus
 
 Ships with the focus ([Focus]) icon in their action bar may perform the focus action. To perform the action, assign one focus token to the ship. When attacking or defending, the ship may spend that token to change all of its [Focus] results to [Hit] results (on attack dice) or [Evade] results (on defense dice). All unspent focus tokens are removed from ships during the End phase.
 
@@ -617,7 +617,7 @@ Ships with the focus ([Focus]) icon in their action bar may perform the focus ac
 **Related Topics:** Actions, Attack, End phase, Modifying dice
 
 
-## Formats of play
+### Formats of play
 
 There are three formats of play as described below.
 
@@ -633,7 +633,7 @@ For more information on Epic Play and tournament rules, visit [www.FantasyFlight
 **Related Topics:** Huge ship†, Missions, Squad building
 
 
-## Free actions
+### Free actions
 
 A free action is an action granted to a ship through a card ability or other effect. It does not count as the one standard action that a ship performs during the “Perform Action” step.
 
@@ -647,7 +647,7 @@ A free action is an action granted to a ship through a card ability or other eff
 **Related Topics:** Actions, Activation phase, Card abilities, Stress
 
 
-## Friendly
+### Friendly
 
 All ships controlled by the same player are friendly ships.
 
@@ -659,7 +659,7 @@ All ships controlled by the same player are friendly ships.
 **Related Topics:** Attack, Card abilities, Ship
 
 
-## Guides
+### Guides
 
 Each ship’s base has two pairs of movement guides, one pair on the front and one pair on the back. These guides are ignored for all purposes except executing maneuvers and overlapping obstacles and other ships. In those cases, the guides count as part of the base.
 
@@ -667,7 +667,7 @@ Each ship’s base has two pairs of movement guides, one pair on the front and o
 **Related Topics:** Maneuver, Obstacles, Overlapping ships
 
 
-## Hit
+### Hit
 
 During the “Compare Results” step of attack, a ship is hit if there are any [Hit] or [Critical Hit] results remaining after canceling dice.
 
@@ -675,7 +675,7 @@ During the “Compare Results” step of attack, a ship is hit if there are any 
 **Related Topics:** Attack, Dice results
 
 
-## Huge ship †
+### Huge ship †
 
 A ship with more than one plastic base is a huge ship. The rules for huge ships are included in those products.
 
@@ -683,7 +683,7 @@ A ship with more than one plastic base is a huge ship. The rules for huge ships 
 **Related Topics:** Formats of play, Large ship†, Ship, Small ship, Squad building, Upgrade cards
 
 
-## Hull
+### Hull
 
 The yellow number on a ship’s Ship card is its hull value. The hull value indicates how many Damage cards must be dealt to it to destroy it.
 
@@ -691,7 +691,7 @@ The yellow number on a ship’s Ship card is its hull value. The hull value indi
 **Related Topics:** Attack, Damage, Destroying ships
 
 
-## Id tokens
+### Id tokens
 
 ID Tokens identify which ships in the play area correspond to which Ship card. If a player fields multiple copies of the same non-unique Ship card, he must assign a different set of ID tokens to each of those ships.
 
@@ -703,7 +703,7 @@ To assign an ID token to a ship, the player places one ID token on the ship’s 
 **Related Topics:** Faction, Setup, Ship, Squad building
 
 
-## Initiative
+### Initiative
 
 The player whose squad has the lowest total squad point cost chooses which player has initiative. If they are tied for squad point cost, one player rolls an attack die. On a [Hit] or [Critical Hit] result, that player chooses who has initiative. On a [Focus] or blank result, his opponent chooses who has initiative.
 
@@ -717,7 +717,7 @@ The player whose squad has the lowest total squad point cost chooses which playe
 **Related Topics:** Activation phase, Card abilities, Combat phase, Pilot skill, Setup, Squad building, Squad points
 
 
-## Ion token †
+### Ion token †
 
 Some card abilities can cause a ship to receive an ion token. A ship is ionized while it has an ion token assigned to it. An ionized ship follows special rules during the following phases:
 
@@ -733,7 +733,7 @@ Some card abilities can cause a ship to receive an ion token. A ship is ionized 
 **Related Topics:** Activation phase, Difficulty, Large ship†, Planning phase
 
 
-## Koiogran turn
+### Koiogran turn
 
 See “Bearing” on page 6.
 
@@ -741,7 +741,7 @@ See “Bearing” on page 6.
 **Related Topics:** Bearing
 
 
-## Large ship †
+### Large ship †
 
 A large ship uses a plastic base that is about 3-1/8" (8 cm) long. Large ships follow all of the rules of small ships with the following exceptions:
 
@@ -755,7 +755,7 @@ A large ship uses a plastic base that is about 3-1/8" (8 cm) long. Large ships f
 **Related Topics:** Barrel roll, Huge ship†, Ion token†, Setup, Ship, Small ship, Upgrade cards
 
 
-## Limited †
+### Limited †
 
 A ship cannot equip more than one copy of the same card with the Limited trait.
 
@@ -763,7 +763,7 @@ A ship cannot equip more than one copy of the same card with the Limited trait.
 **Related Topics:** Squad building, Upgrade cards
 
 
-## Maneuver
+### Maneuver
 
 Each selection on the maneuver dial is a single maneuver, which consists of a speed (number), a bearing (arrow), and a difficulty (color). Ships execute maneuvers during the Activation phase by resolving the “Execute Maneuver” step.
 
@@ -775,7 +775,7 @@ Each selection on the maneuver dial is a single maneuver, which consists of a sp
 **Related Topics:** Activation phase, Barrel roll, Bearing, Boost, Difficulty, Fleeing the battlefield, Guides, Moving through, Obstacles, Overlapping ships, Planning phase, Speed, Stress, Touching
 
 
-## Missions
+### Missions
 
 Missions are an alternative mode of play. Three different missions and the basic rules for playing missions are described in the Mission Guide. Some expansion packs include additional missions.
 
@@ -783,7 +783,7 @@ Missions are an alternative mode of play. Three different missions and the basic
 **Related Topics:** Formats of play
 
 
-## Modifications †
+### Modifications †
 
 Modifications are special upgrades that do not appear in any ship’s upgrade bar. Any ship may equip a modification unless the card is restricted to a specific type of ship. Each ship is limited to one modification.
 
@@ -791,7 +791,7 @@ Modifications are special upgrades that do not appear in any ship’s upgrade ba
 **Related Topics:** Squad building, Upgrade cards
 
 
-## Modifying dice
+### Modifying dice
 
 Players can modify dice by spending focus, evade, and target lock tokens and by resolving card abilities. Dice can be modified in the following ways:
 
@@ -807,7 +807,7 @@ Players can modify dice by spending focus, evade, and target lock tokens and by 
 **Related Topics:** Acquire a target lock, Attack, Card abilities, Dice results, Evade, Focus
 
 
-## Moving through
+### Moving through
 
 When executing a maneuver, a ship moves through an obstacle or another ship if its maneuver template overlaps that obstacle token or that ship’s base. A ship can move through another ship without issue, but moving through an obstacles produces the effects described in the “Obstacles” section.
 
@@ -819,7 +819,7 @@ When executing a maneuver, a ship moves through an obstacle or another ship if i
 **Related Topics:** Activation phase, Maneuver, Obstacles, Overlapping ships, Ship
 
 
-## Obstacles
+### Obstacles
 
 Obstacles acts as hazards that can disrupt and damage ships. When a ship executes a maneuver, if its base or maneuver template overlaps an obstacle token, it executes its maneuver as normal but suffers an effect based on the type of obstacle:
 
@@ -847,7 +847,7 @@ When a ship performs an attack, if it measures range through an obstacle, the at
 **Related Topics:** Activation phase, Attack, Barrel roll, Boost, Damage, Guides, Maneuver, Moving through, Obstructed, Setup
 
 
-## Obstructed
+### Obstructed
 
 An attack is obstructed if the attacker measures range through an obstacle. If an attack is obstructed, the defender rolls one additional defense die during the “Roll Defense Dice” step.
 
@@ -861,7 +861,7 @@ An attack is obstructed if the attacker measures range through an obstacle. If a
 **Related Topics:** Attack, Obstacles, Range
 
 
-## Overlapping ships
+### Overlapping ships
 
 A ship overlaps another ship when executing a maneuver if its base overlaps the other ship’s base. If this happens, move the moving ship backward along the template until it is no longer overlapping another ship. While doing so, adjust the facing of the ship so that the template remains centered between both sets of guides on the ship’s base. Once the ship is no longer overlapping another ship, place it so that it is touching the last ship it overlapped. The ship must skip its “Perform Action” step this round.
 
@@ -875,7 +875,7 @@ A ship overlaps another ship when executing a maneuver if its base overlaps the 
 **Related Topics:** Actions, Activation phase, Fleeing the battlefield, Guides, Maneuver, Moving through, Touching
 
 
-## Pilot skill
+### Pilot skill
 
 A ship’s pilot skill is the orange number to the left of the ship’s name on its Ship card. Pilot skill determines the order in which ships move during the Activation phase and attack during the Combat phase, as well as the order in which ships are placed during setup.
 
@@ -887,7 +887,7 @@ A ship’s pilot skill is the orange number to the left of the ship’s name on 
 **Related Topics:** Activation phase, Attack, Combat phase, Initiative, Setup, Simultaneous attack rule
 
 
-## Planning phase
+### Planning phase
 
 During the Planning phase, each player secretly chooses a maneuver for each of his ships. To choose a maneuver, the player rotates the faceplate of the ship’s maneuver dial until the window shows only the desired maneuver. Then he assigns the maneuver by placing the dial facedown in the play area next to the matching ship.
 
@@ -903,7 +903,7 @@ The phase ends when each ship has a dial assigned to it and neither player wishe
 **Related Topics:** Ion token†, Maneuver, Round
 
 
-## Play area
+### Play area
 
 The play area is the defined area on a flat surface in which the ships are placed and maneuvered. If any part of a ship’s base is outside the play area, that ship has fled the battlefield.
 
@@ -915,7 +915,7 @@ The recommended play area is 3' x 3' (0.9144 m) for a standard 100-point dogfigh
 **Related Topics:** Fleeing the battlefield, Setup, Squad building
 
 
-## Primary weapon
+### Primary weapon
 
 A ship’s primary weapon value is the red number on its Ship card. This value indicates how many attack dice the ship rolls when attacking during the “Roll Attack Dice” step unless it is attacking with a secondary weapon.
 
@@ -929,7 +929,7 @@ A ship’s primary weapon value is the red number on its Ship card. This value i
 **Related Topics:** Attack, Auxiliary firing arc†, Range, Range combat bonus, Secondary weapons, Turret primary weapon†
 
 
-## Range
+### Range
 
 Range is the distance between two ships as measured by the range ruler, which is divided into three range bands. To measure range between two ships, place the range ruler over the point of the first ship that is closest to the second ship, then point the other end of the ruler toward the point of the second ship’s base that is closest to the first base. The range is the band of the range ruler that falls over the closest point of the second ship.
 
@@ -957,7 +957,7 @@ When measuring range for an attack, the attacker measures to the closest point o
 **Related Topics:** Attack, Auxiliary firing arc†, Firing arc, Obstructed, Primary weapon, Range combat bonus, Secondary weapons, Setup, Turret primary weapon†, Weapon range
 
 
-## Range combat bonus
+### Range combat bonus
 
 When resolving a primary weapon attack, the attacker or defender may roll additional dice depending on the range of the attack. At Range 1, the attacker rolls one additional attack die during the “Roll Attack Dice” step. At Range 3, the defender rolls one additional defense die during the “Roll Defense Dice” step.
 
@@ -967,7 +967,7 @@ When resolving a primary weapon attack, the attacker or defender may roll additi
 **Related Topics:** Attack, Primary weapon, Range, Secondary weapons, Turret primary weapon†
 
 
-## Round
+### Round
 
 A single game round consists of four phases resolved in the following order: Planning phase, Activation phase, Combat phase, End phase. The first round begins after setup is completed.
 
@@ -975,7 +975,7 @@ A single game round consists of four phases resolved in the following order: Pla
 **Related Topics:** Activation phase, Combat phase, End phase, Planning phase, Setup, Tracking tokens, Winning the game
 
 
-## Secondary weapons
+### Secondary weapons
 
 Secondary weapons are upgrades that feature the “**Attack:**” header in their card text. They provide additional types of attack other than a ship’s primary weapon.
 
@@ -993,7 +993,7 @@ To use a secondary weapon, the attacker must meet all requirements indicated in 
 **Related Topics:** Attack, Auxiliary firing arc†, Card abilities, Firing arc, Primary weapon, Range, Range combat bonus, Turret primary weapon†, Upgrade cards, Weapon range
 
 
-## Segnor’s loop
+### Segnor’s loop
 
 See “Bearing” on page 6.
 
@@ -1001,7 +1001,7 @@ See “Bearing” on page 6.
 **Related Topics:** Bearing
 
 
-## Setup
+### Setup
 
 Before playing, set up the game as follows:
 
@@ -1023,7 +1023,7 @@ Before playing, set up the game as follows:
 **Related Topics:** Id tokens, Initiative, Large ship†, Obstacles, Pilot skill, Play area, Range, Round, Shields, Squad building, Tracking tokens
 
 
-## Shields
+### Shields
 
 Shields allow a ship to suffer damage without the risk of being dealt faceup Damage cards. The blue number on a Ship card is the ship’s shield value, indicating how many shield tokens to place on the Ship card during setup.
 
@@ -1033,7 +1033,7 @@ Shields allow a ship to suffer damage without the risk of being dealt faceup Dam
 **Related Topics:** Attack, Damage, Setup
 
 
-## Ship
+### Ship
 
 A ship is composed of a plastic figure, pegs, a base, and a ship token, plus ID tokens if necessary.
 
@@ -1047,7 +1047,7 @@ A ship is composed of a plastic figure, pegs, a base, and a ship token, plus ID 
 **Related Topics:** Enemy, Faction, Friendly, Huge ship†, Id tokens, Large ship†, Moving through, Small ship
 
 
-## Simultaneous attack rule
+### Simultaneous attack rule
 
 During the Combat phase, all ships with a pilot skill value equal to the active ship have the opportunity to attack before being destroyed. If a ship would be destroyed and it has the same pilot skill value as the active ship but has **not** had an opportunity to attack yet, it is not destroyed. Instead, it retains its Damage cards and continues to function as normal, suffering any effects on its Damage cards. After it has had its opportunity to attack, it is destroyed and removed from the play area.
 
@@ -1061,7 +1061,7 @@ During the Combat phase, all ships with a pilot skill value equal to the active 
 **Related Topics:** Attack, Damage, Destroying ships, Pilot skill
 
 
-## Small ship
+### Small ship
 
 A small ship uses a plastic base that is about 1-9/16" (4 cm) long. Small ships do not follow any special rules, though their size may be referred to by some card abilities.
 
@@ -1069,7 +1069,7 @@ A small ship uses a plastic base that is about 1-9/16" (4 cm) long. Small ships 
 **Related Topics:** Huge ship†, Large ship†, Ship
 
 
-## Speed
+### Speed
 
 The speed of a maneuver is indicated by the number of the maneuver below the bearing arrow on the dial.
 
@@ -1079,7 +1079,7 @@ The speed of a maneuver is indicated by the number of the maneuver below the bea
 **Related Topics:** Bearing, Difficulty, Maneuver
 
 
-## Spend
+### Spend
 
 When a ship spends a token or other component, that component is removed from the ship and returned to the supply. A ship cannot spend a component that is assigned to another ship unless an effect specifies otherwise.
 
@@ -1087,7 +1087,7 @@ When a ship spends a token or other component, that component is removed from th
 **Related Topics:** Card abilities
 
 
-## Squad building
+### Squad building
 
 Each player builds a squad by choosing ships and upgrades whose total squad point cost does not exceed the total agreed upon by the players during the “Gather Forces” step of setup. The squad point cost of each ship and upgrade is printed in the lower- right corner of each card. The recommended squad point total for a standard dogfight is 100 points.
 
@@ -1105,7 +1105,7 @@ A player can build a squad using any available ships and upgrades with the follo
 **Related Topics:** Faction, Formats of play, Huge ship†, Id tokens, Initiative, Limited†, Modifications†, Play area, Setup, Squad points, Title†, Unique names, Upgrade cards, Upgrade icons
 
 
-## Squad points
+### Squad points
 
 Each Ship card and Upgrade card has a squad point cost printed in the lower-right corner of the card.
 
@@ -1115,7 +1115,7 @@ Each Ship card and Upgrade card has a squad point cost printed in the lower-righ
 **Related Topics:** Initiative, Squad building, Upgrade cards, Winning the game
 
 
-## Stress
+### Stress
 
 A ship is stressed while it has a stress token assigned to it. A stressed ship cannot execute red maneuvers or perform actions, even free actions. A ship receives one stress token when it executes a red maneuver and removes one stress token when it executes a green maneuver.
 
@@ -1131,7 +1131,7 @@ A ship is stressed while it has a stress token assigned to it. A stressed ship c
 **Related Topics:** Actions, Activation phase, Bearing, Cloak†, Difficulty, Free actions, Maneuver
 
 
-## Suffer damage
+### Suffer damage
 
 See “Damage” on page 9.
 
@@ -1139,12 +1139,12 @@ See “Damage” on page 9.
 **Related Topics:** Damage
 
 
-## Supply
+### Supply
 
 The supply is the shared set of game components that are not being used by any player, such as unassigned focus tokens, unused Ship cards, etc.
 
 
-## Tallon roll
+### Tallon roll
 
 See “Bearing” on page 6.
 
@@ -1152,7 +1152,7 @@ See “Bearing” on page 6.
 **Related Topics:** Bearing
 
 
-## Target
+### Target
 
 The target of an attack is declared during the “Declare Target” step. A successfully targeted enemy ship is the defender.
 
@@ -1160,7 +1160,7 @@ The target of an attack is declared during the “Declare Target” step. A succ
 **Related Topics:** Attack, Defender
 
 
-## Target lock
+### Target lock
 
 A target lock consists of a blue target lock token, which is assigned to the ship that acquires the lock (the locking ship), and a red target lock token, which is assigned to an enemy ship (the locked ship).
 
@@ -1168,7 +1168,7 @@ A target lock consists of a blue target lock token, which is assigned to the shi
 **Related Topics:** Acquire a target lock
 
 
-## Title †
+### Title †
 
 A title is a type of upgrade. Any ship can equip a title as long as the title is not restricted to a different type of ship. A ship cannot equip more than one title.
 
@@ -1176,7 +1176,7 @@ A title is a type of upgrade. Any ship can equip a title as long as the title is
 **Related Topics:** Squad building, Upgrade cards
 
 
-## Touching
+### Touching
 
 Two ships are touching if one ship overlapped the other ship while executing a maneuver and their bases are touching as a result. A ship cannot attack another ship that it is touching.
 
@@ -1190,7 +1190,7 @@ Two ships are touching if one ship overlapped the other ship while executing a m
 **Related Topics:** Maneuver, Overlapping ships
 
 
-## Tracking tokens
+### Tracking tokens
 
 Tracking tokens are used to track the number of rounds played during a game. When tracking rounds, the players place one tracking token next to the play area during setup and at the end of each round. The number of tracking tokens next to the play area indicates the current round number.
 
@@ -1202,7 +1202,7 @@ Tracking tokens are used to track the number of rounds played during a game. Whe
 **Related Topics:** Round, Setup
 
 
-## Turret primary weapon †
+### Turret primary weapon †
 
 Some ships use a turret as their primary weapon. Each of these ships has a unique primary weapon icon, and each ship token shows a circular red arrow around the token’s center as a reminder. When attacking with a turret primary weapon, a ship may target an enemy ship inside or outside its firing arc.
 
@@ -1214,7 +1214,7 @@ Some ships use a turret as their primary weapon. Each of these ships has a uniqu
 **Related Topics:** Attack, Auxiliary firing arc†, Firing arc, Primary weapon, Range, Range combat bonus, Secondary weapons
 
 
-## Unique names
+### Unique names
 
 Some Ship cards and Upgrade cards have unique names, which are identified by the bullet ([Unique]) to the left of the name. A player cannot field two or more cards that share the same unique name, even if those cards are of different types.
 
@@ -1222,7 +1222,7 @@ Some Ship cards and Upgrade cards have unique names, which are identified by the
 **Related Topics:** Squad building, Upgrade cards
 
 
-## Upgrade cards
+### Upgrade cards
 
 When building a squad, a player can field upgrades for his ships by paying their squad point cost, which is listed in the lower-right corner of each Upgrade card. The upgrade bar along the bottom of a Ship card displays icons that represent which upgrades that ship can equip. For each icon shown in the upgrade bar, the ship can equip one Upgrade card with the matching icon.
 
@@ -1246,7 +1246,7 @@ Some Upgrade cards have one or more of the following traits in their card text:
 **Related Topics:** Bombs†, Card abilities, Faction, Huge ship†, Large ship†, Limited†, Modifications†, Secondary weapons, Squad building, Squad points, Title†, Unique names, Upgrade icons, Weapon range
 
 
-## Upgrade icons
+### Upgrade icons
 
 Each upgrade icon uses the corresponding name listed below:
 
@@ -1266,7 +1266,7 @@ Each upgrade icon uses the corresponding name listed below:
 **Related Topics:** Squad building, Upgrade cards
 
 
-## Weapon range
+### Weapon range
 
 Each secondary weapon has a weapon range indicated on its Upgrade card below the red attack value. A ship cannot attack with a secondary weapon unless the target is at the specified weapon range (e.g. if the weapon range is Range 2–3, the weapon cannot be used at Range 1).
 
@@ -1274,7 +1274,7 @@ Each secondary weapon has a weapon range indicated on its Upgrade card below the
 **Related Topics:** Attack, Range, Secondary weapons, Upgrade cards
 
 
-## Winning the game
+### Winning the game
 
 The game ends at the end of a round if all of a player’s ships are destroyed. The player with no ships remaining loses, and the player with at least one ship remaining wins. If both players’ last remaining ships are destroyed in the same round, the game ends in a draw.
 
@@ -1284,7 +1284,7 @@ The game ends at the end of a round if all of a player’s ships are destroyed. 
 **Related Topics:** Destroying ships, Round, Squad points
 
 
-## Team play
+### Team play
 
 Although a game of **X-Wing** always consists of two sides, it is possible to play the game with more than two players. To play with more than two players, the players divide themselves as equally as possible into two teams.
 
@@ -1297,7 +1297,7 @@ Players win (and lose) together as a team. It is possible for all of one player�
 Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.
 
 
-## Round limit and time limit
+### Round limit and time limit
 
 Instead of playing a game until all of one player’s ships are destroyed, the players can use a round limit or time limit to restrict the length of a game.
 

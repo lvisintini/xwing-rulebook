@@ -11,10 +11,16 @@
     <div class="RuleBook__Inner RuleBook__Inner--fancy-border">
       <h1>{{ rl.name }}</h1>
 
-      {{ rl.description | xwing_icons | md2html }}
+      {{ rl.content | xwing_icons | md2html }}
 
-      {% for rbr in rl.rulebookrule_set.all %}
-        {% include 'html/includes/_rule.html' with rule=rbr.rule %}
+      {% for section in rl.booksection_set.all %}
+        <h2>{{ section.title }}</h2>
+        {{ section.content | xwing_icons | md2html }}
+
+        {% for section_rule in section.sectionrule_set.all %}
+          {% include 'html/includes/_rule.html' with rule=section_rule.rule %}
+        {% endfor %}
+
       {% endfor %}
 
        {{ '[Epic]' | xwing_icons  }}

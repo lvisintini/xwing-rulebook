@@ -10,43 +10,25 @@ class SourceAdmin(admin.ModelAdmin):
     list_display = ('name', 'date', 'version')
 
 
-class ReferenceInline(nested_admin.NestedTabularInline):
-    model = models.Reference
-    extra = 0
-
-
-class ParagraphAdminForm(forms.ModelForm):
-
+class ClauseContentAdminForm(forms.ModelForm):
     def has_changed(self):
         return True
 
-    def clean_text(self):
-        if not self.cleaned_data.get('format', {}).get('keep_line_breaks', False):
-            return ' '.join(self.cleaned_data['text'].strip().splitlines())
-        return self.cleaned_data['text'].strip()
-
-    def clean_format(self):
-        format_data = self.cleaned_data['format']
-
-        if format_data.get('type') not in ['text', 'item:ul', 'item:ol', 'table']:
-            raise forms.ValidationError('Invalid format["type"]')
-
-        if not isinstance(format_data.get('level'), int):
-            raise forms.ValidationError('Invalid format["level"]')
-
-        if not isinstance(format_data.get('expansion_rule', False), bool):
-            raise forms.ValidationError('Invalid format["expansion_rule"]')
-
-        if not isinstance(format_data.get('keep_line_breaks', False), bool):
-            raise forms.ValidationError('Invalid format["keep_line_breaks"]')
-
-        return format_data
+    def clean_content(self):
+        if not self.cleaned_data.get('keep_line_breaks', False):
+            return ' '.join(self.cleaned_data['content'].strip().splitlines())
+        return self.cleaned_data['content'].strip()
 
 
-class ParagraphInline(nested_admin.NestedTabularInline):
-    model = models.Paragraph
-    form = ParagraphAdminForm
-    inlines = (ReferenceInline, )
+class ClauseContentInline(nested_admin.NestedTabularInline):
+    model = models.ClauseContent
+    extra = 0
+    form = ClauseContentAdminForm
+
+
+class ClauseInline(nested_admin.NestedTabularInline):
+    model = models.Clause
+    inlines = (ClauseContentInline, )
     sortable_field_name = 'order'
     extra = 0
 
@@ -59,34 +41,34 @@ class RuleAdminForm(forms.ModelForm):
 @admin.register(models.Rule)
 class RuleAdmin(nested_admin.NestedModelAdmin):
     list_display = ('name', 'id',)
-    inlines = (ParagraphInline, )
+    inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
     filter_horizontal = ['related_topics', ]
     save_on_top = True
 
 
-class RuleBookRuleInline(nested_admin.NestedTabularInline):
-    model = models.RuleBookRule
+class SectionRuleInline(nested_admin.NestedTabularInline):
+    model = models.SectionRule
     sortable_field_name = 'order'
+    extra = 0
+
+class BookSectionInline(nested_admin.NestedTabularInline):
+    model = models.BookSection
+    sortable_field_name = 'order'
+    inlines = (SectionRuleInline, )
     extra = 0
 
 
 @admin.register(models.RuleBook)
 class RuleBookAdmin(nested_admin.NestedModelAdmin):
     list_display = ('name', 'code', 'version')
-    inlines = (RuleBookRuleInline, )
+    inlines = (BookSectionInline, )
 
 
-class ReferenceInline(admin.TabularInline):
-    model = models.Reference
-    extra = 0
-
-
-@admin.register(models.Paragraph)
-class ParagraphAdmin(admin.ModelAdmin):
+@admin.register(models.Clause)
+class ClauseAdmin(nested_admin.NestedModelAdmin):
     list_display = ('__str__', 'needs_revision')
-    inlines = (ReferenceInline, )
     list_filter = ['needs_revision', ]
-    search_fields = ['text', ]
-    form = ParagraphAdminForm
+    search_fields = ['content', ]
+    inlines = (ClauseContentInline, )
