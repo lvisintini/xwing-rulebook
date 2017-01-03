@@ -9,6 +9,5 @@ $ sudo chown lvisintini:lvisintini /home/lvisintini/src/xwing-rulebook/backups/r
 
 
 $ python xwing_rulebook/manage.py rulebook_markdown --rulebook URR-SWX > outputs/urr-swx.md
-$ python xwing_rulebook/manage.py rules_json --separate-paragraphs > outputs/paragraphs.json
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
 ```

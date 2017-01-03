@@ -1,4 +1,3 @@
-from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 from util.lib import render_template
@@ -85,57 +84,11 @@ class ClauseContent(models.Model):
         return self.source.code
 
 
-# Deprecate
-class Paragraph(models.Model):
-    rule = models.ForeignKey('rule.Rule', related_name='paragraphs')
-    order = models.IntegerField(default=0)
-    format = JSONField(default={'type': 'text', 'level': 0})
-    text = models.TextField(default='')
-    sources = models.ManyToManyField(
-        'rule.Source', related_name='paragraphs', through='rule.Reference'
-    )
-    needs_revision = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['order', ]
-        unique_together = ('rule', 'order')
-
-    @property
-    def anchor_id(self):
-        return '{}-{}'.format(self.rule.anchor_id, self.order)
-
-    @property
-    def reference_text(self):
-        return ', '.join([
-            '{} (Page {})'.format(ref.source.code, ref.page)
-            for ref in self.reference_set.all()
-        ])
-
-    def __str__(self):
-        return 'Rule "{}" Paragraph {}'.format(self.rule, self.order)
-
-
-# Deprecate
-class Reference(models.Model):
-    source = models.ForeignKey('rule.Source')
-    paragraph = models.ForeignKey('rule.Paragraph')
-    page = models.IntegerField(default=0)
-
-    class Meta:
-        ordering = ['source', 'page']
-
-    def __str__(self):
-        return 'Page {} - {}'.format(self.page, self.source)
-
-
 class RuleBook(models.Model):
     name = models.CharField(max_length=125)
     code = models.CharField(max_length=25, default='', unique=True)
     version = models.CharField(max_length=25, null=True, blank=True)
     description = models.TextField(default='')
-    rules = models.ManyToManyField(
-        'rule.Rule', related_name='rule_books', through='rule.RuleBookRule'
-    )
 
     def __str__(self):
         return self.name
@@ -165,16 +118,3 @@ class SectionRule(models.Model):
 
     def __str__(self):
         return '{}: {}'.format(self.book_section, self.rule)
-
-
-# Deprecate
-class RuleBookRule(models.Model):
-    rule_book = models.ForeignKey('rule.RuleBook')
-    rule = models.ForeignKey('rule.Rule')
-    order = models.IntegerField(default=0)
-
-    class Meta:
-        ordering = ['order', ]
-
-    def __str__(self):
-        return '{}:{}'.format(self.rule_book, self.rule)
