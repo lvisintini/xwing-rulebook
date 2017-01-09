@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load markdown %}
+{% load xwing_icons %}
+
+{% block meta-title  %}{{ rulebook.name }}{% endblock %}
+
+{% block page_wapper_class %} u-background-dark{% endblock %}
+
+{% block content %}
+  <div class="RuleBook">
+    <div class="RuleBook__Inner RuleBook__Inner--fancy-border">
+      <h1>{{ rulebook.name }}</h1>
+
+      {{ rulebook.content | xwing_icons | md2html }}
+
+      <h2>
+        <a href="{% url 'rule:section' rulebook_slug=rulebook.slug section_slug=section.slug%}">
+          {{ section.title }}
+        </a>
+      </h2>
+
+      <ul>
+          {% for section_rule in section.sectionrule_set.all %}
+            <li>
+              <a href="{% url 'rule:rule' rulebook_slug=rulebook.slug section_slug=section.slug rule_slug=section_rule.rule.slug %}">
+                {{ section_rule.rule.name }}
+              </a>
+            </li>
+          {% endfor %}
+      </ul>
+
+       {{ '[Epic]' | xwing_icons  }}
+      <div>
+    <div>
+  </div>
+{% endblock %}

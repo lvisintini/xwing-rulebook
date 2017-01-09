@@ -17,7 +17,6 @@ class Command(BaseCommand):
                 ('date', source.date.isoformat()),
                 ('version', source.version),
                 ('code', source.code),
-                ('description', source.description),
             ])
             sources.append(s)
         self.stdout.write(json.dumps(sources, indent=2, ensure_ascii=False))

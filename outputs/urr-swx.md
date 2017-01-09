@@ -225,7 +225,7 @@ Ships with the [Barrel Roll] icon in their action bar may perform the barrel rol
 
 - Performing a barrel roll does not count as executing a maneuver.
 
-- Large ships barrel roll as described in the “Large Ship” glossary entry on page 13.
+- When a large ship performs a barrel roll, instead of placing the end of the template against the ship’s base, place the long side of the template against the ship’s base. All other rules for performing a barrel roll apply as normal.
 
 
 **Related Topics:** Actions, Cloak†, Fleeing the battlefield, Large ship†, Maneuver, Obstacles
@@ -256,7 +256,7 @@ Bearing is indicated by the arrows on the maneuver dial. There are several beari
 - A ship that executes a stationary maneuver still counts as executing a maneuver even though it does not change position.
 
 
-**Related Topics:** Activation phase, Difficulty, Koiogran turn, Maneuver, Segnor’s loop, Speed, Stress, Tallon roll
+**Related Topics:** Activation phase, Difficulty, Maneuver, Speed, Stress
 
 
 ### Bombs †
@@ -285,16 +285,8 @@ Each Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb to
 
 - If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.
 
-- The effects of each bomb are described on its Bomb Token Reference card and are reprinted below for convenience:
 
-    - **Proton Bomb:** When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.
-
-    - **Proximity Mine:** When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.
-
-    - **Seismic Charge:** When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.
-
-
-**Related Topics:** Detonating a bomb†, Dropping a bomb†, Upgrade cards
+**Related Topics:** Proton bomb†, Proximity mine†, Seismic charge†, Upgrade cards
 
 
 ### Boost
@@ -447,15 +439,37 @@ If a ship has a number of Damage cards equal to its hull value, it is destroyed.
 
 - If the players have more than one Damage deck, they should not shuffle them together. Instead, each player uses his own Damage deck and discard pile and does not assign his own Damage cards to any enemy ships.
 
-- The Damage deck included in this box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.
+- The Damage deck included in the **X-Wing** The Force Awakens core set box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.
 
 
-**Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule, Suffer damage
+**Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule
 
 
 ### Decloak †
 
-See “Cloak” on page 8.
+At the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).
+
+When a ship decloaks, it must choose one of the following effects:
+
+1. Perform a barrel roll using the [[Straight] 2] maneuver template.
+
+1. Perform a boost using the [[Straight] 2] maneuver template.
+
+After all decloaking has been resolved, the Activation phase continues as normal.
+
+- Decloaking is not an action or a maneuver.
+
+- A ship can decloak even while stressed.
+
+- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.
+
+- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.
+
+- A ship cannot decloak if this would cause the ship to flee the battlefield.
+
+- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.
+
+- If a ship cannot decloak in any direction, it cannot decloak.
 
 
 **Related Topics:** Cloak†
@@ -479,14 +493,6 @@ A ship is destroyed when it has a number of Damage cards equal to its hull value
 
 
 **Related Topics:** Attack, Damage, Fleeing the battlefield, Hull, Simultaneous attack rule, Winning the game
-
-
-### Detonating a bomb †
-
-See “Bombs” on page 7
-
-
-**Related Topics:** Bombs†
 
 
 ### Dice results
@@ -527,14 +533,6 @@ The difficulty of a maneuver is indicated by the color of the bearing icon. When
 
 
 **Related Topics:** Activation phase, Bearing, Ion token†, Maneuver, Speed, Stress
-
-
-### Dropping a bomb †
-
-See “Bombs” on page 7.
-
-
-**Related Topics:** Bombs†
 
 
 ### End phase
@@ -731,14 +729,6 @@ Some card abilities can cause a ship to receive an ion token. A ship is ionized 
 
 
 **Related Topics:** Activation phase, Difficulty, Large ship†, Planning phase
-
-
-### Koiogran turn
-
-See “Bearing” on page 6.
-
-
-**Related Topics:** Bearing
 
 
 ### Large ship †
@@ -993,14 +983,6 @@ To use a secondary weapon, the attacker must meet all requirements indicated in 
 **Related Topics:** Attack, Auxiliary firing arc†, Card abilities, Firing arc, Primary weapon, Range, Range combat bonus, Turret primary weapon†, Upgrade cards, Weapon range
 
 
-### Segnor’s loop
-
-See “Bearing” on page 6.
-
-
-**Related Topics:** Bearing
-
-
 ### Setup
 
 Before playing, set up the game as follows:
@@ -1131,25 +1113,9 @@ A ship is stressed while it has a stress token assigned to it. A stressed ship c
 **Related Topics:** Actions, Activation phase, Bearing, Cloak†, Difficulty, Free actions, Maneuver
 
 
-### Suffer damage
-
-See “Damage” on page 9.
-
-
-**Related Topics:** Damage
-
-
 ### Supply
 
 The supply is the shared set of game components that are not being used by any player, such as unassigned focus tokens, unused Ship cards, etc.
-
-
-### Tallon roll
-
-See “Bearing” on page 6.
-
-
-**Related Topics:** Bearing
 
 
 ### Target
@@ -1282,6 +1248,30 @@ The game ends at the end of a round if all of a player’s ships are destroyed. 
 
 
 **Related Topics:** Destroying ships, Round, Squad points
+
+
+### Proton bomb †
+
+When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.
+
+
+**Related Topics:** Bombs†
+
+
+### Proximity mine †
+
+When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.
+
+
+**Related Topics:** Bombs†
+
+
+### Seismic charge †
+
+When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.
+
+
+**Related Topics:** Bombs†
 
 
 ### Team play

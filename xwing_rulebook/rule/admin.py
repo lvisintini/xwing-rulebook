@@ -24,7 +24,7 @@ class RuleAdminForm(forms.ModelForm):
 
 
 class ClauseContentVersionInline(nested_admin.NestedTabularInline):
-    fields = ('content', 'content_related_rules', 'active', )
+    fields = ('content', 'content_related_rules', 'active')
     model = ClauseContentVersion
     extra = 0
     readonly_fields = ['content_related_rules',]
@@ -64,7 +64,7 @@ class BookSectionInline(nested_admin.NestedTabularInline):
 
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'date', 'version')
+    list_display = ('name', 'date', 'version', 'code', 'processed')
 
 
 class ClauseCountFilter(admin.SimpleListFilter):
@@ -90,7 +90,7 @@ class ClauseCountFilter(admin.SimpleListFilter):
 
 @admin.register(ClauseContent)
 class ClauseContentAdmin(admin.ModelAdmin):
-    list_display = ('id', '__str__', 'linked_clause_count', 'related_rules')
+    list_display = ('id', 'title', '__str__', 'linked_clause_count', 'related_rules', 'source')
     form = ClauseContentAdminForm
     search_fields = ['id', 'content']
     readonly_fields = ('linked_clause_count', 'related_rules')
@@ -111,6 +111,7 @@ class ClauseContentAdmin(admin.ModelAdmin):
 
 @admin.register(Rule)
 class RuleAdmin(nested_admin.NestedModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
     list_display = ('name', 'id',)
     inlines = (ClauseInline, )
     form = RuleAdminForm
@@ -122,6 +123,7 @@ class RuleAdmin(nested_admin.NestedModelAdmin):
 
 @admin.register(RuleBook)
 class RuleBookAdmin(nested_admin.NestedModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
     list_display = ('name', 'code', 'version')
     inlines = (BookSectionInline, )
 

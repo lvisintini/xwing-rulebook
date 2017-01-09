@@ -1,6 +1,6 @@
 .RuleBook {
   @include vendor('box-shadow', '0px 0px 50px black');
-  background: white url("../images/manual-background.jpg") repeat-y center top;
+  background: white url("../images/background/manual-background.jpg") repeat-y center top;
   width: val($sizes, normal-content-width);
 
   .xwing-miniatures-font,
@@ -14,7 +14,8 @@
     }
 
     p,
-    th {
+    th,
+    li, {
       position: relative;
     }
 
@@ -34,7 +35,7 @@
     width: auto;
     display: block;
     color: white;
-    right: -14em;
+    right: -20em;
     font-size: val($font-size, small);
     line-height: val($line-heights, small);
     padding: val($padding, small);

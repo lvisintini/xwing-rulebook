@@ -446,11 +446,15 @@
     "id": 12,
     "name": "Barrel roll",
     "expansion_rule": false,
-    "markdown": "### Barrel roll\n\nShips with the [Barrel Roll] icon in their action bar may perform the barrel roll action to move laterally and adjust their position. To perform a barrel roll with a small ship, follow these steps:\n\n1. Take the [[Straight] 1] maneuver template.\n\n1. Place one end of the template against the left or right side of the ship’s base. The template cannot be placed beyond the front or back edges of the base.\n\n1. Lift the ship off the play surface, then place the ship at the other end of the template. The template cannot be beyond the front or back edges of the ship’s base, and the ship must face in the same direction as before the barrel roll.\n\n- A ship cannot barrel roll if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot barrel roll if this would cause the ship to flee the battlefield.\n\n- When a player declares a barrel roll action for his ship, he must also declare whether the ship is barrel rolling to the left or to the right before placing the maneuver template on the play area.\n\n- If a player declares a barrel roll action for his ship and cannot complete the action in the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a barrel roll does not count as executing a maneuver.\n\n- Large ships barrel roll as described in the “Large Ship” glossary entry on page 13.\n\n\n**Related Topics:** Actions, Cloak†, Fleeing the battlefield, Large ship†, Maneuver, Obstacles",
+    "markdown": "### Barrel roll\n\nShips with the [Barrel Roll] icon in their action bar may perform the barrel roll action to move laterally and adjust their position. To perform a barrel roll with a small ship, follow these steps:\n\n1. Take the [[Straight] 1] maneuver template.\n\n1. Place one end of the template against the left or right side of the ship’s base. The template cannot be placed beyond the front or back edges of the base.\n\n1. Lift the ship off the play surface, then place the ship at the other end of the template. The template cannot be beyond the front or back edges of the ship’s base, and the ship must face in the same direction as before the barrel roll.\n\n- A ship cannot barrel roll if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot barrel roll if this would cause the ship to flee the battlefield.\n\n- When a player declares a barrel roll action for his ship, he must also declare whether the ship is barrel rolling to the left or to the right before placing the maneuver template on the play area.\n\n- If a player declares a barrel roll action for his ship and cannot complete the action in the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a barrel roll does not count as executing a maneuver.\n\n- When a large ship performs a barrel roll, instead of placing the end of the template against the ship’s base, place the long side of the template against the ship’s base. All other rules for performing a barrel roll apply as normal.\n\n\n**Related Topics:** Actions, Cloak†, Fleeing the battlefield, Large ship†, Maneuver, Obstacles",
     "references": [
       {
         "code": "RR-SWX36",
         "page": 6
+      },
+      {
+        "code": "RR-SWX36",
+        "page": 13
       }
     ],
     "related_rules": [
@@ -484,7 +488,7 @@
     "id": 13,
     "name": "Bearing",
     "expansion_rule": false,
-    "markdown": "### Bearing\n\nBearing is indicated by the arrows on the maneuver dial. There are several bearings available to ships, though each ship has a different set of bearings available to it.\n\n- **Straight:** The straight ([Straight]) bearing advances a ship straight forward.\n\n- **Bank:** The left bank ([Bank Left]) and right bank ([Bank Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 45°.\n\n- **Turn:** The left turn ([Turn Left]) and right turn ([Turn Right]) bearings advance a ship at a tight curve to one side, changing its facing by 90°.\n\n- **Koiogran Turn:** The Koiogran turn ([Koiogran Turn]) bearing advances a ship straight forward, changing its facing by 180°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Segnor’s Loop:** The Segnor’s Loop left ([Segnor's Loop Left]) and Segnor’s Loop right ([Segnor's Loop Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 225°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Tallon Roll:** The Tallon Roll left ([Tallon Roll Left]) and Tallon Roll right ([Tallon Roll Right]) bearings advance a ship at a tight curve to one side, sharply changing its facing by 180°. To achieve this facing, before the player places the ship at the opposite end of the template, he rotates the ship 90° to the left for a Tallon Roll left, or 90° to the right for a Tallon Roll right. The side of the ship’s base must be placed flush against the end of the maneuver template, and the end of the template cannot extend beyond the front or back of the ship’s base.\n\n- **Stationary:** The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.\n\n- If a ship overlaps another ship while executing a Koiogran turn or a Segnor’s Loop, the ship does not rotate 180° at the opposite end of the template. The player places the ship using the rear guides instead of the front guides.\n\n- When a ship executes a Tallon Roll, it must avoid overlapping other ships if possible. If the ship cannot avoid overlapping another ship, it does not rotate 90° at the end of the template.\n\n- A ship that executes a stationary maneuver still counts as executing a maneuver even though it does not change position.\n\n\n**Related Topics:** Activation phase, Difficulty, Koiogran turn, Maneuver, Segnor’s loop, Speed, Stress, Tallon roll",
+    "markdown": "### Bearing\n\nBearing is indicated by the arrows on the maneuver dial. There are several bearings available to ships, though each ship has a different set of bearings available to it.\n\n- **Straight:** The straight ([Straight]) bearing advances a ship straight forward.\n\n- **Bank:** The left bank ([Bank Left]) and right bank ([Bank Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 45°.\n\n- **Turn:** The left turn ([Turn Left]) and right turn ([Turn Right]) bearings advance a ship at a tight curve to one side, changing its facing by 90°.\n\n- **Koiogran Turn:** The Koiogran turn ([Koiogran Turn]) bearing advances a ship straight forward, changing its facing by 180°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Segnor’s Loop:** The Segnor’s Loop left ([Segnor's Loop Left]) and Segnor’s Loop right ([Segnor's Loop Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 225°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.\n\n- **Tallon Roll:** The Tallon Roll left ([Tallon Roll Left]) and Tallon Roll right ([Tallon Roll Right]) bearings advance a ship at a tight curve to one side, sharply changing its facing by 180°. To achieve this facing, before the player places the ship at the opposite end of the template, he rotates the ship 90° to the left for a Tallon Roll left, or 90° to the right for a Tallon Roll right. The side of the ship’s base must be placed flush against the end of the maneuver template, and the end of the template cannot extend beyond the front or back of the ship’s base.\n\n- **Stationary:** The stationary ([Stationary]) bearing does not have a corresponding maneuver template and is always paired with a speed value of “0” to indicate that the ship does not move from its current position.\n\n- If a ship overlaps another ship while executing a Koiogran turn or a Segnor’s Loop, the ship does not rotate 180° at the opposite end of the template. The player places the ship using the rear guides instead of the front guides.\n\n- When a ship executes a Tallon Roll, it must avoid overlapping other ships if possible. If the ship cannot avoid overlapping another ship, it does not rotate 90° at the end of the template.\n\n- A ship that executes a stationary maneuver still counts as executing a maneuver even though it does not change position.\n\n\n**Related Topics:** Activation phase, Difficulty, Maneuver, Speed, Stress",
     "references": [
       {
         "code": "RR-SWX36",
@@ -505,16 +509,8 @@
         "name": "Difficulty"
       },
       {
-        "id": 46,
-        "name": "Koiogran turn"
-      },
-      {
         "id": 49,
         "name": "Maneuver"
-      },
-      {
-        "id": 65,
-        "name": "Segnor’s loop"
       },
       {
         "id": 71,
@@ -523,10 +519,6 @@
       {
         "id": 75,
         "name": "Stress"
-      },
-      {
-        "id": 78,
-        "name": "Tallon roll"
       }
     ]
   },
@@ -534,7 +526,7 @@
     "id": 14,
     "name": "Bombs",
     "expansion_rule": true,
-    "markdown": "### Bombs †\n\nEach Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb token and indicates when the bomb detonates. When a bomb detonates, it produces the effect indicated on its Bomb Token Reference card. To drop a bomb, follow the steps below:\n\n1. Take the [[Straight] 1] maneuver template and slide it between the rear guides of your ship.\n\n1. Place the bomb token indicated on the Upgrade card into the play area and slide the guides of the token into the opposite end of the template.\n\n- Bomb Upgrade cards are not secondary weapons.\n\n- Bomb tokens are not obstacles.\n\n- If a bomb token is dropped on a ship, it is placed under the ship’s base. The bomb does not immediately detonate unless the bomb’s Upgrade card specifies that it detonates when a ship overlaps it.\n\n- If a bomb token that detonates when overlapped is dropped under more than one ship’s base, the ship that dropped the bomb decides which of those ships detonates the bomb.\n\n- If a bomb’s effect specifies that it detonates when a ship or the ship’s maneuver template overlaps it, it detonates regardless of whether the ship was executing a maneuver, barrel rolling, or resolving any other effect or ability that changed its position.\n\n- The guides on a bomb token count as part of the bomb for the purposes of measuring range and overlapping.\n\n- A ship can only drop one bomb per round.\n\n- A bomb can be dropped with a portion of the token outside the play area. Ignore any portion of the token that is outside the play area.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n- The effects of each bomb are described on its Bomb Token Reference card and are reprinted below for convenience:\n\n    - **Proton Bomb:** When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.\n\n    - **Proximity Mine:** When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.\n\n    - **Seismic Charge:** When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.\n\n\n**Related Topics:** Detonating a bomb†, Dropping a bomb†, Upgrade cards",
+    "markdown": "### Bombs †\n\nEach Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb token and indicates when the bomb detonates. When a bomb detonates, it produces the effect indicated on its Bomb Token Reference card. To drop a bomb, follow the steps below:\n\n1. Take the [[Straight] 1] maneuver template and slide it between the rear guides of your ship.\n\n1. Place the bomb token indicated on the Upgrade card into the play area and slide the guides of the token into the opposite end of the template.\n\n- Bomb Upgrade cards are not secondary weapons.\n\n- Bomb tokens are not obstacles.\n\n- If a bomb token is dropped on a ship, it is placed under the ship’s base. The bomb does not immediately detonate unless the bomb’s Upgrade card specifies that it detonates when a ship overlaps it.\n\n- If a bomb token that detonates when overlapped is dropped under more than one ship’s base, the ship that dropped the bomb decides which of those ships detonates the bomb.\n\n- If a bomb’s effect specifies that it detonates when a ship or the ship’s maneuver template overlaps it, it detonates regardless of whether the ship was executing a maneuver, barrel rolling, or resolving any other effect or ability that changed its position.\n\n- The guides on a bomb token count as part of the bomb for the purposes of measuring range and overlapping.\n\n- A ship can only drop one bomb per round.\n\n- A bomb can be dropped with a portion of the token outside the play area. Ignore any portion of the token that is outside the play area.\n\n- If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.\n\n\n**Related Topics:** Proton bomb†, Proximity mine†, Seismic charge†, Upgrade cards",
     "references": [
       {
         "code": "RR-SWX36",
@@ -543,12 +535,16 @@
     ],
     "related_rules": [
       {
-        "id": 25,
-        "name": "Detonating a bomb"
+        "id": 92,
+        "name": "Proton bomb"
       },
       {
-        "id": 28,
-        "name": "Dropping a bomb"
+        "id": 93,
+        "name": "Proximity mine"
+      },
+      {
+        "id": 94,
+        "name": "Seismic charge"
       },
       {
         "id": 86,
@@ -776,7 +772,7 @@
     "id": 21,
     "name": "Damage",
     "expansion_rule": false,
-    "markdown": "### Damage\n\nDuring the “Deal Damage” step of an attack, a ship suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result.\n\nWhen a ship suffers a damage or critical damage, it loses one shield token. If it does not have any shield tokens to lose, it is dealt one Damage card instead. For normal damage, the Damage card is dealt facedown; for critical damage, the Damage card is dealt faceup and the text on the card immediately resolves.\n\nIf a ship has a number of Damage cards equal to its hull value, it is destroyed.\n\n- When a ship suffers damage or critical damage, its hull value is not reduced.\n\n- When a ship is destroyed, its Damage cards are discarded faceup to the discard pile.\n\n- Players can look at the Damage card discard pile at any time.\n\n- If the Damage deck is empty when a Damage card must be dealt or drawn, shuffle the discard pile to create a new Damage deck.\n\n- If both the Damage deck and discard pile are empty, players cannot draw Damage cards from the deck. If a Damage card must be dealt, the players should use a suitable counter (such as a coin or bead) in place of Damage cards until some Damage cards become available to create a deck at the end of the round. Treat all counters as facedown Damage cards.\n\n- If an effect instructs a player to deal a Damage card to a ship, this is different from the ship suffering damage. The card is dealt to the ship regardless of whether the ship has any shield tokens remaining.\n\n- If a ship would be dealt more Damage cards than are needed to destroy it, those cards are still dealt. A ship that is kept in the play area by the Simultaneous Attack Rule is affected by all of its faceup Damage cards regardless of whether they are excess.\n\n- If a Damage card is flipped faceup, it is not treated as being dealt. Flipping a Damage card faceup does not trigger abilities related to dealing a Damage card.\n\n- If the players have more than one Damage deck, they should not shuffle them together. Instead, each player uses his own Damage deck and discard pile and does not assign his own Damage cards to any enemy ships.\n\n- The Damage deck included in this box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.\n\n\n**Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule, Suffer damage",
+    "markdown": "### Damage\n\nDuring the “Deal Damage” step of an attack, a ship suffers one damage for each uncanceled [Hit] result and one critical damage for each uncanceled [Critical Hit] result.\n\nWhen a ship suffers a damage or critical damage, it loses one shield token. If it does not have any shield tokens to lose, it is dealt one Damage card instead. For normal damage, the Damage card is dealt facedown; for critical damage, the Damage card is dealt faceup and the text on the card immediately resolves.\n\nIf a ship has a number of Damage cards equal to its hull value, it is destroyed.\n\n- When a ship suffers damage or critical damage, its hull value is not reduced.\n\n- When a ship is destroyed, its Damage cards are discarded faceup to the discard pile.\n\n- Players can look at the Damage card discard pile at any time.\n\n- If the Damage deck is empty when a Damage card must be dealt or drawn, shuffle the discard pile to create a new Damage deck.\n\n- If both the Damage deck and discard pile are empty, players cannot draw Damage cards from the deck. If a Damage card must be dealt, the players should use a suitable counter (such as a coin or bead) in place of Damage cards until some Damage cards become available to create a deck at the end of the round. Treat all counters as facedown Damage cards.\n\n- If an effect instructs a player to deal a Damage card to a ship, this is different from the ship suffering damage. The card is dealt to the ship regardless of whether the ship has any shield tokens remaining.\n\n- If a ship would be dealt more Damage cards than are needed to destroy it, those cards are still dealt. A ship that is kept in the play area by the Simultaneous Attack Rule is affected by all of its faceup Damage cards regardless of whether they are excess.\n\n- If a Damage card is flipped faceup, it is not treated as being dealt. Flipping a Damage card faceup does not trigger abilities related to dealing a Damage card.\n\n- If the players have more than one Damage deck, they should not shuffle them together. Instead, each player uses his own Damage deck and discard pile and does not assign his own Damage cards to any enemy ships.\n\n- The Damage deck included in the **X-Wing** The Force Awakens core set box replaces the Damage deck included in the original **X-Wing** core set. If players have both, they should use the new deck included in this box.\n\n\n**Related Topics:** Attack, Critical damage, Destroying ships, Hull, Obstacles, Shields, Simultaneous attack rule",
     "references": [
       {
         "code": "RR-SWX36",
@@ -811,10 +807,6 @@
       {
         "id": 69,
         "name": "Simultaneous attack rule"
-      },
-      {
-        "id": 76,
-        "name": "Suffer damage"
       }
     ]
   },
@@ -822,11 +814,11 @@
     "id": 22,
     "name": "Decloak",
     "expansion_rule": true,
-    "markdown": "### Decloak †\n\nSee “Cloak” on page 8.\n\n\n**Related Topics:** Cloak†",
+    "markdown": "### Decloak †\n\nAt the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).\n\nWhen a ship decloaks, it must choose one of the following effects:\n\n1. Perform a barrel roll using the [[Straight] 2] maneuver template.\n\n1. Perform a boost using the [[Straight] 2] maneuver template.\n\nAfter all decloaking has been resolved, the Activation phase continues as normal.\n\n- Decloaking is not an action or a maneuver.\n\n- A ship can decloak even while stressed.\n\n- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.\n\n- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot decloak if this would cause the ship to flee the battlefield.\n\n- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.\n\n- If a ship cannot decloak in any direction, it cannot decloak.\n\n\n**Related Topics:** Cloak†",
     "references": [
       {
         "code": "RR-SWX36",
-        "page": 9
+        "page": 8
       }
     ],
     "related_rules": [
@@ -901,24 +893,6 @@
     ]
   },
   {
-    "id": 25,
-    "name": "Detonating a bomb",
-    "expansion_rule": true,
-    "markdown": "### Detonating a bomb †\n\nSee “Bombs” on page 7\n\n\n**Related Topics:** Bombs†",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 14,
-        "name": "Bombs"
-      }
-    ]
-  },
-  {
     "id": 26,
     "name": "Dice results",
     "expansion_rule": false,
@@ -979,24 +953,6 @@
       {
         "id": 75,
         "name": "Stress"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "name": "Dropping a bomb",
-    "expansion_rule": true,
-    "markdown": "### Dropping a bomb †\n\nSee “Bombs” on page 7.\n\n\n**Related Topics:** Bombs†",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 10
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 14,
-        "name": "Bombs"
       }
     ]
   },
@@ -1511,24 +1467,6 @@
       {
         "id": 58,
         "name": "Planning phase"
-      }
-    ]
-  },
-  {
-    "id": 46,
-    "name": "Koiogran turn",
-    "expansion_rule": false,
-    "markdown": "### Koiogran turn\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 13
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 13,
-        "name": "Bearing"
       }
     ]
   },
@@ -2213,24 +2151,6 @@
     ]
   },
   {
-    "id": 65,
-    "name": "Segnor’s loop",
-    "expansion_rule": false,
-    "markdown": "### Segnor’s loop\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 17
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 13,
-        "name": "Bearing"
-      }
-    ]
-  },
-  {
     "id": 66,
     "name": "Setup",
     "expansion_rule": false,
@@ -2603,24 +2523,6 @@
     ]
   },
   {
-    "id": 76,
-    "name": "Suffer damage",
-    "expansion_rule": false,
-    "markdown": "### Suffer damage\n\nSee “Damage” on page 9.\n\n\n**Related Topics:** Damage",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 18
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 21,
-        "name": "Damage"
-      }
-    ]
-  },
-  {
     "id": 77,
     "name": "Supply",
     "expansion_rule": false,
@@ -2632,24 +2534,6 @@
       }
     ],
     "related_rules": []
-  },
-  {
-    "id": 78,
-    "name": "Tallon roll",
-    "expansion_rule": false,
-    "markdown": "### Tallon roll\n\nSee “Bearing” on page 6.\n\n\n**Related Topics:** Bearing",
-    "references": [
-      {
-        "code": "RR-SWX36",
-        "page": 18
-      }
-    ],
-    "related_rules": [
-      {
-        "id": 13,
-        "name": "Bearing"
-      }
-    ]
   },
   {
     "id": 79,
@@ -2994,5 +2878,59 @@
       }
     ],
     "related_rules": []
+  },
+  {
+    "id": 92,
+    "name": "Proton bomb",
+    "expansion_rule": true,
+    "markdown": "### Proton bomb †\n\nWhen this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.\n\n\n**Related Topics:** Bombs†",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 7
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Proximity mine",
+    "expansion_rule": true,
+    "markdown": "### Proximity mine †\n\nWhen this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.\n\n\n**Related Topics:** Bombs†",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 7
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Seismic charge",
+    "expansion_rule": true,
+    "markdown": "### Seismic charge †\n\nWhen this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.\n\n\n**Related Topics:** Bombs†",
+    "references": [
+      {
+        "code": "RR-SWX36",
+        "page": 7
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 14,
+        "name": "Bombs"
+      }
+    ]
   }
 ]

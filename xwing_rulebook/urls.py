@@ -3,7 +3,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('page.urls')),
-    url(r'^', include('rule.urls')),
+    url(r'^rulebook/', include('rule.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^nested_admin/', include('nested_admin.urls')),

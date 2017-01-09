@@ -126,3 +126,4 @@ STATICFILES_DIRS = [
 ]
 
 EXTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, "external")
+INTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, 'static', 'assets')

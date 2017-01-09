@@ -3,14 +3,18 @@ from django.template import Library
 
 from markdown2 import Markdown
 
+from util.templatetags.xwing_icons import xwing_icons
+
 register = Library()
 
-def md2html(subject):
+
+@register.simple_tag
+def md2html(subject, rulebook=None, section=None):
     markdown = Markdown(extras=["tables"])
 
     if hasattr(subject, 'to_markdown'):
-        subject = subject.to_markdown()
+        subject = subject.to_markdown(True, rulebook, section)
 
-    return mark_safe(markdown.convert(subject))
+    return mark_safe(xwing_icons(markdown.convert(subject)))
 
 register.filter('md2html', md2html)
