@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.template import Library
 
@@ -44,18 +45,38 @@ register.filter('format_clause', format_clause)
 
 
 @register.simple_tag
-def related_topics(related_topics, rulebook=None, section=None):
+def related_rules(add_anchor, related_topics, rulebook=None, section=None):
     if not related_topics.count():
         return ''
 
-    topics = '**Related Topics:** '
+    topics = '**Related Topics:** {}'
+    related = []
 
+    if rulebook:
+        related.extend(related_topics.filter(id__in=rulebook.rule_ids))
+    else:
+        related.extend(related_topics.all())
 
-    for SectionRule.objects.filter(rule_id__in=related_topics.value_list('id', flat=True))
+    if not add_anchor:
+        topics = topics.format(', '.join([
+            '{}{}'.format(r, '†' if r.expansion_rule else '') for r in related
+        ]))
+    else:
+        topics = topics.format(', '.join([
+            '<a href="{}#{}">{}{}</a>'.format(
+                reverse(
+                    'rule:rule',
+                    kwargs={
+                        'rulebook_slug': rulebook.slug,
+                        'section_slug': section.slug,
+                        'rule_slug': r.slug
+                    }
+                ) if rulebook and section else '',
+                r.anchor_id,
+                r,
+                '†' if r.expansion_rule else ''
+            )
+            for r in related
+        ]))
 
-    return mark_safe()
-
-
-
-**Related Topics:** {% for related_topic in rule.related_topics.all %}{% if not add_anchors %}{{ related_topic }}{% if related_topic.expansion_rule %}†{% endif %}{% else %}<a href="{% if rulebook and section %}{% url 'rule:rule' rulebook_slug=rulebook.slug section_slug=section.slug rule_slug=related_topic.slug %}{% endif %}#{{ related_topic.anchor_id }}">{{ related_topic }}{% if related_topic.expansion_rule %}†{% endif %}</a>{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}
-{% endif %}
+    return mark_safe(topics)

@@ -126,6 +126,16 @@ class RuleBook(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def rule_ids(self):
+        if not hasattr(self, '_rules'):
+            section_ids = self.booksection_set.values_list('id', flat=True)
+            self._rule_ids = SectionRule.objects.filter(
+                book_section_id__in=section_ids
+            ).values_list('rule_id', flat=True)
+
+        return self._rule_ids
+
 
 class BookSection(models.Model):
     rule_book = models.ForeignKey('rule.RuleBook')
