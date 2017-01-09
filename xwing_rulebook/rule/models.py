@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from util.lib import render_template
+from utils.lib import render_template
 
 
 CLAUSE_TYPES = (
