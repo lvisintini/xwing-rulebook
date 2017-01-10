@@ -286,7 +286,7 @@ Each Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb to
 - If a ship overlaps another ship, only the portion of the maneuver template that is between the starting and final position of the ship is counted for the purpose of overlapping bombs. Ignore the portion of the maneuver template that the ship moved backward along to resolve the overlap.
 
 
-**Related Topics:** Proton bomb†, Proximity mine†, Seismic charge†, Upgrade cards
+**Related Topics:** Cluster mine token†, Ion bomb token†, Proton bomb token†, Proximity mine token†, Seismic charge token†, Upgrade cards
 
 
 ### Boost
@@ -299,7 +299,7 @@ Ships with the [Boost] icon in their action bar may perform a boost action. To b
 
 1. Move the ship to the opposite end of the template and slide the rear guides of the ship into the template.
 
-- A ship cannot boost if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.
+- A ship cannot boost if this would cause its base to overlap with another ship’s base or an obstacle token, or if the maneuver template overlaps an obstacle token.
 
 - A ship cannot boost if this would cause the ship to flee the battlefield.
 
@@ -355,9 +355,9 @@ Ships with the [Cloak] icon in their action bar may perform a cloak action. When
 
 - Cloak tokens are not removed during the End phase.
 
-At the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).
+At the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to **decloak** , starting with the ship with the lowest pilot skill (using initiative to break ties).
 
-When a ship decloaks, it must choose one of the following effects:
+When a ship decloaks, it must choose **one** of the following effects:
 
 1. Perform a barrel roll using the [[Straight] 2] maneuver template.
 
@@ -381,6 +381,14 @@ After all decloaking has been resolved, the Activation phase continues as normal
 
 
 **Related Topics:** Actions, Agility, Barrel roll, Boost, Decloak†, End phase, Fleeing the battlefield, Stress
+
+
+### Cluster mine token †
+
+When one of these bomb tokens detonates, the ship that moved through or overlapped that token rolls 2 attack dice and suffers 1 damage for each [Hit] and [Critical Hit] rolled. Then discard that token.
+
+
+**Related Topics:** Bombs†
 
 
 ### Combat phase
@@ -447,9 +455,9 @@ If a ship has a number of Damage cards equal to its hull value, it is destroyed.
 
 ### Decloak †
 
-At the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to decloak, starting with the ship with the lowest pilot skill (using initiative to break ties).
+At the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to **decloak** , starting with the ship with the lowest pilot skill (using initiative to break ties).
 
-When a ship decloaks, it must choose one of the following effects:
+When a ship decloaks, it must choose **one** of the following effects:
 
 1. Perform a barrel roll using the [[Straight] 2] maneuver template.
 
@@ -715,6 +723,14 @@ The player whose squad has the lowest total squad point cost chooses which playe
 **Related Topics:** Activation phase, Card abilities, Combat phase, Pilot skill, Setup, Squad building, Squad points
 
 
+### Ion bomb token †
+
+When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens. Then discard this token.
+
+
+**Related Topics:** Bombs†
+
+
 ### Ion token †
 
 Some card abilities can cause a ship to receive an ion token. A ship is ionized while it has an ion token assigned to it. An ionized ship follows special rules during the following phases:
@@ -816,6 +832,12 @@ Obstacles acts as hazards that can disrupt and damage ships. When a ship execute
 - **Asteroid:** The ship must skip its “Perform Action” step this round. After skipping the “Perform Action” step, it rolls one attack die. On a [Hit] result, the ship suffers one damage; on a [Critical Hit] result, it suffers one critical damage. While a ship is overlapping an asteroid, it cannot perform any attacks.
 
 - **Debris Cloud†:** After the “Check Pilot Stress” step, the ship receives one stress token. After the “Perform Action” step, it rolls one attack die. On a [Critical Hit] result, the ship suffers one critical damage. The ship can still perform attacks.
+
+After a ship’s base or maneuver template overlaps an obstacle, and the overlap is not from executing a maneuver, it suffers an effect based on the type of obstacle
+
+- **Asteroid:** The ship rolls 1 attack die. On a [Hit] result, it suffers one damage; on a [Critical Hit] result, it suffers one critical damage. While a ship is overlapping an asteroid, it cannot perform any attacks.
+
+- **Debris Cloud†:** The ship receives 1 stress token. Then, the ship rolls 1 attack die. On a [Critical Hit] result, it suffers one critical damage.
 
 When a ship performs an attack, if it measures range through an obstacle, the attack is obstructed.
 
@@ -919,6 +941,22 @@ A ship’s primary weapon value is the red number on its Ship card. This value i
 **Related Topics:** Attack, Auxiliary firing arc†, Range, Range combat bonus, Secondary weapons, Turret primary weapon†
 
 
+### Proton bomb token †
+
+When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.
+
+
+**Related Topics:** Bombs†
+
+
+### Proximity mine token †
+
+When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.
+
+
+**Related Topics:** Bombs†
+
+
 ### Range
 
 Range is the distance between two ships as measured by the range ruler, which is divided into three range bands. To measure range between two ships, place the range ruler over the point of the first ship that is closest to the second ship, then point the other end of the ruler toward the point of the second ship’s base that is closest to the first base. The range is the band of the range ruler that falls over the closest point of the second ship.
@@ -981,6 +1019,14 @@ To use a secondary weapon, the attacker must meet all requirements indicated in 
 
 
 **Related Topics:** Attack, Auxiliary firing arc†, Card abilities, Firing arc, Primary weapon, Range, Range combat bonus, Turret primary weapon†, Upgrade cards, Weapon range
+
+
+### Seismic charge token †
+
+When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.
+
+
+**Related Topics:** Bombs†
 
 
 ### Setup
@@ -1107,7 +1153,7 @@ A ship is stressed while it has a stress token assigned to it. A stressed ship c
 
 - When a ship executes a green maneuver, it removes one stress token from itself even if it moves through or overlaps an obstacle or another ship.
 
-- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver, the opposing player chooses any non-red maneuver on that ship’s dial for that ship to execute.
+- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver (and cannot use a game effect to rotate its dial or execute a non-red maneuver instead), the owner moves the ship as if it were a white [[Straight] 2] maneuver instead. The speed, bearing, and difficulty of this maneuver cannot be changed.
 
 
 **Related Topics:** Actions, Activation phase, Bearing, Cloak†, Difficulty, Free actions, Maneuver
@@ -1166,6 +1212,23 @@ Tracking tokens are used to track the number of rounds played during a game. Whe
 
 
 **Related Topics:** Round, Setup
+
+
+### Tractor beam token †
+
+A ship with at least one tractor beam token assigned to it follows special rules during these phases:
+
+- **Combat Phase:** The agility value of that ship is reduced by 1 for each tractor beam token, to a minimum of 0.
+
+- **End Phase:** Remove all tractor beam tokens from the ship.
+
+The first time a **small** ship receives a tractor beam token each round, the **opposing** player may choose **one** of the following effects:
+
+- Perform a barrel roll using the [[Straight] 1] maneuver template. The **opposing** player selects the direction of the barrel roll and the final position of the ship.
+
+- Perform a boost using the [[Straight] 1] maneuver template.
+
+This is not an action or a maneuver, and **can** cause the ship to overlap obstacles (but not other ships). The ship suffers the effect of any obstacle it overlaps.
 
 
 ### Turret primary weapon †
@@ -1248,30 +1311,6 @@ The game ends at the end of a round if all of a player’s ships are destroyed. 
 
 
 **Related Topics:** Destroying ships, Round, Squad points
-
-
-### Proton bomb †
-
-When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.
-
-
-**Related Topics:** Bombs†
-
-
-### Proximity mine †
-
-When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.
-
-
-**Related Topics:** Bombs†
-
-
-### Seismic charge †
-
-When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.
-
-
-**Related Topics:** Bombs†
 
 
 ### Team play

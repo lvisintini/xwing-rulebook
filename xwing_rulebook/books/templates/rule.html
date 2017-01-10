@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load markdown %}
+{% load xwing_icons %}
+
+{% block meta-title  %}{{ book.name }}{% endblock %}
+
+{% block page_wapper_class %} u-background-dark{% endblock %}
+
+{% block content %}
+  <div class="Book">
+    <div class="Book__Inner Book__Inner--fancy-border">
+      <h1>{{ book.name }}</h1>
+
+      <h2>
+        <a href="{% url 'books:section' book_slug=book.slug section_slug=section.slug%}">
+          {{ section.title }}
+        </a>
+      </h2>
+
+      {% md2html rule book section %}
+
+      {{ '[Epic]' | xwing_icons  }}
+    <div>
+  </div>
+{% endblock %}

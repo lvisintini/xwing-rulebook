@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 from django.core.management.base import BaseCommand
 
-from rule.models import Rule, ClauseContentVersion
+from rules.models import Rule, ClauseContent
 
 
 class Command(BaseCommand):
@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         rules = []
-        for rule in Rule.objects.order_by('id').all():
+        for rule in Rule.objects.order_by('name').all():
             r = OrderedDict()
 
             r['id'] = rule.id
@@ -21,7 +21,7 @@ class Command(BaseCommand):
 
             references = set()
             for c in rule.clauses.all():
-                content = ClauseContentVersion.objects.get(
+                content = ClauseContent.objects.get(
                     clause=c,
                     active=True
                 ).content

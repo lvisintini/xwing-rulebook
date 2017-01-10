@@ -4,4 +4,4 @@
 {{ c|format_clause:add_anchors }}
 {% endfor %}
 
-{% related_rules add_anchors rule.related_topics rulebook section %}
+{% related_rules add_anchors rule.related_topics book section %}

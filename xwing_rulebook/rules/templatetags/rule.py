@@ -2,7 +2,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.template import Library
 
-from rule.models import ClauseContentVersion
+from rules.models import ClauseContent
 
 register = Library()
 
@@ -16,7 +16,7 @@ PREFIX_TYPE_MAPPING = {
 
 
 def format_clause(clause, add_anchors):
-    content = ClauseContentVersion.objects.get(
+    content = ClauseContent.objects.get(
         clause=clause,
         active=True
     ).content
@@ -45,15 +45,15 @@ register.filter('format_clause', format_clause)
 
 
 @register.simple_tag
-def related_rules(add_anchor, related_topics, rulebook=None, section=None):
+def related_rules(add_anchor, related_topics, book=None, section=None):
     if not related_topics.count():
         return ''
 
     topics = '**Related Topics:** {}'
     related = []
 
-    if rulebook:
-        related.extend(related_topics.filter(id__in=rulebook.rule_ids))
+    if book:
+        related.extend(related_topics.filter(id__in=book.rule_ids))
     else:
         related.extend(related_topics.all())
 
@@ -65,13 +65,13 @@ def related_rules(add_anchor, related_topics, rulebook=None, section=None):
         topics = topics.format(', '.join([
             '<a href="{}#{}">{}{}</a>'.format(
                 reverse(
-                    'rule:rule',
+                    'books:rule',
                     kwargs={
-                        'rulebook_slug': rulebook.slug,
+                        'book_slug': book.slug,
                         'section_slug': section.slug,
                         'rule_slug': r.slug
                     }
-                ) if rulebook and section else '',
+                ) if book and section else '',
                 r.anchor_id,
                 r,
                 '†' if r.expansion_rule else ''
