@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nested_admin',
+    'integrations',
     'rules',
     'books',
     'pages',

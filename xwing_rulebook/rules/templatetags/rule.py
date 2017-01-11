@@ -16,10 +16,10 @@ PREFIX_TYPE_MAPPING = {
 
 
 def format_clause(clause, add_anchors):
-    content = ClauseContent.objects.get(
-        clause=clause,
-        active=True
-    ).content
+    content = ClauseContent.objects.filter(
+        clause=clause
+    ).order_by('-content__source__date', ).first().content
+    # active=True).content
 
     template = '{indentation}{prefix}{anchor}{title}{content}'
     anchor_template = '<a class="SourceReference" id="{anchor_id}">' \

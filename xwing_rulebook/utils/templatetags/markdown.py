@@ -3,7 +3,7 @@ from django.template import Library
 
 from markdown2 import Markdown
 
-from utils.templatetags.xwing_icons import xwing_icons
+from integrations.templatetags.xwing_icons import xwing_icons
 
 register = Library()
 

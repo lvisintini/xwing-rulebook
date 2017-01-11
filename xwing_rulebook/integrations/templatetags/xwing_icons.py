@@ -11,12 +11,12 @@ from django.template import Library
 register = Library()
 
 ICONS = OrderedDict()
-ASSETS_DIR = os.path.join(
+ICON_ASSETS_DIR = os.path.join(
     settings.EXTERNAL_ASSETS_DIR, "xwing-data-integration", "icons", "mappings"
 )
 
 
-for dirpath, _, filenames in os.walk(ASSETS_DIR):
+for dirpath, _, filenames in os.walk(ICON_ASSETS_DIR):
    for f in filenames:
        with open(os.path.abspath(os.path.join(dirpath, f)), 'r') as fo:
            icon_class_mapping = json.load(fo, object_pairs_hook=OrderedDict)

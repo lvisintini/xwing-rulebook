@@ -49,7 +49,8 @@ class ContentInline(nested_admin.NestedTabularInline):
 
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'date', 'version', 'code', 'processed')
+    list_display = ('name', 'code', 'date', 'processed')
+    search_fields = ['name', ]
 
 
 class ClauseCountFilter(admin.SimpleListFilter):
