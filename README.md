@@ -9,4 +9,6 @@ $ sudo chown lvisintini:lvisintini /home/lvisintini/src/xwing-rulebook/backups/r
 
 $ python xwing_rulebook/manage.py book_markdown --book URR-SWX > outputs/urr-swx.md
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
+
+& git submodule update --recursive --remote
 ```
