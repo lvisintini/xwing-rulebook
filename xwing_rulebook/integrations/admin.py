@@ -9,6 +9,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'sku', 'release_date')
     search_fields = ['name', 'sku']
     readonly_fields = ['json', ]
+    filter_horizontal = ['sources', ]
+    save_on_top = True
 
     def json(self, obj):
         return mark_safe("<br/><pre>{}</pre>".format(obj.json))

@@ -1,9 +1,10 @@
 import json
 from collections import OrderedDict
 
+from django.db import models
 from django.core.management.base import BaseCommand
 
-from rules.models import Rule, ClauseContent
+from rules.models import Rule, ClauseContent, SOURCE_TYPE_PRECEDENCE
 
 
 class Command(BaseCommand):
@@ -21,12 +22,7 @@ class Command(BaseCommand):
 
             references = set()
             for c in rule.clauses.all():
-                content = ClauseContent.objects.get(
-                    clause=c,
-                    active=True
-                ).content
-
-                references.add((content.source.code, content.page))
+                references.add((c.current_content.source.code, c.current_content.page))
 
             r['references'] = [
                 OrderedDict([

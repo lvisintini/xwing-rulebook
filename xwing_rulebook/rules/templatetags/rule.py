@@ -1,8 +1,9 @@
+from django.db import models
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.template import Library
 
-from rules.models import ClauseContent
+from rules.models import ClauseContent, SOURCE_TYPE_PRECEDENCE
 
 register = Library()
 
@@ -16,10 +17,7 @@ PREFIX_TYPE_MAPPING = {
 
 
 def format_clause(clause, add_anchors):
-    content = ClauseContent.objects.filter(
-        clause=clause
-    ).order_by('-content__source__date', ).first().content
-    # active=True).content
+    content = clause.current_content
 
     template = '{indentation}{prefix}{anchor}{title}{content}'
     anchor_template = '<a class="SourceReference" id="{anchor_id}">' \

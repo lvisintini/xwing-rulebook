@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.db import models
 import nested_admin
 
-from rules.models import Clause, ClauseContent, Content, Rule, Source
+from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPE_PRECEDENCE
 
 
 class ContentAdminForm(forms.ModelForm):
@@ -22,10 +22,10 @@ class RuleAdminForm(forms.ModelForm):
 
 
 class ClauseContentInline(nested_admin.NestedTabularInline):
-    fields = ('content', 'content_related_rules', 'active')
+    fields = ('content', 'content_related_rules')
     model = ClauseContent
     extra = 0
-    readonly_fields = ['content_related_rules',]
+    readonly_fields = ['content_related_rules', ]
     raw_id_fields = ['content', ]
 
     def content_related_rules(self, obj):
@@ -49,8 +49,37 @@ class ContentInline(nested_admin.NestedTabularInline):
 
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'code', 'date', 'processed')
+    list_display = ('name', 'code', 'type', 'release_date', 'precedence', 'processed')
     search_fields = ['name', ]
+    readonly_fields = ['release_date', 'precedence']
+
+    def release_date(self, obj):
+        return obj.release_date
+    release_date.admin_order_field = 'release_date'
+
+    def precedence(self, obj):
+        return obj.precedence
+    precedence.admin_order_field = 'precedence'
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        qs = qs.annotate(
+            release_date=models.Case(
+                models.When(date=None, then=models.Min('product__release_date', distinct=True)),
+                default='date'
+            )
+        )
+        qs = qs.annotate(
+            precedence=models.Case(
+                models.When(type='FAQ', then=SOURCE_TYPE_PRECEDENCE['FAQ']),
+                models.When(type='RR', then=SOURCE_TYPE_PRECEDENCE['RR']),
+                models.When(type='RC', then=SOURCE_TYPE_PRECEDENCE['RC']),
+                models.When(type='M', then=SOURCE_TYPE_PRECEDENCE['M']),
+                default=SOURCE_TYPE_PRECEDENCE['OTHER'],
+                output_field=models.IntegerField()
+            )
+        )
+        return qs
 
 
 class ClauseCountFilter(admin.SimpleListFilter):

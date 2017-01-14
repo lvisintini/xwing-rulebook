@@ -19,4 +19,3 @@ class Command(BaseCommand):
                 release_date=rd,
                 sku=s['sku'],
             ).save()
-

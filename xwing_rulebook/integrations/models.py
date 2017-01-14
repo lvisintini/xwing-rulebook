@@ -18,6 +18,7 @@ class Product(models.Model):
     name = models.CharField(max_length=125)
     sku = models.CharField(max_length=125)
     release_date = models.DateField(blank=True, null=True)
+    sources = models.ManyToManyField('rules.Source', blank=True)
 
     class Meta:
         ordering = ['release_date', 'sku']
@@ -30,3 +31,6 @@ class Product(models.Model):
                 indent=2
             )
         return self._json
+
+    def __str__(self):
+        return self.name

@@ -12,12 +12,27 @@ CLAUSE_TYPES = (
     ('table', 'Table'),
 )
 
+SOURCE_TYPES = (
+    ('M', 'Manual'),
+    ('RC', 'Reference Card'),
+    ('RR', 'Rules Reference'),
+    ('FAQ', 'FAQ'),
+)
+
+SOURCE_TYPE_PRECEDENCE = {
+    'FAQ': 0,
+    'RR': 1,
+    'RC': 2,
+    'M': 3,
+    'OTHER': 5,
+}
+
 
 class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField(blank=True, null=True)
-    version = models.CharField(max_length=25, blank=True, null=True)
     code = models.CharField(max_length=50, default='', unique=True)
+    type = models.CharField(max_length=50, choices=SOURCE_TYPES, default='RC')
     processed = models.BooleanField(default=False)
     file = models.FilePathField(
         max_length=255,
@@ -29,7 +44,7 @@ class Source(models.Model):
     )
 
     def __str__(self):
-        return self.code
+        return '{}-{}'.format(self.type, self.code)
 
 
 class Rule(models.Model):
@@ -75,6 +90,34 @@ class Clause(models.Model):
     def anchor_id(self):
         return '{}-{}'.format(self.rule.anchor_id, self.order)
 
+    @property
+    def current_content(self):
+        if not hasattr(self, '_current_content'):
+            qs = ClauseContent.objects.filter(clause_id=self.id)
+            qs = qs.annotate(
+                release_date=models.Case(
+                    models.When(
+                        content__source__date=None,
+                        then=models.Min('content__source__product__release_date', distinct=True)
+                    ),
+                    default='content__source__date'
+                )
+            )
+            qs = qs.annotate(
+                precedence=models.Case(
+                    models.When(content__source__type='FAQ', then=SOURCE_TYPE_PRECEDENCE['FAQ']),
+                    models.When(content__source__type='RR', then=SOURCE_TYPE_PRECEDENCE['RR']),
+                    models.When(content__source__type='RC', then=SOURCE_TYPE_PRECEDENCE['RC']),
+                    models.When(content__source__type='M', then=SOURCE_TYPE_PRECEDENCE['M']),
+                    default=SOURCE_TYPE_PRECEDENCE['OTHER'],
+                    output_field=models.IntegerField()
+                )
+            )
+
+            qs = qs .order_by('-release_date', 'precedence')
+            self._current_content = qs.first().content
+        return self._current_content
+
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)
 
@@ -82,10 +125,6 @@ class Clause(models.Model):
 class ClauseContent(models.Model):
     clause = models.ForeignKey('rules.Clause')
     content = models.ForeignKey('rules.Content')
-    active = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['active']
 
 
 class Content(models.Model):
