@@ -10,10 +10,12 @@ class ContentAdminForm(forms.ModelForm):
     def has_changed(self):
         return True
 
-    def clean_content(self):
-        if not self.cleaned_data.get('keep_line_breaks', False):
-            return ' '.join(self.cleaned_data['content'].strip().splitlines())
-        return self.cleaned_data['content'].strip()
+    def clean(self):
+        cleaned_data = super().clean()
+        if not cleaned_data.get('keep_line_breaks', False):
+            cleaned_data['content'] = ' '.join(cleaned_data['content'].strip().splitlines())
+        return cleaned_data
+
 
 
 class RuleAdminForm(forms.ModelForm):

@@ -19,6 +19,11 @@
       position: relative;
     }
 
+    img {
+      vertical-align: middle;
+      margin: 0 val($padding, small);
+    }
+
     th {
      .SourceReference {
         right: inherit;

@@ -8,7 +8,6 @@ CLAUSE_TYPES = (
     ('text', 'Text'),
     ('item:ul', 'Unordered Item'),
     ('item:ol', 'Ordered Item'),
-    ('image', 'Image'),
     ('table', 'Table'),
 )
 
@@ -134,7 +133,7 @@ class Content(models.Model):
     page = models.IntegerField(null=True, blank=True)
     keep_line_breaks = models.BooleanField(default=False)
     file = models.FilePathField(
-        path=settings.INTERNAL_ASSETS_DIR,
+        path=settings.STATICFILES_DIRS[0],
         recursive=True,
         allow_folders=False,
         null=True,

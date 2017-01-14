@@ -1,16 +1,14 @@
-from django.db import models
+from django.conf import settings
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.template import Library
-
-from rules.models import ClauseContent, SOURCE_TYPE_PRECEDENCE
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 register = Library()
 
 PREFIX_TYPE_MAPPING = {
     'text': '',
     'table': '',
-    'image': '',
     'item:ul': '- ',
     'item:ol': '1. '
 }
@@ -22,6 +20,10 @@ def format_clause(clause, add_anchors):
     template = '{indentation}{prefix}{anchor}{title}{content}'
     anchor_template = '<a class="SourceReference" id="{anchor_id}">' \
                       '{source_code}{page}{clause}</a>'
+
+    file = ''
+    if content.file:
+        file = static(content.file.replace(settings.STATICFILES_DIRS[0], ''))
 
     res = template.format(
         indentation='    ' * clause.indentation,
@@ -35,7 +37,7 @@ def format_clause(clause, add_anchors):
         title='' if not content.title or clause.ignore_title else '**{}{}:** '.format(
             content.title, '†' if clause.expansion_related else ''
         ),
-        content=content.content,
+        content=content.content.replace('<FILE>', file),
     )
     return mark_safe(res)
 
