@@ -50,7 +50,7 @@ class ContentInline(nested_admin.NestedTabularInline):
 
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'code', 'type', 'release_date', 'precedence', 'processed')
+    list_display = ('__str__', 'name', 'type', 'release_date', 'precedence', 'processed')
     search_fields = ['name', ]
     readonly_fields = ['release_date', 'precedence']
 
