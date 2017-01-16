@@ -17,7 +17,6 @@ class ContentAdminForm(forms.ModelForm):
         return cleaned_data
 
 
-
 class RuleAdminForm(forms.ModelForm):
     def clean_name(self):
         return self.cleaned_data['name'].capitalize()
