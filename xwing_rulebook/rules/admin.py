@@ -1,7 +1,10 @@
 from django import forms
 from django.contrib import admin
+from django.core.urlresolvers import reverse
 from django.db import models
-import nested_admin
+from django.utils.safestring import mark_safe
+
+from nested_admin import NestedTabularInline, NestedModelAdmin
 
 from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPE_PRECEDENCE
 
@@ -22,7 +25,7 @@ class RuleAdminForm(forms.ModelForm):
         return self.cleaned_data['name'].capitalize()
 
 
-class ClauseContentInline(nested_admin.NestedTabularInline):
+class ClauseContentInline(NestedTabularInline):
     fields = ('content', 'content_related_rules')
     model = ClauseContent
     extra = 0
@@ -35,14 +38,14 @@ class ClauseContentInline(nested_admin.NestedTabularInline):
         return ''
 
 
-class ClauseInline(nested_admin.NestedTabularInline):
+class ClauseInline(NestedTabularInline):
     model = Clause
     inlines = (ClauseContentInline, )
     sortable_field_name = 'order'
     extra = 0
 
 
-class ContentInline(nested_admin.NestedTabularInline):
+class ContentInline(NestedTabularInline):
     model = Content
     extra = 0
     form = ContentAdminForm
@@ -126,19 +129,26 @@ class ContentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Rule)
-class RuleAdmin(nested_admin.NestedModelAdmin):
+class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ('name', 'id',)
+    list_display = ('name', 'link_to_rule',)
     inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
     filter_horizontal = ['related_topics', ]
     save_on_top = True
     search_fields = ['name', ]
+    readonly_fields = ['link_to_rule']
+
+    def link_to_rule(self, obj):
+        rule_link = reverse('rules:rule', args=[], kwargs={'rule_slug':obj.slug})
+        return mark_safe("<a href='{}'>{}</a>".format(rule_link, obj.slug))
+    link_to_rule.short_description = 'Rule link'
 
 
 @admin.register(Clause)
-class ClauseAdmin(nested_admin.NestedModelAdmin):
+class ClauseAdmin(NestedModelAdmin):
     list_display = ('__str__', 'needs_revision')
     list_filter = ['needs_revision', ]
     inlines = (ClauseContentInline, )
+

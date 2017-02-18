@@ -16,15 +16,16 @@ ICON_ASSETS_DIR = os.path.join(
 )
 
 
-for dirpath, _, filenames in os.walk(ICON_ASSETS_DIR):
-   for f in filenames:
-       with open(os.path.abspath(os.path.join(dirpath, f)), 'r') as fo:
-           icon_class_mapping = json.load(fo, object_pairs_hook=OrderedDict)
-           for key, classes in icon_class_mapping.items():
-               ICONS[key] = "<i class=\"{}\"></i>".format(classes)
+for dir_path, _, file_names in os.walk(ICON_ASSETS_DIR):
+    for f in file_names:
+        with open(os.path.abspath(os.path.join(dir_path, f)), 'r') as fo:
+            icon_class_mapping = json.load(fo, object_pairs_hook=OrderedDict)
+            for key, classes in icon_class_mapping.items():
+                ICONS[key] = "<i class=\"{}\"></i>".format(classes)
 
 
 automata = re.compile(r'\[(' + '|'.join([i.strip('[]') for i in ICONS.keys()]) + r')\]')
+
 
 def xwing_icons(text):
     result = automata.sub(lambda x: ICONS[x.group()], text)

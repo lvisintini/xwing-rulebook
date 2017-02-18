@@ -18,7 +18,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
 
     context['rule'] = get_object_or_404(Rule, slug=rule_slug)
 
-    return render(request, 'rule.html', context)
+    return render(request, 'book_rule.html', context)
 
 
 def single_page_book(request):

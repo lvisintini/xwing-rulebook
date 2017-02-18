@@ -9,6 +9,18 @@
     }
 
   &__Inner {
+
+    &--columns {
+      columns: 2 400px;
+      column-gap: 3em;
+      column-rule: 1px dotted #ddd;
+      column-fill: auto;
+
+      h2 {
+        column-span: all;
+      }
+    }
+
     &--fancy-border {
       padding: val($padding, large) val($padding, normal);
     }
