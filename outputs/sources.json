@@ -1,9 +1,340 @@
 [
   {
-    "name": "Star Wars X-Wing Miniatures Game - Rules Reference",
-    "date": "2015-09-04",
-    "version": "swx36_rulesreference",
-    "code": "RR-SWX36",
-    "description": "# Stop!\r\n\r\nRead the Learn to Play booklet before reading this document. After reading the Learn to Play booklet, players are ready to play their first game. As questions arise during gameplay, players should reference this guide instead of the Learn to Play booklet.\r\n\r\n# Introduction\r\n\r\nThis guide is the definitive source for all **X-Wing** rules. Unlike the Learn to Play booklet, this guide addresses complex and unusual gameplay situations.\r\n\r\nThe main component of this guide is a glossary of important game terms, organized alphabetically. It also includes optional rules, an index, and a Quick Reference at the back of the booklet.\r\n\r\nThe rules in this guide can be read by any player at any point."
+    "name": "Ion Token",
+    "type": "RC",
+    "code": "IONTOKEN",
+    "date": null,
+    "release_date": "2012-09-14",
+    "sources": [
+      "Y-Wing Expansion Pack",
+      "Slave I Expansion Pack",
+      "HWK-290 Expansion Pack",
+      "B-Wing Expansion Pack",
+      "Rebel Transport Expansion Pack",
+      "Tantive IV Expansion Pack",
+      "Z-95 Headhunter Expansion Pack",
+      "TIE Defender Expansion Pack",
+      "YT-2400 Freighter Expansion Pack",
+      "VT-49 Decimator Expansion Pack",
+      "StarViper Expansion Pack",
+      "M3-A Interceptor Expansion Pack",
+      "Imperial Raider Expansion Pack",
+      "Hound's Tooth Expansion Pack",
+      "K-Wing Expansion Pack",
+      "TIE Punisher Expansion Pack",
+      "Mist Hunter Expansion Pack",
+      "Sabine's TIE Fighter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Boost Action",
+    "type": "RC",
+    "code": "BOOSTACTION",
+    "date": null,
+    "release_date": "2013-02-28",
+    "sources": [
+      "Millennium Falcon Expansion Pack",
+      "A-Wing Expansion Pack",
+      "TIE Interceptor Expansion Pack",
+      "E-Wing Expansion Pack",
+      "Rebel Aces Expansion Pack",
+      "YT-2400 Freighter Expansion Pack",
+      "StarViper Expansion Pack",
+      "Hound's Tooth Expansion Pack",
+      "TIE Punisher Expansion Pack",
+      "Inquisitor's TIE Expansion Pack",
+      "Protectorate Starfighter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #01",
+    "type": "RC",
+    "code": "BOMBTOKENS01",
+    "date": null,
+    "release_date": "2013-02-28",
+    "sources": [
+      "Slave I Expansion Pack",
+      "IG-2000 Expansion Pack"
+    ]
+  },
+  {
+    "name": "Modifications and Titles",
+    "type": "RC",
+    "code": "MODIFICATIONSSANDTITLES",
+    "date": null,
+    "release_date": "2013-09-12",
+    "sources": [
+      "HWK-290 Expansion Pack",
+      "Z-95 Headhunter Expansion Pack",
+      "TIE Defender Expansion Pack",
+      "TIE Phantom Expansion Pack",
+      "StarViper Expansion Pack",
+      "M3-A Interceptor Expansion Pack",
+      "K-Wing Expansion Pack",
+      "TIE Punisher Expansion Pack",
+      "Inquisitor's TIE Expansion Pack",
+      "Mist Hunter Expansion Pack",
+      "Sabine's TIE Fighter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Using Bombs",
+    "type": "RC",
+    "code": "USINGBOMBS",
+    "date": null,
+    "release_date": "2013-09-12",
+    "sources": [
+      "TIE Bomber Expansion Pack",
+      "VT-49 Decimator Expansion Pack",
+      "K-Wing Expansion Pack",
+      "TIE Punisher Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #02",
+    "type": "RC",
+    "code": "BOMBTOKENS02",
+    "date": null,
+    "release_date": "2013-09-12",
+    "sources": [
+      "TIE Bomber Expansion Pack",
+      "VT-49 Decimator Expansion Pack"
+    ]
+  },
+  {
+    "name": "Decloak",
+    "type": "RC",
+    "code": "DECLOAK",
+    "date": null,
+    "release_date": "2014-06-26",
+    "sources": [
+      "TIE Phantom Expansion Pack",
+      "Mist Hunter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Cloak Action",
+    "type": "RC",
+    "code": "CLOAKACTION",
+    "date": null,
+    "release_date": "2014-06-26",
+    "sources": [
+      "TIE Phantom Expansion Pack",
+      "Mist Hunter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Segnor’s Loop",
+    "type": "RC",
+    "code": "SEGNORSLOOP",
+    "date": null,
+    "release_date": "2015-02-26",
+    "sources": [
+      "StarViper Expansion Pack",
+      "IG-2000 Expansion Pack"
+    ]
+  },
+  {
+    "name": "SLAM Action",
+    "type": "RC",
+    "code": "SLAMACTION",
+    "date": null,
+    "release_date": "2015-08-25",
+    "sources": [
+      "K-Wing Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #04",
+    "type": "RC",
+    "code": "BOMBTOKENS04",
+    "date": null,
+    "release_date": "2015-08-25",
+    "sources": [
+      "TIE Punisher Expansion Pack",
+      "Ghost Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #03",
+    "type": "RC",
+    "code": "BOMBTOKENS03",
+    "date": null,
+    "release_date": "2015-08-25",
+    "sources": [
+      "K-Wing Expansion Pack"
+    ]
+  },
+  {
+    "name": "Turret Primary Weapon",
+    "type": "RC",
+    "code": "TURRETPRIMARYWEAPON",
+    "date": null,
+    "release_date": "2015-08-25",
+    "sources": [
+      "K-Wing Expansion Pack"
+    ]
+  },
+  {
+    "name": "Using Cluster Mines",
+    "type": "RC",
+    "code": "USINGCLUSTERMINES",
+    "date": null,
+    "release_date": "2015-08-25",
+    "sources": [
+      "TIE Punisher Expansion Pack",
+      "Ghost Expansion Pack",
+      "Imperial Veterans Expansion Pack"
+    ]
+  },
+  {
+    "name": "X-Wing Miniatures Game",
+    "type": "RR",
+    "code": "TFARR",
+    "date": null,
+    "release_date": "2015-09-04",
+    "sources": [
+      "The Force Awakens Core Set"
+    ]
+  },
+  {
+    "name": "Tractor Beam Token",
+    "type": "RC",
+    "code": "TRACTORBEAMTOKEN",
+    "date": null,
+    "release_date": "2016-03-17",
+    "sources": [
+      "Mist Hunter Expansion Pack",
+      "Imperial Veterans Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #05",
+    "type": "RC",
+    "code": "BOMBTOKENS05",
+    "date": null,
+    "release_date": "2016-03-17",
+    "sources": [
+      "Ghost Expansion Pack"
+    ]
+  },
+  {
+    "name": "Dual Upgrade Cards",
+    "type": "RC",
+    "code": "DUALUPGRADECARDS",
+    "date": null,
+    "release_date": "2016-03-17",
+    "sources": [
+      "Mist Hunter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #06",
+    "type": "RC",
+    "code": "BOMBTOKENS06",
+    "date": null,
+    "release_date": "2016-06-30",
+    "sources": [
+      "Imperial Veterans Expansion Pack"
+    ]
+  },
+  {
+    "name": "Auxiliary Firing Arc",
+    "type": "RC",
+    "code": "AUXILIARYFIRINGARC",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "ARC-170 Expansion Pack",
+      "Special Forces TIE Expansion Pack"
+    ]
+  },
+  {
+    "name": "Debris Cloud Tokens",
+    "type": "RC",
+    "code": "DEBRISCLOUDTOKENS",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "Shadow Caster Expansion Pack"
+    ]
+  },
+  {
+    "name": "Tallon Roll",
+    "type": "RC",
+    "code": "TALLONROLL",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "Protectorate Starfighter Expansion Pack"
+    ]
+  },
+  {
+    "name": "Using Cargo",
+    "type": "RC",
+    "code": "USINGCARGO",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "Shadow Caster Expansion Pack"
+    ]
+  },
+  {
+    "name": "X-Wing v4.2.3",
+    "type": "FAQ",
+    "code": "SWXFV4.2.3",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Tractor Beam Token (Corrected)",
+    "type": "RC",
+    "code": "TRACTORBEAMTOKEN-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Bomb Tokens #06 (Corrected)",
+    "type": "RC",
+    "code": "BOMBTOKENS06-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Decloak (Corrected)",
+    "type": "RC",
+    "code": "DECLOAK-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Bomb Tokens #04 (Corrected)",
+    "type": "RC",
+    "code": "BOMBTOKENS04-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Boost Action (Corrected)",
+    "type": "RC",
+    "code": "BOOSTACTION-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Conditions",
+    "type": "RC",
+    "code": "CONDITIONS",
+    "date": null,
+    "release_date": "2017-02-02",
+    "sources": [
+      "Sabine's TIE Fighter Expansion Pack"
+    ]
   }
 ]

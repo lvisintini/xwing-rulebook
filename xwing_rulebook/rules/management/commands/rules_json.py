@@ -1,10 +1,9 @@
 import json
 from collections import OrderedDict
 
-from django.db import models
 from django.core.management.base import BaseCommand
 
-from rules.models import Rule, ClauseContent, SOURCE_TYPE_PRECEDENCE
+from rules.models import Rule
 
 
 class Command(BaseCommand):

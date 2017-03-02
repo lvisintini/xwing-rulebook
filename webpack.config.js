@@ -24,18 +24,6 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-0',
       },
-      {
-        test: /\.(scss|css)$/,
-        loaders: ["style-loader", "css-loader", "sass-loader",]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|svg|otf)$/,
-        loader: 'url-loader?limit=100000'
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=100000'
-      }
     ]
   }
 }

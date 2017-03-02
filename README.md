@@ -9,6 +9,13 @@ $ sudo chown lvisintini:lvisintini /home/lvisintini/src/xwing-rulebook/backups/r
 
 $ python xwing_rulebook/manage.py book_markdown --book URR-SWX > outputs/urr-swx.md
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
+$ python xwing_rulebook/manage.py sources_json > outputs/sources.json
 
 & git submodule update --recursive --remote
+
+
+git tag -a AlanTuring-20170301 -m "Release rc_20170227"
+git push origin AlanTuring-20170301
 ```
+
+[Link to mermaid graph](http://knsv.github.io/mermaid/live_editor/#/edit/Z3JhcGggVEIKU1RBUlQtLT5BCkEtLT5CCnN1YmdyYXBoIEF0dGFja2VyCiAgICBCLS0-QwplbmQKQy0tPkQKc3ViZ3JhcGggRGVmZW5kZXIKICAgIEQtLT5GCmVuZApGLS0-RwpHLS0-SApILS0gWWVzIC0tPkkKSC0tIE5vIC0tPkoKSS0tPkoKSi0tIFllcyAtLT5CCkogLS0gTm8gLS0-SwpLLS0-TApMLS0-TQpNLS1ZZXMtLT5OCk0tLU5vLS0-QQpOLS0-RU5E)

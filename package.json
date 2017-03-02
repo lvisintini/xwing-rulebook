@@ -11,22 +11,18 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "classnames": "^2.2.5",
-    "css-loader": "^0.26.1",
-    "file-loader": "^0.9.0",
     "immutable": "^3.8.1",
     "moment": "^2.13.0",
     "node-sass": "^4.1.1",
+    "nodemon": "^1.11.0",
+    "node-sass-import": "^1.1.1",
     "normalize.css":"^5.0.0",
-    "phantomjs":"^2.1.7",
     "raven-js": "^3.8.0",
     "react": "^15.1.0",
     "react-day-picker": "^2.2.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
@@ -34,9 +30,11 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "moha ./xwing_rulebook/frontend/scripts/tests",
+    "test": "mocha ./xwing_rulebook/static/scripts/tests",
     "build": "webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --colors --watch",
+    "build-css": "node-sass --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
+    "watch-css": "nodemon -e ./xwing_rulebook/static/styles -x \"npm run build-css\""
   },
   "author": "Luis Visintini",
   "license": "ISC"

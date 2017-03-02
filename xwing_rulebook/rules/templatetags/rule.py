@@ -4,13 +4,15 @@ from django.utils.safestring import mark_safe
 from django.template import Library
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
+from rules.models import CLAUSE_TYPES
+
 register = Library()
 
 PREFIX_TYPE_MAPPING = {
-    'text': '',
-    'table': '',
-    'item:ul': '- ',
-    'item:ol': '1. '
+    CLAUSE_TYPES.TEXT: '',
+    CLAUSE_TYPES.TABLE: '',
+    CLAUSE_TYPES.UNORDERED_ITEM: '- ',
+    CLAUSE_TYPES.ORDERED_ITEM: '1. '
 }
 
 

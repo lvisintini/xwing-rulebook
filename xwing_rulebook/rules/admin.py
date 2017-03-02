@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPE_PRECEDENCE
+from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPES
 
 
 class ContentAdminForm(forms.ModelForm):
@@ -75,14 +75,27 @@ class SourceAdmin(admin.ModelAdmin):
         )
         qs = qs.annotate(
             precedence=models.Case(
-                models.When(type='FAQ', then=SOURCE_TYPE_PRECEDENCE['FAQ']),
-                models.When(type='RR', then=SOURCE_TYPE_PRECEDENCE['RR']),
-                models.When(type='RC', then=SOURCE_TYPE_PRECEDENCE['RC']),
-                models.When(type='M', then=SOURCE_TYPE_PRECEDENCE['M']),
-                default=SOURCE_TYPE_PRECEDENCE['OTHER'],
+                models.When(
+                    content__source__type=SOURCE_TYPES.FAQ,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.RULES_REFERENCE,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.REFERENCE_CARD,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.MANUAL,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
+                ),
+                default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
                 output_field=models.IntegerField()
             )
         )
+
         return qs
 
 
@@ -141,7 +154,7 @@ class RuleAdmin(NestedModelAdmin):
     readonly_fields = ['link_to_rule']
 
     def link_to_rule(self, obj):
-        rule_link = reverse('rules:rule', args=[], kwargs={'rule_slug':obj.slug})
+        rule_link = reverse('rules:rule', args=[], kwargs={'rule_slug': obj.slug})
         return mark_safe("<a href='{}'>{}</a>".format(rule_link, obj.slug))
     link_to_rule.short_description = 'Rule link'
 
@@ -151,4 +164,3 @@ class ClauseAdmin(NestedModelAdmin):
     list_display = ('__str__', 'needs_revision')
     list_filter = ['needs_revision', ]
     inlines = (ClauseContentInline, )
-

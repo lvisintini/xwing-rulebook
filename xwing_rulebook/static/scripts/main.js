@@ -1,2 +1,2 @@
 import path from "path";
-import "styles/main.scss";
+consolog.log('JS WORKS!!!')

@@ -4,34 +4,85 @@ from django.conf import settings
 from utils.lib import render_template
 
 
-CLAUSE_TYPES = (
-    ('text', 'Text'),
-    ('item:ul', 'Unordered Item'),
-    ('item:ol', 'Ordered Item'),
-    ('table', 'Table'),
-)
+class CLAUSE_TYPES:
+    TEXT = 'text'
+    UNORDERED_ITEM = 'item:ul'
+    ORDERED_ITEM = 'item:ol'
+    TABLE = 'table'
 
-SOURCE_TYPES = (
-    ('M', 'Manual'),
-    ('RC', 'Reference Card'),
-    ('RR', 'Rules Reference'),
-    ('FAQ', 'FAQ'),
-)
+    as_choices = (
+        (TEXT, 'Text'),
+        (UNORDERED_ITEM, 'Unordered Item'),
+        (ORDERED_ITEM, 'Ordered Item'),
+        (TABLE, 'Table'),
+    )
 
-SOURCE_TYPE_PRECEDENCE = {
-    'FAQ': 0,
-    'RR': 1,
-    'RC': 2,
-    'M': 3,
-    'OTHER': 5,
-}
+    as_list = [
+        TEXT,
+        UNORDERED_ITEM,
+        ORDERED_ITEM,
+        TABLE
+    ]
+
+
+class SOURCE_TYPES:
+    MANUAL = 'M'
+    REFERENCE_CARD = 'RC'
+    RULES_REFERENCE = 'RR'
+    FAQ = 'FAQ'
+    OTHER = 'OTHER'
+
+    PRECEDENCE = [
+        FAQ,
+        RULES_REFERENCE,
+        REFERENCE_CARD,
+        MANUAL,
+        OTHER,
+    ]
+
+    as_choices = (
+        (MANUAL, 'Manual'),
+        (REFERENCE_CARD, 'Reference Card'),
+        (RULES_REFERENCE, 'Rules Reference'),
+        (FAQ, 'FAQ'),
+    )
+    as_list = [
+        MANUAL,
+        REFERENCE_CARD,
+        RULES_REFERENCE,
+        FAQ,
+        OTHER,
+    ]
+
+
+class RULE_TYPES:
+    RULE = 'rule'
+    RULE_CLARIFICATION = 'rule-clarification'
+    CARD_CLARIFICATION = 'card-clarification'
+    EXAMPLE = 'example'
+
+    as_choices = (
+        (RULE, 'Rule'),
+        (RULE_CLARIFICATION, 'Rule clarification'),
+        (CARD_CLARIFICATION, 'Card clarification'),
+        (EXAMPLE, 'Example'),
+    )
+
+    as_list = [
+        RULE,
+        RULE_CLARIFICATION,
+        CARD_CLARIFICATION,
+        EXAMPLE,
+    ]
 
 
 class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField(blank=True, null=True)
     code = models.CharField(max_length=50, default='', unique=True)
-    type = models.CharField(max_length=50, choices=SOURCE_TYPES, default='RC')
+    type = models.CharField(
+        max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
+    )
     processed = models.BooleanField(default=False)
     file = models.FilePathField(
         max_length=255,
@@ -51,6 +102,8 @@ class Rule(models.Model):
     slug = models.SlugField(max_length=125, default='', unique=True)
     related_topics = models.ManyToManyField('self', blank=True)
     expansion_rule = models.BooleanField(default=False)
+    huge_ship_rule = models.BooleanField(default=False)
+    type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
 
     class Meta:
         ordering = ['name', ]
@@ -75,7 +128,9 @@ class Rule(models.Model):
 class Clause(models.Model):
     rule = models.ForeignKey('rules.Rule', related_name='clauses')
     order = models.IntegerField(default=0)
-    type = models.CharField(max_length=10, choices=CLAUSE_TYPES, default='item:ul')
+    type = models.CharField(
+        max_length=10, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
+    )
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)
@@ -104,11 +159,23 @@ class Clause(models.Model):
             )
             qs = qs.annotate(
                 precedence=models.Case(
-                    models.When(content__source__type='FAQ', then=SOURCE_TYPE_PRECEDENCE['FAQ']),
-                    models.When(content__source__type='RR', then=SOURCE_TYPE_PRECEDENCE['RR']),
-                    models.When(content__source__type='RC', then=SOURCE_TYPE_PRECEDENCE['RC']),
-                    models.When(content__source__type='M', then=SOURCE_TYPE_PRECEDENCE['M']),
-                    default=SOURCE_TYPE_PRECEDENCE['OTHER'],
+                    models.When(
+                        content__source__type=SOURCE_TYPES.FAQ,
+                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
+                    ),
+                    models.When(
+                        content__source__type=SOURCE_TYPES.RULES_REFERENCE,
+                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
+                    ),
+                    models.When(
+                        content__source__type=SOURCE_TYPES.REFERENCE_CARD,
+                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
+                    ),
+                    models.When(
+                        content__source__type=SOURCE_TYPES.MANUAL,
+                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
+                    ),
+                    default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
                     output_field=models.IntegerField()
                 )
             )
