@@ -78,9 +78,8 @@ class DamageDeck(models.Model):
             )
         return self._json
 
-
     def __str__(self):
-        return self.name
+        return '[{}] {}'.format(dict(DAMAGE_DECK_TYPES.as_choices).get(self.type), self.name)
 
 
 class Pilot(models.Model, JSONMixin):

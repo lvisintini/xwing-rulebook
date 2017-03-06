@@ -143,8 +143,8 @@ class ContentAdmin(admin.ModelAdmin):
 
 @admin.register(Rule)
 class RuleAdmin(NestedModelAdmin):
-    prepopulated_fields = {"slug": ("name",)}
-    list_display = ('name', 'link_to_rule',)
+    prepopulated_fields = {'slug': ('name',)}
+    list_display = ('name', 'link_to_rule', 'type')
     inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
@@ -154,6 +154,8 @@ class RuleAdmin(NestedModelAdmin):
     readonly_fields = ['link_to_rule']
 
     def link_to_rule(self, obj):
+        if not obj.slug:
+            return None
         rule_link = reverse('rules:rule', args=[], kwargs={'rule_slug': obj.slug})
         return mark_safe("<a href='{}'>{}</a>".format(rule_link, obj.slug))
     link_to_rule.short_description = 'Rule link'

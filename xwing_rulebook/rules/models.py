@@ -105,6 +105,13 @@ class Rule(models.Model):
     huge_ship_rule = models.BooleanField(default=False)
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
 
+    related_pilots = models.ManyToManyField('integrations.Pilot', blank=True,
+                                            related_name='related_rules')
+    related_upgrades = models.ManyToManyField('integrations.Upgrade', blank=True,
+                                              related_name='related_rules')
+    related_damage_deck = models.ManyToManyField('integrations.DamageDeck', blank=True,
+                                                 related_name='related_damage_deck')
+
     class Meta:
         ordering = ['name', ]
 
