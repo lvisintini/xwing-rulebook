@@ -109,8 +109,8 @@ class Rule(models.Model):
                                             related_name='related_rules')
     related_upgrades = models.ManyToManyField('integrations.Upgrade', blank=True,
                                               related_name='related_rules')
-    related_damage_deck = models.ManyToManyField('integrations.DamageDeck', blank=True,
-                                                 related_name='related_damage_deck')
+    related_damage_decks = models.ManyToManyField('integrations.DamageDeck', blank=True,
+                                                 related_name='related_rules')
 
     class Meta:
         ordering = ['name', ]

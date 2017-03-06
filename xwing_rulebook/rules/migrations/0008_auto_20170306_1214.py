@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='rule',
-            name='related_damage_deck',
-            field=models.ManyToManyField(blank=True, related_name='related_damage_deck', to='integrations.DamageDeck'),
+            name='related_damage_decks',
+            field=models.ManyToManyField(blank=True, related_name='related_rules', to='integrations.DamageDeck'),
         ),
         migrations.AddField(
             model_name='rule',

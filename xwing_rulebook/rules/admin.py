@@ -148,7 +148,9 @@ class RuleAdmin(NestedModelAdmin):
     inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
-    filter_horizontal = ['related_topics', ]
+    filter_horizontal = [
+        'related_topics', 'related_damage_decks', 'related_upgrades', 'related_pilots'
+    ]
     save_on_top = True
     search_fields = ['name', ]
     readonly_fields = ['link_to_rule']
