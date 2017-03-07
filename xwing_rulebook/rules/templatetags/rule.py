@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 from django.template import Library
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
-from rules.models import CLAUSE_TYPES
+from rules.models import CLAUSE_TYPES, RULE_TYPES
 
 register = Library()
 
@@ -48,6 +48,8 @@ register.filter('format_clause', format_clause)
 
 @register.simple_tag
 def related_rules(add_anchor, related_topics, book=None, section=None):
+    related_topics = related_topics.filter(type=RULE_TYPES.RULE)
+
     if not related_topics.count():
         return ''
 

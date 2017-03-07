@@ -159,7 +159,7 @@ class RuleAdmin(NestedModelAdmin):
         if not obj.slug:
             return None
         rule_link = reverse('rules:rule', args=[], kwargs={'rule_slug': obj.slug})
-        return mark_safe("<a href='{}'>{}</a>".format(rule_link, obj.slug))
+        return mark_safe("<a target='-blank' href='{}'>{}</a>".format(rule_link, obj.slug))
     link_to_rule.short_description = 'Rule link'
 
 
