@@ -18,10 +18,9 @@ class Book(models.Model):
     def rule_ids(self):
         if not hasattr(self, '_rules'):
             section_ids = self.section_set.values_list('id', flat=True)
-            self._rule_ids = SectionRule.objects.filter(
+            self._rule_ids = list(set(SectionRule.objects.filter(
                 section_id__in=section_ids
-            ).values_list('rule_id', flat=True)
-
+            ).values_list('rule_id', flat=True)))
         return self._rule_ids
 
 

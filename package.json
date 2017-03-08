@@ -31,8 +31,8 @@
   },
   "scripts": {
     "test": "mocha ./xwing_rulebook/static/scripts/tests",
-    "build": "webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch",
+    "build-js": "webpack --progress --colors",
+    "watch-js": "webpack --progress --colors --watch",
     "build-css": "node-sass --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
     "watch-css": "nodemon -e ./xwing_rulebook/static/styles -x \"npm run build-css\""
   },

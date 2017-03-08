@@ -32,7 +32,12 @@ class BookAdmin(nested_admin.NestedModelAdmin):
         ]) or '-')
 
     def duplicate_rules(self, obj):
-        dup = [x for x in set(list(obj.rule_ids)) if list(obj.rule_ids).count(x) > 1]
+        section_ids = obj.section_set.values_list('id', flat=True)
+        rule_ids = SectionRule.objects.filter(
+            section_id__in=section_ids
+        ).values_list('rule_id', flat=True)
+
+        dup = [x for x in set(rule_ids) if rule_ids.count(x) > 1]
         return mark_safe(',<br/>'.join([
             r.name for r in Rule.objects.filter(id__in=dup)
         ]) or '-')

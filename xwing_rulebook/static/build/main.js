@@ -8830,7 +8830,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	consolog.log('JS WORKS!!!');
+	console.log('JS WORKS!!!');
 
 /***/ },
 /* 300 */

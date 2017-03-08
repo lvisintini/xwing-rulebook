@@ -67,7 +67,7 @@ def related_rules(add_anchor, related_topics, book=None, section=None):
         ]))
     else:
         topics = topics.format(', '.join([
-            '<a href="{}#{}">{}{}</a>'.format(
+            '({}{})[{}#{}]'.format(
                 reverse(
                     'books:rule',
                     kwargs={
