@@ -122,11 +122,13 @@ class ClauseCountFilter(admin.SimpleListFilter):
 
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', '__str__', 'linked_clause_count', 'related_rules', 'source')
+    list_display = (
+        'id', 'title', '__str__', 'linked_clause_count', 'related_rules', 'source', 'page'
+    )
     form = ContentAdminForm
     search_fields = ['id', 'content']
     readonly_fields = ('linked_clause_count', 'related_rules')
-    list_filter = [ClauseCountFilter, ]
+    list_filter = [ClauseCountFilter, 'source']
 
     def linked_clause_count(self, obj):
         return obj.clause_count

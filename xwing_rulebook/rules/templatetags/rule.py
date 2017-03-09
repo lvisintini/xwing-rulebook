@@ -67,8 +67,8 @@ def related_rules(add_anchor, related_topics, book=None, section=None):
         ]))
     else:
         topics = topics.format(', '.join([
-            '({}{})[{}#{}]'.format(
-                reverse(
+            '[{rule}{expansion_icon}]({relative_url}#{anchor})'.format(
+                relative_url=reverse(
                     'books:rule',
                     kwargs={
                         'book_slug': book.slug,
@@ -76,9 +76,9 @@ def related_rules(add_anchor, related_topics, book=None, section=None):
                         'rule_slug': r.slug
                     }
                 ) if book and section else '',
-                r.anchor_id,
-                r,
-                '†' if r.expansion_rule else ''
+                anchor=r.anchor_id,
+                rule=r,
+                expansion_icon='†' if r.expansion_rule else ''
             )
             for r in related
         ]))

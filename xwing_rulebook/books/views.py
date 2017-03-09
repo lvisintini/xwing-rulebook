@@ -42,6 +42,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 request, 'book_rule.html', {'book': book, 'section': section, 'rule': rule}
             )
 
+
 def single_page_book(request):
     book = Book.objects.first()
 

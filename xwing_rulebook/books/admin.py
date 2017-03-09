@@ -33,9 +33,9 @@ class BookAdmin(nested_admin.NestedModelAdmin):
 
     def duplicate_rules(self, obj):
         section_ids = obj.section_set.values_list('id', flat=True)
-        rule_ids = SectionRule.objects.filter(
+        rule_ids = list(SectionRule.objects.filter(
             section_id__in=section_ids
-        ).values_list('rule_id', flat=True)
+        ).values_list('rule_id', flat=True))
 
         dup = [x for x in set(rule_ids) if rule_ids.count(x) > 1]
         return mark_safe(',<br/>'.join([
