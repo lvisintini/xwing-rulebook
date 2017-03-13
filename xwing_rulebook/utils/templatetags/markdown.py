@@ -9,11 +9,11 @@ register = Library()
 
 
 @register.simple_tag
-def md2html(subject, rulebook=None, section=None):
+def md2html(subject, rulebook=None):
     markdown = Markdown(extras=["tables"])
 
     if hasattr(subject, 'to_markdown'):
-        subject = subject.to_markdown(True, rulebook, section)
+        subject = subject.to_markdown(True, rulebook)
 
     return mark_safe(xwing_icons(markdown.convert(subject)))
 

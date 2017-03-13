@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
-
-from utils.lib import render_template
+from django.urls import reverse
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class CLAUSE_TYPES:
@@ -23,6 +23,13 @@ class CLAUSE_TYPES:
         ORDERED_ITEM,
         TABLE
     ]
+
+    MARKDOWN_PREFIX_TYPE_MAPPING = {
+        TEXT: '',
+        TABLE: '',
+        UNORDERED_ITEM: '- ',
+        ORDERED_ITEM: '1. '
+    }
 
 
 class SOURCE_TYPES:
@@ -100,17 +107,17 @@ class Source(models.Model):
 class Rule(models.Model):
     name = models.CharField(max_length=125)
     slug = models.SlugField(max_length=125, default='', unique=True)
-    related_topics = models.ManyToManyField('self', blank=True)
     expansion_rule = models.BooleanField(default=False)
     huge_ship_rule = models.BooleanField(default=False)
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
 
+    related_rules = models.ManyToManyField('self', blank=True)
     related_pilots = models.ManyToManyField('integrations.Pilot', blank=True,
                                             related_name='related_rules')
     related_upgrades = models.ManyToManyField('integrations.Upgrade', blank=True,
                                               related_name='related_rules')
     related_damage_decks = models.ManyToManyField('integrations.DamageDeck', blank=True,
-                                                 related_name='related_rules')
+                                                  related_name='related_rules')
 
     class Meta:
         ordering = ['name', ]
@@ -119,14 +126,52 @@ class Rule(models.Model):
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
 
-    def to_markdown(self, add_anchors=True, rulebook=None, section=None):
-        context = {
-            'rule': self,
-            'add_anchors': add_anchors,
-            'book': rulebook,
-            'section': section,
+    def as_anchored_markdown(self):
+        return self.to_markdown(True)
+
+    def as_unanchored_markdown(self):
+        return self.to_markdown(False)
+
+    def to_markdown(self, add_anchors):
+        template = '### {anchor}{rule_name}{expansion_rule}\n{clauses}'
+        anchor_template = '<a id="{anchor_id}"></a>'
+
+        return template.format(
+            anchor='' if not add_anchors else anchor_template.format(anchor_id=self.anchor_id),
+            rule_name=self.name,
+            expansion_rule='' if not self.expansion_rule else ' †',
+            clauses='\n'.join([c.to_markdown(add_anchors) for c in self.clauses.all()])
+        )
+
+    def related_topics_ss(self, add_anchors, add_links, url_name='rules:rule', **extra_url_params):
+        related_topics = self.related_topics.filter(type=RULE_TYPES.RULE)
+
+        if not related_topics.count():
+            return ''
+
+        topics = '**Related Topics:** {}'
+        templates = {
+            (False, False): '{rule}{expansion_icon}',
+            (True, False): '[{rule}{expansion_icon}](#{anchor})',
+            (False, True): '[{rule}{expansion_icon}]({relative_url})',
+            (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
         }
-        return render_template('rule.md', context).strip()
+
+        template = templates[(add_anchors, add_links)]
+
+        url_params = list(extra_url_params.items())
+
+        topics = topics.format(', '.join([
+            template.format(
+                rule=r,
+                expansion_icon='' if not r.expansion_rule else '†',
+                relative_url=reverse(url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)),
+                anchor=r.anchor_id,
+            )
+            for r in related_topics
+        ]))
+
+        return topics
 
     def __str__(self):
         return self.name
@@ -190,6 +235,33 @@ class Clause(models.Model):
             qs = qs .order_by('-release_date', 'precedence')
             self._current_content = qs.first().content
         return self._current_content
+
+    def to_markdown(self, add_anchors):
+        content = self.current_content
+
+        template = '{indentation}{prefix}{anchor}{title}{content}'
+        anchor_template = '<a class="SourceReference" id="{anchor_id}">' \
+                          '{source_code}{page}{clause}</a>'
+
+        file = ''
+        if content.file:
+            file = static(content.file.replace(settings.STATICFILES_DIRS[0], ''))
+
+        res = template.format(
+            indentation='    ' * self.indentation,
+            prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[self.type],
+            anchor='' if not add_anchors else anchor_template.format(
+                anchor_id=self.anchor_id,
+                source_code=content.source.code,
+                page='' if content.page is None else ' (Page {})'.format(content.page),
+                clause=' [{}]'.format(self.id)
+            ),
+            title='' if not content.title or self.ignore_title else '**{}{}:** '.format(
+                content.title, '†' if self.expansion_related else ''
+            ),
+            content=content.content.replace('<FILE>', file),
+        )
+        return res
 
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)

@@ -147,11 +147,24 @@ class ContentAdmin(admin.ModelAdmin):
 class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'link_to_rule', 'type')
+    fieldsets = (
+        ('Basic', {
+            'fields': (
+                'name', 'slug', 'type', 'link_to_rule', 'expansion_rule', 'huge_ship_rule',
+                'related_rules'
+            )
+        }),
+        ('Related cards', {
+            'fields': ('related_damage_decks', 'related_upgrades', 'related_pilots'),
+            'classes': ('collapse', )
+        }),
+
+    )
     inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
     filter_horizontal = [
-        'related_topics', 'related_damage_decks', 'related_upgrades', 'related_pilots'
+        'related_rules', 'related_damage_decks', 'related_upgrades', 'related_pilots'
     ]
     save_on_top = True
     search_fields = ['name', ]
