@@ -9,13 +9,13 @@ $ sudo chown lvisintini:lvisintini /home/lvisintini/src/xwing-rulebook/backups/*
 
 $ psql rulebookdb < /home/lvisintini/src/xwing-rulebook/backups/rulebookdb-2017-03-13T12\:20\:00Z.sql
 
-$ python xwing_rulebook/manage.py book_markdown --book URR-SWX > outputs/urr-swx.md
+$ python xwing_rulebook/manage.py book_markdown URR-SWX > outputs/urr-swx.md
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
 $ python xwing_rulebook/manage.py sources_json > outputs/sources.json
 
 & git submodule update --recursive --remote
 
-$ python xwing_rulebook/manage.py book_alpha_order --book URR-SWX
+$ python xwing_rulebook/manage.py book_alpha_order URR-SWX
 
 $ git tag -a AlanTuring-20170301 -m "Release rc_20170227"
 $ git push origin AlanTuring-20170301

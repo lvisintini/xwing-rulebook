@@ -8,9 +8,6 @@ class Book(models.Model):
     version = models.CharField(max_length=25, null=True, blank=True)
     description = models.TextField(default='')
 
-    def has_rule(self, rule):
-        pass
-
     def __str__(self):
         return self.name
 

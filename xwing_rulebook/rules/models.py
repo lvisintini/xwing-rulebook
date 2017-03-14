@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.urls import reverse
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
@@ -142,36 +141,6 @@ class Rule(models.Model):
             expansion_rule='' if not self.expansion_rule else ' †',
             clauses='\n'.join([c.to_markdown(add_anchors) for c in self.clauses.all()])
         )
-
-    def related_topics_ss(self, add_anchors, add_links, url_name='rules:rule', **extra_url_params):
-        related_topics = self.related_topics.filter(type=RULE_TYPES.RULE)
-
-        if not related_topics.count():
-            return ''
-
-        topics = '**Related Topics:** {}'
-        templates = {
-            (False, False): '{rule}{expansion_icon}',
-            (True, False): '[{rule}{expansion_icon}](#{anchor})',
-            (False, True): '[{rule}{expansion_icon}]({relative_url})',
-            (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
-        }
-
-        template = templates[(add_anchors, add_links)]
-
-        url_params = list(extra_url_params.items())
-
-        topics = topics.format(', '.join([
-            template.format(
-                rule=r,
-                expansion_icon='' if not r.expansion_rule else '†',
-                relative_url=reverse(url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)),
-                anchor=r.anchor_id,
-            )
-            for r in related_topics
-        ]))
-
-        return topics
 
     def __str__(self):
         return self.name

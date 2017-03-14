@@ -8,21 +8,19 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--book',
-            dest='book_code',
+            'book_code',
             type=str,
-            help='The code for the book you want the markdown for.',
         )
 
     def handle(self, *args, **options):
         book = None
-        if options.get('book_code'):
-            try:
-                book = Book.objects.get(code=options['book_code'])
-            except Book.DoesNotExist:
-                self.stdout.write(self.style.ERROR(
-                    'Failed to load Book'.format(options['book_code'])
-                ))
+
+        try:
+            book = Book.objects.get(code=options.get('book_code'))
+        except Book.DoesNotExist:
+            self.stdout.write(self.style.ERROR(
+                'Failed to load Book'.format(options.get('book_code'))
+            ))
 
         if book:
             for section in book.section_set.all():
