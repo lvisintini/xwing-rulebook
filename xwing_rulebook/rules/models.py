@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class CLAUSE_TYPES:
@@ -125,23 +124,6 @@ class Rule(models.Model):
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
 
-    def as_anchored_markdown(self):
-        return self.to_markdown(True)
-
-    def as_unanchored_markdown(self):
-        return self.to_markdown(False)
-
-    def to_markdown(self, add_anchors):
-        template = '### {anchor}{rule_name}{expansion_rule}\n{clauses}'
-        anchor_template = '<a id="{anchor_id}"></a>'
-
-        return template.format(
-            anchor='' if not add_anchors else anchor_template.format(anchor_id=self.anchor_id),
-            rule_name=self.name,
-            expansion_rule='' if not self.expansion_rule else ' †',
-            clauses='\n'.join([c.to_markdown(add_anchors) for c in self.clauses.all()])
-        )
-
     def __str__(self):
         return self.name
 
@@ -204,33 +186,6 @@ class Clause(models.Model):
             qs = qs .order_by('-release_date', 'precedence')
             self._current_content = qs.first().content
         return self._current_content
-
-    def to_markdown(self, add_anchors):
-        content = self.current_content
-
-        template = '{indentation}{prefix}{anchor}{title}{content}'
-        anchor_template = '<a class="SourceReference" id="{anchor_id}">' \
-                          '{source_code}{page}{clause}</a>'
-
-        file = ''
-        if content.file:
-            file = static(content.file.replace(settings.STATICFILES_DIRS[0], ''))
-
-        res = template.format(
-            indentation='    ' * self.indentation,
-            prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[self.type],
-            anchor='' if not add_anchors else anchor_template.format(
-                anchor_id=self.anchor_id,
-                source_code=content.source.code,
-                page='' if content.page is None else ' (Page {})'.format(content.page),
-                clause=' [{}]'.format(self.id)
-            ),
-            title='' if not content.title or self.ignore_title else '**{}{}:** '.format(
-                content.title, '†' if self.expansion_related else ''
-            ),
-            content=content.content.replace('<FILE>', file),
-        )
-        return res
 
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)

@@ -4,28 +4,14 @@
 
 {% block meta-title  %}{{ book.name }}{% endblock %}
 
-{% block page_wapper_class %} u-background-dark{% endblock %}
+{% block page_wrapper_class %} u-background-dark{% endblock %}
 
 {% block content %}
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
-      <h1>{{ book.name }}</h1>
+      {{ md|md2html }}
 
-      {{ book.content | xwing_icons | md2html }}
-
-
-      {% for section in book.section_set.all %}
-        <h2>{{ section.title }}</h2>
-        {{ section.content | xwing_icons | md2html }}
-
-        {% for section_rule in section.sectionrule_set.all %}
-          {% md2html section_rule.rule %}
-        {% endfor %}
-
-      {% endfor %}
-
-       {{ '[Epic]' | xwing_icons  }}
-      <div>
-    <div>
+      {{ '[Epic]' | xwing_icons  }}
+    </div>
   </div>
 {% endblock %}

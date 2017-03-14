@@ -4,7 +4,7 @@
 
 {% block meta-title  %}{{ book.name }}{% endblock %}
 
-{% block page_wapper_class %} u-background-dark{% endblock %}
+{% block page_wrapper_class %} u-background-dark{% endblock %}
 
 {% block content %}
   <div class="Book">
@@ -17,9 +17,11 @@
         </a>
       </h2>
 
-      {% md2html rule book %}
+      {{ rule.as_anchored_markdown | md2html }}
+
+      {{ rule | filter_related_rules_by_type:RULE_TYPES.RULE }}
 
       {{ '[Epic]' | xwing_icons  }}
-    <div>
+    </div>
   </div>
 {% endblock %}

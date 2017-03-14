@@ -27,8 +27,7 @@ for dir_path, _, file_names in os.walk(ICON_ASSETS_DIR):
 automata = re.compile(r'\[(' + '|'.join([i.strip('[]') for i in ICONS.keys()]) + r')\]')
 
 
+@register.filter
 def xwing_icons(text):
     result = automata.sub(lambda x: ICONS[x.group()], text)
     return mark_safe(result)
-
-register.filter('xwing_icons', xwing_icons)

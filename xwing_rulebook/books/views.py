@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from books.models import Book, Section, SectionRule
+from books.helpers import Book2Markdown
 
 
 def book(request, book_slug, section_slug=None, rule_slug=None):
@@ -48,6 +49,7 @@ def single_page_book(request):
 
     context = {
         'book': book,
+        'md': Book2Markdown(book).as_single_page(anchored=True, linked=False),
     }
 
     return render(request, 'single_page_book.html', context)
