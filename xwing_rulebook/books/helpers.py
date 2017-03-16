@@ -1,4 +1,5 @@
 from rules.helpers import Rule2Markdown
+from rules.models import RULE_TYPES
 
 
 class Book2Markdown:
@@ -50,3 +51,26 @@ class Book2Markdown:
         )
 
         return book_md
+
+    def book_related_topics_references(self, rule, section=None):
+        filtered_rules = rule.related_rules.filter(type=RULE_TYPES.RULE, id__in=self.book.rule_ids)
+        kwargs = {
+            'url_name': 'books:rule-in-book',
+            'book_slug': self.book.slug,
+        }
+        if section:
+            kwargs['url_name'] = 'books:rule'
+            kwargs['section_slug'] = section.slug
+
+        related_topics_md = Rule2Markdown.rules_as_references(
+            filtered_rules,
+            False,
+            True,
+            **kwargs
+        )
+
+        if related_topics_md:
+            related_topics_md = "\n**Related Topics:** {}\n".format(
+                related_topics_md
+            )
+        return related_topics_md

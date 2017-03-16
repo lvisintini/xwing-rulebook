@@ -60,12 +60,10 @@ class Rule2Markdown:
 
         return '\n\n'.join(clauses_mds)
 
-    def related_rules_as_references(self, rule_type, anchored=False, linked=False,
-                                    url_name='rules:rule', **kwargs):
+    @staticmethod
+    def rules_as_references(rules, anchored=False, linked=False, url_name='rules:rule', **kwargs):
 
-        filtered_rules = self.rule.related_rules.filter(type=rule_type)
-
-        if not filtered_rules.count():
+        if not rules.count():
             return ''
 
         templates = {
@@ -86,15 +84,14 @@ class Rule2Markdown:
                 relative_url=reverse(url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)),
                 anchor=r.anchor_id,
             )
-            for r in filtered_rules
+            for r in rules
         ])
 
         return references
 
     def related_topics_references(self, *args, **kwargs):
-        related_topics_md = self.related_rules_as_references(
-            RULE_TYPES.RULE, *args, **kwargs
-        )
+        filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE)
+        related_topics_md = self.rules_as_references(filtered_rules, *args, **kwargs)
         if related_topics_md:
             related_topics_md = "\n**Related Topics:** {}\n".format(
                 related_topics_md
@@ -102,9 +99,8 @@ class Rule2Markdown:
         return related_topics_md
 
     def rule_clarifications_references(self, *args, **kwargs):
-        rule_clarifications_md = self.related_rules_as_references(
-            RULE_TYPES.RULE_CLARIFICATION, *args, **kwargs
-        )
+        filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE_CLARIFICATION)
+        rule_clarifications_md = self.rules_as_references(filtered_rules, *args, **kwargs)
         if rule_clarifications_md:
             rule_clarifications_md = "\n**Rule Clarifications:** {}\n".format(
                 rule_clarifications_md
@@ -112,9 +108,8 @@ class Rule2Markdown:
         return rule_clarifications_md
 
     def rule_examples_references(self, *args, **kwargs):
-        rule_examples_md = self.related_rules_as_references(
-            RULE_TYPES.EXAMPLE, *args, **kwargs
-        )
+        filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.EXAMPLE)
+        rule_examples_md = self.rules_as_references(filtered_rules, *args, **kwargs)
         if rule_examples_md:
             rule_examples_md = "\n**Examples:** {}\n".format(
                 rule_examples_md
