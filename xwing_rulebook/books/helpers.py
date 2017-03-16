@@ -22,7 +22,7 @@ class Book2Markdown:
 
                 rules.append(
                     rule_template.format(
-                        title_and_rule=md_helper.rule_to_markdown(anchored),
+                        title_and_rule=md_helper.rule_to_markdown(anchored, 3),
                         related_topics=md_helper.related_topics_references(
                             anchored, linked, *args, **kwargs
                         ),

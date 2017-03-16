@@ -15,8 +15,8 @@ class Rule2Markdown:
     def as_unanchored_markdown(self):
         return self.rule_to_markdown(False)
 
-    def rule_to_markdown(self, anchored):
-        template = '### {anchor}{rule_name}{expansion_rule}\n{clauses}'
+    def rule_to_markdown(self, anchored, header_level=3):
+        template = '#' * header_level + ' {anchor}{rule_name}{expansion_rule}\n{clauses}'
         anchor_template = '<a id="{anchor_id}"></a>'
 
         return template.format(

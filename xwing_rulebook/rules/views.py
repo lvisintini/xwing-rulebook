@@ -8,6 +8,5 @@ def rule(request, rule_slug=None):
     r = get_object_or_404(Rule, slug=rule_slug)
     context = {
         'rule': r,
-        'md_helper': Rule2Markdown(r)
     }
     return render(request, 'rule.html', context)

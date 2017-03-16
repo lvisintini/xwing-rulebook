@@ -45,11 +45,4 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
 
 
 def single_page_book(request):
-    book = Book.objects.first()
-
-    context = {
-        'book': book,
-        'md': Book2Markdown(book).as_single_page(anchored=True, linked=False),
-    }
-
-    return render(request, 'single_page_book.html', context)
+    return render(request, 'single_page_book.html', {'book': Book.objects.first()})

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load markdown %}
 {% load xwing_icons %}
+{% load rule_to_markdown %}
 
 {% block meta-title  %}{{ rule.name }}{% endblock %}
 
@@ -10,7 +11,27 @@
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
 
-      {{ md_helper.as_anchored_markdown | md2html }}
+      {{ rule | rule_as_anchored_markdown:1 | md2html }}
+
+      {% with rule|filter_related_rules_by_type:RULE_TYPES.RULE_CLARIFICATION as clarifications %}
+        {% if clarifications.count %}
+          <h2>Rule Clarifications</h2>
+          {% for clarification in clarifications %}
+            {{ clarification | rule_as_anchored_markdown:3 | md2html }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+        {% with rule|filter_related_rules_by_type:RULE_TYPES.EXAMPLE as examples %}
+        {% if examples.count %}
+          <h2>Rule examples</h2>
+          {% for example in examples %}
+            {{ example | rule_as_anchored_markdown:3 | md2html }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {{ rule | related_topics_as_rule_linked_list_markdown | md2html }}
 
       {{ '[Epic]' | xwing_icons  }}
     </div>
