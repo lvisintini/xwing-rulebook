@@ -14,7 +14,7 @@
       {{ book.content | xwing_icons | md2html }}
 
       <h2>
-        <a href="{% url 'books:section' book_slug=book.slug section_slug=section.slug%}">
+        <a href="{% url 'books:section' book_slug=book.slug section_slug=section.slug %}">
           {{ section.title }}
         </a>
       </h2>

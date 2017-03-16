@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load markdown %}
+{% load xwing_icons %}
+{% load rule_to_markdown %}
+
+{% block meta-title  %}{{ rule.name }}{% endblock %}
+
+{% block page_wrapper_class %} u-background-dark{% endblock %}
+
+{% block content %}
+  <div class="Book">
+    <div class="Book__Inner Book__Inner--fancy-border">
+      <h1>Rules index</h1>
+
+      <ul>
+        {% for rule in rules %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=rule.slug  %}">{{ rule.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

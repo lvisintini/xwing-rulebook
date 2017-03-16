@@ -10,3 +10,11 @@ def rule(request, rule_slug=None):
         'rule': r,
     }
     return render(request, 'rule.html', context)
+
+
+def rules_index(request):
+    rules = Rule.objects.all()
+    context = {
+        'rules': rules,
+    }
+    return render(request, 'index.html', context)

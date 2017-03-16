@@ -10,6 +10,9 @@
 {% block content %}
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
+      <div class="u-text-right">
+        <a href="{% url 'rules:index' %}">&#8592; Back to index</a>
+      </div>
 
       {{ rule | rule_as_anchored_markdown:1 | md2html }}
 
