@@ -22,7 +22,7 @@
         {% endif %}
       {% endwith %}
 
-        {% with rule|filter_related_rules_by_type:RULE_TYPES.EXAMPLE as examples %}
+      {% with rule|filter_related_rules_by_type:RULE_TYPES.EXAMPLE as examples %}
         {% if examples.count %}
           <h2>Rule examples</h2>
           {% for example in examples %}
