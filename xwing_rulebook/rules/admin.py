@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPES
+from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPES, RULE_TYPES
 
 
 class ContentAdminForm(forms.ModelForm):
@@ -166,9 +166,15 @@ class RuleAdmin(NestedModelAdmin):
     filter_horizontal = [
         'related_rules', 'related_damage_decks', 'related_upgrades', 'related_pilots'
     ]
+    list_filter = ['type', ]
     save_on_top = True
     search_fields = ['name', ]
     readonly_fields = ['link_to_rule']
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.name == "related_rules":
+            kwargs["queryset"] = Rule.objects.filter(type=RULE_TYPES.RULE)
+        return super(RuleAdmin, self).formfield_for_manytomany(db_field, request, **kwargs)
 
     def link_to_rule(self, obj):
         if not obj.slug:
