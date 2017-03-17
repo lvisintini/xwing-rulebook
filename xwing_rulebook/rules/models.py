@@ -203,6 +203,7 @@ class Content(models.Model):
     page = models.IntegerField(null=True, blank=True)
     keep_line_breaks = models.BooleanField(default=False)
     file = models.FilePathField(
+        max_length=255,
         path=settings.STATICFILES_DIRS[0],
         recursive=True,
         allow_folders=False,
