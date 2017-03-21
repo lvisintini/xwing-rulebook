@@ -25,15 +25,6 @@
         {% endif %}
       {% endwith %}
 
-      {% with rule|filter_related_rules_by_type:RULE_TYPES.EXAMPLE as examples %}
-        {% if examples.count %}
-          <h2>Rule examples</h2>
-          {% for example in examples %}
-            {{ example | rule_as_anchored_markdown:3 | md2html }}
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
-
       {{ rule | related_topics_as_rule_linked_list_markdown | md2html }}
 
       {{ '[Epic]' | xwing_icons  }}

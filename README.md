@@ -13,6 +13,8 @@ $ python xwing_rulebook/manage.py book_markdown URR-SWX > outputs/urr-swx.md
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
 $ python xwing_rulebook/manage.py sources_json > outputs/sources.json
 
+$ python xwing_rulebook/manage.py load_from_xwing_data
+
 & git submodule update --recursive --remote
 
 $ python xwing_rulebook/manage.py book_alpha_order URR-SWX

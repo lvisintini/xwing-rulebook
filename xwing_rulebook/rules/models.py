@@ -64,20 +64,20 @@ class RULE_TYPES:
     RULE = 'rule'
     RULE_CLARIFICATION = 'rule-clarification'
     CARD_CLARIFICATION = 'card-clarification'
-    EXAMPLE = 'example'
+    CARD_ERRATA = 'card-errata'
 
     as_choices = (
         (RULE, 'Rule'),
         (RULE_CLARIFICATION, 'Rule clarification'),
         (CARD_CLARIFICATION, 'Card clarification'),
-        (EXAMPLE, 'Example'),
+        (CARD_ERRATA, 'Card errata'),
     )
 
     as_list = [
         RULE,
         RULE_CLARIFICATION,
         CARD_CLARIFICATION,
-        EXAMPLE,
+        CARD_ERRATA,
     ]
 
 
@@ -116,6 +116,8 @@ class Rule(models.Model):
                                               related_name='related_rules')
     related_damage_decks = models.ManyToManyField('integrations.DamageDeck', blank=True,
                                                   related_name='related_rules')
+    related_conditions = models.ManyToManyField('integrations.Condition', blank=True,
+                                                related_name='related_rules')
 
     class Meta:
         ordering = ['name', ]
@@ -123,6 +125,28 @@ class Rule(models.Model):
     @property
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
+
+    @property
+    def card_images(self):
+        if not hasattr(self, '_card_images'):
+            template = 'xwing-data-images/{image}'
+
+            card_relationships = [
+                self.related_pilots,
+                self.related_upgrades,
+                self.related_damage_decks,
+                self.related_conditions
+            ]
+
+            card_images = []
+            for qs in card_relationships:
+                card_images.extend([
+                    (c.name, template.format(**c.json)) for c in qs.all() if c.json.get('image')
+                ])
+
+            self._card_images = dict(card_images)
+
+        return self._card_images
 
     def __str__(self):
         return self.name

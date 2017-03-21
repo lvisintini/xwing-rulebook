@@ -1,7 +1,9 @@
 from datetime import datetime
 from django.core.management.base import BaseCommand
 
-from integrations.models import Product, DamageDeck, Pilot, Upgrade, Ship, DATA, DAMAGE_DECK_TYPES
+from integrations.models import (
+    Product, DamageDeck, Pilot, Upgrade, Ship, Condition, DATA, DAMAGE_DECK_TYPES
+)
 
 
 class Command(BaseCommand):
@@ -31,7 +33,7 @@ class Command(BaseCommand):
                 dd.type = dd_type
                 dd.save()
 
-        for model_class in [Pilot, Ship, Upgrade]:
+        for model_class in [Pilot, Ship, Upgrade, Condition]:
             for d in DATA[model_class.data_key]:
                 model_class(
                     id=d['id'],

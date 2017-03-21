@@ -1,7 +1,9 @@
+import json
+
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from integrations.models import Product, Ship, Pilot, Upgrade, DamageDeck
+from integrations.models import Product, Ship, Pilot, Upgrade, DamageDeck, Condition
 
 
 @admin.register(Product)
@@ -23,7 +25,7 @@ class ModelWithJSON(admin.ModelAdmin):
     save_on_top = True
 
     def json(self, obj):
-        return mark_safe("<br/><pre>{}</pre>".format(obj.json))
+        return mark_safe("<br/><pre>{}</pre>".format(json.dumps(obj.json, indent=2)))
 
 
 @admin.register(Ship)
@@ -38,6 +40,11 @@ class PilotAdmin(ModelWithJSON):
 
 @admin.register(Upgrade)
 class UpgradeAdmin(ModelWithJSON):
+    pass
+
+
+@admin.register(Condition)
+class ConditionAdmin(ModelWithJSON):
     pass
 
 

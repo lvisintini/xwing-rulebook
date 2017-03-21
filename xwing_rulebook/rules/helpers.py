@@ -16,13 +16,23 @@ class Rule2Markdown:
         return self.rule_to_markdown(False)
 
     def rule_to_markdown(self, anchored, header_level=3):
-        template = '#' * header_level + ' {anchor}{rule_name}{expansion_rule}\n{clauses}'
+        template = '{header_level} {anchor}{rule_name}{expansion_rule}\n{card_images}{clauses}'
         anchor_template = '<a id="{anchor_id}"></a>'
+        card_images_template = '![{label}]({url})'
+
+        card_images = []
+        if self.rule.type in [RULE_TYPES.CARD_CLARIFICATION, ]:
+            card_images.extend(
+                card_images_template.format(label=name, url=static(img))
+                for name, img in self.rule.card_images.items()
+            )
 
         return template.format(
+            header_level='#' * header_level,
             anchor='' if not anchored else anchor_template.format(anchor_id=self.rule.anchor_id),
             rule_name=self.rule.name,
             expansion_rule='' if not self.rule.expansion_rule else ' †',
+            card_images='{}\n\n'.format(''.join(card_images)) if card_images else '',
             clauses=self.clauses_to_markdown(anchored)
         )
 

@@ -155,7 +155,9 @@ class RuleAdmin(NestedModelAdmin):
             )
         }),
         ('Related cards', {
-            'fields': ('related_damage_decks', 'related_upgrades', 'related_pilots'),
+            'fields': (
+                'related_damage_decks', 'related_upgrades', 'related_pilots', 'related_conditions'
+            ),
             'classes': ('collapse', )
         }),
 
