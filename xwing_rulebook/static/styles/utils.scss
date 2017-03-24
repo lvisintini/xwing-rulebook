@@ -17,6 +17,27 @@
     }
   }
 
+  &-flex {
+    display: flex;
+
+    &-left {
+      justify-content: flex-start;
+    }
+
+    &-right {
+      justify-content: flex-end;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-columns {
+      flex-direction: column;
+    }
+  }
+
+
   &-background {
     &-dark {
       background-color: val($palette, bg-dark);

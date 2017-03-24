@@ -1,5 +1,5 @@
-from django.db import models
 from django.conf import settings
+from django.db import models
 
 
 class CLAUSE_TYPES:
@@ -7,27 +7,54 @@ class CLAUSE_TYPES:
     UNORDERED_ITEM = 'item:ul'
     ORDERED_ITEM = 'item:ol'
     TABLE = 'table'
+    IMAGE_BLOCK = 'image-block'
+    IMAGE_WRAP = 'image-wrap'
 
     as_choices = (
         (TEXT, 'Text'),
         (UNORDERED_ITEM, 'Unordered Item'),
         (ORDERED_ITEM, 'Ordered Item'),
         (TABLE, 'Table'),
+        (IMAGE_BLOCK, 'Image (Block)'),
+        (IMAGE_WRAP, 'Image (Wrap)')
     )
 
     as_list = [
         TEXT,
         UNORDERED_ITEM,
         ORDERED_ITEM,
-        TABLE
+        TABLE,
+        IMAGE_BLOCK,
+        IMAGE_WRAP
+
     ]
 
     MARKDOWN_PREFIX_TYPE_MAPPING = {
         TEXT: '',
         TABLE: '',
         UNORDERED_ITEM: '- ',
-        ORDERED_ITEM: '1. '
+        ORDERED_ITEM: '1. ',
+        IMAGE_BLOCK: '',
+        IMAGE_WRAP: ''
     }
+
+
+class CLAUSE_ALIGNMENT:
+    LEFT = 'left'
+    RIGHT = 'right'
+    CENTER = 'center'
+
+    as_choices = (
+        (LEFT, 'Left'),
+        (RIGHT, 'Right'),
+        (CENTER, 'Center'),
+    )
+
+    as_list = [
+        LEFT,
+        RIGHT,
+        CENTER,
+    ]
 
 
 class SOURCE_TYPES:
@@ -63,12 +90,14 @@ class SOURCE_TYPES:
 class RULE_TYPES:
     RULE = 'rule'
     RULE_CLARIFICATION = 'rule-clarification'
+    CARD = 'card'
     CARD_CLARIFICATION = 'card-clarification'
     CARD_ERRATA = 'card-errata'
 
     as_choices = (
         (RULE, 'Rule'),
         (RULE_CLARIFICATION, 'Rule clarification'),
+        (CARD, 'Card'),
         (CARD_CLARIFICATION, 'Card clarification'),
         (CARD_ERRATA, 'Card errata'),
     )
@@ -76,6 +105,7 @@ class RULE_TYPES:
     as_list = [
         RULE,
         RULE_CLARIFICATION,
+        CARD,
         CARD_CLARIFICATION,
         CARD_ERRATA,
     ]
@@ -110,6 +140,7 @@ class Rule(models.Model):
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
 
     related_rules = models.ManyToManyField('self', blank=True)
+
     related_pilots = models.ManyToManyField('integrations.Pilot', blank=True,
                                             related_name='related_rules')
     related_upgrades = models.ManyToManyField('integrations.Upgrade', blank=True,
@@ -126,28 +157,6 @@ class Rule(models.Model):
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
 
-    @property
-    def card_images(self):
-        if not hasattr(self, '_card_images'):
-            template = 'xwing-data-images/{image}'
-
-            card_relationships = [
-                self.related_pilots,
-                self.related_upgrades,
-                self.related_damage_decks,
-                self.related_conditions
-            ]
-
-            card_images = []
-            for qs in card_relationships:
-                card_images.extend([
-                    (c.name, template.format(**c.json)) for c in qs.all() if c.json.get('image')
-                ])
-
-            self._card_images = dict(card_images)
-
-        return self._card_images
-
     def __str__(self):
         return self.name
 
@@ -156,13 +165,16 @@ class Clause(models.Model):
     rule = models.ForeignKey('rules.Rule', related_name='clauses')
     order = models.IntegerField(default=0)
     type = models.CharField(
-        max_length=10, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
+        max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
+    )
+    alignment = models.CharField(
+        max_length=6, choices=CLAUSE_ALIGNMENT.as_choices, default=CLAUSE_ALIGNMENT.LEFT
     )
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)
     needs_revision = models.BooleanField(default=False)
-    available_contents = models.ManyToManyField('rules.Content', through='rules.ClauseContent')
+    available_contents = models.ManyToManyField('contents.Content', through='rules.ClauseContent')
 
     class Meta:
         ordering = ['rule', 'order']
@@ -217,29 +229,4 @@ class Clause(models.Model):
 
 class ClauseContent(models.Model):
     clause = models.ForeignKey('rules.Clause')
-    content = models.ForeignKey('rules.Content')
-
-
-class Content(models.Model):
-    title = models.CharField(max_length=125, null=True, blank=True)
-    content = models.TextField(default='')
-    source = models.ForeignKey('rules.Source')
-    page = models.IntegerField(null=True, blank=True)
-    keep_line_breaks = models.BooleanField(default=False)
-    file = models.FilePathField(
-        max_length=255,
-        path=settings.STATICFILES_DIRS[0],
-        recursive=True,
-        allow_folders=False,
-        null=True,
-        blank=True
-    )
-
-    def __str__(self):
-        reference = str(self.source)
-        if self.page is not None:
-            reference = '{} (Page {})'.format(reference, self.page)
-
-        if self.title:
-            return '{} - {}: {}'.format(reference, self.title, self.content)[:125]
-        return '{} - {}'.format(reference, self.content[:125])
+    content = models.ForeignKey('contents.Content')

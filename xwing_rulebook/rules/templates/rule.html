@@ -25,6 +25,24 @@
         {% endif %}
       {% endwith %}
 
+      {% with rule|filter_related_rules_by_type:RULE_TYPES.CARD_ERRATA as card_erratas %}
+        {% if card_erratas.count %}
+          <h2>Errata</h2>
+          {% for card_errata in card_erratas %}
+            {{ card_errata | rule_as_anchored_markdown:3 | md2html }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      {% with rule|filter_related_rules_by_type:RULE_TYPES.CARD_CLARIFICATION as clarifications %}
+        {% if clarifications.count %}
+          <h2>Clarification</h2>
+          {% for clarification in clarifications %}
+            {{ clarification | rule_as_anchored_markdown:3 | md2html }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
       {{ rule | related_topics_as_rule_linked_list_markdown | md2html }}
 
       {{ '[Epic]' | xwing_icons  }}

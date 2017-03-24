@@ -7,10 +7,10 @@ class Book2Markdown:
         self.book = book
 
     def as_single_page(self, anchored, linked, *args, **kwargs):
-        book_template = "# {book_name}\n\n{book_content}\n\n{sections}"
-        section_template = "## {section_title}\n\n{section_content}\n\n{rules}\n"
+        book_template = "# {book_name} #\n\n{book_content}\n\n{sections}"
+        section_template = "## {section_title} ##\n\n{section_content}\n\n{rules}\n"
         rule_template = (
-            '{title_and_rule}\n{related_topics}{rule_clarifications}{rule_examples}\n'
+            '{title_and_rule}\n{related_topics}{rule_clarifications}\n'
         )
 
         sections = []
@@ -28,9 +28,6 @@ class Book2Markdown:
                             anchored, linked, *args, **kwargs
                         ),
                         rule_clarifications=md_helper.rule_clarifications_references(
-                            anchored, linked, *args, **kwargs
-                        ),
-                        rule_examples=md_helper.rule_examples_references(
                             anchored, linked, *args, **kwargs
                         ),
                     )

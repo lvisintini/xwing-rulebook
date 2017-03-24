@@ -6,18 +6,7 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Content, Rule, Source, SOURCE_TYPES, RULE_TYPES
-
-
-class ContentAdminForm(forms.ModelForm):
-    def has_changed(self):
-        return True
-
-    def clean(self):
-        cleaned_data = super().clean()
-        if not cleaned_data.get('keep_line_breaks', False):
-            cleaned_data['content'] = ' '.join(cleaned_data['content'].strip().splitlines())
-        return cleaned_data
+from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES, RULE_TYPES
 
 
 class RuleAdminForm(forms.ModelForm):
@@ -43,12 +32,6 @@ class ClauseInline(NestedTabularInline):
     inlines = (ClauseContentInline, )
     sortable_field_name = 'order'
     extra = 0
-
-
-class ContentInline(NestedTabularInline):
-    model = Content
-    extra = 0
-    form = ContentAdminForm
 
 
 @admin.register(Source)
@@ -99,50 +82,6 @@ class SourceAdmin(admin.ModelAdmin):
         return qs
 
 
-class ClauseCountFilter(admin.SimpleListFilter):
-    title = "Clause Counts"
-    parameter_name = "clause_count"
-
-    def lookups(self, request, model_admin):
-        return (
-            ('0', '0 clauses'),
-            ('1', '1 clause'),
-            ('2+', '2+ clauses'),
-        )
-
-    def queryset(self, request, queryset):
-        if self.value() == '0':
-            return queryset.filter(clause_count=0)
-        if self.value() == '1':
-            return queryset.filter(clause_count=1)
-        if self.value() == '2+':
-            return queryset.filter(clause_count__gte=2)
-        return queryset
-
-
-@admin.register(Content)
-class ContentAdmin(admin.ModelAdmin):
-    list_display = (
-        'id', 'title', '__str__', 'linked_clause_count', 'related_rules', 'source', 'page'
-    )
-    form = ContentAdminForm
-    search_fields = ['id', 'content']
-    readonly_fields = ('linked_clause_count', 'related_rules')
-    list_filter = [ClauseCountFilter, 'source']
-
-    def linked_clause_count(self, obj):
-        return obj.clause_count
-    linked_clause_count.admin_order_field = 'clause_count'
-
-    def related_rules(self, obj):
-        return ', '.join(obj.clause_set.values_list('rule__name', flat=True))
-
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        qs = qs.annotate(clause_count=models.Count('clause', distinct=True))
-        return qs
-
-
 @admin.register(Rule)
 class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
@@ -151,7 +90,7 @@ class RuleAdmin(NestedModelAdmin):
         ('Basic', {
             'fields': (
                 'name', 'slug', 'type', 'link_to_rule', 'expansion_rule', 'huge_ship_rule',
-                'related_rules'
+                'related_rules',
             )
         }),
         ('Related cards', {
@@ -175,7 +114,7 @@ class RuleAdmin(NestedModelAdmin):
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == "related_rules":
-            kwargs["queryset"] = Rule.objects.filter(type=RULE_TYPES.RULE)
+            kwargs["queryset"] = Rule.objects.filter(type__in=[RULE_TYPES.RULE, RULE_TYPES.CARD])
         return super(RuleAdmin, self).formfield_for_manytomany(db_field, request, **kwargs)
 
     def link_to_rule(self, obj):

@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polymorphic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,11 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nested_admin',
-    'integrations',
-    'rules',
-    'books',
-    'pages',
-    'utils',
+    'integrations.apps.IntegrationsConfig',
+    'rules.apps.RulesConfig',
+    'books.apps.BooksConfig',
+    'pages.apps.PagesConfig',
+    'utils.apps.UtilsConfig',
+    'contents.apps.ContentsConfig',
 ]
 
 MIDDLEWARE = [
