@@ -16,6 +16,12 @@ class TextContentAdminForm(forms.ModelForm):
         cleaned_data = super().clean()
         if not cleaned_data.get('keep_line_breaks', False):
             cleaned_data['content'] = ' '.join(cleaned_data['content'].strip().splitlines())
+            cleaned_data['content_as_per_source'] = ' '.join(
+                cleaned_data.get('content_as_per_source', '').strip().splitlines()
+            )
+
+        if not cleaned_data.get('preserve_title_case', False):
+            cleaned_data['title'] = cleaned_data['title'].capitalize()
         return cleaned_data
 
 

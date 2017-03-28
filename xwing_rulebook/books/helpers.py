@@ -3,10 +3,14 @@ from rules.models import RULE_TYPES
 
 
 class Book2Markdown:
-    def __init__(self, book):
+    def __init__(self, book, **kwargs):
         self.book = book
 
-    def as_single_page(self, anchored, linked, *args, **kwargs):
+        self.anchored = kwargs.pop('anchored', False)
+        self.linked = kwargs.pop('linked', False)
+        self.extra_url_params = kwargs
+
+    def as_single_page(self):
         book_template = "# {book_name} #\n\n{book_content}\n\n{sections}"
         section_template = "## {section_title} ##\n\n{section_content}\n\n{rules}\n"
         rule_template = (
@@ -19,17 +23,19 @@ class Book2Markdown:
             for section_rule in section.sectionrule_set.all():
                 r = section_rule.rule
 
-                md_helper = Rule2Markdown(r)
+                md_helper = Rule2Markdown(
+                    r,
+                    anchored=self.anchored,
+                    linked=self.linked,
+                    header_level=3,
+                    **self.extra_url_params
+                )
 
                 rules.append(
                     rule_template.format(
-                        title_and_rule=md_helper.rule_to_markdown(anchored, 3),
-                        related_topics=md_helper.related_topics_references(
-                            anchored, linked, *args, **kwargs
-                        ),
-                        rule_clarifications=md_helper.rule_clarifications_references(
-                            anchored, linked, *args, **kwargs
-                        ),
+                        title_and_rule=md_helper.rule_to_markdown(),
+                        related_topics=md_helper.related_topics_references(),
+                        rule_clarifications=md_helper.rule_clarifications_references(),
                     )
                 )
 
@@ -59,15 +65,13 @@ class Book2Markdown:
             kwargs['url_name'] = 'books:rule'
             kwargs['section_slug'] = section.slug
 
-        related_topics_md = Rule2Markdown.rules_as_references(
-            filtered_rules,
-            False,
-            True,
+        related_topics_md = Rule2Markdown(
+            rule,
+            anchored=self.anchored,
+            linked=self.linked,
             **kwargs
-        )
+        ).rules_as_references(filtered_rules)
 
         if related_topics_md:
-            related_topics_md = "\n**Related Topics:** {}\n".format(
-                related_topics_md
-            )
+            related_topics_md = "\n**Related Topics:** {}\n".format(related_topics_md)
         return related_topics_md

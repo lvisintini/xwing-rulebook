@@ -8,17 +8,29 @@ register = Library()
 
 @register.filter
 def rule_as_anchored_markdown(rule, level=3):
-    return Rule2Markdown(rule).rule_to_markdown(True, level)
+    return Rule2Markdown(
+        rule,
+        anchored=True,
+        header_level=level,
+    ).rule_to_markdown()
 
 
 @register.filter
 def rule_as_unanchored_markdown(rule, level=3):
-    return Rule2Markdown(rule).rule_to_markdown(False, level)
+    return Rule2Markdown(
+        rule,
+        anchored=False,
+        header_level=level,
+    ).rule_to_markdown()
 
 
 @register.filter
 def related_topics_as_rule_linked_list_markdown(rule):
-    return Rule2Markdown(rule).related_topics_references(False, True)
+    return Rule2Markdown(
+        rule,
+        anchored=False,
+        linked=True,
+    ).related_topics_references()
 
 
 @register.filter

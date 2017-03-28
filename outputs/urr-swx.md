@@ -1,4 +1,4 @@
-# Ultimate X-Wing Miniatures Rules Reference
+# Ultimate X-Wing Miniatures Rules Reference #
 
 This rule book merges all **X-Wing Miniatures** rules and its erratas into a single document.
 
@@ -8,7 +8,7 @@ It's based on the Rules Reference manual that comes with the **X-Wing Miniatures
 
 Those exceptions are duly noted in the in the *Unofficial content changes* section of this document.
 
-## Introduction
+## Introduction ##
 
 ### Stop!
 
@@ -36,7 +36,7 @@ Card abilities can override the rules listed in this guide. Mission rules can ov
 If a card ability or mission effect uses the word “cannot,” that effect is absolute and cannot be overridden by other effects.
 
 
-## Glossary
+## Glossary ##
 
 The glossary lists all gameplay terms and phases in detail. If you are unable to find a topic in this glossary, check the index section.
 
@@ -65,7 +65,11 @@ A ship can maintain one target lock. If a ship acquires a new target lock, it mu
 
 - A ship can be locked by more than one enemy ship.
 
-**Target lock tokens:** ![alt_text](/static/images/tokens/target-lock-tokens.png)
+**Target lock tokens:** 
+
+![alt_text](/static/images/tokens/target-lock-tokens.png)
+
+
 
 **Related Topics:** Actions, Attack, Modifying dice, Target lock
 
@@ -279,7 +283,11 @@ Bearing is indicated by the arrows on the maneuver dial. There are several beari
 
 - **Segnor’s Loop:** The Segnor’s Loop left ([Segnor's Loop Left]) and Segnor’s Loop right ([Segnor's Loop Right]) bearings advance a ship at a shallow curve to one side, changing its facing by 225°. To achieve this facing, the player slides the ship’s front guides into the end of the maneuver template instead of the rear guides.
 
-    ![alt_text](/static/images/rules/segnors-loop.png)
+    
+
+![alt_text](/static/images/rules/segnors-loop.png)
+
+
 
 - **Tallon Roll:** The Tallon Roll left ([Tallon Roll Left]) and Tallon Roll right ([Tallon Roll Right]) bearings advance a ship at a tight curve to one side, sharply changing its facing by 180°. To achieve this facing, before the player places the ship at the opposite end of the template, he rotates the ship 90° to the left for a Tallon Roll left, or 90° to the right for a Tallon Roll right. The side of the ship’s base must be placed flush against the end of the maneuver template, and the end of the template cannot extend beyond the front or back of the ship’s base.
 
@@ -302,7 +310,11 @@ Each Bomb ([Bomb]) Upgrade card allows a ship to drop a specific type of bomb to
 
 1. Place the bomb token indicated on the Upgrade card into the play area and slide the guides of the token into the opposite end of the template.
 
-    ![alt_text](/static/images/rules/using-bombs.png)
+    
+
+![alt_text](/static/images/rules/using-bombs.png)
+
+
 
 - Bomb Upgrade cards are not secondary weapons.
 
@@ -411,12 +423,20 @@ After all decloaking has been resolved, the Activation phase continues as normal
 
 - If a ship cannot decloak in any direction, it cannot decloak.
 
-**Cloak token:** ![alt_text](/static/images/tokens/cloak-token.png)
+**Cloak token:** 
+
+![alt_text](/static/images/tokens/cloak-token.png)
+
+
 
 **Related Topics:** Actions, Agility, Barrel roll, Boost, Decloak†, End phase, Fleeing the battlefield, Stress
 
 ### Cluster mine tokens † ### 
+
+
 ![alt_text](/static/images/tokens/cluster-mine-tokens.png)
+
+
 
 When one of these bomb tokens detonates, the ship that moved through or overlapped that token rolls 2 attack dice and suffers 1 damage for each [Hit] and [Critical Hit] rolled. Then discard that token.
 
@@ -438,7 +458,11 @@ During the Combat phase, each ship has an opportunity to perform one attack, sta
 **Rule Clarifications:** Altered pilot skill, Timing chart for performing an attack
 
 ### Conner net token † ### 
+
+
 ![alt_text](/static/images/tokens/conner-net-token.png)
+
+
 
 When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its “Perform Action” step. Then discard this token.
 
@@ -453,7 +477,11 @@ During an attack, a ship suffers one critical damage for each uncanceled [Critic
 
 - Each faceup Damage card has either the **Ship** or **Pilot** trait. These traits have no inherent effect, but they may be referenced by other effects.
 
-**Critical hit tokens:** ![alt_text](/static/images/tokens/critical-hit-tokens.png)
+**Critical hit tokens:** 
+
+![alt_text](/static/images/tokens/critical-hit-tokens.png)
+
+
 
 **Related Topics:** Attack, Card abilities, Damage
 
@@ -511,7 +539,11 @@ After all decloaking has been resolved, the Activation phase continues as normal
 
 - If a ship cannot decloak in any direction, it cannot decloak.
 
-**Cloak token:** ![alt_text](/static/images/tokens/cloak-token.png)
+**Cloak token:** 
+
+![alt_text](/static/images/tokens/cloak-token.png)
+
+
 
 **Related Topics:** Cloak†
 
@@ -584,7 +616,11 @@ Ships with the evade ([Evade]) icon in their action bar may perform the evade ac
 
 - If an ability instructs a player to assign an evade token to a ship, this is different than performing an evade action. The ship is assigned the token without performing an action and may still perform the evade action this round.
 
-**Evade tokens:** ![alt_text](/static/images/tokens/evade-tokens.png)
+**Evade tokens:** 
+
+![alt_text](/static/images/tokens/evade-tokens.png)
+
+
 
 **Related Topics:** Actions, End phase, Modifying dice
 
@@ -630,7 +666,11 @@ Ships with the focus ([Focus]) icon in their action bar may perform the focus ac
 
 - If a card ability instructs a player to assign a focus token to a ship, this is different than performing a focus action. The ship is assigned the token without performing an action and may still perform the focus action this round.
 
-**Focus tokens:** ![alt_text](/static/images/tokens/focus-tokens.png)
+**Focus tokens:** 
+
+![alt_text](/static/images/tokens/focus-tokens.png)
+
+
 
 **Related Topics:** Actions, Attack, End phase, Modifying dice
 
@@ -692,7 +732,11 @@ The yellow number on a ship’s Ship card is its hull value. The hull value indi
 **Related Topics:** Attack, Damage, Destroying ships
 
 ### Id tokens ### 
+
+
 ![alt_text](/static/images/tokens/id-tokens.png)
+
+
 
 ID Tokens identify which ships in the play area correspond to which Ship card. If a player fields multiple copies of the same non-unique Ship card, he must assign a different set of ID tokens to each of those ships.
 
@@ -727,21 +771,33 @@ The player whose squad has the lowest total squad point cost chooses which playe
 ### Inside firing arc at range x ### 
 Some card abilities use the expression “inside firing arc at Range X” or “inside firing arc beyond Range X.” This compound phrase defines a specific situation where the closest point to closest point distance between two ships, when measured inside firing arc, is at a specific range band. See the diagram below.
 
-**Inside Firing Arc at Range X Example:** ![alt_text](/static/images/rules/inside-firing-arc-range-x-example.png)
+**Inside Firing Arc at Range X Example:** 
+
+![alt_text](/static/images/rules/inside-firing-arc-range-x-example.png)
+
+
 
 A K-wing equipped with the Tactician Upgrade card is attacking with its turret primary weapon, and has a choice of three possible targets. If it attacks the TIE fighter, Tactician would trigger, since the TIE fighter is inside arc at Range 2. If it attacks the Firespray-31, it would roll 1 additional attack die, because the closest point to closest point measurement between the K-wing and the Firespray-31 is Range 1, and trigger Tactician, because the Firespray-31 is inside arc at Range 2. If the K-wing attacks the TIE Adv. Prototype (which is equipped with Autothrusters), the closest point to closest point measurement between the K-wing and the TIE Adv. Prototype is Range 2, but the TIE Adv. Prototype is inside arc at Range 3. Therefore, the TIE Adv. Prototype will not roll an additional defense die and Tactician will not trigger, but Autothrusters will trigger.
 
 **Related Topics:** Auxiliary firing arc†, Firing arc
 
 ### Ion bomb token † ### 
+
+
 ![alt_text](/static/images/tokens/ion-bomb-token.png)
+
+
 
 When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens. Then discard this token.
 
 **Related Topics:** Bombs†, Ion token†
 
 ### Ion token † ### 
+
+
 ![alt_text](/static/images/tokens/ion-tokens.png)
+
+
 
 Some card abilities can cause a ship to receive an ion token. A ship is ionized while it has an ion token assigned to it. An ionized ship follows special rules during the following phases:
 
@@ -865,7 +921,11 @@ When a ship performs an attack, if it measures range through an obstacle, the at
 
 - If a ship is overlapping an obstacle at the start of its maneuver, it ignores that obstacle unless its maneuver template or final position overlaps that obstacle again.
 
-**Debris Cloud Tokens:** ![alt_text](/static/images/tokens/debri-tokens.png)
+**Debris Cloud Tokens:** 
+
+![alt_text](/static/images/tokens/debri-tokens.png)
+
+
 
 **Related Topics:** Activation phase, Attack, Barrel roll, Boost, Damage, Guides, Maneuver, Moving through, Obstructed, Setup, Using cargo†
 
@@ -940,14 +1000,22 @@ A ship’s primary weapon value is the red number on its Ship card. This value i
 **Related Topics:** Attack, Auxiliary firing arc†, Range, Range combat bonus, Secondary weapons, Turret primary weapon†
 
 ### Proton bomb token † ### 
+
+
 ![alt_text](/static/images/tokens/proton-bomb-token.png)
+
+
 
 When this bomb token detonates, deal 1 faceup Damage card to each ship at Range 1 of the token. Then discard this token.
 
 **Related Topics:** Bombs†
 
 ### Proximity mine token † ### 
+
+
 ![alt_text](/static/images/tokens/proximity-mine-token.png)
+
+
 
 When this bomb token detonates, the ship that moved through or overlapped this token rolls 3 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.
 
@@ -1008,7 +1076,11 @@ To use a secondary weapon, the attacker must meet all requirements indicated in 
 **Related Topics:** Attack, Auxiliary firing arc†, Card abilities, Firing arc, Primary weapon, Range, Range combat bonus, Turret primary weapon†, Upgrade cards, Weapon range
 
 ### Seismic charge token † ### 
+
+
 ![alt_text](/static/images/tokens/seismic-charge-tokens.png)
+
+
 
 When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage. Then discard this token.
 
@@ -1034,7 +1106,11 @@ Before playing, set up the game as follows:
 **Related Topics:** Id tokens, Initiative, Large ship†, Obstacles, Pilot skill, Play area, Range, Round, Shields, Squad building, Tracking tokens
 
 ### Shields ### 
+
+
 ![alt_text](/static/images/tokens/shield-tokens.png)
+
+
 
 Shields allow a ship to suffer damage without the risk of being dealt faceup Damage cards. The blue number on a Ship card is the ship’s shield value, indicating how many shield tokens to place on the Ship card during setup.
 
@@ -1114,7 +1190,11 @@ A ship is stressed while it has a stress token assigned to it. A stressed ship c
 
 - A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver (and cannot use a game effect to rotate its dial or execute a non-red maneuver instead), the owner moves the ship as if it were a white [[Straight] 2] maneuver instead. The speed, bearing, and difficulty of this maneuver cannot be changed.
 
-**Stress tokens:** ![alt_text](/static/images/tokens/stress-tokens.png)
+**Stress tokens:** 
+
+![alt_text](/static/images/tokens/stress-tokens.png)
+
+
 
 **Related Topics:** Actions, Activation phase, Bearing, Cloak†, Difficulty, Free actions, Maneuver
 
@@ -1163,7 +1243,11 @@ Tracking tokens are used to track the number of rounds played during a game. Whe
 **Related Topics:** Round, Setup
 
 ### Tractor beam token † ### 
+
+
 ![alt_text](/static/images/tokens/tractor-beam-tokens.png)
+
+
 
 A ship with at least one tractor beam token assigned to it follows special rules during these phases:
 
@@ -1242,7 +1326,11 @@ If a cargo token is dropped on a ship, it is placed under the ship’s base and 
 
 Cargo tokens count as debris cloud obstacles.
 
+
+
 ![alt_text](/static/images/rules/using-cargo.png)
+
+
 
 **Related Topics:** Obstacles, Upgrade cards
 
@@ -1255,7 +1343,11 @@ To drop the cluster mine token set, follow these steps:
 
 1. Place 1 additional cluster mine token in each of the recessed areas of the central cluster mine token.
 
+
+
 ![alt_text](/static/images/rules/using-cluster-mines.png)
+
+
 
 **Related Topics:** Bombs†, Cluster mine tokens†
 
@@ -1272,7 +1364,7 @@ The game ends at the end of a round if all of a player’s ships are destroyed. 
 **Related Topics:** Destroying ships, Round, Squad points
 
 
-## Optional Rules
+## Optional Rules ##
 
 
 
@@ -1295,22 +1387,22 @@ Players win (and lose) together as a team. It is possible for all of one player�
 Players on the same team may strategize against their opponents. Players are free to discuss any information with teammates (and opponents), but all discussion must take place in public (i.e., their opponents must be able to hear all discussion). Teammates may show each other the maneuvers chosen on their dials.
 
 
-## Credits
+## Credits ##
 
 
 
 
-## Setup Diagram
+## Setup Diagram ##
 
 
 
 
-## Quick Reference
+## Quick Reference ##
 
 
 
 
-## Unofficial content changes
+## Unofficial content changes ##
 
 This section list all the unofficial content changes made to the text in the rules.
 

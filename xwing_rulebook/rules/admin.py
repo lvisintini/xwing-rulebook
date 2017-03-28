@@ -10,8 +10,11 @@ from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES, RULE
 
 
 class RuleAdminForm(forms.ModelForm):
-    def clean_name(self):
-        return self.cleaned_data['name'].capitalize()
+    def clean(self):
+        cleaned_data = super().clean()
+        if not cleaned_data.get('preserve_name_case', False):
+            cleaned_data['name'] = cleaned_data['name'].capitalize()
+        return cleaned_data
 
 
 class ClauseContentInline(NestedTabularInline):
@@ -89,8 +92,8 @@ class RuleAdmin(NestedModelAdmin):
     fieldsets = (
         ('Basic', {
             'fields': (
-                'name', 'slug', 'type', 'link_to_rule', 'expansion_rule', 'huge_ship_rule',
-                'related_rules',
+                'name', 'slug', 'preserve_name_case', 'type', 'link_to_rule', 'expansion_rule',
+                'huge_ship_rule', 'related_rules',
             )
         }),
         ('Related cards', {

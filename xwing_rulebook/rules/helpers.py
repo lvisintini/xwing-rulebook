@@ -1,12 +1,18 @@
 from django.urls import reverse
 
-from rules.models import RULE_TYPES, CLAUSE_TYPES, CLAUSE_ALIGNMENT
+from rules.models import RULE_TYPES, CLAUSE_TYPES
 from contents.models import TextContent, ImageContent
 
 
 class Rule2Markdown:
-    def __init__(self, rule):
+    def __init__(self, rule, **kwargs):
         self.rule = rule
+
+        self.header_level = kwargs.pop('header_level', 3)
+        self.anchored = kwargs.pop('anchored', False)
+        self.linked = kwargs.pop('linked', False)
+        self.url_name = kwargs.pop('url_name', 'rules:rule')
+        self.extra_url_params = kwargs
 
     @staticmethod
     def attrs_render(ids=None, classes=None, data=None):
@@ -24,21 +30,21 @@ class Rule2Markdown:
             ) if data else '',
         )
 
-    def as_anchored_markdown(self):
-        return self.rule_to_markdown(True)
+    @staticmethod
+    def title_render(clause, content):
+        return '' if not content.title or clause.ignore_title else '**{}{}:** '.format(
+            content.title, '†' if clause.expansion_related else ''
+        )
 
-    def as_unanchored_markdown(self):
-        return self.rule_to_markdown(False)
-
-    def rule_to_markdown(self, anchored, header_level=3):
+    def rule_to_markdown(self):
         template = '{header_level} {rule_name}{expansion_rule} {header_level} {anchor}\n{clauses}'
 
         return template.format(
-            header_level='#' * header_level,
+            header_level='#' * self.header_level,
             rule_name=self.rule.name,
             expansion_rule='' if not self.rule.expansion_rule else ' †',
-            clauses=self.clauses_to_markdown(anchored),
-            anchor='' if not anchored else self.attrs_render(
+            clauses=self.clauses_to_markdown(),
+            anchor='' if not self.anchored else self.attrs_render(
                 ids=[self.rule.anchor_id, ],
                 classes=[],
                 data={
@@ -47,8 +53,8 @@ class Rule2Markdown:
             ),
         )
 
-    def clauses_to_markdown(self, anchored):
-        template = '{indentation}{prefix}{title}{clause_content}'
+    def clauses_to_markdown(self):
+        template = '{indentation}{prefix}{clause_content}'
 
         clauses_mds = []
 
@@ -56,18 +62,15 @@ class Rule2Markdown:
 
             content = clause.current_content.get_real_instance()
             if isinstance(content, TextContent):
-                clause_md = self.text_content_markdown(clause, content, anchored)
+                clause_md = self.text_content_markdown(clause, content)
             elif isinstance(content, ImageContent):
-                clause_md = self.image_content_markdown(clause, content, anchored)
+                clause_md = self.image_content_markdown(clause, content)
             else:
                 raise NotImplementedError
 
             md = template.format(
                 indentation='    ' * clause.indentation,
                 prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[clause.type],
-                title='' if not content.title or clause.ignore_title else '**{}{}:** '.format(
-                    content.title, '†' if clause.expansion_related else ''
-                ),
                 clause_content=clause_md,
             )
 
@@ -75,7 +78,7 @@ class Rule2Markdown:
 
         return '\n\n'.join(clauses_mds)
 
-    def text_content_markdown(self, clause, content, anchored):
+    def text_content_markdown(self, clause, content):
         file = content.image.static_url if content.image else ''
         clause_content = content.content.replace('<FILE>', file)
 
@@ -84,19 +87,13 @@ class Rule2Markdown:
                 [clause.indentation * '    ' + c.strip() for c in clause_content.splitlines()]
             )
 
-        classes = []
-        if clause.alignment == CLAUSE_ALIGNMENT.RIGHT:
-            classes.append('u-text-right')
-        if clause.alignment == CLAUSE_ALIGNMENT.CENTER:
-            classes.append('u-text-center')
-
-        template = '{clause_content}{anchor}'
+        template = '{title}{clause_content}{anchor}'
 
         md = template.format(
+            title=self.title_render(clause, content),
             clause_content=clause_content,
-            anchor='' if not anchored else '\n' + self.attrs_render(
+            anchor='' if not self.anchored else '\n' + self.attrs_render(
                 ids=[clause.anchor_id, ],
-                classes=classes,
                 data={
                     'anchor-id': clause.anchor_id,
                     'source-code': content.source.code,
@@ -108,38 +105,82 @@ class Rule2Markdown:
         )
         return md
 
-    def image_content_markdown(self, clause, content, anchored):
-
-        classes = []
-        if clause.alignment == CLAUSE_ALIGNMENT.RIGHT:
-            classes.extend(['u-flex', 'u-flex-right'])
-        if clause.alignment == CLAUSE_ALIGNMENT.CENTER:
-            classes.extend(['u-flex', 'u-flex-center'])
-
-        md = '![alt_text]({static_url}){caption}{anchor}'.format(
-            static_url=content.image.static_url,
-            alt_text=content.image.alt_text,
-            caption='\n{indentation}{caption}'.format(
-                caption=content.image.caption,
+    def image_content_markdown(self, clause, content):
+        title = self.title_render(clause, content)
+        title_anchor = ''
+        if self.anchored and title:
+            title_anchor = '\n{indentation}{anchor}'.format(
                 indentation='    ' * clause.indentation,
-            ) if content.image.caption else '',
-            anchor='' if not anchored else '\n' + self.attrs_render(
-                ids=[clause.anchor_id, ],
-                classes=classes,
-                data={
-                    'anchor-id': clause.anchor_id,
-                    'source-code': content.source.code,
-                    'page': '' if content.page is None else content.page,
-                    'clause': clause.id,
-                    'clause-type': clause.type
-                }
+                anchor=self.attrs_render(
+                    ids=[clause.anchor_id, ],
+                    classes=['Rule__ImageTitle', ],
+                    data={
+                        'anchor-id': clause.anchor_id,
+                        'source-code': content.source.code,
+                        'page': '' if content.page is None else content.page,
+                        'clause': clause.id,
+                        'clause-type': clause.type
+                    }
+                )
             )
+        image_anchor = ''
+        if self.anchored:
+            image_anchor = '\n{indentation}{anchor}'.format(
+                indentation='    ' * clause.indentation,
+                anchor=self.attrs_render(
+                    ids=[clause.anchor_id, ],
+                    classes=['Rule__Image', ],
+                    data={
+                        'anchor-id': clause.anchor_id,
+                        'source-code': content.source.code,
+                        'page': '' if content.page is None else content.page,
+                        'clause': clause.id,
+                        'clause-type': clause.type
+                    }
+                )
+            )
+
+        caption = ''
+        if content.image.caption:
+            caption = '\n{indentation}{caption}'.format(
+                indentation='    ' * clause.indentation,
+                caption=content.image.caption,
+            )
+
+        caption_anchor = ''
+        if self.anchored and caption:
+            caption_anchor = '\n{indentation}{anchor}'.format(
+                indentation='    ' * clause.indentation,
+                anchor=self.attrs_render(
+                    ids=[clause.anchor_id, ],
+                    classes=['Rule__ImageCaption', ],
+                    data={
+                        'anchor-id': clause.anchor_id,
+                        'source-code': content.source.code,
+                        'page': '' if content.page is None else content.page,
+                        'clause': clause.id,
+                        'clause-type': clause.type
+                    }
+                )
+            )
+
+        md = (
+            '{title}{title_anchor}\n\n'
+            '![alt_text]({static_url}){image_anchor}\n\n'
+            '{caption}{caption_anchor}'
+        ).format(
+            title=title,
+            title_anchor=title_anchor,
+            alt_text=content.image.alt_text,
+            static_url=content.image.static_url,
+            image_anchor=image_anchor,
+            caption=caption,
+            caption_anchor=caption_anchor,
         )
 
         return md
 
-    @staticmethod
-    def rules_as_references(rules, anchored=False, linked=False, url_name='rules:rule', **kwargs):
+    def rules_as_references(self, rules):
 
         if not rules.count():
             return ''
@@ -151,15 +192,17 @@ class Rule2Markdown:
             (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
         }
 
-        template = templates[(anchored, linked)]
+        template = templates[(self.anchored, self.linked)]
 
-        url_params = list(kwargs.items())
+        url_params = list(self.extra_url_params.items())
 
         references = ', '.join([
             template.format(
                 rule=r,
                 expansion_icon='' if not r.expansion_rule else '†',
-                relative_url=reverse(url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)),
+                relative_url=reverse(
+                    self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
+                ),
                 anchor=r.anchor_id,
             )
             for r in rules
@@ -167,18 +210,18 @@ class Rule2Markdown:
 
         return references
 
-    def related_topics_references(self, *args, **kwargs):
+    def related_topics_references(self):
         filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE)
-        related_topics_md = self.rules_as_references(filtered_rules, *args, **kwargs)
+        related_topics_md = self.rules_as_references(filtered_rules)
         if related_topics_md:
             related_topics_md = "\n**Related Topics:** {}\n".format(
                 related_topics_md
             )
         return related_topics_md
 
-    def rule_clarifications_references(self, *args, **kwargs):
+    def rule_clarifications_references(self):
         filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE_CLARIFICATION)
-        rule_clarifications_md = self.rules_as_references(filtered_rules, *args, **kwargs)
+        rule_clarifications_md = self.rules_as_references(filtered_rules)
         if rule_clarifications_md:
             rule_clarifications_md = "\n**Rule Clarifications:** {}\n".format(
                 rule_clarifications_md

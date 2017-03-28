@@ -1,0 +1,17 @@
+.Rule {
+
+  &__Image {
+    img {
+      vertical-align: middle;
+      margin: 0 val($padding, small);
+      max-width: 100%;
+    }
+  }
+
+  &__ImageTitle,
+  &__Image,
+  &__ImageCaption {
+    display: flex;
+    justify-content: center;
+  }
+}

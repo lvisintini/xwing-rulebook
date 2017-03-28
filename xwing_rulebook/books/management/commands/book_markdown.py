@@ -25,4 +25,8 @@ class Command(BaseCommand):
             ))
 
         if book:
-            self.stdout.write(Book2Markdown(book).as_single_page(anchored=False, linked=False))
+            self.stdout.write(Book2Markdown(
+                book,
+                anchored=False,
+                linked=False,
+            ).as_single_page())

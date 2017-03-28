@@ -6,6 +6,7 @@ from polymorphic.models import PolymorphicModel
 
 class Content(PolymorphicModel):
     title = models.CharField(max_length=125, null=True, blank=True)
+    preserve_title_case = models.BooleanField(default=False)
     source = models.ForeignKey('rules.Source', related_name="contents")
     page = models.IntegerField(null=True, blank=True)
 
@@ -15,6 +16,12 @@ class Content(PolymorphicModel):
 
 class TextContent(Content):
     content = models.TextField(default='')
+    content_as_per_source = models.TextField(
+        default='',
+        help_text="If the text in the content field is not a verbatim copy of the source's text, "
+                  "Add the original text here.",
+        blank=True
+    )
     keep_line_breaks = models.BooleanField(default=False)
     image = models.ForeignKey('contents.Image', blank=True, null=True,
                               related_name='text_contents')

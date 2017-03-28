@@ -519,6 +519,12 @@ a {
   .u-flex-columns {
     flex-direction: column; }
 
+.u-float-left {
+  float: left; }
+
+.u-float-right {
+  float: right; }
+
 .u-background-dark {
   background-color: #3F3F3F; }
 
@@ -545,10 +551,6 @@ a {
   .Book__Inner th,
   .Book__Inner li {
     position: relative; }
-  .Book__Inner img {
-    vertical-align: middle;
-    margin: 0 0.5em;
-    max-width: 100%; }
   .Book__Inner th .SourceReference {
     right: inherit;
     left: 79.5em;
@@ -565,5 +567,14 @@ a {
   line-height: 1.5em;
   padding: 0.5em;
   font-weight: normal; }
+
+.Rule__Image img {
+  vertical-align: middle;
+  margin: 0 0.5em;
+  max-width: 100%; }
+
+.Rule__ImageTitle, .Rule__Image, .Rule__ImageCaption {
+  display: flex;
+  justify-content: center; }
 
 /*# sourceMappingURL=main.css.map */

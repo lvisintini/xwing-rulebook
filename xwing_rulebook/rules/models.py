@@ -7,16 +7,14 @@ class CLAUSE_TYPES:
     UNORDERED_ITEM = 'item:ul'
     ORDERED_ITEM = 'item:ol'
     TABLE = 'table'
-    IMAGE_BLOCK = 'image-block'
-    IMAGE_WRAP = 'image-wrap'
+    IMAGE = 'image'
 
     as_choices = (
         (TEXT, 'Text'),
         (UNORDERED_ITEM, 'Unordered Item'),
         (ORDERED_ITEM, 'Ordered Item'),
         (TABLE, 'Table'),
-        (IMAGE_BLOCK, 'Image (Block)'),
-        (IMAGE_WRAP, 'Image (Wrap)')
+        (IMAGE, 'Image'),
     )
 
     as_list = [
@@ -24,9 +22,7 @@ class CLAUSE_TYPES:
         UNORDERED_ITEM,
         ORDERED_ITEM,
         TABLE,
-        IMAGE_BLOCK,
-        IMAGE_WRAP
-
+        IMAGE,
     ]
 
     MARKDOWN_PREFIX_TYPE_MAPPING = {
@@ -34,27 +30,8 @@ class CLAUSE_TYPES:
         TABLE: '',
         UNORDERED_ITEM: '- ',
         ORDERED_ITEM: '1. ',
-        IMAGE_BLOCK: '',
-        IMAGE_WRAP: ''
+        IMAGE: '',
     }
-
-
-class CLAUSE_ALIGNMENT:
-    LEFT = 'left'
-    RIGHT = 'right'
-    CENTER = 'center'
-
-    as_choices = (
-        (LEFT, 'Left'),
-        (RIGHT, 'Right'),
-        (CENTER, 'Center'),
-    )
-
-    as_list = [
-        LEFT,
-        RIGHT,
-        CENTER,
-    ]
 
 
 class SOURCE_TYPES:
@@ -135,6 +112,7 @@ class Source(models.Model):
 class Rule(models.Model):
     name = models.CharField(max_length=125)
     slug = models.SlugField(max_length=125, default='', unique=True)
+    preserve_name_case = models.BooleanField(default=False)
     expansion_rule = models.BooleanField(default=False)
     huge_ship_rule = models.BooleanField(default=False)
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
@@ -166,9 +144,6 @@ class Clause(models.Model):
     order = models.IntegerField(default=0)
     type = models.CharField(
         max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
-    )
-    alignment = models.CharField(
-        max_length=6, choices=CLAUSE_ALIGNMENT.as_choices, default=CLAUSE_ALIGNMENT.LEFT
     )
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)

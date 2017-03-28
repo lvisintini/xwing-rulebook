@@ -4,6 +4,7 @@ from collections import OrderedDict
 from django.core.management.base import BaseCommand
 
 from rules.models import Rule
+from rules.helpers import Rule2Markdown
 
 
 class Command(BaseCommand):
@@ -14,10 +15,14 @@ class Command(BaseCommand):
         for rule in Rule.objects.order_by('name').all():
             r = OrderedDict()
 
+            helper = Rule2Markdown(rule, anchored=False)
+
             r['id'] = rule.id
             r['name'] = rule.name
+            r['type'] = rule.type
+            r['huge_ship_rule'] = rule.huge_ship_rule
             r['expansion_rule'] = rule.expansion_rule
-            r['markdown'] = rule.to_markdown(False)
+            r['markdown'] = helper.rule_to_markdown()
 
             references = set()
             for c in rule.clauses.all():
@@ -28,7 +33,7 @@ class Command(BaseCommand):
                     ('code', x),
                     ('page', y)
                 ])
-                for x, y in sorted(list(references))
+                for x, y in sorted(list(references), key=lambda x: (x[0], x[1] is None, x[1]))
             ]
 
             r['related_rules'] = [
@@ -36,7 +41,7 @@ class Command(BaseCommand):
                     ('id', related.id),
                     ('name', related.name),
                 ])
-                for related in rule.related_topics.all()
+                for related in rule.related_rules.all()
             ]
 
             rules.append(r)
