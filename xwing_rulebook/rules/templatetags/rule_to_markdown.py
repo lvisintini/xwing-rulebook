@@ -7,19 +7,11 @@ register = Library()
 
 
 @register.filter
-def rule_as_anchored_markdown(rule, level=3):
-    return Rule2Markdown(
-        rule,
-        anchored=True,
-        header_level=level,
-    ).rule_to_markdown()
-
-
-@register.filter
-def rule_as_unanchored_markdown(rule, level=3):
+def rule_as_markdown(rule, level=3):
     return Rule2Markdown(
         rule,
         anchored=False,
+        linked=True,
         header_level=level,
     ).rule_to_markdown()
 

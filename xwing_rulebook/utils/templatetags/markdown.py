@@ -15,7 +15,7 @@ def md2html(subject):
                 subject,
                 [
                     "markdown.extensions.attr_list",
-                    "markdown.extensions.tables"
+                    "markdown.extensions.tables",
                 ]
             )
         )

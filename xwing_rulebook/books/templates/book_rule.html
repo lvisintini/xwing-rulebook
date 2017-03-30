@@ -19,13 +19,13 @@
         </a>
       </h2>
 
-      {{ rule | rule_as_anchored_markdown:3 | md2html }}
+      {{ rule | rule_as_markdown:3 | md2html }}
 
       {% with rule|filter_related_rules_by_type:RULE_TYPES.RULE_CLARIFICATION as clarifications %}
         {% if clarifications.count %}
           <h4>Rule Clarifications</h4>
           {% for clarification in clarifications %}
-            {{ clarification | rule_as_anchored_markdown:5 | md2html }}
+            {{ clarification | rule_as_markdown:5 | md2html }}
           {% endfor %}
         {% endif %}
       {% endwith %}

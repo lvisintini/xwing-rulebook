@@ -14,13 +14,13 @@
         <a href="{% url 'rules:index' %}">&#8592; Back to index</a>
       </div>
 
-      {{ rule | rule_as_anchored_markdown:1 | md2html }}
+      {{ rule | rule_as_markdown:1 | md2html }}
 
       {% with rule|filter_related_rules_by_type:RULE_TYPES.RULE_CLARIFICATION as clarifications %}
         {% if clarifications.count %}
           <h2>Rule Clarifications</h2>
           {% for clarification in clarifications %}
-            {{ clarification | rule_as_anchored_markdown:3 | md2html }}
+            {{ clarification | rule_as_markdown:3 | md2html }}
           {% endfor %}
         {% endif %}
       {% endwith %}
@@ -29,7 +29,7 @@
         {% if card_erratas.count %}
           <h2>Errata</h2>
           {% for card_errata in card_erratas %}
-            {{ card_errata | rule_as_anchored_markdown:3 | md2html }}
+            {{ card_errata | rule_as_markdown:3 | md2html }}
           {% endfor %}
         {% endif %}
       {% endwith %}
@@ -38,7 +38,7 @@
         {% if clarifications.count %}
           <h2>Clarification</h2>
           {% for clarification in clarifications %}
-            {{ clarification | rule_as_anchored_markdown:3 | md2html }}
+            {{ clarification | rule_as_markdown:3 | md2html }}
           {% endfor %}
         {% endif %}
       {% endwith %}

@@ -75,3 +75,15 @@ class Image(models.Model):
 
     def __str__(self):
         return self.static_url
+
+
+class Link(models.Model):
+    content = models.ForeignKey('contents.TextContent', related_name='links')
+    rule = models.ForeignKey('rules.Rule', blank=True, null=True)
+    alias = models.CharField(max_length=50, help_text="Used as the link identifier. "
+                                                      "Use <LINK:{alias}> in your markdown")
+    text = models.CharField(max_length=255, help_text="Only used if no rule is provided")
+    url = models.CharField(max_length=255, help_text="Used only if no rule is provided.")
+
+    def __str__(self):
+        return "{}-{}".format(self.alias, self.rule)

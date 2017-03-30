@@ -3,9 +3,16 @@ from django.contrib import admin
 from django.db import models
 from django.utils.safestring import mark_safe
 
-from contents.models import Content, TextContent, ImageContent, Image
+from contents.models import Content, TextContent, ImageContent, Image, Link
 
-from polymorphic.admin import PolymorphicParentModelAdmin, PolymorphicChildModelAdmin, PolymorphicChildModelFilter
+from polymorphic.admin import (
+    PolymorphicParentModelAdmin, PolymorphicChildModelAdmin, PolymorphicChildModelFilter
+)
+
+
+class LinkInline(admin.StackedInline):
+    model = Link
+    extra = 0
 
 
 class TextContentAdminForm(forms.ModelForm):
@@ -80,6 +87,7 @@ class ContentAdmin(PolymorphicParentModelAdmin):
 class TextContentAdmin(PolymorphicChildModelAdmin):
     base_model = Content
     base_form = TextContentAdminForm
+    inlines = (LinkInline, )
 
 
 @admin.register(ImageContent)

@@ -36,8 +36,36 @@ class Rule2Markdown:
             content.title, '†' if clause.expansion_related else ''
         )
 
+    def link_render(self, link):
+        templates = {
+            (False, False, False): '{text}',
+            (False, False, True): '[{text}]({url})',
+            (False, True, False): '{text}',
+            (False, True, True): '[{text}]({url})',
+
+            (True, False, False): '{rule}{expansion_icon}',
+            (True, False, True): '[{rule}{expansion_icon}]({relative_url})',
+            (True, True, False): '[{rule}{expansion_icon}](#{anchor})',
+            (True, True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
+        }
+
+        template = templates[(bool(link.rule), self.anchored, self.linked)]
+        url_params = list(self.extra_url_params.items())
+        r = link.rule
+
+        return template.format(
+            rule=link.rule,
+            expansion_icon='†' if r and r.expansion_rule else '',
+            relative_url=reverse(
+                self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
+            ) if r else '',
+            anchor=r.anchor_id if r else '',
+            url=link.url,
+            text=link.text
+        )
+
     def rule_to_markdown(self):
-        template = '{header_level} {rule_name}{expansion_rule} {header_level} {anchor}\n{clauses}'
+        template = '{header_level} {rule_name}{expansion_rule} {anchor}\n{clauses}'
 
         return template.format(
             header_level='#' * self.header_level,
@@ -81,6 +109,11 @@ class Rule2Markdown:
     def text_content_markdown(self, clause, content):
         file = content.image.static_url if content.image else ''
         clause_content = content.content.replace('<FILE>', file)
+
+        for l in content.links.all():
+            clause_content = clause_content.replace(
+                '<LINK:{}>'.format(l.alias), self.link_render(l)
+            )
 
         if content.keep_line_breaks:
             clause_content = '\n'.join(
