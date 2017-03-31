@@ -10,7 +10,7 @@
 {% block content %}
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
-      {{ book | book_as_single_page_markdown | md2html }}
+      {{ book2markdown.as_single_page | md2html }}
 
       {{ '[Epic]' | xwing_icons  }}
     </div>

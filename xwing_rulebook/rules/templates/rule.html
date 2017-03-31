@@ -14,36 +14,37 @@
         <a href="{% url 'rules:index' %}">&#8592; Back to index</a>
       </div>
 
-      {{ rule | rule_as_markdown:1 | md2html }}
+      {% if rule2markdown.image_clauses_markdown %}
+        <div class="u-flex u-flex-space-between">
+          <div class="u-flex-one-quarter">
+            {{ rule2markdown.image_clauses_markdown | md2html }}
+          </div>
+          <div class="u-flex-three-quarters">
+            {{ rule2markdown.rule_title | md2html }}
+            {{ rule2markdown.content_clauses_markdown | md2html }}
 
-      {% with rule|filter_related_rules_by_type:RULE_TYPES.RULE_CLARIFICATION as clarifications %}
-        {% if clarifications.count %}
-          <h2>Rule Clarifications</h2>
-          {% for clarification in clarifications %}
-            {{ clarification | rule_as_markdown:3 | md2html }}
+            {% if rule2markdown.rule_clarifications %}
+              {% for helper in rule2markdown.rule_clarifications %}
+                <h2>Rule Clarifications</h2>
+                {{ helper.rule_markdown | md2html }}
+              {% endfor %}
+            {% endif %}
+
+            {{ rule2markdown.related_topics_as_references | md2html }}
+          </div>
+        </div>
+      {% else %}
+        {{ rule2markdown.rule_markdown | md2html }}
+
+        {% if rule2markdown.rule_clarifications %}
+          {% for helper in rule2markdown.rule_clarifications %}
+            <h2>Rule Clarifications</h2>
+            {{ helper.rule_markdown | md2html }}
           {% endfor %}
         {% endif %}
-      {% endwith %}
 
-      {% with rule|filter_related_rules_by_type:RULE_TYPES.CARD_ERRATA as card_erratas %}
-        {% if card_erratas.count %}
-          <h2>Errata</h2>
-          {% for card_errata in card_erratas %}
-            {{ card_errata | rule_as_markdown:3 | md2html }}
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
-
-      {% with rule|filter_related_rules_by_type:RULE_TYPES.CARD_CLARIFICATION as clarifications %}
-        {% if clarifications.count %}
-          <h2>Clarification</h2>
-          {% for clarification in clarifications %}
-            {{ clarification | rule_as_markdown:3 | md2html }}
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
-
-      {{ rule | related_topics_as_rule_linked_list_markdown | md2html }}
+        {{ rule2markdown.related_topics_as_references | md2html }}
+      {% endif %}
 
       {{ '[Epic]' | xwing_icons  }}
     </div>

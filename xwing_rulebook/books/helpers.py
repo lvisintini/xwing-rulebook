@@ -2,6 +2,36 @@ from rules.helpers import Rule2Markdown
 from rules.models import RULE_TYPES
 
 
+class BookRule2Markdown(Rule2Markdown):
+    def __init__(self, book, rule, **kwargs):
+        self.book = book
+        super().__init__(rule, **kwargs)
+
+    def related_topics_as_references(self):
+        filtered_rules = self.rule.related_rules.filter(
+            type=RULE_TYPES.RULE,
+            id__in=self.book.rule_ids
+        )
+        related_topics_md = self.related_rules_as_references(filtered_rules)
+        if related_topics_md:
+            related_topics_md = "\n**Related Topics:** {}\n".format(
+                related_topics_md
+            )
+        return related_topics_md
+
+    def rule_clarifications_as_references(self):
+        filtered_rules = self.rule.related_rules.filter(
+            type=RULE_TYPES.RULE_CLARIFICATION,
+            id__in=self.book.rule_ids
+        )
+        rule_clarifications_md = self.related_rules_as_references(filtered_rules)
+        if rule_clarifications_md:
+            rule_clarifications_md = "\n**Rule Clarifications:** {}\n".format(
+                rule_clarifications_md
+            )
+        return rule_clarifications_md
+
+
 class Book2Markdown:
     def __init__(self, book, **kwargs):
         self.book = book
@@ -11,8 +41,8 @@ class Book2Markdown:
         self.extra_url_params = kwargs
 
     def as_single_page(self):
-        book_template = "# {book_name} #\n\n{book_content}\n\n{sections}"
-        section_template = "## {section_title} ##\n\n{section_content}\n\n{rules}\n"
+        book_template = "# {book_name}\n\n{book_content}\n\n{sections}"
+        section_template = "## {section_title}\n\n{section_content}\n\n{rules}\n"
         rule_template = (
             '{title_and_rule}\n{related_topics}{rule_clarifications}\n'
         )
@@ -33,9 +63,9 @@ class Book2Markdown:
 
                 rules.append(
                     rule_template.format(
-                        title_and_rule=md_helper.rule_to_markdown(),
-                        related_topics=md_helper.related_topics_references(),
-                        rule_clarifications=md_helper.rule_clarifications_references(),
+                        title_and_rule=md_helper.rule_markdown(),
+                        related_topics=md_helper.related_topics_as_references(),
+                        rule_clarifications=md_helper.rule_clarifications_as_references(),
                     )
                 )
 
@@ -54,24 +84,3 @@ class Book2Markdown:
         )
 
         return book_md
-
-    def book_related_topics_references(self, rule, section=None):
-        filtered_rules = rule.related_rules.filter(type=RULE_TYPES.RULE, id__in=self.book.rule_ids)
-        kwargs = {
-            'url_name': 'books:rule-in-book',
-            'book_slug': self.book.slug,
-        }
-        if section:
-            kwargs['url_name'] = 'books:rule'
-            kwargs['section_slug'] = section.slug
-
-        related_topics_md = Rule2Markdown(
-            rule,
-            anchored=self.anchored,
-            linked=self.linked,
-            **kwargs
-        ).rules_as_references(filtered_rules)
-
-        if related_topics_md:
-            related_topics_md = "\n**Related Topics:** {}\n".format(related_topics_md)
-        return related_topics_md

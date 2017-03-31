@@ -15,14 +15,18 @@ class Command(BaseCommand):
         for rule in Rule.objects.order_by('name').all():
             r = OrderedDict()
 
-            helper = Rule2Markdown(rule, anchored=False)
+            helper = Rule2Markdown(
+                rule,
+                anchored=False,
+                linked=False,
+            )
 
             r['id'] = rule.id
             r['name'] = rule.name
             r['type'] = rule.type
             r['huge_ship_rule'] = rule.huge_ship_rule
             r['expansion_rule'] = rule.expansion_rule
-            r['markdown'] = helper.rule_to_markdown()
+            r['markdown'] = helper.rule_markdown()
 
             references = set()
             for c in rule.clauses.all():

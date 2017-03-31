@@ -28,12 +28,32 @@
       justify-content: flex-end;
     }
 
+    &-space-between {
+      justify-content: space-between;
+    }
+
     &-center {
       justify-content: center;
     }
 
     &-columns {
       flex-direction: column;
+    }
+
+    &-half {
+      flex: 0 1 75%;
+    }
+
+    &-third {
+      flex: 0 1 33.33%;
+    }
+
+    &-one-quarter {
+      flex: 0 1 25%;
+    }
+
+    &-three-quarters {
+      flex: 0 1 75%;
     }
   }
 

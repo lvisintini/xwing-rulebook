@@ -19,18 +19,37 @@
         </a>
       </h2>
 
-      {{ rule | rule_as_markdown:3 | md2html }}
+      {% if bookrule2markdown.image_clauses_markdown %}
+        <div class="u-flex u-flex-space-between">
+          <div class="u-flex-one-quarter">
+            {{ rule2markdown.image_clauses_markdown | md2html }}
+          </div>
+          <div class="u-flex-three-quarters">
+            {{ bookrule2markdown.rule_title | md2html }}
+            {{ bookrule2markdown.content_clauses_markdown | md2html }}
 
-      {% with rule|filter_related_rules_by_type:RULE_TYPES.RULE_CLARIFICATION as clarifications %}
-        {% if clarifications.count %}
-          <h4>Rule Clarifications</h4>
-          {% for clarification in clarifications %}
-            {{ clarification | rule_as_markdown:5 | md2html }}
+            {% if bookrule2markdown.rule_clarifications %}
+              {% for helper in bookrule2markdown.rule_clarifications %}
+                <h2>Rule Clarifications</h2>
+                {{ helper.rule_markdown | md2html }}
+              {% endfor %}
+            {% endif %}
+
+            {{ bookrule2markdown.related_topics_as_references | md2html }}
+          </div>
+        </div>
+      {% else %}
+        {{ bookrule2markdown.rule_markdown | md2html }}
+
+        {% if bookrule2markdown.rule_clarifications %}
+          {% for helper in bookrule2markdown.rule_clarifications %}
+            <h2>Rule Clarifications</h2>
+            {{ helper.rule_markdown | md2html }}
           {% endfor %}
         {% endif %}
-      {% endwith %}
 
-      {% related_topics_as_book_linked_list_markdown rule %}
+        {{ bookrule2markdown.related_topics_as_references | md2html }}
+      {% endif %}
 
       {{ '[Epic]' | xwing_icons  }}
     </div>
