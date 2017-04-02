@@ -11,6 +11,7 @@ def rule(request, rule_slug=None):
         rule,
         anchored=True,
         linked=True,
+        anchored_links=False,
         header_level=1,
     )
 

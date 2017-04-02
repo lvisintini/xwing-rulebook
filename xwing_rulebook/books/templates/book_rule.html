@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load markdown %}
 {% load xwing_icons %}
-{% load book_to_markdown %}
-{% load rule_to_markdown %}
 
 {% block meta-title  %}{{ book.name }}{% endblock %}
 
@@ -19,37 +17,9 @@
         </a>
       </h2>
 
-      {% if bookrule2markdown.image_clauses_markdown %}
-        <div class="u-flex u-flex-space-between">
-          <div class="u-flex-one-quarter">
-            {{ rule2markdown.image_clauses_markdown | md2html }}
-          </div>
-          <div class="u-flex-three-quarters">
-            {{ bookrule2markdown.rule_title | md2html }}
-            {{ bookrule2markdown.content_clauses_markdown | md2html }}
-
-            {% if bookrule2markdown.rule_clarifications %}
-              {% for helper in bookrule2markdown.rule_clarifications %}
-                <h2>Rule Clarifications</h2>
-                {{ helper.rule_markdown | md2html }}
-              {% endfor %}
-            {% endif %}
-
-            {{ bookrule2markdown.related_topics_as_references | md2html }}
-          </div>
-        </div>
-      {% else %}
-        {{ bookrule2markdown.rule_markdown | md2html }}
-
-        {% if bookrule2markdown.rule_clarifications %}
-          {% for helper in bookrule2markdown.rule_clarifications %}
-            <h2>Rule Clarifications</h2>
-            {{ helper.rule_markdown | md2html }}
-          {% endfor %}
-        {% endif %}
-
-        {{ bookrule2markdown.related_topics_as_references | md2html }}
-      {% endif %}
+      {% with bookrule2markdown as helper %}
+        {% include 'includes/_rule.html' %}
+      {% endwith %}
 
       {{ '[Epic]' | xwing_icons  }}
     </div>

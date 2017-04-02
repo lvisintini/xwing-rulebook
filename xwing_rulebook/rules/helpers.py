@@ -1,6 +1,6 @@
 from django.urls import reverse
 
-from rules.models import RULE_TYPES, CLAUSE_TYPES, LAYOUT_GROUP
+from rules.models import RULE_TYPES, CLAUSE_TYPES, CLAUSE_GROUPS
 from contents.models import TextContent, ImageContent
 
 
@@ -13,8 +13,8 @@ class Rule2MarkdownBase:
         self.header_level = kwargs.pop('header_level', 3)
         self.anchored = kwargs.pop('anchored', False)
         self.linked = kwargs.pop('linked', False)
+        self.anchored_links = kwargs.pop('anchored_links', False)
         self.url_name = kwargs.pop('url_name', self.default_url_name)
-        self.clause_filters = kwargs.pop('clause_filters', {})
         self.extra_url_params = kwargs
 
     @staticmethod
@@ -52,7 +52,7 @@ class Rule2MarkdownBase:
             (True, True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
         }
 
-        template = templates[(bool(link.rule), self.anchored, self.linked)]
+        template = templates[(bool(link.rule), self.anchored_links, self.linked)]
         url_params = list(self.extra_url_params.items())
         r = link.rule
 
@@ -68,9 +68,14 @@ class Rule2MarkdownBase:
         )
 
     def rule_markdown(self):
-        return '{rule_title}\n{rule_content}'.format(
+        return '{rule_title}\n{rule_content}{card_errata}{card_clarification}'.format(
             rule_title=self.rule_title(),
-            rule_content=self.rule_clauses(**self.clause_filters)
+            rule_content=self.rule_clauses(group__in=[
+                CLAUSE_GROUPS.MAIN,
+                CLAUSE_GROUPS.IMAGES,
+            ]),
+            card_errata=self.card_errata_clauses_markdown(),
+            card_clarification=self.card_clarification_clauses_markdown(),
         )
 
     def rule_title(self):
@@ -113,6 +118,39 @@ class Rule2MarkdownBase:
 
         return '\n\n'.join(clauses_mds)
 
+    def main_clauses_markdown(self):
+        return self.rule_clauses(group=CLAUSE_GROUPS.MAIN)
+
+    def image_clauses_markdown(self):
+        return self.rule_clauses(group=CLAUSE_GROUPS.IMAGES)
+
+    def card_errata_clauses_markdown(self):
+        template = "\n{header_level} Card errata \n{card_errata_md}\n"
+
+        if self.rule.type != RULE_TYPES.CARD:
+            return ''
+
+        card_errata_md = self.rule_clauses(group=CLAUSE_GROUPS.CARD_ERRATA)
+        if card_errata_md:
+            card_errata_md = template.format(
+                header_level='#' * (self.header_level + 1),
+                card_errata_md=card_errata_md
+            )
+        return card_errata_md
+
+    def card_clarification_clauses_markdown(self):
+        template = "\n{header_level} Card Clarifications \n{card_clarification_md}\n"
+        if self.rule.type != RULE_TYPES.CARD:
+            return ''
+
+        card_clarification_md = self.rule_clauses(group=CLAUSE_GROUPS.CARD_CLARIFICATION)
+        if card_clarification_md:
+            card_clarification_md = template.format(
+                header_level='#' * (self.header_level + 1),
+                card_clarification_md=card_clarification_md
+            )
+        return card_clarification_md
+
     def text_content_markdown(self, clause, content):
         file = content.image.static_url if content.image else ''
         clause_content = content.content.replace('<FILE>', file)
@@ -144,24 +182,6 @@ class Rule2MarkdownBase:
             )
         )
         return md
-
-    def clauses_markdown_by_groups(self, *groups):
-        return self.rule_clauses(group__in=groups)
-
-    def clause_markdown_exclusion(self, *groups):
-        return self.rule_clauses(group__exclude=groups)
-
-    def image_clauses_markdown(self):
-        """
-        This is a convenience method to be used in rule views
-        """
-        return self.clauses_markdown_by_groups(LAYOUT_GROUP.LEFT)
-
-    def content_clauses_markdown(self):
-        """
-        This is a convenience method to be used in rule views
-        """
-        return self.clause_markdown_exclusion(LAYOUT_GROUP.LEFT)
 
     def image_content_markdown(self, clause, content):
         title = self.render_clause_title(clause, content)
@@ -250,7 +270,7 @@ class Rule2MarkdownBase:
             (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
         }
 
-        template = templates[(self.anchored, self.linked)]
+        template = templates[(self.anchored_links, self.linked)]
 
         url_params = list(self.extra_url_params.items())
 
@@ -299,20 +319,9 @@ class Rule2Markdown(Rule2MarkdownBase):
                     anchored=self.anchored,
                     linked=self.linked,
                     url_name=self.url_name,
-                    clause_filters=self.clause_filters,
                     **self.extra_url_params
                 )
             )
-
-    def set_clause_filters(self, **kwargs):
-        self.clause_filters = kwargs
-        for helper in self.related_rules_helpers:
-            helper.clause_filters = kwargs
-
-    def clear_clause_filters(self):
-        self.clause_filters = {}
-        for helper in self.related_rules_helpers:
-            helper.clause_filters = {}
 
     def rule_clarifications(self):
         return [

@@ -27,6 +27,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 rule,
                 anchored=False,
                 linked=True,
+                anchored_links=False,
                 header_level=1,
                 url_name='books:rule',
                 book_slug=book.slug,
@@ -54,6 +55,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 rule,
                 anchored=True,
                 linked=True,
+                anchored_links=False,
                 header_level=1,
                 url_name='books:rule',
                 book_slug=book.slug,
@@ -80,6 +82,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 rule,
                 anchored=True,
                 linked=True,
+                anchored_links=False,
                 header_level=1,
                 url_name='books:rule',
                 book_slug=book.slug,
@@ -102,7 +105,8 @@ def single_page_book(request):
     helper = Book2Markdown(
         rulebook,
         anchored=True,
-        linked=False
+        linked=False,
+        anchored_links=True
     )
 
     context = {

@@ -38,6 +38,7 @@ class Book2Markdown:
 
         self.anchored = kwargs.pop('anchored', False)
         self.linked = kwargs.pop('linked', False)
+        self.anchored_links = kwargs.pop('anchored_links', False)
         self.extra_url_params = kwargs
 
     def as_single_page(self):
@@ -57,6 +58,7 @@ class Book2Markdown:
                     r,
                     anchored=self.anchored,
                     linked=self.linked,
+                    anchored_links=self.anchored_links,
                     header_level=3,
                     **self.extra_url_params
                 )

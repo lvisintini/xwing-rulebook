@@ -1,0 +1,36 @@
+{% load markdown %}
+
+{% if helper.image_clauses_markdown %}
+  <div class="u-flex u-flex-space-between">
+    <div class="u-flex-one-quarter">
+      {{ helper.image_clauses_markdown | md2html }}
+    </div>
+    <div class="u-flex-three-quarters">
+      {{ helper.rule_title | md2html }}
+      {{ helper.main_clauses_markdown | md2html }}
+
+      {{ helper.card_errata_clauses_markdown | md2html }}
+      {{ helper.card_clarification_clauses_markdown | md2html }}
+
+      {% if helper.rule_clarifications %}
+        {% for helper in helper.rule_clarifications %}
+          <h2>Rule Clarifications</h2>
+          {{ helper.rule_markdown | md2html }}
+        {% endfor %}
+      {% endif %}
+
+      {{ helper.related_topics_as_references | md2html }}
+    </div>
+  </div>
+{% else %}
+  {{ helper.rule_markdown | md2html }}
+
+  {% if helper.rule_clarifications %}
+    {% for helper in helper.rule_clarifications %}
+      <h2>Rule Clarifications</h2>
+      {{ helper.rule_markdown | md2html }}
+    {% endfor %}
+  {% endif %}
+
+  {{ helper.related_topics_as_references | md2html }}
+{% endif %}

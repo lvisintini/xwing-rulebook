@@ -82,27 +82,24 @@ class RULE_TYPES:
     ]
 
 
-class LAYOUT_GROUP:
+class CLAUSE_GROUPS:
     MAIN = 1
-    LEFT = 2
-    RIGHT = 3
-    TOP = 4
-    BOTTOM = 5
+    IMAGES = 2
+    CARD_ERRATA = 3
+    CARD_CLARIFICATION = 4
 
     as_choices = (
         (MAIN, 'Main'),
-        (LEFT, 'Left'),
-        (RIGHT, 'Right'),
-        (TOP, 'Top'),
-        (BOTTOM, 'Bottom'),
+        (IMAGES, 'Images'),
+        (CARD_ERRATA, 'Card Errata'),
+        (CARD_CLARIFICATION, 'Card Clarification'),
     )
 
     as_list = [
         MAIN,
-        LEFT,
-        RIGHT,
-        TOP,
-        BOTTOM,
+        IMAGES,
+        CARD_ERRATA,
+        CARD_CLARIFICATION,
     ]
 
 
@@ -163,7 +160,7 @@ class Clause(models.Model):
     type = models.CharField(
         max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
     )
-    group = models.IntegerField(default=1, choices=LAYOUT_GROUP.as_choices, verbose_name="Layout")
+    group = models.IntegerField(default=1, choices=CLAUSE_GROUPS.as_choices)
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)
