@@ -1,0 +1,1 @@
+xwing_rulebook/manage.py
