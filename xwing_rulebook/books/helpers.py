@@ -31,6 +31,13 @@ class BookRule2Markdown(Rule2Markdown):
             )
         return rule_clarifications_md
 
+    def rule_clarifications(self):
+        rule_ids = self.book.rule_ids
+        return [
+            helper for helper in self.related_rules_helpers
+            if helper.rule.type == RULE_TYPES.RULE_CLARIFICATION and helper.rule.id in rule_ids
+        ]
+
 
 class Book2Markdown:
     def __init__(self, book, **kwargs):

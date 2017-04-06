@@ -244,7 +244,7 @@ class Rule2MarkdownBase:
 
         md = (
             '{title}{title_anchor}'
-            '![alt_text]({static_url}){image_anchor}'
+            '![{alt_text}]({static_url}){image_anchor}'
             '{caption}{caption_anchor}'
         ).format(
             title=title,
@@ -328,3 +328,19 @@ class Rule2Markdown(Rule2MarkdownBase):
             helper for helper in self.related_rules_helpers
             if helper.rule.type == RULE_TYPES.RULE_CLARIFICATION
         ]
+
+    def rule_clarifications_as_content(self):
+        template = "\n{header_level} Rule Clarifications \n{rule_clarifications_mds}\n"
+
+        rule_clarifications = self.rule_clarifications()
+
+        if not rule_clarifications:
+            return ''
+
+        rule_clarifications_mds = template.format(
+            header_level='#' * (self.header_level + 1),
+            rule_clarifications_mds='\n\n'.join(
+                [helper.rule_markdown() for helper in rule_clarifications]
+            )
+        )
+        return rule_clarifications_mds

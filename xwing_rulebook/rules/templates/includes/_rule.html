@@ -12,25 +12,13 @@
       {{ helper.card_errata_clauses_markdown | md2html }}
       {{ helper.card_clarification_clauses_markdown | md2html }}
 
-      {% if helper.rule_clarifications %}
-        {% for helper in helper.rule_clarifications %}
-          <h2>Rule Clarifications</h2>
-          {{ helper.rule_markdown | md2html }}
-        {% endfor %}
-      {% endif %}
+      {{ helper.rule_clarifications_as_content | md2html }}
 
       {{ helper.related_topics_as_references | md2html }}
     </div>
   </div>
 {% else %}
   {{ helper.rule_markdown | md2html }}
-
-  {% if helper.rule_clarifications %}
-    {% for helper in helper.rule_clarifications %}
-      <h2>Rule Clarifications</h2>
-      {{ helper.rule_markdown | md2html }}
-    {% endfor %}
-  {% endif %}
-
+  {{ helper.rule_clarifications_as_content | md2html }}
   {{ helper.related_topics_as_references | md2html }}
 {% endif %}

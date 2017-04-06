@@ -584,7 +584,6 @@ a {
   max-width: 100%; }
 
 .Rule__ImageTitle, .Rule__Image, .Rule__ImageCaption {
-  display: flex;
-  justify-content: center; }
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,5 @@
+import re
+
 from django.conf import settings
 from django.db import models
 
@@ -150,8 +152,13 @@ class Rule(models.Model):
     def anchor_id(self):
         return '-'.join(self.name.lower().split())
 
+    @property
+    def name_as_title(self):
+        automata = re.compile(r' ?\(.*?\)')
+        return automata.sub('', self.name)
+
     def __str__(self):
-        return self.name
+        return '[{}] {}'.format(dict(RULE_TYPES.as_choices).get(self.type, self.type), self.name)
 
 
 class Clause(models.Model):
