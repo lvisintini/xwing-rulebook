@@ -54,15 +54,14 @@ class Rule2MarkdownBase:
 
         template = templates[(bool(link.rule), self.anchored_links, self.linked)]
         url_params = list(self.extra_url_params.items())
-        r = link.rule
 
         return template.format(
-            rule=link.rule,
-            expansion_icon='†' if r and r.expansion_rule else '',
+            rule=link.rule.name,
+            expansion_icon='†' if link.rule and link.rule.expansion_rule else '',
             relative_url=reverse(
-                self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
-            ) if r else '',
-            anchor=r.anchor_id if r else '',
+                self.url_name, kwargs=dict([('rule_slug', link.rule.slug)] + url_params)
+            ) if link.rule else '',
+            anchor=link.rule.anchor_id if link.rule else '',
             url=link.url,
             text=link.text
         )
@@ -276,7 +275,7 @@ class Rule2MarkdownBase:
 
         references = ', '.join([
             template.format(
-                rule=r,
+                rule=r.name,
                 expansion_icon='' if not r.expansion_rule else '†',
                 relative_url=reverse(
                     self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
