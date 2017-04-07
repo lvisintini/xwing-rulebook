@@ -1,4 +1,7 @@
+import os
+
 from django import forms
+from django.conf import settings
 from django.contrib import admin
 from django.db import models
 from django.utils.safestring import mark_safe
@@ -13,6 +16,23 @@ from polymorphic.admin import (
 class LinkInline(admin.StackedInline):
     model = Link
     extra = 0
+
+
+class ImageAdminForm(forms.ModelForm):
+    file = forms.ChoiceField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        choices = []
+
+        for dir_path, _, filenames in os.walk(os.path.join(settings.STATICFILES_DIRS[0], 'images')):
+
+            choices.extend([
+                (os.path.join(dir_path, f).replace(settings.STATICFILES_DIRS[0], ''), ) * 2
+                for f in filenames if f.endswith('.png')
+            ])
+
+        self.fields['file'].choices = sorted(choices)
 
 
 class TextContentAdminForm(forms.ModelForm):
@@ -107,6 +127,7 @@ class ImageAdmin(admin.ModelAdmin):
             )
         }),
     )
+    form = ImageAdminForm
 
     def render_image(self, obj):
         if obj.file:

@@ -105,14 +105,6 @@ class Source(models.Model):
         max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
     )
     processed = models.BooleanField(default=False)
-    file = models.FilePathField(
-        max_length=255,
-        path=settings.INTERNAL_ASSETS_DIR,
-        recursive=True,
-        allow_folders=False,
-        null=True,
-        blank=True
-    )
 
     def __str__(self):
         return '{}-{}'.format(self.type, self.code)

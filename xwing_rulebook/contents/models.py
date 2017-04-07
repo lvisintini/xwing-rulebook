@@ -60,18 +60,11 @@ class ImageContent(Content):
 class Image(models.Model):
     caption = models.CharField(max_length=250, default='', blank=True)
     alt_text = models.CharField(max_length=250, default='', blank=True)
-    file = models.FilePathField(
-        max_length=255,
-        path=settings.STATICFILES_DIRS[0],
-        recursive=True,
-        allow_folders=False,
-        null=True,
-        blank=True
-    )
+    file = models.CharField(max_length=255)
 
     @property
     def static_url(self):
-        return static(self.file.replace(settings.STATICFILES_DIRS[0], ''))
+        return static(self.file)
 
     def __str__(self):
         return self.static_url

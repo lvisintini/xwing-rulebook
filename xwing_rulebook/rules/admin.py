@@ -62,19 +62,19 @@ class SourceAdmin(admin.ModelAdmin):
         qs = qs.annotate(
             precedence=models.Case(
                 models.When(
-                    content__source__type=SOURCE_TYPES.FAQ,
+                    type=SOURCE_TYPES.FAQ,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.RULES_REFERENCE,
+                    type=SOURCE_TYPES.RULES_REFERENCE,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.REFERENCE_CARD,
+                    type=SOURCE_TYPES.REFERENCE_CARD,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.MANUAL,
+                    type=SOURCE_TYPES.MANUAL,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
                 ),
                 default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
