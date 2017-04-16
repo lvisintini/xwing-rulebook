@@ -15,8 +15,10 @@
       <link rel="stylesheet" href="{% static 'fonts/xwing-miniatures-font/xwing-miniatures.css' %}">
       <link rel="stylesheet" href="{% static 'build/main.css' %}">
     {% endblock %}
+    {% include 'includes/_google_tag_manager.html' %}
   </head>
   <body>
+    {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">
       <div class="PageWrapper__Header">
         {% block header %}{% endblock %}

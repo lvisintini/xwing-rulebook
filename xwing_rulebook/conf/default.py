@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from utils.constants import ENVIRONMENTS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'utils.context_processors.constants',
+                'utils.context_processors.settings',
             ],
         },
     },
@@ -131,4 +133,7 @@ STATICFILES_DIRS = [
 ]
 
 EXTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, "external")
-INTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, 'static', 'assets')
+
+ENVIRONMENT = ENVIRONMENTS.DEVELOPMENT
+
+GOOGLE_TAG_MANAGER_ID = ''

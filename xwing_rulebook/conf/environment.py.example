@@ -1,5 +1,5 @@
 import os
-
+from utils.constants import ENVIRONMENTS
 
 location = lambda x: os.path.join(
     os.path.dirname(os.path.realpath(__file__)), '../..', x
@@ -22,3 +22,7 @@ DATABASES = {
 
 EXTRA_APPS = tuple(EXTRA_APPS)
 EXTRA_MIDDLEWARE_CLASSES = tuple(EXTRA_MIDDLEWARE_CLASSES)
+
+
+ENVIRONMENT = ENVIRONMENTS.DEVELOPMENT
+GOOGLE_TAG_MANAGER_ID = ''
