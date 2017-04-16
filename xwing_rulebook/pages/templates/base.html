@@ -27,7 +27,9 @@
         {% block content %}{% endblock %}
       </div>
       <div class="PageWrapper__Footer">
-        {% block footer %}{% endblock %}
+        {% block footer %}
+          {% include 'includes/_paypal.html' %}
+        {% endblock %}
       </div>
 
     </div>
@@ -36,7 +38,7 @@
       <script src="{% static 'build/main.js' %}"></script>
     {% endblock %}
 
-    {% block analytics %}{% endblock %}
+
 
   </body>
 </html>
