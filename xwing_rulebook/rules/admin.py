@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES, RULE_TYPES
+from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES
 
 
 class RuleAdminForm(forms.ModelForm):
@@ -96,20 +96,11 @@ class RuleAdmin(NestedModelAdmin):
                 'huge_ship_rule', 'related_rules',
             )
         }),
-        ('Related cards', {
-            'fields': (
-                'related_damage_decks', 'related_upgrades', 'related_pilots', 'related_conditions'
-            ),
-            'classes': ('collapse', )
-        }),
-
     )
     inlines = (ClauseInline, )
     form = RuleAdminForm
     sortable_field_name = 'id'
-    filter_horizontal = [
-        'related_rules', 'related_damage_decks', 'related_upgrades', 'related_pilots'
-    ]
+    filter_horizontal = ['related_rules', ]
     list_filter = ['type', ]
     save_on_top = True
     search_fields = ['name', ]

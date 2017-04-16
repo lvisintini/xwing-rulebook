@@ -120,15 +120,6 @@ class Rule(models.Model):
 
     related_rules = models.ManyToManyField('self', blank=True)
 
-    related_pilots = models.ManyToManyField('integrations.Pilot', blank=True,
-                                            related_name='related_rules')
-    related_upgrades = models.ManyToManyField('integrations.Upgrade', blank=True,
-                                              related_name='related_rules')
-    related_damage_decks = models.ManyToManyField('integrations.DamageDeck', blank=True,
-                                                  related_name='related_rules')
-    related_conditions = models.ManyToManyField('integrations.Condition', blank=True,
-                                                related_name='related_rules')
-
     class Meta:
         ordering = ['name', ]
 
