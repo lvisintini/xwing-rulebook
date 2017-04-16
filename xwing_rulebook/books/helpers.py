@@ -31,6 +31,19 @@ class BookRule2Markdown(Rule2Markdown):
             )
         return rule_clarifications_md
 
+    def related_cards_as_references(self):
+        filtered_rules = self.rule.related_rules.filter(
+            type=RULE_TYPES.CARD,
+            id__in=self.book.rule_ids
+        )
+        related_cards_md = self.related_rules_as_references(filtered_rules)
+        if related_cards_md:
+            related_cards_md = "\n**Related Cards:** {}\n".format(
+                related_cards_md
+            )
+        return related_cards_md
+
+
     def rule_clarifications(self):
         rule_ids = self.book.rule_ids
         return [

@@ -305,6 +305,15 @@ class Rule2MarkdownBase:
             )
         return rule_clarifications_md
 
+    def related_cards_as_references(self):
+        filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.CARD)
+        related_cards_md = self.related_rules_as_references(filtered_rules)
+        if related_cards_md:
+            related_cards_md = "\n**Related Cards:** {}\n".format(
+                related_cards_md
+            )
+        return related_cards_md
+
 
 class Rule2Markdown(Rule2MarkdownBase):
     def __init__(self, *args, **kwargs):
