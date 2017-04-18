@@ -8,8 +8,10 @@
 {% block content %}
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
-      <div class="u-text-right">
-        <a href="{% url 'rules:index' %}">&#8592; Back to index</a>
+
+      <div class="u-flex u-flex-space-between">
+        <a href="{% url 'admin:rules_rule_change' rule.id %}">&uarr; Go to admin</a>
+        <a href="{% url 'rules:index' %}">&larr; Back to index</a>
       </div>
 
       {% with rule2markdown as helper %}
