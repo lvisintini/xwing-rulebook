@@ -107,6 +107,7 @@ class CARD_TYPES:
     as_choices = (
         (NOT_APPLICABLE, 'N/A'),
         (PILOT, 'Pilot'),
+        (CONDITION, 'Upgrade'),
         (CONDITION, 'Condition'),
         (DAMAGE_ORG, 'Damage card (Original core set)'),
         (DAMAGE_TFA, 'Damage card (TFA core set)'),

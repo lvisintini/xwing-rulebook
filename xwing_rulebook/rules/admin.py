@@ -21,14 +21,14 @@ class RuleAdminForm(forms.ModelForm):
                         "CARD_TYPES.NOT_APPLICABLE."
                     )
                 )
-            else:
-                if cleaned_data['card_type'] == CARD_TYPES.NOT_APPLICABLE:
-                    self.add_error(
-                        'card_type', forms.ValidationError(
-                            "If rule.type == RULE_TYPES.CARD, rule.card_type needs to be anything "
-                            "but CARD_TYPES.NOT_APPLICABLE."
-                        )
+        else:
+            if cleaned_data['card_type'] == CARD_TYPES.NOT_APPLICABLE:
+                self.add_error(
+                    'card_type', forms.ValidationError(
+                        "If rule.type == RULE_TYPES.CARD, rule.card_type needs to be anything "
+                        "but CARD_TYPES.NOT_APPLICABLE."
                     )
+                )
 
         if not cleaned_data.get('preserve_name_case', False):
             cleaned_data['name'] = cleaned_data['name'].capitalize()
