@@ -106,7 +106,7 @@ class SourceAdmin(admin.ModelAdmin):
 @admin.register(Rule)
 class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ('name', 'link_to_rule', 'type')
+    list_display = ('name', 'link_to_rule', 'type', 'card_type')
     fieldsets = (
         ('Basic', {
             'fields': (
