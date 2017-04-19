@@ -6,12 +6,30 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES
+from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES, CARD_TYPES, RULE_TYPES
 
 
 class RuleAdminForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
+
+        if cleaned_data['type'] != RULE_TYPES.CARD:
+            if cleaned_data['card_type'] != CARD_TYPES.NOT_APPLICABLE:
+                self.add_error(
+                    'card_type', forms.ValidationError(
+                        "If rule.type != RULE_TYPES.CARD, rule.card_type needs to be "
+                        "CARD_TYPES.NOT_APPLICABLE."
+                    )
+                )
+            else:
+                if cleaned_data['card_type'] == CARD_TYPES.NOT_APPLICABLE:
+                    self.add_error(
+                        'card_type', forms.ValidationError(
+                            "If rule.type == RULE_TYPES.CARD, rule.card_type needs to be anything "
+                            "but CARD_TYPES.NOT_APPLICABLE."
+                        )
+                    )
+
         if not cleaned_data.get('preserve_name_case', False):
             cleaned_data['name'] = cleaned_data['name'].capitalize()
         return cleaned_data
@@ -92,8 +110,15 @@ class RuleAdmin(NestedModelAdmin):
     fieldsets = (
         ('Basic', {
             'fields': (
-                'name', 'slug', 'preserve_name_case', 'type', 'link_to_rule', 'expansion_rule',
-                'huge_ship_rule', 'related_rules',
+                'name',
+                'slug',
+                'preserve_name_case',
+                'type',
+                'card_type',
+                'link_to_rule',
+                'expansion_rule',
+                'huge_ship_rule',
+                'related_rules',
             )
         }),
     )

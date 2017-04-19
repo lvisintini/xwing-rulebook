@@ -1,6 +1,16 @@
 
 Useful commands
 ```
+sudo apt-get install postgresql postgresql-client virtualwrapper
+mkvirtualenv --python=/usr/bin/python3 xwing-rulebook
+git clone git@github.com:lvisintini/xwing-rulebook.git
+cd xwing-rulebook
+pip install -r requirements.txt
+sudo su - postgres
+psql
+create database rulebookdb;
+
+
 $ sudo su - postgres
 $ pg_dump -U postgres rulebookdb -f rulebookdb-`date -u +"%Y-%m-%dT%H:%M:%SZ"`.sql
 $ exit

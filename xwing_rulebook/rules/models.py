@@ -96,6 +96,32 @@ class CLAUSE_GROUPS:
     ]
 
 
+class CARD_TYPES:
+    NOT_APPLICABLE = 0
+    PILOT = 1
+    UPGRADE = 2
+    CONDITION = 3
+    DAMAGE_ORG = 4
+    DAMAGE_TFA = 5
+
+    as_choices = (
+        (NOT_APPLICABLE, 'N/A'),
+        (PILOT, 'Pilot'),
+        (CONDITION, 'Condition'),
+        (DAMAGE_ORG, 'Damage card (Original core set)'),
+        (DAMAGE_TFA, 'Damage card (TFA core set)'),
+    )
+
+    as_list = [
+        NOT_APPLICABLE,
+        PILOT,
+        UPGRADE,
+        CONDITION,
+        DAMAGE_ORG,
+        DAMAGE_TFA,
+    ]
+
+
 class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField(blank=True, null=True)
@@ -116,7 +142,9 @@ class Rule(models.Model):
     expansion_rule = models.BooleanField(default=False)
     huge_ship_rule = models.BooleanField(default=False)
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
-
+    card_type = models.IntegerField(
+        default=CARD_TYPES.NOT_APPLICABLE, choices=CARD_TYPES.as_choices, blank=True, null=False
+    )
     related_rules = models.ManyToManyField('self', blank=True)
 
     class Meta:
@@ -141,7 +169,7 @@ class Clause(models.Model):
     type = models.CharField(
         max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
     )
-    group = models.IntegerField(default=1, choices=CLAUSE_GROUPS.as_choices)
+    group = models.IntegerField(default=CLAUSE_GROUPS.MAIN, choices=CLAUSE_GROUPS.as_choices)
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)
