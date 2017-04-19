@@ -144,7 +144,7 @@ class Rule(models.Model):
     huge_ship_rule = models.BooleanField(default=False)
     type = models.CharField(max_length=25, choices=RULE_TYPES.as_choices, default=RULE_TYPES.RULE)
     card_type = models.IntegerField(
-        default=CARD_TYPES.NOT_APPLICABLE, choices=CARD_TYPES.as_choices, blank=True, null=False
+        default=CARD_TYPES.NOT_APPLICABLE, choices=CARD_TYPES.as_choices, blank=False, null=False
     )
     related_rules = models.ManyToManyField('self', blank=True)
 
