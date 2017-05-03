@@ -126,7 +126,7 @@ class RuleAdmin(NestedModelAdmin):
     form = RuleAdminForm
     sortable_field_name = 'id'
     filter_horizontal = ['related_rules', ]
-    list_filter = ['type', ]
+    list_filter = ['type', 'card_type']
     save_on_top = True
     search_fields = ['name', ]
     readonly_fields = ['link_to_rule']
