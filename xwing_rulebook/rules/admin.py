@@ -106,7 +106,7 @@ class SourceAdmin(admin.ModelAdmin):
 @admin.register(Rule)
 class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ('name', 'link_to_rule', 'type', 'card_type')
+    list_display = ('id', 'name', 'link_to_rule', 'type', 'card_type')
     fieldsets = (
         ('Basic', {
             'fields': (
@@ -124,7 +124,6 @@ class RuleAdmin(NestedModelAdmin):
     )
     inlines = (ClauseInline, )
     form = RuleAdminForm
-    sortable_field_name = 'id'
     filter_horizontal = ['related_rules', ]
     list_filter = ['type', 'card_type']
     save_on_top = True
