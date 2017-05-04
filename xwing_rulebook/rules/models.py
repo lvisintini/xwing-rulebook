@@ -168,9 +168,9 @@ class Clause(models.Model):
     rule = models.ForeignKey('rules.Rule', related_name='clauses')
     order = models.IntegerField(default=0)
     type = models.CharField(
-        max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.UNORDERED_ITEM
+        max_length=11, choices=CLAUSE_TYPES.as_choices, default=CLAUSE_TYPES.TEXT
     )
-    group = models.IntegerField(default=CLAUSE_GROUPS.MAIN, choices=CLAUSE_GROUPS.as_choices)
+    group = models.IntegerField(choices=CLAUSE_GROUPS.as_choices, default=CLAUSE_GROUPS.MAIN)
     expansion_related = models.BooleanField(default=False)
     indentation = models.IntegerField(default=0)
     ignore_title = models.BooleanField(default=False)

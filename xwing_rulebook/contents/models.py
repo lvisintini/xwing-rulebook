@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 from polymorphic.models import PolymorphicModel
