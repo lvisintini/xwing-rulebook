@@ -14,7 +14,7 @@
       <ul>
         {% for rule in rules %}
           <li>
-            <a href="{% url 'rules:rule' rule_slug=rule.slug  %}">{{ rule.name }}</a>
+            <a href="{% url 'rules:rule' rule_slug=rule.slug  %}">{{ rule.name | xwing_icons }}</a>
           </li>
         {% endfor %}
       </ul>

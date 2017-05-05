@@ -113,6 +113,15 @@ class TextContentAdmin(PolymorphicChildModelAdmin):
 @admin.register(ImageContent)
 class ImageContentAdmin(PolymorphicChildModelAdmin):
     base_model = Content
+    readonly_fields = ('render_image', )
+
+    def render_image(self, obj):
+        if obj.image:
+            return mark_safe("<br/><img src={static_url} />".format(
+                static_url=obj.image.static_url)
+            )
+        return None
+    render_image.short_description = 'Preview'
 
 
 @admin.register(Image)
