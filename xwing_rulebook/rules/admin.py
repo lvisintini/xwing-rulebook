@@ -115,6 +115,7 @@ class RuleAdmin(NestedModelAdmin):
                 'preserve_name_case',
                 'type',
                 'card_type',
+                'additional_keywords',
                 'link_to_rule',
                 'expansion_rule',
                 'huge_ship_rule',

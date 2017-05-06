@@ -147,6 +147,7 @@ class Rule(models.Model):
         default=CARD_TYPES.NOT_APPLICABLE, choices=CARD_TYPES.as_choices, blank=False, null=False
     )
     related_rules = models.ManyToManyField('self', blank=True)
+    additional_keywords = models.CharField(max_length=250, default='', blank=True)
 
     class Meta:
         ordering = ['name', ]
