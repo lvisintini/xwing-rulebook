@@ -17,15 +17,15 @@ class FaqAdminForm(forms.ModelForm):
 
 @admin.register(Faq)
 class FaqAdmin(admin.ModelAdmin):
-    list_display = ('topic', 'question', 'answer')
+    list_display = ('topic', 'question', 'answer', 'rules')
     search_fields = ['question', 'answer']
     ordering = ('order', )
     list_filter = ['topic', ]
     form = FaqAdminForm
+    raw_id_fields = ['related_clauses', ]
+    readonly_fields = ['rules', ]
 
-    readonly_fields = []
-
-    def clauses(self, obj):
-        if obj.content:
-            return ', '.join(obj.related_clauses.values_list('rule__name', flat=True).disctint())
+    def rules(self, obj):
+        if obj.related_clauses.count():
+            return ', '.join(obj.related_clauses.values_list('rule__name', flat=True,).distinct())
         return ''
