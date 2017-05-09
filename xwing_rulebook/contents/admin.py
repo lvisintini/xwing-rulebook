@@ -140,8 +140,8 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ('alias', 'label', 'target')
-    readonly_fields = ['label', 'target']
+    list_display = ('alias', 'label', 'target', 'placeholder')
+    readonly_fields = ['label', 'target', 'placeholder']
 
     def label(self, obj):
         return "{label}{expansion_icon}".format(
@@ -151,3 +151,8 @@ class LinkAdmin(admin.ModelAdmin):
 
     def target(self, obj):
         return str(obj.rule) if obj.rule else obj.url
+
+    def placeholder(self, obj):
+        if obj.id:
+            return '<LINK:{}>'.format(obj.alias)
+        return '-'

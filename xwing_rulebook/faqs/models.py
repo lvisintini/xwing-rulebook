@@ -35,6 +35,18 @@ class Faq(models.Model):
     topic = models.CharField(max_length=24, choices=TOPICS.as_choices, default=TOPICS.GENERAL)
     question = models.TextField(default='')
     answer = models.TextField(default='')
+    question_as_per_source = models.TextField(
+        default='',
+        help_text="If the text in the question field is not a verbatim copy of the source's text, "
+                  "Add the original text here.",
+        blank=True
+    )
+    answer_as_per_source = models.TextField(
+        default='',
+        help_text="If the text in the answer field is not a verbatim copy of the source's text, "
+                  "Add the original text here.",
+        blank=True
+    )
     source = models.ForeignKey('rules.Source', related_name="faqs")
     page = models.IntegerField(null=True, blank=True)
     order = models.IntegerField(default=0)

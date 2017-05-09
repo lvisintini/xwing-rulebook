@@ -73,6 +73,7 @@ class Link(models.Model):
     rule = models.ForeignKey('rules.Rule', blank=True, null=True)
     alias = models.CharField(
         max_length=50,
+        unique=True,
         help_text="Used as the link identifier. Use <LINK:{alias}> in your markdown"
     )
     text = models.CharField(

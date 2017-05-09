@@ -25,6 +25,28 @@ class FaqAdmin(admin.ModelAdmin):
     raw_id_fields = ['related_clauses', ]
     readonly_fields = ['rules', ]
 
+    fieldsets = (
+        (None, {
+            'fields': (
+                'topic',
+                'question',
+                'answer',
+                'source',
+                'page',
+                'order',
+                'related_clauses',
+                'rules',
+            )
+        }),
+        ('Original text', {
+            'fields': (
+                'question_as_per_source',
+                'answer_as_per_source'
+            ),
+            'classes': ('collapse', )
+        }),
+    )
+
     def rules(self, obj):
         if obj.related_clauses.count():
             return ', '.join(obj.related_clauses.values_list('rule__name', flat=True).distinct())
