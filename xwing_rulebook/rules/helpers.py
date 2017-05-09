@@ -1,7 +1,7 @@
 from django.urls import reverse
 
 from rules.models import RULE_TYPES, CLAUSE_TYPES, CLAUSE_GROUPS
-from contents.models import TextContent, ImageContent
+from contents.models import TextContent, ImageContent, Link
 
 
 class Rule2MarkdownBase:
@@ -56,7 +56,7 @@ class Rule2MarkdownBase:
         url_params = list(self.extra_url_params.items())
 
         return template.format(
-            rule=link.rule.name,
+            rule=link.rule.name if link.rule else link.text,
             expansion_icon='†' if link.rule and link.rule.expansion_rule else '',
             relative_url=reverse(
                 self.url_name, kwargs=dict([('rule_slug', link.rule.slug)] + url_params)
@@ -154,7 +154,7 @@ class Rule2MarkdownBase:
         file = content.image.static_url if content.image else ''
         clause_content = content.content.replace('<FILE>', file)
 
-        for l in content.links.all():
+        for l in Link.objects.all():
             clause_content = clause_content.replace(
                 '<LINK:{}>'.format(l.alias), self.render_link(l)
             )

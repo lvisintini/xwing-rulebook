@@ -70,7 +70,6 @@ class Image(models.Model):
 
 
 class Link(models.Model):
-    content = models.ForeignKey('contents.TextContent', related_name='links')
     rule = models.ForeignKey('rules.Rule', blank=True, null=True)
     alias = models.CharField(
         max_length=50,
@@ -86,4 +85,4 @@ class Link(models.Model):
     )
 
     def __str__(self):
-        return "{}-{}".format(self.alias, self.rule)
+        return self.alias

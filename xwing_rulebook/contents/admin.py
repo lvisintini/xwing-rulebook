@@ -12,12 +12,6 @@ from polymorphic.admin import (
     PolymorphicParentModelAdmin, PolymorphicChildModelAdmin, PolymorphicChildModelFilter
 )
 
-
-class LinkInline(admin.StackedInline):
-    model = Link
-    extra = 0
-
-
 class ImageAdminForm(forms.ModelForm):
     file = forms.ChoiceField(required=True)
 
@@ -107,7 +101,6 @@ class ContentAdmin(PolymorphicParentModelAdmin):
 class TextContentAdmin(PolymorphicChildModelAdmin):
     base_model = Content
     base_form = TextContentAdminForm
-    inlines = (LinkInline, )
 
 
 @admin.register(ImageContent)
@@ -143,3 +136,18 @@ class ImageAdmin(admin.ModelAdmin):
             return mark_safe("<br/><img src={static_url} />".format(static_url=obj.static_url))
         return None
     render_image.short_description = 'Image'
+
+
+@admin.register(Link)
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ('alias', 'label', 'target')
+    readonly_fields = ['label', 'target']
+
+    def label(self, obj):
+        return "{label}{expansion_icon}".format(
+            label=obj.rule.name if obj.rule else obj.text,
+            expansion_icon='†' if obj.rule and obj.rule.expansion_rule else ''
+        )
+
+    def target(self, obj):
+        return str(obj.rule) if obj.rule else obj.url

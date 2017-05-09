@@ -43,7 +43,6 @@ class BookRule2Markdown(Rule2Markdown):
             )
         return related_cards_md
 
-
     def rule_clarifications(self):
         rule_ids = self.book.rule_ids
         return [
