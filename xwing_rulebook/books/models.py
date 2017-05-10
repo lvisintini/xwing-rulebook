@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.functional import cached_property
 
 
 class Book(models.Model):
@@ -11,14 +12,12 @@ class Book(models.Model):
     def __str__(self):
         return self.name
 
-    @property
+    @cached_property
     def rule_ids(self):
-        if not hasattr(self, '_rules'):
-            section_ids = self.section_set.values_list('id', flat=True)
-            self._rule_ids = list(set(SectionRule.objects.filter(
-                section_id__in=section_ids
-            ).values_list('rule_id', flat=True)))
-        return self._rule_ids
+        section_ids = self.section_set.values_list('id', flat=True)
+        return list(set(SectionRule.objects.filter(
+            section_id__in=section_ids
+        ).values_list('rule_id', flat=True)))
 
 
 class Section(models.Model):

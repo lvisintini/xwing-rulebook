@@ -188,7 +188,7 @@ class Clause(models.Model):
 
     @cached_property
     def current_content(self):
-        qs = ClauseContent.objects.filter(clause_id=self.id)
+        qs = ClauseContent.objects.filter(clause_id=self.id).select_related('content')
 
         count = qs.count()
         if not count:

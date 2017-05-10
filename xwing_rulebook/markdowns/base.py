@@ -60,7 +60,7 @@ class MarkdownBase:
 
     @cached_property
     def links(self):
-        return Link.objects.all()
+        return Link.objects.select_related('rule').all()
 
     def render_links(self, text):
         for l in self.links:
