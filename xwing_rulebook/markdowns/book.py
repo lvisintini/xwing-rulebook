@@ -1,4 +1,4 @@
-from rules.helpers import Rule2Markdown
+from markdowns.rule import Rule2Markdown
 from rules.models import RULE_TYPES
 
 

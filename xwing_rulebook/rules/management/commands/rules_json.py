@@ -4,7 +4,7 @@ from collections import OrderedDict
 from django.core.management.base import BaseCommand
 
 from rules.models import Rule
-from rules.helpers import Rule2Markdown
+from markdowns.rule import Rule2Markdown
 
 
 class Command(BaseCommand):

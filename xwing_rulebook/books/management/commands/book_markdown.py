@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
 from books.models import Book
-from books.helpers import Book2Markdown
+from markdowns.book import Book2Markdown
 
 
 class Command(BaseCommand):

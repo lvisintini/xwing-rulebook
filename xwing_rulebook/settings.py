@@ -21,6 +21,6 @@ if module:
     if 'EXTRA_APPS' in locals():
         INSTALLED_APPS = INSTALLED_APPS + EXTRA_APPS
 
-    if 'EXTRA_MIDDLEWARE_CLASSES' in locals():
+    if 'EXTRA_MIDDLEWARE' in locals():
         MIDDLEWARE = MIDDLEWARE + EXTRA_MIDDLEWARE
 

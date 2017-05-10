@@ -1,6 +1,7 @@
 import re
 
 from django.db import models
+from django.utils.functional import cached_property
 
 
 class CLAUSE_TYPES:
@@ -181,49 +182,56 @@ class Clause(models.Model):
     class Meta:
         ordering = ['rule', 'order']
 
-    @property
+    @cached_property
     def anchor_id(self):
         return '{}-{}'.format(self.rule.anchor_id, self.order)
 
-    @property
+    @cached_property
     def current_content(self):
-        if not hasattr(self, '_current_content'):
-            qs = ClauseContent.objects.filter(clause_id=self.id)
-            qs = qs.annotate(
-                release_date=models.Case(
-                    models.When(
-                        content__source__date=None,
-                        then=models.Min('content__source__product__release_date', distinct=True)
-                    ),
-                    default='content__source__date'
-                )
-            )
-            qs = qs.annotate(
-                precedence=models.Case(
-                    models.When(
-                        content__source__type=SOURCE_TYPES.FAQ,
-                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
-                    ),
-                    models.When(
-                        content__source__type=SOURCE_TYPES.RULES_REFERENCE,
-                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
-                    ),
-                    models.When(
-                        content__source__type=SOURCE_TYPES.REFERENCE_CARD,
-                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
-                    ),
-                    models.When(
-                        content__source__type=SOURCE_TYPES.MANUAL,
-                        then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
-                    ),
-                    default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
-                    output_field=models.IntegerField()
-                )
-            )
+        qs = ClauseContent.objects.filter(clause_id=self.id)
 
-            qs = qs .order_by('-release_date', 'precedence')
-            self._current_content = qs.first().content
-        return self._current_content
+        count = qs.count()
+        if not count:
+            raise Exception('Clause has no ClauseContents!')
+
+        if count == 1:
+            return qs.first().content
+
+        qs = qs.annotate(
+            release_date=models.Case(
+                models.When(
+                    content__source__date=None,
+                    then=models.Min('content__source__product__release_date', distinct=True)
+                ),
+                default='content__source__date'
+            )
+        )
+        qs = qs.annotate(
+            precedence=models.Case(
+                models.When(
+                    content__source__type=SOURCE_TYPES.FAQ,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.RULES_REFERENCE,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.REFERENCE_CARD,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
+                ),
+                models.When(
+                    content__source__type=SOURCE_TYPES.MANUAL,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
+                ),
+                default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
+                output_field=models.IntegerField()
+            )
+        )
+
+        qs = qs .order_by('-release_date', 'precedence')
+
+        return qs.first().content
 
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from rules.models import Rule
-from rules.helpers import Rule2Markdown
+from markdowns.rule import Rule2Markdown
 
 
 def rule(request, rule_slug=None):
