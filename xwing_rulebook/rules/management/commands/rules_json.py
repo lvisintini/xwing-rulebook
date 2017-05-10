@@ -30,7 +30,12 @@ class Command(BaseCommand):
 
             references = set()
             for c in rule.clauses.all():
-                references.add((c.current_content.source.code, c.current_content.page))
+                references.add(
+                    (
+                        c.current_content.source.code,
+                        c.current_content.page
+                    )
+                )
 
             r['references'] = [
                 OrderedDict([

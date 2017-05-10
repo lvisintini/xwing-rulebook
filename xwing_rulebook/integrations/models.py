@@ -49,7 +49,7 @@ class Product(models.Model, JSONMixin):
     name = models.CharField(max_length=125)
     sku = models.CharField(max_length=125)
     release_date = models.DateField(blank=True, null=True)
-    sources = models.ManyToManyField('rules.Source', blank=True)
+    sources = models.ManyToManyField('rules.Source', blank=True, related_name='products')
 
     data_key = 'sources'
 

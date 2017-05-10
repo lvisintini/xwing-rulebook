@@ -1,11 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from django.http.response import Http404
 
 from rules.models import Rule
 from markdowns.rule import Rule2Markdown
 
 
 def rule(request, rule_slug=None):
-    rule = get_object_or_404(Rule, slug=rule_slug)
+    try:
+        rule = Rule.objects.prefetch_related('clauses__available_contents').get(slug=rule_slug)
+    except Rule.DoesNotExist:
+        raise Http404
 
     helper = Rule2Markdown(
         rule,

@@ -188,40 +188,33 @@ class Clause(models.Model):
 
     @cached_property
     def current_content(self):
-        qs = ClauseContent.objects.filter(clause_id=self.id).select_related('content')
-
-        count = qs.count()
-        if not count:
-            raise Exception('Clause has no ClauseContents!')
-
-        if count == 1:
-            return qs.first().content
+        qs = self.available_contents.select_related('source', 'polymorphic_ctype')
 
         qs = qs.annotate(
             release_date=models.Case(
                 models.When(
-                    content__source__date=None,
-                    then=models.Min('content__source__product__release_date', distinct=True)
+                    source__date=None,
+                    then=models.Min('source__products__release_date', distinct=True)
                 ),
-                default='content__source__date'
+                default='source__date'
             )
         )
         qs = qs.annotate(
             precedence=models.Case(
                 models.When(
-                    content__source__type=SOURCE_TYPES.FAQ,
+                    source__type=SOURCE_TYPES.FAQ,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.RULES_REFERENCE,
+                    source__type=SOURCE_TYPES.RULES_REFERENCE,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.REFERENCE_CARD,
+                    source__type=SOURCE_TYPES.REFERENCE_CARD,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
                 ),
                 models.When(
-                    content__source__type=SOURCE_TYPES.MANUAL,
+                    source__type=SOURCE_TYPES.MANUAL,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
                 ),
                 default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
@@ -231,12 +224,12 @@ class Clause(models.Model):
 
         qs = qs .order_by('-release_date', 'precedence')
 
-        return qs.first().content
+        return qs.first().get_real_instance()
 
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)
 
 
 class ClauseContent(models.Model):
-    clause = models.ForeignKey('rules.Clause')
+    clause = models.ForeignKey('rules.Clause', related_name='clause_contents')
     content = models.ForeignKey('contents.Content')
