@@ -188,7 +188,7 @@ class Clause(models.Model):
 
     @cached_property
     def current_content(self):
-        qs = self.available_contents.select_related('source', 'polymorphic_ctype')
+        qs = self.available_contents.select_related('source')
 
         qs = qs.annotate(
             release_date=models.Case(
@@ -224,7 +224,7 @@ class Clause(models.Model):
 
         qs = qs .order_by('-release_date', 'precedence')
 
-        return qs.first().get_real_instance()
+        return qs.first()
 
     def __str__(self):
         return 'Rule "{}" Clause {}'.format(self.rule, self.order)

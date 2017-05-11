@@ -1,19 +1,29 @@
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
-from polymorphic.models import PolymorphicModel
 
 
-class Content(PolymorphicModel):
+class CONTENT_TYPES:
+    TEXT = 'text'
+    IMAGE = 'image'
+
+    as_choices = [
+        (TEXT, 'Text'),
+        (IMAGE, 'Image'),
+    ]
+
+    as_list = [
+        TEXT,
+        IMAGE
+    ]
+
+
+class Content(models.Model):
+    type = models.CharField(max_length=5, default=CONTENT_TYPES.TEXT,
+                            choices=CONTENT_TYPES.as_choices)
     title = models.CharField(max_length=125, null=True, blank=True)
     preserve_title_case = models.BooleanField(default=False)
     source = models.ForeignKey('rules.Source', related_name="contents")
     page = models.IntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return self.get_real_instance().__str__()
-
-
-class TextContent(Content):
     content = models.TextField(default='')
     content_as_per_source = models.TextField(
         default='',
@@ -22,38 +32,23 @@ class TextContent(Content):
         blank=True
     )
     keep_line_breaks = models.BooleanField(default=False)
-    image = models.ForeignKey('contents.Image', blank=True, null=True,
-                              related_name='text_contents')
+    image = models.ForeignKey('contents.Image', blank=True, null=True, related_name='contents')
 
     def __str__(self):
         reference = str(self.source)
         if self.page is not None:
             reference = '{} (Page {})'.format(reference, self.page)
 
-        if self.title:
-            return '{} - {}: {}'.format(reference, self.title, self.content)[:125]
-        return '{} - {}'.format(reference, self.content)
-
-    class Meta:
-        verbose_name = 'Text content'
-        verbose_name_plural = 'Text contents'
-
-
-class ImageContent(Content):
-    image = models.ForeignKey('contents.Image', related_name='image_contents')
-
-    def __str__(self):
-        reference = str(self.source)
-        if self.page is not None:
-            reference = '{} (Page {})'.format(reference, self.page)
+        content = self.image.static_url if self.type == CONTENT_TYPES.IMAGE else self.content[:125]
 
         if self.title:
-            return '{} - {}: {}'.format(reference, self.title, self.image.static_url)
-        return '{} - {}'.format(reference, self.image.static_url)
+            content = '{}: {}'.format(self.title, self.content)[:125]
 
-    class Meta:
-        verbose_name = 'Image content'
-        verbose_name_plural = 'Image contents'
+        return '[{}Content] {} - {}'.format(
+            dict(CONTENT_TYPES.as_choices)[self.type],
+            reference,
+            content,
+        )
 
 
 class Image(models.Model):

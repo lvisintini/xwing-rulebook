@@ -1,5 +1,6 @@
 from django.urls import reverse
-from contents.models import TextContent, ImageContent
+
+from contents.models import CONTENT_TYPES
 from markdowns.base import MarkdownBase
 from rules.models import CLAUSE_GROUPS, CLAUSE_TYPES, RULE_TYPES
 
@@ -50,10 +51,9 @@ class Rule2MarkdownBase(MarkdownBase):
         qs = self.rule.clauses.filter(**filters)
 
         for clause in qs:
-
-            if isinstance(clause.current_content, TextContent):
+            if clause.current_content.type == CONTENT_TYPES.TEXT:
                 clause_md = self.text_content_markdown(clause, clause.current_content)
-            elif isinstance(clause.current_content, ImageContent):
+            elif clause.current_content.type == CONTENT_TYPES.IMAGE:
                 clause_md = self.image_content_markdown(clause, clause.current_content)
             else:
                 raise NotImplementedError

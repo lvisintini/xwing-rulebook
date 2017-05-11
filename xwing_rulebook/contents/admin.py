@@ -1,3 +1,4 @@
+
 import os
 
 from django import forms
@@ -6,11 +7,8 @@ from django.contrib import admin
 from django.db import models
 from django.utils.safestring import mark_safe
 
-from contents.models import Content, TextContent, ImageContent, Image, Link
+from contents.models import Content, Image, Link, CONTENT_TYPES
 
-from polymorphic.admin import (
-    PolymorphicParentModelAdmin, PolymorphicChildModelAdmin, PolymorphicChildModelFilter
-)
 
 class ImageAdminForm(forms.ModelForm):
     file = forms.ChoiceField(required=True)
@@ -29,7 +27,7 @@ class ImageAdminForm(forms.ModelForm):
         self.fields['file'].choices = sorted(choices)
 
 
-class TextContentAdminForm(forms.ModelForm):
+class ContentAdminForm(forms.ModelForm):
     def has_changed(self):
         return True
 
@@ -68,45 +66,48 @@ class ClauseCountFilter(admin.SimpleListFilter):
 
 
 @admin.register(Content)
-class ContentAdmin(PolymorphicParentModelAdmin):
-    base_model = Content
-    child_models = (TextContent, ImageContent)
+class ContentAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'polymorphic_type', 'title', '__str__', 'linked_clause_count', 'related_rules',
+        'id', 'type', 'title', '__str__', 'linked_clause_count', 'related_rules',
         'source', 'page'
     )
-    search_fields = ['id', 'textcontent__content', 'imagecontent__image__alt_text']
-    readonly_fields = ('linked_clause_count', 'related_rules')
-    list_filter = [PolymorphicChildModelFilter, ClauseCountFilter, 'source']
+
+    fieldsets = (
+        (None, {
+            'fields': [
+                'type',
+                'title',
+                'preserve_title_case',
+                'source',
+                'page',
+            ],
+        }),
+        ('Text', {
+            'fields': [
+                'image',
+                'render_image',
+            ],
+            'classes': ('collapse',)
+        }),
+        ('Image', {
+            'fields': [
+                'content',
+                'content_as_per_source',
+                'keep_line_breaks',
+            ],
+            'classes': ('collapse',)
+        }),
+    )
+    search_fields = ['id', 'content', 'image__alt_text']
+    readonly_fields = ('linked_clause_count', 'related_rules', 'render_image',)
+    list_filter = ['type', ClauseCountFilter, 'source']
 
     def linked_clause_count(self, obj):
         return obj.clause_count
     linked_clause_count.admin_order_field = 'clause_count'
 
-    def polymorphic_type(self, obj):
-        return obj.polymorphic_ctype.name.replace(' content', '')
-    polymorphic_type.short_description = 'type'
-    polymorphic_type.admin_order_field = 'polymorphic_ctype'
-
     def related_rules(self, obj):
         return ', '.join(obj.clause_set.values_list('rule__name', flat=True))
-
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        qs = qs.annotate(clause_count=models.Count('clause', distinct=True))
-        return qs
-
-
-@admin.register(TextContent)
-class TextContentAdmin(PolymorphicChildModelAdmin):
-    base_model = Content
-    base_form = TextContentAdminForm
-
-
-@admin.register(ImageContent)
-class ImageContentAdmin(PolymorphicChildModelAdmin):
-    base_model = Content
-    readonly_fields = ('render_image', )
 
     def render_image(self, obj):
         if obj.image:
@@ -115,6 +116,11 @@ class ImageContentAdmin(PolymorphicChildModelAdmin):
             )
         return None
     render_image.short_description = 'Preview'
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        qs = qs.annotate(clause_count=models.Count('clause', distinct=True))
+        return qs
 
 
 @admin.register(Image)
