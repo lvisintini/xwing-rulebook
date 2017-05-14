@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils.functional import cached_property
+
+
+from rules.models import Rule
 
 
 class TOPICS:
@@ -54,3 +58,13 @@ class Faq(models.Model):
 
     def __str__(self):
         return '[{}] Q:{}'.format(self.topic, self.question[:20])
+
+    @cached_property
+    def rules(self):
+        return Rule.objects.filter(id_in=list(
+            self.related_clauses.values_list('rule__id', flat=True).distinct()
+        ))
+
+    @property
+    def anchor_id(self):
+        return 'faq-{}-{}'.format(self.topic, self.id)
