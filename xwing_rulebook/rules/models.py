@@ -116,11 +116,11 @@ class CARD_TYPES:
 
     as_list = [
         NOT_APPLICABLE,
-        PILOT,
-        UPGRADE,
-        CONDITION,
         DAMAGE_ORG,
         DAMAGE_TFA,
+        CONDITION,
+        PILOT,
+        UPGRADE,
     ]
 
 

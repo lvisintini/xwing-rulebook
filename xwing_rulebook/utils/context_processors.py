@@ -1,6 +1,6 @@
 from django.conf import settings as django_settings
 
-from rules.models import RULE_TYPES
+from rules.models import RULE_TYPES, CARD_TYPES
 from utils.constants import ENVIRONMENTS
 
 
@@ -8,6 +8,7 @@ def constants(request):
     return {
         "ENVIRONMENTS": ENVIRONMENTS,
         "RULE_TYPES": RULE_TYPES,
+        "CARD_TYPES": CARD_TYPES,
     }
 
 

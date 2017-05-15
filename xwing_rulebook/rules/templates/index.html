@@ -11,13 +11,20 @@
     <div class="Book__Inner Book__Inner--fancy-border">
       <h1>Rules index</h1>
 
-      <ul>
-        {% for rule in rules %}
-          <li>
-            <a href="{% url 'rules:rule' rule_slug=rule.slug  %}">{{ rule.name | xwing_icons }}</a>
-          </li>
+      {% for type_key, rules_by_card_type in rules_by_type.items %}
+        <h2>{{ type_key.1 }}s</h2>
+
+        {% for card_type_key, rules in rules_by_card_type.items %}
+          {% if card_type_key.0 != CARD_TYPES.NOT_APPLICABLE %}<h3>{{ card_type_key.1 }}</h3>{% endif %}
+          <ul>
+              {% for r in rules %}
+                <li>
+                  <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+                </li>
+              {% endfor %}
+          </ul>
         {% endfor %}
-      </ul>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}
