@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load xwing_icons %}
 
-{% block meta-title  %}{{ block.super }}{{ rule.name_as_title }}{% endblock %}
+{% block meta-title  %}{{ block.super }}FAQs{% endblock %}
 
 {% block page_wrapper_class %} u-background-dark{% endblock %}
 
@@ -10,12 +10,13 @@
     <div class="Book__Inner Book__Inner--fancy-border">
 
       <div class="u-flex u-flex-space-between">
-        <a href="{% url 'admin:rules_rule_change' rule.id %}">&uarr; Go to admin</a>
+        <a href="{% url 'admin:faqs_faq_changelist' %}">&uarr; Go to admin</a>
         <a href="{% url 'rules:index' %}">&larr; Back to index</a>
       </div>
 
-      {% with rule2markdown as helper %}
-        {% include 'includes/_rule.html' %}
+      <h1>FAQs</h1>
+      {% with faqs2markdown as helper %}
+        {% include 'includes/_faqs.html' %}
       {% endwith %}
 
       {{ '[Epic]' | xwing_icons  }}

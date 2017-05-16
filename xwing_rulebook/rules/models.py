@@ -184,7 +184,7 @@ class Clause(models.Model):
 
     @cached_property
     def anchor_id(self):
-        return '{}-{}'.format(self.rule.anchor_id, self.order)
+        return '{}-{}'.format(self.rule.anchor_id, self.id)
 
     @cached_property
     def current_content(self):

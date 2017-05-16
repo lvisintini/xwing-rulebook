@@ -1,0 +1,7 @@
+{% load markdown %}
+
+{{ helper.faqs_markdown | md2html }}
+{{ helper.rule_clarifications_as_content | md2html }}
+
+{{ helper.related_cards_as_references | md2html }}
+{{ helper.related_topics_as_references | md2html }}

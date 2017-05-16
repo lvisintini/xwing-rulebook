@@ -35,7 +35,7 @@ class FaqAdmin(admin.ModelAdmin):
                 'page',
                 'order',
                 'related_clauses',
-                'rules',
+                'display_rules',
             )
         }),
         ('Original text', {
@@ -48,6 +48,7 @@ class FaqAdmin(admin.ModelAdmin):
     )
 
     def display_rules(self, obj):
-        if obj.related_clauses.count():
-            return ', '.join(obj.related_clauses.values_list('rule__name', flat=True).distinct())
-        return ''
+        return ', '.join(
+            obj.related_clauses.values_list('rule__name', flat=True).distinct('rule__name')
+        )
+    display_rules.short_description = 'Rules'

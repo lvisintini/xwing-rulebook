@@ -53,3 +53,10 @@
     padding: val($padding, small);
     font-weight: normal;
 }
+
+/* http://stackoverflow.com/questions/21036553/fetch-the-value-from-url
+https://nodejs.org/docs/v0.7.7/api/url.html
+ */
+:target {
+  background-color: yellow;
+}

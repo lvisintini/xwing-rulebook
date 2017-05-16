@@ -580,6 +580,9 @@ a {
   padding: 0.5em;
   font-weight: normal; }
 
+:target {
+  background-color: yellow; }
+
 .Rule__Image img {
   vertical-align: middle;
   margin: 0 0.5em;
