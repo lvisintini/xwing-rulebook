@@ -55,6 +55,7 @@ class Faq(models.Model):
     page = models.IntegerField(null=True, blank=True)
     order = models.IntegerField(default=0)
     related_clauses = models.ManyToManyField('rules.Clause', blank=True)
+    related_rules = models.ManyToManyField('rules.Rule', blank=True)
 
     def __str__(self):
         return '[{}] Q:{}'.format(self.topic, self.question[:20])

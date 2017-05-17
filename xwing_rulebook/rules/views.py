@@ -1,5 +1,5 @@
 from itertools import groupby
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict
 
 from django.shortcuts import render
 from django.http.response import Http404
@@ -101,10 +101,11 @@ def rules_index(request):
         )
     )
 
-    rules_by_type = defaultdict(OrderedDict)
+    rules_by_type = OrderedDict()
     for key, group in grouped_rules:
+        if key[0] not in rules_by_type:
+            rules_by_type[key[0]] = OrderedDict()
         rules_by_type[key[0]][key[1]] = list(group)
-    rules_by_type = dict(rules_by_type)
 
     context = {
         'rules_by_type': rules_by_type,

@@ -39,16 +39,7 @@ class Content(models.Model):
         if self.page is not None:
             reference = '{} (Page {})'.format(reference, self.page)
 
-        content = self.image.static_url if self.type == CONTENT_TYPES.IMAGE else self.content[:125]
-
-        if self.title:
-            content = '{}: {}'.format(self.title, self.content)[:125]
-
-        return '[{}Content] {} - {}'.format(
-            dict(CONTENT_TYPES.as_choices)[self.type],
-            reference,
-            content,
-        )
+        return '[{}] {}'.format(dict(CONTENT_TYPES.as_choices)[self.type], reference)
 
 
 class Image(models.Model):

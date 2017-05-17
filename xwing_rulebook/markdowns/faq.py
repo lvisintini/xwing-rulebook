@@ -87,7 +87,7 @@ class FaqsToMarkdown(MarkdownBase):
         question = self.render_links(faq.question)
         answer = self.render_links(faq.answer)
 
-        template = '**Q: {question}**{q_anchor}\n\nA:{answer}{a_anchor}\n\n{related}'
+        template = '**Q: {question}**{q_anchor}\n\nA: {answer}{a_anchor}\n\n{related}'
 
         return template.format(
             question=question,

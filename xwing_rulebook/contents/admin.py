@@ -1,4 +1,3 @@
-
 import os
 
 from django import forms
@@ -6,8 +5,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.db import models
 from django.utils.safestring import mark_safe
+from django.template.defaultfilters import escape
 
 from contents.models import Content, Image, Link, CONTENT_TYPES
+from utils.lib import word_sensitive_grouper
 
 
 class ImageAdminForm(forms.ModelForm):
@@ -68,7 +69,7 @@ class ClauseCountFilter(admin.SimpleListFilter):
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'type', 'title', '__str__', 'linked_clause_count', 'related_rules',
+        'id', 'type', 'title', 'display_content', 'linked_clause_count', 'related_rules',
         'source', 'page'
     )
 
@@ -99,8 +100,24 @@ class ContentAdmin(admin.ModelAdmin):
         }),
     )
     search_fields = ['id', 'content', 'image__alt_text']
-    readonly_fields = ('linked_clause_count', 'related_rules', 'render_image',)
+    readonly_fields = ('linked_clause_count', 'related_rules', 'render_image', 'display_content')
     list_filter = ['type', ClauseCountFilter, 'source']
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        qs = qs.annotate(clause_count=models.Count('clause', distinct=True))
+
+        qs = qs.annotate(
+            joined_content=models.Case(
+                models.When(
+                    type=CONTENT_TYPES.TEXT,
+                    then='content'
+                ),
+                default='image__file',
+                output_field=models.CharField()
+            )
+        )
+        return qs
 
     def linked_clause_count(self, obj):
         return obj.clause_count
@@ -117,10 +134,15 @@ class ContentAdmin(admin.ModelAdmin):
         return None
     render_image.short_description = 'Preview'
 
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        qs = qs.annotate(clause_count=models.Count('clause', distinct=True))
-        return qs
+    def display_content(self, obj):
+        if obj.type == CONTENT_TYPES.TEXT:
+            return mark_safe('<br/>'.join(word_sensitive_grouper(escape(obj.content), 100)))
+        elif obj.type == CONTENT_TYPES.IMAGE:
+            return obj.image.file
+        return None
+    display_content.short_description = 'Content'
+    display_content.admin_order_field = 'joined_content'
+
 
 
 @admin.register(Image)

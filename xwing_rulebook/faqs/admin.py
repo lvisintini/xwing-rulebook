@@ -1,7 +1,12 @@
+from collections import defaultdict
+
 from django import forms
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+from django.template.defaultfilters import escape
 
 from faqs.models import Faq
+from utils.lib import word_sensitive_grouper
 
 
 class FaqAdminForm(forms.ModelForm):
@@ -17,13 +22,14 @@ class FaqAdminForm(forms.ModelForm):
 
 @admin.register(Faq)
 class FaqAdmin(admin.ModelAdmin):
-    list_display = ('id', 'topic', 'order', 'question', 'answer', 'display_rules', 'source', 'page')
+    list_display = ('id', 'topic', 'order', 'display_text', 'display_rules', 'source', 'page')
     search_fields = ['question', 'answer']
     ordering = ('topic', 'order', )
     list_filter = ['topic', ]
     form = FaqAdminForm
     raw_id_fields = ['related_clauses', ]
-    readonly_fields = ['display_rules', ]
+    readonly_fields = ['display_rules', 'display_text']
+    filter_horizontal = ['related_rules', ]
 
     fieldsets = (
         (None, {
@@ -35,6 +41,7 @@ class FaqAdmin(admin.ModelAdmin):
                 'page',
                 'order',
                 'related_clauses',
+                'related_rules',
                 'display_rules',
             )
         }),
@@ -48,7 +55,25 @@ class FaqAdmin(admin.ModelAdmin):
     )
 
     def display_rules(self, obj):
-        return ', '.join(
-            obj.related_clauses.values_list('rule__name', flat=True).distinct('rule__name')
-        )
+        related = defaultdict(list)
+        for rule in obj.related_rules.all():
+            related[rule.name] = []
+
+        for clause in obj.related_clauses.all():
+            related[clause.rule.name].append(str(clause.id))
+
+        verbose_related = [
+            '{}{}'.format(rule_name, ' <sup>{}</sup>'.format(', '.join(clauses)) if clauses else '')
+            for rule_name, clauses in related.items()
+        ]
+
+        return mark_safe('<br/>'.join(verbose_related))
     display_rules.short_description = 'Rules'
+
+    def display_text(self, obj):
+        return mark_safe("<strong>Q:</strong> {}<br/><br/><strong>A:</strong> {}".format(
+            '<br/>'.join(word_sensitive_grouper(escape(obj.question), 100)),
+            '<br/>'.join(word_sensitive_grouper(escape(obj.answer), 100)),
+
+        ))
+    display_text.short_description = 'FAQ'

@@ -1,7 +1,25 @@
 from django.template import Context, loader
+from itertools import zip_longest
 
 
 def render_template(template, context):
     t = loader.get_template(template)
     c = Context(context)
     return t.render(c)
+
+
+def grouper(iterable, n, fillvalue=None):
+    args = [iter(iterable)] * n
+    return zip_longest(*args, fillvalue=fillvalue)
+
+
+def word_sensitive_grouper(content, length=100):
+    if len(content) <= length:
+        return [content, ]
+    else:
+        contents = content[:length+1].split(' ')
+        chunk = ' '.join(contents[0:-1])
+        reminder = content[len(chunk)+1:]
+        res = [chunk, ]
+        res.extend(word_sensitive_grouper(reminder, length))
+        return res
