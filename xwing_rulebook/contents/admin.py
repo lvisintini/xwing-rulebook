@@ -7,7 +7,8 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import escape
 
-from contents.models import Content, Image, Link, CONTENT_TYPES
+from contents.models import Content, Image, Link
+from contents.constants import CONTENT_TYPES
 from utils.lib import word_sensitive_grouper
 
 

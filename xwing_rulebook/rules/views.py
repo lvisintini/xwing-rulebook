@@ -5,7 +5,8 @@ from django.shortcuts import render
 from django.http.response import Http404
 from django.db import models
 
-from rules.models import Rule, RULE_TYPES, CARD_TYPES
+from rules.models import Rule
+from rules.constants import RULE_TYPES, CARD_TYPES
 from markdowns.rule import Rule2Markdown
 
 

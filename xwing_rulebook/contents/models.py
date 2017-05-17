@@ -1,20 +1,7 @@
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 
-
-class CONTENT_TYPES:
-    TEXT = 'text'
-    IMAGE = 'image'
-
-    as_choices = [
-        (TEXT, 'Text'),
-        (IMAGE, 'Image'),
-    ]
-
-    as_list = [
-        TEXT,
-        IMAGE
-    ]
+from contents.constants import CONTENT_TYPES
 
 
 class Content(models.Model):

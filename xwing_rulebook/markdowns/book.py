@@ -1,5 +1,5 @@
 from markdowns.rule import Rule2Markdown
-from rules.models import RULE_TYPES
+from rules.constants import RULE_TYPES
 
 
 class BookRule2Markdown(Rule2Markdown):

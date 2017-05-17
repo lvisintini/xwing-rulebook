@@ -2,8 +2,9 @@ from datetime import datetime
 from django.core.management.base import BaseCommand
 
 from integrations.models import (
-    Product, DamageDeck, Pilot, Upgrade, Ship, Condition, DATA, DAMAGE_DECK_TYPES
+    Product, DamageDeck, Pilot, Upgrade, Ship, Condition
 )
+from integrations.constants import DATA, DAMAGE_DECK_TYPES
 
 
 class Command(BaseCommand):

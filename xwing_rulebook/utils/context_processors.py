@@ -1,6 +1,6 @@
 from django.conf import settings as django_settings
 
-from rules.models import RULE_TYPES, CARD_TYPES
+from rules.constants import RULE_TYPES, CARD_TYPES
 from utils.constants import ENVIRONMENTS
 
 

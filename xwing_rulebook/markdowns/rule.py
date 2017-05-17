@@ -1,8 +1,8 @@
 from django.urls import reverse
 
-from contents.models import CONTENT_TYPES
+from contents.constants import CONTENT_TYPES
 from markdowns.base import MarkdownBase
-from rules.models import CLAUSE_GROUPS, CLAUSE_TYPES, RULE_TYPES
+from rules.constants import CLAUSE_TYPES, RULE_TYPES, CLAUSE_GROUPS
 
 
 class Rule2MarkdownBase(MarkdownBase):
@@ -212,9 +212,9 @@ class Rule2MarkdownBase(MarkdownBase):
 
         templates = {
             (False, False): '{rule}{expansion_icon}',
-            (True, False): '[{rule}{expansion_icon}](#{anchor})',
+            (True, False): '[{rule}{expansion_icon}]({anchor})',
             (False, True): '[{rule}{expansion_icon}]({relative_url})',
-            (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
+            (True, True): '[{rule}{expansion_icon}]({relative_url}{anchor})',
         }
 
         template = templates[(self.anchored_links, self.linked)]
@@ -228,7 +228,7 @@ class Rule2MarkdownBase(MarkdownBase):
                 relative_url=reverse(
                     self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
                 ),
-                anchor=r.anchor_id,
+                anchor='#{}'.format(r.anchor_id),
             )
             for r in rules
         ])

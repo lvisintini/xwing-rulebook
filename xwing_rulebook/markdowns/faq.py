@@ -1,9 +1,11 @@
 from itertools import groupby
+from collections import defaultdict
 
 from django.db import models
 from django.urls import reverse
 
-from faqs.models import Faq, TOPICS
+from faqs.models import Faq
+from faqs.constants import TOPICS
 from markdowns.base import MarkdownBase
 
 
@@ -11,9 +13,7 @@ class FaqsToMarkdown(MarkdownBase):
     default_url_name = 'rules:rule'
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-        qs = Faq.objects
+        qs = kwargs.pop('faqs', Faq.objects)
         qs = qs.annotate(
             topic_order=models.Case(
                 models.When(
@@ -54,6 +54,7 @@ class FaqsToMarkdown(MarkdownBase):
         qs = qs.order_by('topic_order', 'order')
 
         self.faqs = qs
+        super().__init__(**kwargs)
 
     def topic_title(self, topic):
         template = '{header_level} {topic} {anchor}'
@@ -116,17 +117,18 @@ class FaqsToMarkdown(MarkdownBase):
         )
 
     def related_clauses_as_references(self, faq):
-        if not faq.related_clauses.count():
-            return ''
+        related = defaultdict(list)
+        for rule in faq.related_rules.all():
+            related[rule] = []
 
-        groups = groupby(faq.related_clauses.order_by('rule_id'), key=lambda c: (c.rule_id, c.rule))
-        clauses_by_rule = [(key[1], list(group)) for key, group in groups]
+        for clause in faq.related_clauses.all():
+            related[clause.rule].append(clause)
 
         templates = {
             (False, False): '{rule}{expansion_icon}',
-            (True, False): '[{rule}{expansion_icon}](#{anchor})',
+            (True, False): '[{rule}{expansion_icon}]({anchor})',
             (False, True): '[{rule}{expansion_icon}]({relative_url})',
-            (True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
+            (True, True): '[{rule}{expansion_icon}]({relative_url}{anchor})',
         }
 
         template = templates[(self.anchored_links, self.linked)]
@@ -139,9 +141,9 @@ class FaqsToMarkdown(MarkdownBase):
                 relative_url=reverse(
                     self.url_name, kwargs=dict([('rule_slug', rule.slug)] + url_params)
                 ),
-                anchor='&'.join([c.anchor_id for c in clauses]),
+                anchor='#{}'.format('&'.join([c.anchor_id for c in clauses])) if clauses else '',
             )
-            for rule, clauses in clauses_by_rule
+            for rule, clauses in related.items()
         ])
 
         return '**Related Rules:** {}'.format(references)

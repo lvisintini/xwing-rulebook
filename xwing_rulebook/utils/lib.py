@@ -17,8 +17,7 @@ def word_sensitive_grouper(content, length=100):
     if len(content) <= length:
         return [content, ]
     else:
-        contents = content[:length+1].split(' ')
-        chunk = ' '.join(contents[0:-1])
+        chunk = content[:length+1].rsplit(' ', maxsplit=1)[0]
         reminder = content[len(chunk)+1:]
         res = [chunk, ]
         res.extend(word_sensitive_grouper(reminder, length))

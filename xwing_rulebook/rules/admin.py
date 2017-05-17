@@ -6,7 +6,8 @@ from django.utils.safestring import mark_safe
 
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
-from rules.models import Clause, ClauseContent, Rule, Source, SOURCE_TYPES, CARD_TYPES, RULE_TYPES
+from rules.models import Clause, ClauseContent, Rule, Source
+from rules.constants import SOURCE_TYPES, RULE_TYPES, CARD_TYPES
 
 
 class RuleAdminForm(forms.ModelForm):

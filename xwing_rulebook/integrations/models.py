@@ -1,36 +1,10 @@
-from collections import OrderedDict
-import json
-import os
-
-from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
 
-
-DATA_ASSETS_DIR = os.path.join(settings.EXTERNAL_ASSETS_DIR, "xwing-data", "data")
-DATA = {}
-for dirpath, _, filenames in os.walk(DATA_ASSETS_DIR):
-    for f in filenames:
-        with open(os.path.abspath(os.path.join(dirpath, f)), 'r') as fo:
-            DATA[f.split('.')[0]] = json.load(fo, object_pairs_hook=OrderedDict)
-
-
-class DAMAGE_DECK_TYPES:
-    CORE = 'core'
-    CORE_TFA = 'core-tfa'
-
-    as_choices = (
-        (CORE, 'Core set'),
-        (CORE_TFA, 'The Force Awakens core set'),
-    )
-
-    as_list = [
-        CORE, CORE_TFA
-    ]
+from integrations.constants import DATA, DAMAGE_DECK_TYPES
 
 
 class JSONMixin:
-
     @property
     def slug(self):
         return slugify(self.json.get('xws', self.name))

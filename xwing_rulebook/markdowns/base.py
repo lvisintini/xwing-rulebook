@@ -40,8 +40,8 @@ class MarkdownBase:
 
             (True, False, False): '{rule}{expansion_icon}',
             (True, False, True): '[{rule}{expansion_icon}]({relative_url})',
-            (True, True, False): '[{rule}{expansion_icon}](#{anchor})',
-            (True, True, True): '[{rule}{expansion_icon}]({relative_url}#{anchor})',
+            (True, True, False): '[{rule}{expansion_icon}]({anchor})',
+            (True, True, True): '[{rule}{expansion_icon}]({relative_url}{anchor})',
         }
 
         template = templates[(bool(link.rule), self.anchored_links, self.linked)]
@@ -53,7 +53,7 @@ class MarkdownBase:
             relative_url=reverse(
                 self.url_name, kwargs=dict([('rule_slug', link.rule.slug)] + url_params)
             ) if link.rule else '',
-            anchor=link.rule.anchor_id if link.rule else '',
+            anchor='#{}'.format(link.rule.anchor_id) if link.rule else '',
             url=link.url,
             text=link.text
         )
