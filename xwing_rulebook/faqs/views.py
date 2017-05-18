@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from markdowns.faq import FaqsToMarkdown
+from markdowns.faq import Faqs2Markdown
 
 
 def faqs(request):
-    helper = FaqsToMarkdown(
+    helper = Faqs2Markdown(
         anchored=True,
         linked=True,
         anchored_links=True,

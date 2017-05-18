@@ -1,5 +1,5 @@
 from itertools import groupby
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 from django.db import models
 from django.urls import reverse
@@ -9,120 +9,53 @@ from faqs.constants import TOPICS
 from markdowns.base import MarkdownBase
 
 
-class FaqsToMarkdown(MarkdownBase):
+class Faq2Markdown(MarkdownBase):
     default_url_name = 'rules:rule'
 
-    def __init__(self, **kwargs):
-        qs = kwargs.pop('faqs', Faq.objects)
-        qs = qs.annotate(
-            topic_order=models.Case(
-                models.When(
-                    topic=TOPICS.GENERAL,
-                    then=TOPICS.as_list.index(TOPICS.GENERAL)
-                ),
-                models.When(
-                    topic=TOPICS.ACTIONS_AND_GAME_EFFECTS,
-                    then=TOPICS.as_list.index(TOPICS.ACTIONS_AND_GAME_EFFECTS)
-                ),
-                models.When(
-                    topic=TOPICS.COMBAT,
-                    then=TOPICS.as_list.index(TOPICS.COMBAT)
-                ),
-                models.When(
-                    topic=TOPICS.ATTACK_TIMING_CHART,
-                    then=TOPICS.as_list.index(TOPICS.ATTACK_TIMING_CHART)
-                ),
-                models.When(
-                    topic=TOPICS.MISSIONS,
-                    then=TOPICS.as_list.index(TOPICS.MISSIONS)
-                ),
-                models.When(
-                    topic=TOPICS.MOVEMENT,
-                    then=TOPICS.as_list.index(TOPICS.MOVEMENT)
-                ),
-                models.When(
-                    topic=TOPICS.RANGE_MEASUREMENT,
-                    then=TOPICS.as_list.index(TOPICS.RANGE_MEASUREMENT)
-                ),
-                default=100,
-                output_field=models.IntegerField()
-            )
-        )
-
-        qs = qs.select_related('source')
-        qs = qs.prefetch_related('related_clauses__rule')
-        qs = qs.order_by('topic_order', 'order')
-
-        self.faqs = qs
+    def __init__(self, faq, **kwargs):
+        self.faq = faq
         super().__init__(**kwargs)
 
-    def topic_title(self, topic):
-        template = '{header_level} {topic} {anchor}'
-        return template.format(
-            header_level='#' * self.header_level,
-            topic=dict(TOPICS.as_choices)[topic],
-            anchor='' if not self.anchored else self.render_attrs(
-                ids=['faq-{}'.format(topic), ],
-                classes=[],
-                data={
-                    'order': TOPICS.as_list.index(topic)
-                }
-            ),
-        )
+    def faq_markdown(self):
+        question = self.render_links(self.faq.question)
+        answer = self.render_links(self.faq.answer)
 
-    def faqs_markdown(self):
-        faq_groups = groupby(
-            self.faqs, key=lambda f: f.topic
-        )
-
-        faqs_topic_mds = []
-        for topic, group in faq_groups:
-            topic_mds = [self.faq_markdown(faq) for faq in group]
-            faqs_topic_mds.append(
-                '{}\n\n{}'.format(self.topic_title(topic), '\n\n----------\n\n'.join(topic_mds))
-            )
-
-        return '\n\n'.join(faqs_topic_mds)
-
-    def faq_markdown(self, faq):
-        question = self.render_links(faq.question)
-        answer = self.render_links(faq.answer)
-
-        template = '**Q: {question}**{q_anchor}\n\nA: {answer}{a_anchor}\n\n{related}'
+        template = '**Q: {question}**{q_anchor}\n\nA: {answer}{a_anchor}'
 
         return template.format(
             question=question,
             answer=answer,
             q_anchor='' if not self.anchored else '\n' + self.render_attrs(
-                ids=['{}-Q-{}'.format(faq.anchor_id, faq.id), ],
+                ids=['{}-Q-{}'.format(self.faq.anchor_id, self.faq.id), ],
                 data={
-                    'anchor-id': '{}-Q'.format(faq.anchor_id),
-                    'source-code': faq.source.code,
-                    'page': '' if faq.page is None else faq.page,
-                    'id': faq.id,
+                    'anchor-id': '{}-Q'.format(self.faq.anchor_id),
+                    'source-code': self.faq.source.code,
+                    'page': '' if self.faq.page is None else self.faq.page,
+                    'id': self.faq.id,
                     'type': 'question',
                 }
             ),
             a_anchor='' if not self.anchored else '\n' + self.render_attrs(
-                ids=['{}-A-{}'.format(faq.anchor_id, faq.id), ],
+                ids=['{}-A-{}'.format(self.faq.anchor_id, self.faq.id), ],
                 data={
-                    'anchor-id': '{}-A'.format(faq.anchor_id),
-                    'source-code': faq.source.code,
-                    'page': '' if faq.page is None else faq.page,
-                    'id': faq.id,
+                    'anchor-id': '{}-A'.format(self.faq.anchor_id),
+                    'source-code': self.faq.source.code,
+                    'page': '' if self.faq.page is None else self.faq.page,
+                    'id': self.faq.id,
                     'type': 'answer',
                 }
             ),
-            related=self.related_clauses_as_references(faq)
         )
 
-    def related_clauses_as_references(self, faq):
+    def related_rules_as_references(self):
         related = defaultdict(list)
-        for rule in faq.related_rules.all():
+        for rule in self.faq.related_rules.all():
             related[rule] = []
 
-        for clause in faq.related_clauses.all():
+        for clause in self.faq.related_clauses.all():
             related[clause.rule].append(clause)
+
+        related = OrderedDict(sorted(related.items(), key=lambda x: x[0].name))
 
         templates = {
             (False, False): '{rule}{expansion_icon}',
@@ -147,3 +80,61 @@ class FaqsToMarkdown(MarkdownBase):
         ])
 
         return '**Related Rules:** {}'.format(references)
+
+
+class Faqs2Markdown(MarkdownBase):
+    default_url_name = 'rules:rule'
+
+    def __init__(self, faqs=None, **kwargs):
+        super().__init__(**kwargs)
+
+        qs = Faq.objects if faqs is None else faqs
+        qs = qs.select_related('source')
+        qs = qs.prefetch_related('related_clauses__rule')
+        qs = qs.order_by('topic_order', 'order')
+
+        self.faq_helpers = []
+
+        for faq in qs.all():
+            self.faq_helpers.append(
+                Faq2Markdown(
+                    faq,
+                    header_level=self.header_level + 1,
+                    anchored=self.anchored,
+                    linked=self.linked,
+                    anchored_links=self.anchored_links,
+                    url_name=self.url_name,
+                    **self.extra_url_params
+                )
+            )
+
+    def topic_title(self, topic):
+        template = '{header_level} {topic} {anchor}'
+        return template.format(
+            header_level='#' * self.header_level,
+            topic=dict(TOPICS.as_choices)[topic],
+            anchor='' if not self.anchored else self.render_attrs(
+                ids=['faq-{}'.format(topic), ],
+                classes=[],
+                data={
+                    'order': TOPICS.as_list.index(topic)
+                }
+            ),
+        )
+
+    def faqs_markdown(self):
+        faq_groups = groupby(
+            self.faq_helpers, key=lambda fh: fh.faq.topic
+        )
+
+        faqs_topic_mds = []
+        for topic, group in faq_groups:
+            topic_mds = [
+                faq_helper.faq_markdown() + '\n\n' + faq_helper.related_rules_as_references()
+                for faq_helper in group
+            ]
+            faqs_topic_mds.append(
+                '{}\n\n{}'.format(self.topic_title(topic), '\n\n----------\n\n'.join(topic_mds))
+            )
+
+        return '\n\n'.join(faqs_topic_mds)

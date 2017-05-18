@@ -2,6 +2,7 @@ from django.urls import reverse
 
 from contents.constants import CONTENT_TYPES
 from markdowns.base import MarkdownBase
+from markdowns.faq import Faq2Markdown
 from rules.constants import CLAUSE_TYPES, RULE_TYPES, CLAUSE_GROUPS
 
 
@@ -275,6 +276,22 @@ class Rule2Markdown(Rule2MarkdownBase):
                     header_level=self.header_level + 2,
                     anchored=self.anchored,
                     linked=self.linked,
+                    anchored_links=self.anchored_links,
+                    url_name=self.url_name,
+                    **self.extra_url_params
+                )
+            )
+
+        self.faq_helpers = []
+
+        for faq in self.rule.related_faqs.all():
+            self.faq_helpers.append(
+                Faq2Markdown(
+                    faq,
+                    header_level=self.header_level + 2,
+                    anchored=self.anchored,
+                    linked=self.linked,
+                    anchored_links=self.anchored_links,
                     url_name=self.url_name,
                     **self.extra_url_params
                 )
@@ -298,6 +315,20 @@ class Rule2Markdown(Rule2MarkdownBase):
             header_level='#' * (self.header_level + 1),
             rule_clarifications_mds='\n\n'.join(
                 [helper.rule_markdown() for helper in rule_clarifications]
+            )
+        )
+        return rule_clarifications_mds
+
+    def rule_related_faqs(self):
+        template = "\n{header_level} Related FAQs \n{related_faqs_md}\n"
+
+        if not self.faq_helpers:
+            return ''
+
+        rule_clarifications_mds = template.format(
+            header_level='#' * (self.header_level + 1),
+            related_faqs_md='\n\n'.join(
+                [helper.faq_markdown() for helper in self.faq_helpers]
             )
         )
         return rule_clarifications_mds

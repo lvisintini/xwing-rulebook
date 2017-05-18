@@ -3,7 +3,6 @@ from collections import OrderedDict
 
 from django.shortcuts import render
 from django.http.response import Http404
-from django.db import models
 
 from rules.models import Rule
 from rules.constants import RULE_TYPES, CARD_TYPES
@@ -32,59 +31,7 @@ def rule(request, rule_slug=None):
 
 
 def rules_index(request):
-    qs = Rule.objects
-
-    qs = qs.annotate(
-        type_order=models.Case(
-            models.When(
-                type=RULE_TYPES.RULE,
-                then=RULE_TYPES.as_list.index(RULE_TYPES.RULE)
-            ),
-            models.When(
-                type=RULE_TYPES.RULE_CLARIFICATION,
-                then=RULE_TYPES.as_list.index(RULE_TYPES.RULE)
-            ),
-            models.When(
-                type=RULE_TYPES.CARD,
-                then=RULE_TYPES.as_list.index(RULE_TYPES.CARD)
-            ),
-            default=100,
-            output_field=models.IntegerField()
-        )
-    )
-
-    qs = qs.annotate(
-        card_type_order=models.Case(
-            models.When(
-                card_type=CARD_TYPES.NOT_APPLICABLE,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.NOT_APPLICABLE)
-            ),
-            models.When(
-                card_type=CARD_TYPES.DAMAGE_ORG,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.DAMAGE_ORG)
-            ),
-            models.When(
-                card_type=CARD_TYPES.DAMAGE_TFA,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.DAMAGE_TFA)
-            ),
-            models.When(
-                card_type=CARD_TYPES.CONDITION,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.CONDITION)
-            ),
-            models.When(
-                card_type=CARD_TYPES.PILOT,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.PILOT)
-            ),
-            models.When(
-                card_type=CARD_TYPES.UPGRADE,
-                then=CARD_TYPES.as_list.index(CARD_TYPES.UPGRADE)
-            ),
-            default=100,
-            output_field=models.IntegerField()
-        )
-    )
-
-    qs = qs.order_by('type_order', 'card_type_order', 'name')
+    qs = Rule.objects.order_by('type_order', 'card_type_order', 'name')
 
     grouped_rules = groupby(
         qs.all(),

@@ -6,6 +6,7 @@ from django.utils.safestring import mark_safe
 from django.template.defaultfilters import escape
 
 from faqs.models import Faq
+from faqs.constants import TOPICS
 from utils.lib import word_sensitive_grouper
 
 
@@ -22,13 +23,14 @@ class FaqAdminForm(forms.ModelForm):
 
 @admin.register(Faq)
 class FaqAdmin(admin.ModelAdmin):
-    list_display = ('id', 'topic', 'order', 'display_text', 'display_rules', 'source', 'page')
+    list_display = (
+        'id', 'display_topic', 'order', 'display_text', 'display_rules', 'source', 'page'
+    )
     search_fields = ['question', 'answer']
-    ordering = ('topic', 'order', )
     list_filter = ['topic', ]
     form = FaqAdminForm
     raw_id_fields = ['related_clauses', ]
-    readonly_fields = ['display_rules', 'display_text']
+    readonly_fields = ['display_rules', 'display_text', 'display_topic']
     filter_horizontal = ['related_rules', ]
 
     fieldsets = (
@@ -57,10 +59,10 @@ class FaqAdmin(admin.ModelAdmin):
     def display_rules(self, obj):
         related = defaultdict(list)
         for rule in obj.related_rules.all():
-            related[rule.name] = []
+            related[str(rule)] = []
 
         for clause in obj.related_clauses.all():
-            related[clause.rule.name].append(str(clause.id))
+            related[str(clause.rule)].append(str(clause.id))
 
         verbose_related = [
             '{}{}'.format(rule_name, ' <sup>{}</sup>'.format(', '.join(clauses)) if clauses else '')
@@ -77,3 +79,8 @@ class FaqAdmin(admin.ModelAdmin):
 
         ))
     display_text.short_description = 'FAQ'
+
+    def display_topic(self, obj):
+        return dict(TOPICS.as_choices)[obj.topic]
+    display_topic.short_description = 'Topic'
+    display_topic.admin_order_field = 'topic_order'
