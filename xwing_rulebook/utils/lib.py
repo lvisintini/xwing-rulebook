@@ -15,9 +15,15 @@ def grouper(iterable, n, fillvalue=None):
 
 def word_sensitive_grouper(content, length=100):
     if len(content) <= length:
+        if content == '':
+            return []
         return [content, ]
     else:
-        chunk = content[:length+1].rsplit(' ', maxsplit=1)[0]
+        if ' ' in content[:length+1]:
+            chunk = content[:length+1].rsplit(' ', maxsplit=1)[0]
+        else:
+            # This is in case a word is longer than the provided length
+            chunk = content.split(' ', maxsplit=1)[0]
         reminder = content[len(chunk)+1:]
         res = [chunk, ]
         res.extend(word_sensitive_grouper(reminder, length))

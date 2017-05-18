@@ -3,11 +3,13 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.safestring import mark_safe
-
+from django.template.defaultfilters import escape
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
+from contents.constants import CONTENT_TYPES
 from rules.models import Clause, ClauseContent, Rule, Source
 from rules.constants import SOURCE_TYPES, RULE_TYPES, CARD_TYPES
+from utils.lib import word_sensitive_grouper
 
 
 class RuleAdminForm(forms.ModelForm):
@@ -37,16 +39,30 @@ class RuleAdminForm(forms.ModelForm):
 
 
 class ClauseContentInline(NestedTabularInline):
-    fields = ('content', 'content_related_rules')
+    fields = ('content', 'display_content', 'content_related_rules')
     model = ClauseContent
     extra = 0
-    readonly_fields = ['content_related_rules', ]
+    readonly_fields = ['content_related_rules', 'display_content']
     raw_id_fields = ['content', ]
 
     def content_related_rules(self, obj):
         if obj.content:
             return ', '.join(obj.content.clause_set.values_list('rule__name', flat=True))
         return ''
+
+    def display_content(self, obj):
+        if obj.content.type == CONTENT_TYPES.TEXT:
+            content = '{title}{text}'.format(
+                title='' if not obj.content.title else '<strong>{}:</strong>'.format(
+                    obj.content.title
+                ),
+                text=obj.content.content,
+            )
+            return mark_safe('<br/>'.join(escape(word_sensitive_grouper(content, 100))))
+        elif obj.content.type == CONTENT_TYPES.IMAGE:
+            return obj.content.image.file
+        return None
+    display_content.short_description = 'Preview'
 
 
 class ClauseInline(NestedTabularInline):

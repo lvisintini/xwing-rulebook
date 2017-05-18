@@ -93,7 +93,7 @@ The active ship can perform one standard action during the “Perform Action” 
 
 - A ship can choose not to perform an action during the “Perform Action” step or when granted a free action.
 
-**Related Topics:** Acquire a target lock, Activation phase, Barrel roll, Boost, Cloak†, Evade, Focus, Free actions, Overlapping ships, Slam action†, Stress
+**Related Topics:** Acquire a target lock, Activation phase, Barrel roll, Boost, Cloak†, Evade, Focus, Free actions, Overlapping ships, SLAM action†, Stress
 
 **Rule Clarifications:** Assigning a token to your ship
 
