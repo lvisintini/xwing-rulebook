@@ -9,6 +9,12 @@
 {% block content %}
   <div class="Book">
     <div class="Book__Inner Book__Inner--fancy-border">
+
+      <div class="u-flex u-flex-space-between">
+        <a href="{% url 'admin:rules_rule_changelist' %}">&uarr; Go to admin</a>
+        <a href="{% url 'faqs:index' %}">&rarr; Go to FAQs</a>
+      </div>
+
       <h1>Rules index</h1>
 
       {% for type_key, rules_by_card_type in rules_by_type.items %}
