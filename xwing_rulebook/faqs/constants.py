@@ -1,7 +1,7 @@
 class TOPICS:
     GENERAL = "general"
     ACTIONS_AND_GAME_EFFECTS = "actions-and-game-effects"
-    COMBAT = "Combat"
+    COMBAT = "combat"
     ATTACK_TIMING_CHART = "attack-timing-chart"
     MISSIONS = "missions"
     MOVEMENT = "movement"

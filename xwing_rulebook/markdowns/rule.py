@@ -284,7 +284,7 @@ class Rule2Markdown(Rule2MarkdownBase):
 
         self.faq_helpers = []
 
-        for faq in self.rule.related_faqs.all():
+        for faq in self.rule.related_faqs.order_by('topic_order', 'order').all():
             self.faq_helpers.append(
                 Faq2Markdown(
                     faq,
@@ -325,10 +325,10 @@ class Rule2Markdown(Rule2MarkdownBase):
         if not self.faq_helpers:
             return ''
 
-        rule_clarifications_mds = template.format(
+        faq_mds = template.format(
             header_level='#' * (self.header_level + 1),
             related_faqs_md='\n\n'.join(
                 [helper.faq_markdown() for helper in self.faq_helpers]
             )
         )
-        return rule_clarifications_mds
+        return faq_mds
