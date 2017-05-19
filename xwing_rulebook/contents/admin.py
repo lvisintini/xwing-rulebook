@@ -73,7 +73,7 @@ class ContentAdmin(admin.ModelAdmin):
         'id', 'type', 'title', 'display_content', 'linked_clause_count', 'related_rules',
         'source', 'page'
     )
-
+    form = ContentAdminForm
     fieldsets = (
         (None, {
             'fields': [
@@ -84,14 +84,14 @@ class ContentAdmin(admin.ModelAdmin):
                 'page',
             ],
         }),
-        ('Text', {
+        ('Image', {
             'fields': [
                 'image',
                 'render_image',
             ],
             'classes': ('collapse',)
         }),
-        ('Image', {
+        ('Text', {
             'fields': [
                 'content',
                 'content_as_per_source',

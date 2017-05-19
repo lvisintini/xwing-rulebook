@@ -103,15 +103,25 @@ class Rule(models.Model):
 
     @cached_property
     def related_faqs(self):
-        faq_ids = self.faqs.all().distinct()
+        faqs = self.faqs.all().distinct()
         for c in self.clauses.prefetch_related('faqs').all():
-            faq_ids = faq_ids | c.faqs.all().distinct()
+            faqs = faqs | c.faqs.all().distinct()
 
         if self.type == RULE_TYPES.RULE:
             for clarification in self.related_rules.filter(type=RULE_TYPES.RULE_CLARIFICATION):
-                faq_ids = faq_ids | clarification.related_faqs
+                faqs = faqs | clarification.related_faqs
 
-        return faq_ids
+        return faqs
+
+    @cached_property
+    def extended_clauses(self):
+        clauses = self.clauses.all()
+
+        if self.type == RULE_TYPES.RULE:
+            for clarification in self.related_rules.filter(type=RULE_TYPES.RULE_CLARIFICATION):
+                clauses = clauses | clarification.clauses.all()
+
+        return clauses
 
     def __str__(self):
         return '[{}] {}'.format(dict(RULE_TYPES.as_choices).get(self.type, self.type), self.name)

@@ -1,9 +1,9 @@
 from itertools import groupby
-from collections import defaultdict, OrderedDict
+from collections import OrderedDict
 
-from django.db import models
 from django.urls import reverse
 
+from rules.models import Rule
 from faqs.models import Faq
 from faqs.constants import TOPICS
 from markdowns.base import MarkdownBase
@@ -48,14 +48,17 @@ class Faq2Markdown(MarkdownBase):
         )
 
     def related_rules_as_references(self):
-        related = defaultdict(list)
-        for rule in self.faq.related_rules.all():
+        related = OrderedDict()
+
+        qs = Rule.objects.filter(clauses__in=self.faq.related_clauses.all())
+        qs = (qs | self.faq.related_rules.all()).distinct()
+        qs = qs.order_by('name')
+
+        for rule in qs:
             related[rule] = []
-
-        for clause in self.faq.related_clauses.all():
-            related[clause.rule].append(clause)
-
-        related = OrderedDict(sorted(related.items(), key=lambda x: x[0].name))
+            for clause in self.faq.related_clauses.all():
+                if clause in rule.extended_clauses.all():
+                    related[rule].append(clause)
 
         templates = {
             (False, False): '{rule}{expansion_icon}',

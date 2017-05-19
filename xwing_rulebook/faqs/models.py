@@ -68,7 +68,7 @@ class Faq(models.Model):
     objects = FaqManager()
 
     def __str__(self):
-        return '[{}] Q:{}'.format(self.topic, self.question[:20])
+        return '[{}] Q:{}'.format(dict(TOPICS.as_choices)[self.topic], self.question[:20])
 
     @property
     def anchor_id(self):
