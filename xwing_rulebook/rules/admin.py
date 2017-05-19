@@ -77,6 +77,7 @@ class SourceAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'name', 'type', 'release_date', 'precedence', 'processed')
     search_fields = ['name', ]
     readonly_fields = ['release_date', 'precedence']
+    list_filter = ('processed', 'type')
 
     def release_date(self, obj):
         return obj.release_date
@@ -90,7 +91,7 @@ class SourceAdmin(admin.ModelAdmin):
         qs = super().get_queryset(request)
         qs = qs.annotate(
             release_date=models.Case(
-                models.When(date=None, then=models.Min('product__release_date', distinct=True)),
+                models.When(date=None, then=models.Min('products__release_date', distinct=True)),
                 default='date'
             )
         )
