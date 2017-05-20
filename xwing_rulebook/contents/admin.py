@@ -19,11 +19,18 @@ class ImageAdminForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         choices = []
 
+        loaded_images = list(Image.objects.values_list('file', flat=True))
+
         for dir_path, _, filenames in os.walk(os.path.join(settings.STATICFILES_DIRS[0], 'images')):
+            file_paths = [
+                os.path.join(dir_path, f).replace(settings.STATICFILES_DIRS[0], '')
+                for f in filenames if f.endswith('.png') or f.endswith('.svg')
+            ]
 
             choices.extend([
-                (os.path.join(dir_path, f).replace(settings.STATICFILES_DIRS[0], ''), ) * 2
-                for f in filenames if f.endswith('.png')
+                (f, ) * 2
+                for f in file_paths
+                if f not in loaded_images
             ])
 
         self.fields['file'].choices = sorted(choices)
@@ -35,11 +42,12 @@ class ContentAdminForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get('keep_line_breaks', False):
-            cleaned_data['content'] = ' '.join(cleaned_data['content'].strip().splitlines())
-            cleaned_data['content_as_per_source'] = ' '.join(
-                cleaned_data.get('content_as_per_source', '').strip().splitlines()
-            )
+        if cleaned_data['type'] == CONTENT_TYPES.TEXT:
+            if not cleaned_data.get('keep_line_breaks', False):
+                cleaned_data['content'] = ' '.join(cleaned_data['content'].strip().splitlines())
+                cleaned_data['content_as_per_source'] = ' '.join(
+                    cleaned_data.get('content_as_per_source', '').strip().splitlines()
+                )
 
         if not cleaned_data.get('preserve_title_case', False):
             cleaned_data['title'] = cleaned_data['title'].capitalize()
@@ -148,7 +156,7 @@ class ContentAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'caption', 'alt_text')
+    list_display = ('file', 'caption', 'alt_text')
     readonly_fields = ('render_image', )
     search_fields = ['file', ]
     fieldsets = (

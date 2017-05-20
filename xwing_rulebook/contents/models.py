@@ -7,11 +7,11 @@ from contents.constants import CONTENT_TYPES
 class Content(models.Model):
     type = models.CharField(max_length=5, default=CONTENT_TYPES.TEXT,
                             choices=CONTENT_TYPES.as_choices)
-    title = models.CharField(max_length=125, null=True, blank=True)
+    title = models.CharField(max_length=125, default='', blank=True)
     preserve_title_case = models.BooleanField(default=False)
     source = models.ForeignKey('rules.Source', related_name="contents")
     page = models.IntegerField(null=True, blank=True)
-    content = models.TextField(default='')
+    content = models.TextField(default='', blank=True)
     content_as_per_source = models.TextField(
         default='',
         help_text="If the text in the content field is not a verbatim copy of the source's text, "

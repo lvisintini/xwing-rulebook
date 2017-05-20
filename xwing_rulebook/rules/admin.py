@@ -53,12 +53,12 @@ class ClauseContentInline(NestedTabularInline):
     def display_content(self, obj):
         if obj.content.type == CONTENT_TYPES.TEXT:
             content = '{title}{text}'.format(
-                title='' if not obj.content.title else '<strong>{}:</strong>'.format(
-                    obj.content.title
+                title='' if not obj.content.title else '<strong>{}:</strong> '.format(
+                    escape(obj.content.title)
                 ),
-                text=obj.content.content,
+                text=escape(obj.content.content),
             )
-            return mark_safe('<br/>'.join(escape(word_sensitive_grouper(content, 100))))
+            return mark_safe('<br/>'.join(word_sensitive_grouper(content, 100)))
         elif obj.content.type == CONTENT_TYPES.IMAGE:
             return obj.content.image.file
         return None
