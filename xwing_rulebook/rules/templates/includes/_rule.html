@@ -13,6 +13,11 @@
       {{ helper.card_clarification_clauses_markdown | md2html }}
 
       {{ helper.rule_clarifications_as_content | md2html }}
+      {{ helper.rule_related_faqs | md2html }}
+
+      {% if helper.related_cards_as_references or helper.related_topics_as_references %}
+        <hr/>
+      {% endif %}
 
       {{ helper.related_cards_as_references | md2html }}
       {{ helper.related_topics_as_references | md2html }}
@@ -23,7 +28,9 @@
   {{ helper.rule_clarifications_as_content | md2html }}
   {{ helper.rule_related_faqs | md2html }}
 
-  <hr/>
+  {% if helper.related_cards_as_references or helper.related_topics_as_references %}
+    <hr/>
+  {% endif %}
 
   {{ helper.related_cards_as_references | md2html }}
   {{ helper.related_topics_as_references | md2html }}

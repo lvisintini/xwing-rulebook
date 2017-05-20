@@ -8,6 +8,7 @@ from django.utils.safestring import mark_safe
 from django.template.defaultfilters import escape
 
 from contents.models import Content, Image, Link
+from rules.models import Source
 from contents.constants import CONTENT_TYPES
 from utils.lib import word_sensitive_grouper
 
@@ -37,6 +38,11 @@ class ImageAdminForm(forms.ModelForm):
 
 
 class ContentAdminForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['source'].queryset = Source.objects.order_by('processed', 'type', 'name')
+
     def has_changed(self):
         return True
 

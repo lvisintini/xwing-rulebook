@@ -14,6 +14,7 @@ class Source(models.Model):
         max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
     )
     processed = models.BooleanField(default=False)
+    notes = models.CharField(max_length=250, default='', blank=True)
 
     def __str__(self):
         return '{}-{}'.format(self.type, self.code)
@@ -100,6 +101,15 @@ class Rule(models.Model):
     def name_as_title(self):
         automata = re.compile(r' ?\(.*?\)')
         return automata.sub('', self.name)
+
+    @property
+    def decorated_name(self):
+        template = '{rule_name}{expansion_rule}{huge_ship}'
+        return template.format(
+            rule_name=self.name,
+            expansion_rule='' if not self.expansion_rule else ' †',
+            huge_ship='' if not self.huge_ship_rule else ' [Epic]',
+        )
 
     @cached_property
     def related_faqs(self):

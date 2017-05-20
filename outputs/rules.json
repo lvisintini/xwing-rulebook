@@ -8,11 +8,11 @@
     "markdown": "### Accuracy Corrector \n![Accuracy Corrector original card](/static/images/upgrades/accuracy-corrector-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“When attacking, during the “Modify Attack Dice” step, you may cancel all of your dice results. Then, you may add 2 [Hit] results to your roll.\n\nYour dice cannot be modified again during this attack.”\n\n#### Card Clarifications \nAccuracy Corrector is used during the “Modify Attack Dice” step. After canceling your dice results, you may choose **not** to add 2 [Hit] results. This still counts as an attack. Dice results added by Accuracy Corrector may not be modified again, but may be canceled (for example, by the effect of Ion Cannon).\n\nAccuracy Corrector can be used to add 2 [Hit] results even if you have the Blinded Pilot Damage (original Damage deck) card and are rolling no attack dice.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -24,7 +24,7 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Acquire a target lock \nShips with the [Target Lock] icon in their action bar may perform the acquire a target lock action to acquire a target lock on an enemy ship at Range 1–3. While attacking, a ship can spend a target lock that it has on the defender to reroll any number of its attack dice.\n\nA target lock consists of a red target lock token and a blue target lock token displaying the same letter. When a target lock is acquired, assign the blue target lock token to the ship performing the action (the locking ship), and assign the red target lock token on the target (the locked ship).\n\nTarget locks are not removed during the End phase.\n\nA ship can maintain one target lock. If a ship acquires a new target lock, it must remove its old target lock.\n\n- A ship that does not have the [Target Lock] icon in its action bar can acquire and maintain a target lock granted by another game effect.\n\n- If a ship spends a target lock as part of the cost of an ability, that target lock does not also allow the ship to reroll attack dice.\n\n- If a player declares an acquire a target lock action for his ship and the enemy ship he wants to lock is not at range, he may choose a different ship to lock or a different action entirely.\n\n- If an ability instructs a ship to “acquire a target lock,” this is different than performing an acquire a target lock action. The ship acquires the target lock without performing an action, and it may do so even if it has already performed the acquire a target lock action this round.\n\n- A ship can acquire a new target lock on a ship that it already has locked; the old target lock is removed.\n\n- A ship can spend a target lock and choose not to reroll any dice.\n\n- If an effect removes a blue or red target lock token from a ship, the matching red or blue target lock token is also removed (unless the blue target lock is assigned to another ship).\n\n- A ship can be locked by more than one enemy ship.\n\n**Target lock tokens:** ![Target lock tokens](/static/images/tokens/target-lock-tokens.png)",
+    "markdown": "### Acquire a target lock \nShips with the [Target Lock] icon in their action bar may perform the acquire a target lock action to acquire a target lock on an enemy ship at Range 1–3. While attacking, a ship can spend a target lock that it has on the defender to reroll any number of its attack dice.\n\nA target lock consists of a red target lock token and a blue target lock token displaying the same letter. When a target lock is acquired, assign the blue target lock token to the ship performing the action (the locking ship), and assign the red target lock token on the target (the locked ship).\n\nTarget locks are not removed during the End phase.\n\nA ship can maintain one target lock. If a ship acquires a new target lock, it must remove its old target lock.\n\n- A ship that does not have the [Target Lock] icon in its action bar can acquire and maintain a target lock granted by another game effect.\n\n- If a ship spends a target lock as part of the cost of an ability, that target lock does not also allow the ship to reroll attack dice.\n\n- If a player declares an acquire a target lock action for his ship and the enemy ship he wants to lock is not at range, he may choose a different ship to lock or a different action entirely.\n\n- If an ability instructs a ship to “acquire a target lock,” this is different than performing an acquire a target lock action. The ship acquires the target lock without performing an action, and it may do so even if it has already performed the acquire a target lock action this round.\n\n- A ship can acquire a new target lock on a ship that it already has locked; the old target lock is removed.\n\n- A ship can spend a target lock and choose not to reroll any dice.\n\n- If an effect removes a blue or red target lock token from a ship, the matching red or blue target lock token is also removed (unless the blue target lock is assigned to another ship).\n\n- A ship can be locked by more than one enemy ship.\n\n**Target Lock Tokens:** ![Target lock tokens](/static/images/tokens/target-lock-tokens.png)",
     "references": [
       {
         "code": "TFARR",
@@ -67,7 +67,7 @@
     "markdown": "### Acquiring a target lock \nWhen acquiring a target lock, a player must first declare the intended target. Then, he measures range to the declared target to see if the target is within legal range. If the target is in range, the ship performing the action must acquire a target lock on the target. If the target is not in range, the player may declare a different target, or he may declare a different action.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -134,7 +134,7 @@
       },
       {
         "id": 116,
-        "name": "Slam action"
+        "name": "SLAM"
       },
       {
         "id": 77,
@@ -247,7 +247,7 @@
     "markdown": "### Adaptability \n![Adaptability](/static/images/upgrades/adaptability.png)\n#### Card Clarifications \nShips equipped with Adaptability do not alter their pilot skill until they are placed in the play area during setup. For example, a Green Squadron Pilot equipped with Adaptability would be placed in the play area during setup at pilot skill 3. As soon as it is placed, it may choose to raise its pilot skill to 4 or lower it to 2.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -262,7 +262,7 @@
     "markdown": "### Adaptive Ailerons \n![Adaptive Ailerons](/static/images/upgrades/adaptive-ailerons.png)\n#### Card Clarifications \nIf a ship equipped with Adaptive Ailerons overlaps an obstacle as part of this additional maneuver, it suffers the effect of overlapping it as described in the \"Obstacles\" rule. For example, if a ship using Adaptive Ailerons overlaps an asteroid it would roll for damage but not skip its \"Perform Action\" step.\n\nIf a ship equipped with Adaptive Ailerons overlaps another ship as part of this additional maneuver, it does not skip its \"Perform Action\" step.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -277,7 +277,7 @@
     "markdown": "### Adrenaline Rush \n![Adrenaline Rush](/static/images/upgrades/adrenaline-rush.png)\n#### Card Clarifications \nIf a stressed ship equipped with Adrenaline Rush reveals a red maneuver, it may still use Adrenaline Rush to treat the maneuver as a white maneuver.\n\nAdrenaline Rush **cannot** be used to treat the red [[Turn Left] or [Turn Right]] maneuver caused by a faceup Damaged Engine damage card as a white maneuver.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -292,7 +292,7 @@
     "markdown": "### Advanced Cloaking Device \n![Advanced Cloaking Device](/static/images/upgrades/advanced-cloaking-device.png)\n#### Card Clarifications \nA ship with a stress token cannot perform actions, and therefore cannot perform the free cloak action provided by Advanced Cloaking Device.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -307,7 +307,7 @@
     "markdown": "### Advanced Sensors \n![Advanced Sensors](/static/images/upgrades/advanced-sensors.png)\n#### Card Clarifications \nIf a ship equipped with Advanced Sensors does not have a maneuver dial assigned to it (for example, because it is ionized), it cannot use Advanced Sensors’ ability\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -322,7 +322,7 @@
     "markdown": "### Advanced SLAM \n![Advanced SLAM](/static/images/upgrades/advanced-slam.png)\n#### Card Clarifications \nOverlapping an obstacle occurs when the maneuver template or the ship's final position overlaps an obstacle. Overlapping a ship occurs when the ship's final position would overlap a ship\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -337,7 +337,7 @@
     "markdown": "### Advanced Targeting Computer \n![Advanced Targeting Computer](/static/images/upgrades/adv-targeting-computer.png)\n#### Card Clarifications \nDarth Vader can be equipped with the Advanced Targeting Computer Upgrade card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -376,7 +376,7 @@
     "markdown": "### Airen Cracken \n![Airen Cracken](/static/images/pilots/airen-cracken.png)\n#### Card Clarifications \nIf Airen Cracken chooses a friendly ship to perform an action (such as target lock), but that ship cannot perform that action (because the enemy ship is out of range, for example), that ship may choose a different action **or** Airen Cracken may choose a new friendly ship at Range 1 to perform a free action.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -391,7 +391,7 @@
     "markdown": "### Altered pilot skill \nSome abilities alter the pilot skill value of a ship. If several game effects alter the pilot skill of a ship, only the most recent effect is applied. For example, if a Green Squadron Pilot equips Veteran Instincts, it increases its pilot skill from 3 to 5. However, if it later receives the “Damaged Cockpit” Damage card faceup, its pilot skill is reduced from 5 to 0 (rather than 2). Next round, however, Wedge Antilles can use Swarm Tactics to raise its pilot skill to 9.\n\nAdditionally, during the Combat phase, if the pilot skill of a ship that has not activated this phase changes to be higher than the current active ship, that ship does not become the active ship this phase. For example, if Tel Trevura has the “Damaged Cockpit” Damage card and is destroyed (for the first time) by a ship at pilot skill 5, he discards his damage cards. Therefore, his pilot skill changes to 7 and he cannot become the active ship this phase.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -415,7 +415,7 @@
     "markdown": "### Anti-Pursuit Lasers \n![Anti-Pursuit Lasers￼](/static/images/upgrades/anti-pursuit-lasers.png)\n#### Card Clarifications \nThe effect of Anti-Pursuit Lasers only resolves if an enemy ship is touching the ship equipped with AntiPursuit Lasers after executing its maneuver.\n\nThe effect of Anti-Pursuit Lasers does not resolve if only the maneuver template overlaps a ship equipped with Anti-Pursuit Lasers.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -430,7 +430,7 @@
     "markdown": "### Assigning a token to your ship \nWhen an ability instructs you to assign a token to your ship, this is different than performing a free action that provides the same token. For example, Kyle Katarn’s (pilot) ability allows you to “assign 1 of your focus tokens to another friendly ship at Range 1–3.” A ship that has a focus or evade token assigned to it can still perform that action during the round.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -458,7 +458,7 @@
     "markdown": "### Assigning incorrect ship dials \nIf a player assigns the wrong ship dial to his ship (for example, assigning a B-wing dial to an X-wing), when he reveals the dial he must inform his opponent of the error. If the revealed maneuver is a legal maneuver for that ship (for example, the revealed B-wing dial shows a red [[Straight] 4] maneuver, a maneuver whose bearing and speed also appears on the X-wing ship dial), it is executed with the proper difficulty of the maneuver (in this example, white). If the revealed maneuver is not a legal maneuver for that ship (for example, the B-wing dial shows a red [[Turn Left] 1] maneuver, a maneuver that does not appear on the X-wing ship dial), the player’s opponent chooses which legal maneuver from that ship’s actual dial that ship will perform.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -654,7 +654,7 @@
     "markdown": "### Attani Mindlink \n![Attani Mindlink](/static/images/upgrades/attanni-mindlink.png)\n#### Card Clarifications \nIf a ship with Attani Mindlink receives multiple focus or stress tokens as part of the same effect (such as with Recon Specialist or Rage), each other friendly ship with Attani Mindlink receives only 1 of that token.\n\nIf a ship with Attani Mindlink flees the battlefield while performing a red maneuver, the ship is immediately destroyed and does not receive a stress token. If a ship with Attani Mindlink overlaps an obstacle while performing a red maneuver, the ship receives the stress token before rolling for damage since the damage is rolled after skipping the \"Perform Action\" step.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -666,10 +666,10 @@
     "type": "rule-clarification",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### “At” vs. “Within” \nWhen an ability instructs you to assign a token to your ship, this is different than performing a free action that provides the same token. For example, Kyle Katarn’s (pilot) ability allows you to “assign 1 of your focus tokens to another friendly ship at Range 1–3.” A ship that has a focus or evade token assigned to it can still perform that action during the round.",
+    "markdown": "### “At” vs. “Within” \n“At” means the closest part of the target’s base touches that range section. For example, when attacking a ship whose base touches both Range 2 and Range 3, that ship is at Range 2. “Within” means wholly within. For example, normal tournament deployment is “within Range 1 of the table edge.”",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -689,7 +689,7 @@
     "markdown": "### Autoblaster \n![Autoblaster](/static/images/upgrades/autoblasters.png)\n#### Card Clarifications \nWhen attacking with Autoblaster, the defender cannot cancel [Hit] results with evade tokens or other added [Evade] results, such as from C-3PO (see \"Rolling dice\").\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -704,11 +704,11 @@
     "markdown": "### Autothrusters \n![Autothrusters original card](/static/images/upgrades/autothrusters-original.png)\nOriginal card\n\n![Autothrusters corrected card](/static/images/upgrades/autothrusters-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“When defending, if you are inside the attacker’s firing arc beyond Range 2 or outside the attacker’s firing arc, you may change 1 of your blank results to a [Evade] result. You can equip this card only if you have the [Boost] action icon.”\n\n#### Card Clarifications \nSee \"Inside firing arc at range X\"\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 15
       }
     ],
@@ -767,7 +767,7 @@
     "markdown": "### “Backstabber” \n![￼ “Backstabber”](/static/images/pilots/backstabber.png)\n#### Card Clarifications \n“Backstabber” only rolls the additional attack die granted by his ability if no portion of his base is inside any of the defender’s firing arcs.\n\nA ship with a turret primary or a [Turret] secondary weapon is still affected by “Backstabber” if no portion of his base is inside any of the defender’s firing arcs.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -886,23 +886,8 @@
     "markdown": "### Biggs Darklighter \n![Biggs Darklighter](/static/images/pilots/biggs-darklighter.png)\n#### Card Clarifications \nBiggs Darklighter's ability does not trigger if the attacker chose a weapon that cannot target Biggs Darklighter.\n\nSee \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
-      }
-    ],
-    "related_rules": []
-  },
-  {
-    "id": 124,
-    "name": "Blinded Pilot",
-    "type": "card",
-    "huge_ship_rule": false,
-    "expansion_rule": false,
-    "markdown": "### Blinded Pilot \n![Blinded Pilot](/static/images/damage/core-blinded-pilot.png)\n#### Card Clarifications \nA ship with Blinded Pilot assigned to it must perform an attack in order to flip this card facedown.\n\nA ship with Blinded Pilot assigned to it may still use abilities that trigger after performing an attack, such as Darth Vader, Gunner, and Luke Skywalker, even though no attack dice are rolled.\n\nA ship with two copies of Blinded Pilot assigned to it flips them both facedown after it performs an attack.\n",
-    "references": [
-      {
-        "code": "SWXFV.4.3.2",
-        "page": 9
       }
     ],
     "related_rules": []
@@ -916,7 +901,22 @@
     "markdown": "### Blinded Pilot \n![Blinded Pilot](/static/images/damage/tfa-blinded-pilot.png)\n#### Card Clarifications \nA ship that has a weapons disabled token or is overlapping an asteroid does not get an opportunity to attack during the Combat phase and therefore cannot turn Blinded Pilot facedown.\n\nIf a ship gets an opportunity to attack from a card effect (such as Dengar or Corran Horn), that ship can resolve one of those abilities and flips Blinded Pilot facedown.\n\nA ship with this card cannot trigger Advanced Cloaking Device, Darth Vader ([Crew]), Gunner, etc., as the ship cannot perform attacks.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
+        "page": 9
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 124,
+    "name": "Blinded Pilot",
+    "type": "card",
+    "huge_ship_rule": false,
+    "expansion_rule": false,
+    "markdown": "### Blinded Pilot \n![Blinded Pilot](/static/images/damage/core-blinded-pilot.png)\n#### Card Clarifications \nA ship with Blinded Pilot assigned to it must perform an attack in order to flip this card facedown.\n\nA ship with Blinded Pilot assigned to it may still use abilities that trigger after performing an attack, such as Darth Vader, Gunner, and Luke Skywalker, even though no attack dice are rolled.\n\nA ship with two copies of Blinded Pilot assigned to it flips them both facedown after it performs an attack.\n",
+    "references": [
+      {
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -931,7 +931,7 @@
     "markdown": "### Boba Fett \n![Boba Fett](/static/images/pilots/boba-fett.png)\n#### Card Clarifications \nIf Boba Fett is equipped with Navigator and chooses a bank maneuver, when he reveals his dial he may rotate to any bank maneuver of any speed.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -946,7 +946,7 @@
     "markdown": "### Boba Fett ([Crew]) \n![Boba Fett](/static/images/upgrades/boba-fett.png)\n#### Card Clarifications \nIf Boba Fett is used to discard a card that allows an additional card to be equipped during squad building (such as Royal Guard TIE, R2-D6, or *Mist Hunter*), any additional equipped cards are not discarded.\n\nBoba Fett cannot affect docked ships. If Boba Fett is used to discard the *Ghost* title while the *Phantom* is docked, the *Phantom* remains docked and cannot deploy until the *Ghost* is destroyed (forcing it to deploy).\n\nChewbacca's Upgrade card ability to discard a damage card does not prevent that card from being dealt, so Boba Fett's ability still triggers.\n\nA ship equipped with Boba Fett can use his ability if the defender was dealt a faceup Damage card from any source during that ship’s attack. Boba Fett cannot be used during an attack if the ship with Boba Fett equipped is not the ship attacking.\n\nIf Boba Fett is used to discard an Upgrade card that has an ordnance token on it (including the Extra Munitions Upgrade card itself), the opposing player can discard the ordnance token instead.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -995,6 +995,10 @@
         "name": "Seismic charge token"
       },
       {
+        "id": 262,
+        "name": "Thermal detonators token"
+      },
+      {
         "id": 88,
         "name": "Upgrade cards"
       },
@@ -1013,7 +1017,7 @@
     "markdown": "### Boost \nShips with the [Boost] icon in their action bar may perform a boost action. To boost, follow these steps:\n\n1. Choose the [[Straight] 1], [[Bank Left] 1], or [[Bank Right] 1] maneuver template.\n\n1. Set the maneuver template between the ship’s front guides.\n\n1. Move the ship to the opposite end of the template and slide the rear guides of the ship into the template.\n\n- A ship cannot boost if this would cause its base to overlap with another ship’s base or an obstacle token, or if the maneuver template overlaps an obstacle token.\n\n- A ship cannot boost if this would cause the ship to flee the battlefield.\n\n- When a player declares a boost action for his ship, he must also declare which direction he is boosting before determining if he can complete the boost in that direction.\n\n- If a player declares a boost action for his ship and cannot complete the action using the desired direction, he may choose a different direction or a different action entirely.\n\n- Performing a boost does not count as executing a maneuver.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       },
       {
@@ -1057,7 +1061,7 @@
     "markdown": "### Bossk \n![Bossk](/static/images/pilots/bossk.png)\n#### Card Clarifications \nWhen a ship is hit by Bossk’s attack, Bossk may cancel a [Critical Hit] result to add 2 [Hit] results before Draw Their Fire, Xizor’s ability, and R4-D6 can be used.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1072,7 +1076,7 @@
     "markdown": "### Bossk ([Crew]) \n![Bossk](/static/images/upgrades/bossk.png)\n#### Card Clarifications \nBossk triggers each time you perform an attack that does not hit. If you are not stressed, you receive a stress token. If you are already stressed, you do not receive an additional stress token. Then, whether or not a stress token is received, assign 1 focus token to your ship and acquire a target lock on the defender.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1087,7 +1091,7 @@
     "markdown": "### Bumping ships \nIf a player knocks a ship over, he must endeavor to replace it exactly as he found it. If there is any disagreement about its placement, the player’s opponent has final say over its position, though he must attempt to match the ship’s original position.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -1102,7 +1106,7 @@
     "markdown": "### C-3PO \n![C-3PO](/static/images/upgrades/c-3po.png)\n#### Card Clarifications \nA ship equipped with both C-3PO and Flight Instructor may guess the number of [Evade] results, add an [Evade] result if the guess was correct, then reroll the dice (if applicable). C-3PO may be used in conjunction with the Lando Calrissian Upgrade card when performing Lando Calrissian’s special action.\n\nJuke can be used to modify the [Evade] result added by C-3PO.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1117,7 +1121,7 @@
     "markdown": "### Calculation \n![Calculation](/static/images/upgrades/calculation.png)\n#### Card Clarifications \nYou may only use Calculation once per attack, no matter how many focus tokens you have to spend. However, If you roll multiple [Focus] results during an attack, you may spend 1 focus token to change 1 [Focus] result into a [Critical Hit] result (using Calculation) and a second focus token to change all other [Focus] results into [Hit] results (the normal effect of spending a focus token).\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1152,7 +1156,7 @@
     "markdown": "### Captain Jonus \n![Captain Jonus](/static/images/pilots/captain-jonus.png)\n#### Card Clarifications \nIf another friendly ship performs multiple attacks with a secondary weapon (such as Cluster Missiles), Captain Jonus may use his ability for each attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1167,7 +1171,7 @@
     "markdown": "### Captain Kagi \n![Captain Kagi](/static/images/pilots/captain-kagi.png)\n#### Card Clarifications \nIf an enemy ship equipped with Fire-Control System is at range to acquire a target lock on Captain Kagi and attacks a ship other than Captain Kagi, the target lock provided by Fire-Control System must be acquired on the defender, not Captain Kagi. If the enemy ship also has Weapons Engineer, its second target lock must be acquired on Captain Kagi.\n\nIf a ship already has a target lock on Captain Kagi, it cannot acquire a target lock on a different ship if it is at range to acquire a target lock on Captain Kagi.\n\nIf a ship attempts to acquire a target lock on an enemy ship but that ship could acquire a target lock on Captain Kagi instead, that ship cannot choose a different action and must acquire a target lock on Captain Kagi.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1182,7 +1186,7 @@
     "markdown": "### Captain Oicunn \n![Captain Oicunn](/static/images/pilots/captian-oicunn.png)\n#### Card Clarifications \nSee “Overlapping in-line ships”, “Touching and stationary maneuvers”, and “Touching multiple ships”.\n\nCaptain Oicunn’s ability only triggers after Captain Oicunn executes a maneuver.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1197,7 +1201,7 @@
     "markdown": "### Captain Yorr \n![Captain Yorr](/static/images/pilots/captain-yorr.png)\n#### Card Clarifications \nIf, through his pilot ability, Captain Yorr intercepts a stress token that is part of the cost of triggering an ability on another ship (such as Soontir Fel or Opportunist), that ability’s effect does not resolve.\n\nIf Captain Yorr intercepts a stress token that was the result of an ability (such as Push the Limit), that ability resolves, then Yorr receives the stress token.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1287,7 +1291,7 @@
     "markdown": "### Chewbacca \n![Chewbacca](/static/images/pilots/chewbacca.png)\n#### Card Clarifications \nAny time Chewbacca is dealt a faceup Damage card, he flips it facedown without resolving its effect, including the Injured Pilot Damage card (original Damage deck).\n\nDamage cards flipped faceup by card abilities (such as Saboteur or Rexler Brath) are not considered “dealt,” and therefore Chewbacca’s ability does not apply.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 10
       }
     ],
@@ -1302,7 +1306,7 @@
     "markdown": "### Chewbacca ([Crew]) \n![Chewbacca](/static/images/upgrades/chewbacca.png)\n#### Card Clarifications \nIf a ship equipped with Chewbacca suffers a critical damage, the player may look at that card before choosing whether to use Chewbacca’s ability to discard it.\n\nIf a ship equipped with Chewbacca is about to suffer its last damage before it would be destroyed, Chewbacca may be used to prevent that one damage and recover a shield.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1314,14 +1318,14 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": true,
-    "markdown": "### Cloak † \nShips with the [Cloak] icon in their action bar may perform a cloak action. When a ship performs the cloak action, assign one cloak token to that ship. A cloaked ship follows these rules:\n\n- The agility value of a ship with a cloak token is increased by 2.\n\n- While a ship has a cloak token, it cannot perform attacks.\n\n- A ship cannot perform the cloak action while it already has a cloak token.\n\n- Cloak tokens are not removed during the End phase.\n\nAt the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to **decloak** , starting with the ship with the lowest pilot skill (using initiative to break ties).\n\nWhen a ship decloaks, it must choose **one** of the following effects:\n\n1. Perform a barrel roll using the [[Straight] 2] maneuver template.\n\n1. Perform a boost using the [[Straight] 2] maneuver template.\n\nAfter all decloaking has been resolved, the Activation phase continues as normal.\n\n- Decloaking is not an action or a maneuver.\n\n- A ship can decloak even while stressed.\n\n- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.\n\n- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot decloak if this would cause the ship to flee the battlefield.\n\n- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.\n\n- If a ship cannot decloak in any direction, it cannot decloak.\n\n**Cloak token:** ![Cloak token](/static/images/tokens/cloak-token.png)",
+    "markdown": "### Cloak † \n![Cloak icon](/static/images/actions/cloak.svg)\nCloak icon\n\nShips with the [Cloak] icon in their action bar may perform a cloak action. When a ship performs the cloak action, assign one cloak token to that ship.\n\nA cloaked ship follows these rules:\n\n- The agility value of a ship with a cloak token is increased by 2.\n\n- While a ship has a cloak token, it cannot perform attacks.\n\n- A ship cannot perform the cloak action while it already has a cloak token.\n\n- Cloak tokens are not removed during the End phase.\n\nAt the start of the Activation phase, after players have resolved all other abilities that trigger at the start of the Activation phase, each ship may spend a cloak token to **decloak** , starting with the ship with the lowest pilot skill (using initiative to break ties).\n\nWhen a ship decloaks, it must choose **one** of the following effects:\n\n1. Perform a barrel roll using the [[Straight] 2] maneuver template.\n\n1. Perform a boost using the [[Straight] 2] maneuver template.\n\nAfter all decloaking has been resolved, the Activation phase continues as normal.\n\n- Decloaking is not an action or a maneuver.\n\n- A ship can decloak even while stressed.\n\n- When a player declares that his ship is decloaking, he must declare whether it is barrel rolling to the left, barrel rolling to the right, or boosting forward before placing a maneuver template on the play area.\n\n- A ship cannot decloak if it would overlap another ship or an obstacle token, or if the maneuver template would overlap an obstacle token.\n\n- A ship cannot decloak if this would cause the ship to flee the battlefield.\n\n- If a ship cannot decloak in the desired direction, it may choose another direction or choose not to decloak.\n\n- If a ship cannot decloak in any direction, it cannot decloak.\n\n**Cloak Token:** ![Cloak token](/static/images/tokens/cloak-token.png)",
     "references": [
       {
         "code": "CLOAKACTION",
         "page": null
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       },
       {
@@ -1373,7 +1377,7 @@
         "page": null
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       }
     ],
@@ -1397,7 +1401,7 @@
     "markdown": "### Cluster Missiles \n![Cluster Missiles](/static/images/upgrades/cluster-missiles.png)\n#### Card Clarifications \nSee \"Timing chart for performing an attack\".\n\nIf a ship is equipped with Cluster Missiles and Munitions Failsafe, **both** attacks must miss for Munitions Failsafe to activate.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1412,7 +1416,7 @@
     "markdown": "### Colonel Jendon \n![Colonel Jendon](/static/images/pilots/colonel-jendon.png)\n#### Card Clarifications \nColonel Jendon may assign 1 of his blue target lock tokens to a ship that does not have the target lock action listed in its action bar.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1427,7 +1431,7 @@
     "markdown": "### Colonel Vessery \n![Colonel Vessery](/static/images/pilots/colonel-vessery.png)\n#### Card Clarifications \nIf a friendly ship has a target lock on an enemy ship and Colonel Vessery spends his own target lock to attack that ship (for example, he spends his target lock to fire a Concussion Missile), he may immediately acquire a new target lock on that ship and spend it to reroll his attack dice.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1490,8 +1494,23 @@
     "markdown": "### Commander Kenkirk \n![Commander Kenkirk](/static/images/pilots/commander-kenkirk.png)\n#### Card Clarifications \nSee \"Increasing and reducing values\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 266,
+    "name": "Conditions Cards",
+    "type": "rule",
+    "huge_ship_rule": false,
+    "expansion_rule": false,
+    "markdown": "### Conditions Cards \nConditions cards are cards assigned by Ship and Upgrade cards that represent persistent game effects.\n\nA Condition card is not in play until a game effect assigns it to a ship.\n\nWhen a Condition card is assigned, its text immediately resolves.\n\nAfter a ship is assigned a Condition card, assign the associated Condition token to that ship as a reminder of the card’s ongoing effect. That token is removed when the Condition is removed.\n\nA Condition that has been removed can be assigned again.\n\n#### Unique Conditions\n\nIf one of your unique Conditions is already in play and one of your effects calls for it to be assigned again, remove the Condition card form the original ship and assign it to the new ship.",
+    "references": [
+      {
+        "code": "CONDITIONCARDS",
+        "page": null
       }
     ],
     "related_rules": []
@@ -1505,7 +1524,7 @@
     "markdown": "### Conner Net \n![Conner Net](/static/images/upgrades/conner-net.png)\n#### Card Clarifications \nIf a Conner Net is dropped overlapping a ship and immediately detonates, and that ship has not yet activated this phase, that ship executes the maneuver on its dial as normal and skips its “Perform Action” step. If a Conner Net is dropped overlapping a ship and immediately detonates, and that ship has activated this round, that ship suffers the effects of being ionized next turn and does not skip any “Perform Action” step. If a ship is ionized, executes its [1[Straight]] maneuver, and overlaps a Conner Net, all ion tokens are discarded at the end of the maneuver (including those received from Conner Net).\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1522,10 +1541,14 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": true,
-    "markdown": "### Conner net token † \n![Conner net token](/static/images/tokens/conner-net-token.png)\n\nWhen this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its “Perform Action” step. Then discard this token.",
+    "markdown": "### Conner net token † \n![Conner net token](/static/images/tokens/conner-net-token.png)\n\nWhen this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage., receives 2 ion tokens, and skips its “Perform Action” step. Then discard this token.",
     "references": [
       {
         "code": "BOMBTOKENS03",
+        "page": null
+      },
+      {
+        "code": "BOMBTOKENS05",
         "page": null
       }
     ],
@@ -1553,7 +1576,7 @@
     "markdown": "### Corran Horn \n![Corran Horn](/static/images/pilots/corran-horn.png)\n#### Card Clarifications \nCorran Horn performs his additional attack at the **start** of the End phase, **before** evade and focus tokens are removed.\n\nIf both players field Corran Horn, the player with initiative chooses first whether or not to resolve his ability and attack. If the second Corran Horn is destroyed by this attack, do not remove him from the play area. He still has the opportunity to resolve his ability this round before he is removed.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1568,7 +1591,7 @@
     "markdown": "### \"Countdown\" \n![\"Countdown\"](/static/images/pilots/countdown.png)\n#### Card Clarifications \nUsing \"Countdown's\" ability will make the attack miss as there are no uncanceled [Hit] or [Critical Hit] results.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1583,7 +1606,7 @@
     "markdown": "### Crack Shot \n![Crack Shot original card](/static/images/upgrades/crack-shot-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“When attacking a ship inside your firing arc, at the start of the ‘Compare Results’ step, you may discard this card to cancel 1 of the defender’s [Evade] results.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       }
     ],
@@ -1595,7 +1618,7 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Critical damage \nDuring an attack, a ship suffers one critical damage for each uncanceled [Critical Hit] result. If a ship is dealt a Damage card due to suffering critical damage, that card is dealt faceup and its text immediately resolves.\n\n- The effect of a faceup Damage card is ongoing until the card is discarded or flipped facedown.\n\n- When a ship is dealt a faceup Damage card, assign a critical hit token to that ship as a reminder of the card’s ongoing effect. That token is discarded if the card is discarded or flipped facedown.\n\n- Each faceup Damage card has either the **Ship** or **Pilot** trait. These traits have no inherent effect, but they may be referenced by other effects.\n\n**Critical hit tokens:** ![Critical hit tokens](/static/images/tokens/critical-hit-tokens.png)",
+    "markdown": "### Critical damage \nDuring an attack, a ship suffers one critical damage for each uncanceled [Critical Hit] result. If a ship is dealt a Damage card due to suffering critical damage, that card is dealt faceup and its text immediately resolves.\n\n- The effect of a faceup Damage card is ongoing until the card is discarded or flipped facedown.\n\n- When a ship is dealt a faceup Damage card, assign a critical hit token to that ship as a reminder of the card’s ongoing effect. That token is discarded if the card is discarded or flipped facedown.\n\n- Each faceup Damage card has either the **Ship** or **Pilot** trait. These traits have no inherent effect, but they may be referenced by other effects.\n\n**Critical Hit Tokens:** ![Critical hit tokens](/static/images/tokens/critical-hit-tokens.png)",
     "references": [
       {
         "code": "TFARR",
@@ -1674,7 +1697,7 @@
     "markdown": "### Damaged Cockpit \n![Damaged Cockpit](/static/images/damage/core-damaged-cockpit.png)\n#### Card Clarifications \nSee ‘Altered pilot skill’.\n\nIf Damaged Cockpit is flipped faceup during a round, its effect is applied on the round after it was flipped faceup.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -1689,7 +1712,7 @@
     "markdown": "### Damaged Engine \n![Damaged Engine](/static/images/damage/core-damaged-engine.png)\n#### Card Clarifications \nA ship equipped with R2 Astromech that has Damaged Engine assigned to it treats all of its turn maneuvers [[Turn Left] and [Turn Right]] as red maneuvers, including the 1- and 2-speed turn maneuvers.\n\nAdrenaline Rush **cannot** be used to treat a red turn [[Turn Left] or [Turn Right]] maneuver caused by a faceup Damaged Engine damage card as a white maneuver.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -1704,7 +1727,7 @@
     "markdown": "### Damaged Sensor Array \n![Damaged Sensor Array](/static/images/damage/core-damaged-sensor-array.png)\n#### Card Clarifications \nA ship with Damaged Sensor Array assigned to it cannot perform the target lock action in its action bar, but may still acquire target locks through other means.\n\nA ship with Damaged Sensor Array assigned to it can still perform actions from damage cards that have the ‘**Action**’ header, that are granted by Upgrade cards (such as Marksmanship, Expert Handling, Lando Calrissian, or Ysanne Isard), or that are from pilot abilities (such as Jake Farrell), so long as those actions are **not** listed in that ship’s action bar.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -1719,11 +1742,11 @@
     "markdown": "### Daredevil \n![Daredevil original card](/static/images/upgrades/daredevil-original.png)\nOriginal card\n\n![Daredevil corrected card](/static/images/upgrades/daredevil-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“**Action:** Execute a white [[Turn Left] 1] or [[Turn Right] 1] maneuver. Then, receive 1 stress token. Then, if you do not have the [Boost] action icon, roll 2 attack dice. Suffer any damage [[Hit]] and critical damage [[Critical Hit]] rolled.”\n\n#### Card Clarifications \nA ship that performs the Daredevil action follows all normal rules for executing a maneuver, except that the maneuver is always treated as a white maneuver. Daredevil may be performed even if the ship would overlap another ship or obstacle; resolve the overlapping as normal.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1738,7 +1761,7 @@
     "markdown": "### “Dark Curse” \n![“Dark Curse”](/static/images/pilots/dark-curse.png)\n#### Card Clarifications \nDark Curse” can be the target of a secondary weapon attack that requires the attacker to spend a focus token because \"Dark Curse\" becomes the defender after the cost for the attack is paid.\n\nSee \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1753,7 +1776,7 @@
     "markdown": "### Darth Vader ([Crew]) \n![￼￼Darth Vader](/static/images/upgrades/darth-vader.png)\n#### Card Clarifications \nA ship equipped with Darth Vader can use this ability only if it has at least 1 hull remaining.\n\nIf a ship equipped with Darth Vader can attack twice in one round (such as a ship equipped with Gunner), it can use Darth Vader after the first attack and after the second attack. If Darth Vader destroys the ship to which he is equipped, it can still perform its second attack. If Vader is used twice, it must be in this order: Attack, Vader, Attack, Vader.\n\nIf a ship equipped with Darth Vader performs a secondary weapon attack that says “perform this attack twice,” Darth Vader can be used only once, and only after the second attack. See \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1768,7 +1791,7 @@
     "markdown": "### Dash Rendar \n![Dash Rendar](/static/images/pilots/dash-rendar.png)\n#### Card Clarifications \nWhen declaring a barrel roll or boost, Dash Rendar must choose whether or not to use his ability before measuring if he would overlap an obstacle.\n\nIf Dash Rendar receives the Stunned Pilot Damage card and executes a maneuver that causes him to overlap an obstacle token, he does **not** suffer damage.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1783,7 +1806,7 @@
     "markdown": "### Dauntless \n![Dauntless](/static/images/upgrades/dauntless.png)\n#### Card Clarifications \nIf a ship equipped with the Dauntless title executes a red maneuver and overlaps another ship, it cannot perform a free action. If it executes a green maneuver, overlaps another ship, and uses Dauntless to perform a free action, the stress it receives is not removed by the green maneuver.\n\nA ship equipped with the Dauntless title that overlaps another ship may use the Daredevil Upgrade card to execute a white [[Turn Left] 1] or [[Turn Right] 1] maneuver.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 16
       }
     ],
@@ -1798,7 +1821,7 @@
     "markdown": "### Deadeye \n![Deadeye original card](/static/images/upgrades/deadeye-original.png)\nOriginal card\n#### Card errata \nThe text on this card should be preceded by the phrase:\n\n“*SMALL SHIP ONLY*.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       }
     ],
@@ -1813,7 +1836,7 @@
     "markdown": "### Dead Man’s Switch \n![Dead Man’s Switch](/static/images/upgrades/dead-mans-switch.png)\n#### Card Clarifications \nShips that are destroyed in the Combat phase by Dead Man’s Switch follow the Simultaneous Attack Rule if they are of the same pilot skill as the attacker that destroyed the ship equipped with Dead Man’s Switch.\n\nIf IG-88A destroys a ship equipped with Dead Man’s switch at Range 1, the effect of Dead Man’s Switch is resolved during the “Deal Damage” step, before IG-88A recovers 1 shield after the attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -1856,7 +1879,7 @@
     "markdown": "### Dengar \n![Dengar](/static/images/pilots/dengar.png)\n#### Card Clarifications \nDengar’s ability resolves after any “after attacking” or “after defending” abilities that do not perform an attack. This is the same timing used by other abilities that perform an additional attack (such as Gunner). Additionally, this ability can occur even if Dengar was destroyed by the attack. See \"Timing chart for performing an attack\".\n\nWhen Dengar is attacked by a ship that is at Range 1 of Biggs Darklighter, if Dengar chooses to use his ability, he attacks the ship that just attacked him rather than Biggs Darklighter.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -1987,7 +2010,7 @@
     "markdown": "### Draw Their Fire \n![Draw Their Fire](/static/images/upgrades/draw-their-fire.png)\n#### Card Clarifications \nA ship equipped with Draw Their Fire cannot suffer the critical damage caused by Darth Vader, Proximity Mines, or Prince Xizor’s pilot ability, as that damage is not an attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2002,7 +2025,7 @@
     "markdown": "### “Echo” \n![“Echo”](/static/images/pilots/echo.png)\n#### Card Clarifications \nWhen declaring a decloak, the player controlling “Echo” must declare both the side and direction of the decloak. If “Echo” can perform the decloak, she must do so. If “Echo” cannot perform the decloak, the player controlling “Echo” may declare a decloak in any other direction, or he may choose not to decloak.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -2017,7 +2040,7 @@
     "markdown": "### Emon Azzameen \n![Emon Azzameen](/static/images/pilots/emon-azzameen.png)\n#### Card Clarifications \nBefore dropping a bomb, Emon Azzameen must declare what template he will use and in what direction he will drop the bomb. Once he has declared a template and direction, he is committed to dropping the bomb according to that declaration.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 11
       }
     ],
@@ -2032,11 +2055,11 @@
     "markdown": "### Emperor Palpatine \n![Emperor Palpatine original card](/static/images/upgrades/emperor-palpatine-original.png)\nOriginal card\n\n![Emperor Palpatine corrected card](/static/images/upgrades/emperor-palpatine-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“*IMPERIAL ONLY*.\n\nOnce per round, before a friendly ship rolls dice, you may name a die result. After rolling, you must change 1 of its dice results to the named result. That die result cannot be modified again.\"\n\n#### Card Clarifications \nThis ability can be used to change a die rolled as the result of a card ability (such as Anti-Pursuit Lasers or resolving a Damage card effect) or when a friendly ship has overlapped a Proximity Mine, Cluster Mine, or obstacle.\n\nA player may change a die result to the result it is already showing (for example, using Emperor Palpatine to change a [Critical Hit] result to a [Critical Hit] result).\n\nEmperor Palpatine is a crew Upgrade card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2111,7 +2134,7 @@
     "markdown": "### Esege Tuketu \n![Esege Tuketu](/static/images/pilots/esege-tuketu.png)\n#### Card Clarifications \nIf Esege Tuketu has a focus token and is at Range 1–2 of Poe Dameron when Poe Dameron attacks, Poe Dameron may trigger his pilot ability even if he has no focus tokens assigned to him.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2123,7 +2146,7 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Evade \nShips with the evade ([Evade]) icon in their action bar may perform the evade action. To perform the action, assign one evade token to the ship. When defending, the ship may spend that token to add one additional evade ([Evade]) result to his defense roll. All unspent evade tokens are removed from ships during the End phase.\n\n- A ship can have more than one evade token.\n\n- If an ability instructs a player to assign an evade token to a ship, this is different than performing an evade action. The ship is assigned the token without performing an action and may still perform the evade action this round.\n\n**Evade tokens:** ![Evade tokens](/static/images/tokens/evade-tokens.png)",
+    "markdown": "### Evade \nShips with the evade ([Evade]) icon in their action bar may perform the evade action. To perform the action, assign one evade token to the ship. When defending, the ship may spend that token to add one additional evade ([Evade]) result to his defense roll. All unspent evade tokens are removed from ships during the End phase.\n\n- A ship can have more than one evade token.\n\n- If an ability instructs a player to assign an evade token to a ship, this is different than performing an evade action. The ship is assigned the token without performing an action and may still perform the evade action this round.\n\n**Evade Tokens:** ![Evade tokens](/static/images/tokens/evade-tokens.png)",
     "references": [
       {
         "code": "TFARR",
@@ -2177,7 +2200,7 @@
     "markdown": "### Experimental Interface \n![Experimental Interface](/static/images/upgrades/experimental-interface.png)\n#### Card Clarifications \nSee “Push the Limit”.\n\nIf Experimental Interface and Push the Limit are both equipped to a ship, they can be used together to perform two additional free actions. After the actions have resolved, the ship receives 2 stress tokens.\n\nExperimental Interface is unique. Some copies were printed without the [Unique] (unique symbol) in front of the name.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2192,11 +2215,11 @@
     "markdown": "### Expert Handling \n![Expert Handling original card](/static/images/upgrades/expert-handling-original.png)\nOriginal card\n\n![Expert Handling corrected card](/static/images/upgrades/expert-handling-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“**Action:** Perform a free barrel roll action. If you do not have the [Barrel Roll] action icon, receive 1 stress token. You may then remove 1 enemy target lock from your ship.”\n\n#### Card Clarifications \nA ship can only perform the same action once per round. A ship equipped with Expert Handling cannot perform a barrel roll and use the Expert Handling action in the same round.\n\nIf a ship attempts to perform an Expert Handling action, but cannot perform a barrel roll, the ship may perform a different action instead.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2243,7 +2266,7 @@
     "markdown": "### Feedback Array \n![Feedback Array](/static/images/upgrades/feedback-array.png)\n#### Card Clarifications \nFeedback Array is resolved only when you become the active ship during the Combat phase. If a ship equipped with Feedback Array destroys an enemy ship of equal pilot skill that has not attacked yet, that ship is not removed, following the Simultaneous Attack Rule.\n\nUsing Feedback Array does not count as an attack, and can be used against ships you are touching and while you have the Blinded Pilot Damage card assigned to your ship. It cannot be used while you are overlapping an asteroid or have a weapons disabled token.\n\nWhen using Feedback Array, during the Combat phase, you cannot have performed any attacks this phase before you became the active ship and cannot perform any attacks this phase after you became the active ship. If you have multiple copies of Feedback Array equipped, you can use only 1 Feedback Array during the Combat phase.\n\nA ship equipped with Feedback Array can use this ability only if it has at least 1 hull remaining.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2258,7 +2281,7 @@
     "markdown": "### “Fel’s Wrath” \n![“Fel’s Wrath”](/static/images/pilots/fels-wrath.png)\n#### Card Clarifications \nIf Corran Horn destroys “Fel’s Wrath” at the start of a round’s End phase, “Fel’s Wrath” is not removed until the end of the following round’s Combat phase.\n\nIf Fel’s Wrath has used his ability and destroys the last enemy ship, the match ends in a draw as “winning the game” is checked at the end of the round.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2273,7 +2296,7 @@
     "markdown": "### Fire-Control System \n![Fire-Control System](/static/images/upgrades/fire-control-system.png)\n#### Card Clarifications \nIf a ship equipped with Fire-Control System and Weapons Engineer attacks, that ship must acquire the first target lock on the defender (if able) before acquiring a target lock on a second ship.\n\nIf a ship equipped with Fire-Control System attacks with a secondary weapon that says “perform this attack twice,” the ship acquires a target lock only after the second attack. See \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2328,7 +2351,7 @@
     "markdown": "### Flechette Torpedoes \n![Flechette Torpedoes](/static/images/upgrades/flechette-torpedoes.png)\n#### Card Clarifications \nWhen determining whether the defender receives a stress token from Flechette Torpedoes, the defender’s starting hull value (including any equipped Hull Upgrade card) is used, **not** the defender’s remaining hull points.\n\nIf a ship equipped with Munitions Failsafe and Flechette Torpedoes misses when firing Flechette Torpedoes at a target with hull value ‘4’ or lower, the defender receives 1 stress token and the Flechette Torpedoes are **not** discarded.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2384,7 +2407,7 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Focus \nShips with the focus ([Focus]) icon in their action bar may perform the focus action. To perform the action, assign one focus token to the ship. When attacking or defending, the ship may spend that token to change all of its [Focus] results to [Hit] results (on attack dice) or [Evade] results (on defense dice). All unspent focus tokens are removed from ships during the End phase.\n\n- A ship can have more than one focus token.\n\n- A ship can spend a focus token even if it did not roll any [Focus] results.\n\n- If a card ability instructs a player to assign a focus token to a ship, this is different than performing a focus action. The ship is assigned the token without performing an action and may still perform the focus action this round.\n\n**Focus tokens:** ![Focus tokens](/static/images/tokens/focus-tokens.png)",
+    "markdown": "### Focus \nShips with the focus ([Focus]) icon in their action bar may perform the focus action. To perform the action, assign one focus token to the ship. When attacking or defending, the ship may spend that token to change all of its [Focus] results to [Hit] results (on attack dice) or [Evade] results (on defense dice). All unspent focus tokens are removed from ships during the End phase.\n\n- A ship can have more than one focus token.\n\n- A ship can spend a focus token even if it did not roll any [Focus] results.\n\n- If a card ability instructs a player to assign a focus token to a ship, this is different than performing a focus action. The ship is assigned the token without performing an action and may still perform the focus action this round.\n\n**Focus Tokens:** ![Focus tokens](/static/images/tokens/focus-tokens.png)",
     "references": [
       {
         "code": "TFARR",
@@ -2519,7 +2542,7 @@
     "markdown": "### Garven Dreis \n![Garven Dreis](/static/images/pilots/garven-dreis.png)\n#### Card Clarifications \nA ship may be assigned a focus token from Garven Dreis even if it has already performed a focus action earlier in the round.\n\nA ship may spend a focus token during an attack even if there are 0 [Focus] results to change (including an attack where no dice are rolled, such as when a ship has a faceup Blinded Pilot Damage card [original Damage deck]).\n\nGarven may still use his ability after using R5-P9 even if he cannot recover any shields.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2534,7 +2557,7 @@
     "markdown": "### “Genius” \n![“Genius” original card](/static/images/upgrades/genius-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb after you execute your maneuver instead.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       }
     ],
@@ -2564,7 +2587,7 @@
     "markdown": "### “Gonk” \n![“Gonk”](/static/images/upgrades/gonk.png)\n#### Card Clarifications \nBoth actions on “Gonk” are different actions. A ship equipped with “Gonk” can perform both actions during a round if it has the ability to perform multiple actions.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       }
     ],
@@ -2607,15 +2630,15 @@
     "markdown": "### Gunner \n![Gunner original card](/static/images/upgrades/gunner-original.png)\nOriginal card\n\n![Gunner corrected card](/static/images/upgrades/gunner-corrected.png)\nCorrected card\n#### Card errata \nThe first sentence on this card should read:\n\n“After you perform an attack that does not hit, you may immediately perform a primary weapon attack.”\n\n#### Card Clarifications \nUsing Gunner’s ability is a separate attack, which means that the ship can choose to declare a different target for the second attack, and any abilities to modify attack dice (such as spending a focus token or a target lock) must be used for each attack separately\n\nWhen using a secondary weapon that says “perform this attack twice”, **both** attacks must miss for Gunner to activate.\n\nSee \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 17
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -2630,7 +2653,7 @@
     "markdown": "### Han Solo \n![Han Solo](/static/images/pilots/han-solo.png)\n#### Card Clarifications \nIf Han Solo is placed overlapping an obstacle during Setup, he suffers the effect of overlapping an obstacle. If he suffers damage from this, he removes a shield.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2645,7 +2668,7 @@
     "markdown": "### Heavy Laser Cannon \n![Heavy Laser Cannon](/static/images/upgrades/heavy-laser-cannon.png)\n#### Card Clarifications \nWhen an attack is performed using Heavy Laser Cannon and all [Critical Hit] results are changed to [Hit] results, the attack dice can be modified as normal. Any attack dice rerolled are not changed from [Critical Hit] results to [Hit] results.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -2660,7 +2683,7 @@
     "markdown": "### \"Heavy Scyk\" Interceptor \n![\"Heavy Scyk\" Interceptor original card](/static/images/upgrades/heavy-scyk-interceptor-original.png)\nOriginal card\n#### Card errata \nThe text on this card should be followed by the phrase:\n\n“Increase your hull value by 1.\"\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       }
     ],
@@ -2699,7 +2722,7 @@
     "markdown": "### “Hobbie” Klivian \n![“Hobbie” Klivian](/static/images/pilots/hobbie-klivian.png)\n#### Card Clarifications \n“Hobbie” Klivian may remove 1 stress token from his ship each time he acquires or spends a target lock. Ships can acquire a target lock without performing the acquire a target Lock action.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2714,7 +2737,7 @@
     "markdown": "### Homing Missiles \n![Homing Missiles](/static/images/upgrades/homing-missiles.png)\n#### Card Clarifications \nThe attacker must have a target lock on the defender to use Homing Missiles, but the target lock is not spent in order to perform the attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -2729,7 +2752,7 @@
     "markdown": "### Hotshot Co-pilot \n![Hotshot Co-pilot](/static/images/upgrades/hotshot-co-pilot.png)\n#### Card Clarifications \nWhen attacking a ship with Hotshot Co-pilot equipped, the defender must spend the focus token after the \"Declare Target\" step and before the end of the \"Modify Defense Dice\" step.\n\nWhen defending against a ship with Hotshot Co-pilot equipped, the attacker must spend a focus token after the \"Declare Target\" step and before the end of the \"Modify Attack Dice\" step.\n\nWhen spending a focus token, it can be for an effect that costs a focus token such as Calculation or Weapons Guidance.\n\nIf the defender has Hotshot Co-pilot equipped, and the attacker cannot modify his dice such as from Snap Shot or after resolving Accuracy Corrector, the attacker is not able to spend a focus token.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -2848,7 +2871,7 @@
     "markdown": "### IG-2000 \n![IG-2000](/static/images/upgrades/ig-2000.png)\n#### Card Clarifications \nIf you have multiple Aggressors equipped with the *IG-2000* title and one of the Aggressors is removed from play, all other Aggressors equipped with the *IG- 2000* title immediately lose the destroyed Aggressor’s pilot ability.\n\nAn Aggressor equipped with *IG-2000* that receives the Injured Pilot Damage card can still use the pilot abilities of friendly ships equipped with *IG-2000*, but those friendly ships can no longer use its pilot ability.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -2863,7 +2886,7 @@
     "markdown": "### IG-88A \n![IG-88A](/static/images/pilots/ig-88a.png)\n#### Card Clarifications \nIG-88A’s pilot ability does **not** allow him to gain shields above his starting shield value— he must lose a shield token before he can recover it.\n\nIf IG-88A destroys a ship at his pilot skill, he recovers the shield after the attack and before that ship has had an opportunity to attack with the Simultaneous attack rule.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -2878,7 +2901,7 @@
     "markdown": "### Illegal dial \nIf a player reveals a dial that is stuck between two different maneuvers in such a way that it is impossible to determine which maneuver was selected, the player’s opponent chooses which of those two maneuvers that ship will perform.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -2898,7 +2921,7 @@
     "markdown": "### I'll Show You the Dark Side \n![I'll Show You the Dark Side](/static/images/conditions/ill-show-you-the-dark-side.png)\n#### Card Clarifications \nIf a ship with this card assigned to it suffers critical damage during an attack, it **must** suffer the Damage card assigned to *I'll Show You the Dark Side* instead (even if it has shield tokens).\n\nThe effect of Darth Vader ([Crew]) occurs after the attack and therefore does not trigger the effect of *I'll Show You the Dark Side*.\n\nWhen this card is assigned, if there are no Pilot trait damage cards remaining in the Damage deck, no Damage card is assigned to *I'll Show You the Dark Side*.\n\nIf Maarek Stele attacks a ship with *I'll Show You the Dark Side* assigned to it, the effect of the condition will deal the ship the Damage card on it and Maarek Stele's ability does not trigger. If the attack would cause the defender to suffer additional critical damage, Maarek Stele's ability would trigger.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -2913,7 +2936,7 @@
     "markdown": "### \"Immediately\" \nImmediately is used as emphasis on some cards, it is purely reminder text and has no distinct game effect.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -2928,7 +2951,7 @@
     "markdown": "### Increasing and reducing values \nWhen multiple card effects or abilities increase or reduce a value, such as agility, ignore any “to a minimum of 0” restrictions until the calculation is complete. For example, if a ship with a printed agility value of “0” and the “Structural Damage” Damage card (reducing its agility by 1 to a minimum of 0) uses Countermeasures, (increasing its agility by 1) its agility is “0.”",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -2987,7 +3010,7 @@
     "markdown": "### Inside firing arc at range X \nSome card abilities use the expression “inside firing arc at Range X” or “inside firing arc beyond Range X.” This compound phrase defines a specific situation where the closest point to closest point distance between two ships, when measured inside firing arc, is at a specific range band. See the diagram below.\n\n**Inside Firing Arc at Range X Example:** ![Inside Firing Arc at Range X Example](/static/images/rules/inside-firing-arc-range-x-example.png)\n\nA K-wing equipped with the Tactician Upgrade card is attacking with its turret primary weapon, and has a choice of three possible targets. If it attacks the TIE fighter, Tactician would trigger, since the TIE fighter is inside arc at Range 2. If it attacks the Firespray-31, it would roll 1 additional attack die, because the closest point to closest point measurement between the K-wing and the Firespray-31 is Range 1, and trigger Tactician, because the Firespray-31 is inside arc at Range 2. If the K-wing attacks the TIE Adv. Prototype (which is equipped with Autothrusters), the closest point to closest point measurement between the K-wing and the TIE Adv. Prototype is Range 2, but the TIE Adv. Prototype is inside arc at Range 3. Therefore, the TIE Adv. Prototype will not roll an additional defense die and Tactician will not trigger, but Autothrusters will trigger.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -3011,7 +3034,7 @@
     "markdown": "### Integrated Astromech \n![Integrated Astromech](/static/images/upgrades/integrated-astromech.png)\n#### Card Clarifications \nIf Integrated Astromech is used to discard R2-D6, any equipped Elite Pilot Talent Upgrade card is not discarded.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -3086,6 +3109,21 @@
     ]
   },
   {
+    "id": 267,
+    "name": "Jam",
+    "type": "rule",
+    "huge_ship_rule": true,
+    "expansion_rule": false,
+    "markdown": "### Jam [Epic] \n![Jam icon](/static/images/actions/jam.svg)\nJam icon\n\nShips with the [Jam] action icon in their action bar may perform the **Jam** action.\n\nTo do so, choose one enemy ship at Range 1–2 and assign it stress tokens until it has a total of two stress tokens.",
+    "references": [
+      {
+        "code": "SWX.HSR.V3",
+        "page": 2
+      }
+    ],
+    "related_rules": []
+  },
+  {
     "id": 179,
     "name": "Jan Ors",
     "type": "card",
@@ -3094,7 +3132,7 @@
     "markdown": "### Jan Ors \n![Jan Ors](/static/images/pilots/jan-ors.png)\n#### Card Clarifications \nJan Ors’ ability only applies to a single attack. For example, if a ship equipped with Gunner or Cluster Missiles rolls the extra attack die granted by Jan Ors on its first attack, it does not receive the extra attack die from Jan Ors again during the second attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -3109,7 +3147,7 @@
     "markdown": "### Jan Ors ([Crew]) \n![Jan Ors](/static/images/upgrades/jan-ors.png)\n#### Card Clarifications \nIf the ship Jan Ors is equipped to performs a focus action or would be assigned a focus token, Jan Ors can be used to assign that ship an evade token instead.\n\nA ship equipped with Recon Specialist at Range 1–3 of Jan Ors that performs a focus action may receive 1 focus token and 1 evade token.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3124,7 +3162,7 @@
     "markdown": "### Jek Porkins \n![Jek Porkins](/static/images/pilots/jek-porkins.png)\n#### Card Clarifications \nIf Jek Porkins uses his pilot ability to discard the stress token received from executing a red maneuver, he does not skip his Perform Action step.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -3139,7 +3177,7 @@
     "markdown": "### Kanan Jarrus \n![Kanan Jarrus](/static/images/upgrades/kanan-jarrus.png)\n#### Card Clarifications \nKanan's ability triggers after the Clean Up substep of the Execute Maneuver step.\n\nIf a friendly ship at Range 1–2 executes a white maneuver and overlaps a debris cloud, Kanan’s ability can remove the stress token gained from the debris cloud.\n\nKanan Jarrus's ability triggers at the same time as the *Millennium Falcon* (Heroes of the Resistance) title ability, therefore allowing Kanan's ability to remove the stress gained from title. Kanan's ability triggers before stress from Inertial Dampeners or Daredevil is assigned.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3154,7 +3192,7 @@
     "markdown": "### Kath Scarlet \n![Kath Scarlet](/static/images/pilots/kath-scarlet.png)\n#### Card Clarifications \nIf Kath Scarlet attacks with an Ion Cannon, [Critical Hit] results that are canceled by the Ion Cannon’s game effect do not cause the defender to receive 1 stress token.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -3169,7 +3207,7 @@
     "markdown": "### Keyan Farlander \n![Keyan Farlander](/static/images/pilots/keyan-farlander.png)\n#### Card Clarifications \nWhen attacking, if Keyan Farlander has a stress token, he can use his ability even if he hasn’t rolled any [Focus] results; in this case, 0 dice are modified but 1 stress token is removed.\n\nKeyan Farlander can use his ability only once per attack as card abilities cannot be resolved more than once during the timing specified on the card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       }
     ],
@@ -3228,7 +3266,7 @@
     "markdown": "### Latts Razzi \n![Latts Razzi](/static/images/pilots/latts-razzi.png)\n#### Card Clarifications \nLatts Razzi’s ability is used when a ship is declared as the target of an attack. Therefore, when using a secondary weapon that says “perform this attack twice,” Latts Razzi’s ability can only be used during the first attack and only applies to the first attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3243,7 +3281,7 @@
     "markdown": "### “Leebo” \n![“Leebo”](/static/images/pilots/leebo.png)\n#### Card Clarifications \nIf Maarek Stele deals “Leebo” a faceup damage card, “Leebo” may still use his ability to draw an additional Damage card. He then chooses to resolve either the Damage card chosen by Maarek Stele or the additional card and discards the unchosen card. “Leebo’s” ability cannot trigger from a Damage card being flipped faceup.\n\nIf “Leebo” is equipped with Determination, he may draw two Damage cards. If one has the Pilot trait, he may choose it and immediately discard it.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3258,7 +3296,7 @@
     "markdown": "### Lieutenant Lorrir \n![Lieutenant Lorrir](/static/images/pilots/lieutenant-lorrir.png)\n#### Card Clarifications \nWhen declaring a barrel roll action, the player controlling Lieutenant Lorrir must declare both the side and direction of the roll. If Lorrir can perform the barrel roll action, he must do so. If Lorrir cannot perform the barrel roll action, the player controlling Lorrir may declare a Barrel Roll action in any other direction, or he may declare a different action.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3273,7 +3311,7 @@
     "markdown": "### Lightning Reflexes \n![Lightning Reflexes](/static/images/upgrades/lightning-reflexes.png)\n#### Card Clarifications \nA ship equipped with Lightning Reflexes can use it even if the ship overlapped another ship when executing its maneuver.\n\nA ship that executes a maneuver that is not on its dial (such as an ionized ship, a ship using Inertial Dampeners, or Juno Eclipse using her pilot ability to execute a maneuver that is not on her dial) cannot use Lightning Reflexes.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3312,7 +3350,7 @@
     "markdown": "### Lone Wolf \n![Lone Wolf original card](/static/images/upgrades/lone-wolf-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“When attacking or defending, if there are no other friendly ships at Range 1–2, you may reroll 1 of your blank results.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],
@@ -3327,11 +3365,11 @@
     "markdown": "### Luke Skywalker ([Crew]) \n![Luke Skywalker original card](/static/images/upgrades/luke-skywalker-original.png)\nOriginal card\n\n![Luke Skywalker corrected card](/static/images/upgrades/luke-skywalker-corrected.png)\nCorrected card\n#### Card errata \nThe first sentence on this card should read:\n\n“After you perform an attack that does not hit, you may immediately perform a primary weapon attack.”\n\n#### Card Clarifications \nUsing Luke Skywalker’s ability is a separate attack, which means that the ship can choose to declare a different target for the second attack, and any abilities to modify attack dice (such as spending a focus token or a target lock) must be used for each attack separately.\n\nWhen using a secondary weapon that says “perform this attack twice”, **both** attacks must miss for Luke Skywalker to activate.\n\nSee \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3346,7 +3384,7 @@
     "markdown": "### M9-G8 \n![M9-G8](/static/images/upgrades/m9-g8.png)\n#### Card Clarifications \nWhen using M9-G8, the source of the reroll is the ship equipped with M9-G8, not the ship attacking. For example, if a ship is attacking with Snap Shot, a ship equipped with M9-G8, can cause that ship to reroll a die.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3361,7 +3399,7 @@
     "markdown": "### Manaroo \n![Manaroo original card](/static/images/pilots/manaroo-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship at Range 1.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],
@@ -3452,7 +3490,7 @@
     "markdown": "### Marksmanship \n![Marksmanship](/static/images/upgrades/marksmanship.png)\n#### Card Clarifications \nAfter a ship performs the Marksmanship action, its effect may be applied during each attack it performs until the end of the round.\n\nWhen a ship uses the Marksmanship action, during each attack that round the controlling player must choose to apply the entire effect of Marksmanship or not. If using the Marksmanship effect, 1 [Focus] result must to be changed to a [Critical Hit] result before any [Focus] results are changed to [Hit] results.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -3467,7 +3505,7 @@
     "markdown": "### Measuring range \nPlayers may **only** measure range and/or use the range ruler to determine whether a ship is inside or outside of a firing arc at the following times:\n\n- When a ship becomes the active ship during the combat phase, the active player can measure range from the active ship to any enemy ships before declaring one as its target.\n\n- When a player declares a ship’s ability that requires another ship (or ships) to be at a certain range, the player trying to resolve the ability can measure range from their ship to any valid ships before resolving the ability.\n\n- After declaring the intended target of a target lock action, the active player may measure range to the intended target, and only to the intended target.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -3487,11 +3525,11 @@
     "markdown": "### Miranda Doni \n![Miranda Doni](/static/images/pilots/miranda-doni.png)\n#### Card Clarifications \nIf Miranda performs an attack using a secondary weapon that says “perform this attack twice,” she may use her ability on the first attack or the second attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 12
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3506,7 +3544,7 @@
     "markdown": "### Missed opportunities \nOccasionally, players forget to resolve important effects during the course of a game. At formal and premier events, once an opportunity is missed and play has proceeded past that timing window, the opportunity is lost:\n\n- If a player forgets to perform an action with a ship and play has proceeded to the next ship (a dial has been revealed, a maneuver has been executed, etc.), that ship loses its chance to perform an action.\n\n- If a player forgets to place a maneuver dial next to a ship, but tells his opponent he is ready to begin the round, once play has proceeded to the first ship (a dial has been revealed, a maneuver has been executed, etc.), he may no longer place a dial. Instead, when that ship activates, the player’s opponent chooses the maneuver that ship will perform. No actions may be taken before this maneuver, but play proceeds normally after the maneuver has been executed.\n\n- If a player forgets to declare a game effect during a specific timing window (such as declaring the target of Swarm Tactics at the start of the Combat phase), he may not execute that game effect at a later time.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 5
       }
     ],
@@ -3645,7 +3683,7 @@
     "markdown": "### Nashtah Pup Pilot \n![Nashtah Pup Pilot](/static/images/pilots/nashtah-pup-pilot.png)\n#### Card Clarifications \nIf the only ship remaining in a match is the *Nashtah Pup* Pilot, the player who controls that ship wins. If this scenario arises during a tournament match, the *Nashtah Pup* Pilot is treated as though it is worth 1 point. For example, in a standard 100 point dogfight match, the player who controls the *Nashtah Pup* Pilot earns a win and has a margin of victory of 101 and his opponent scores 99. The *Nashtah Pup* Pilot cannot be equipped with any Upgrade card. If Bossk is equipped with *Hound’s Tooth* and either Veteran Instincts or Adaptability, the *Nashtah Pup* Pilot keeps that modified pilot skill.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3660,7 +3698,7 @@
     "markdown": "### Navigator \n![Navigator](/static/images/upgrades/navigator.png)\n#### Card Clarifications \nA ship that has been ionized cannot use Navigator to change the speed of the white [[Straight] 1] maneuver.\n\nIf Boba Fett is equipped with Navigator and chooses a bank maneuver, when he reveals his dial he may rotate to any bank maneuver of any speed.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -3675,7 +3713,7 @@
     "markdown": "### Nien Nunb \n![Nien Nunb](/static/images/upgrades/nien-nunb.png)\n#### Card Clarifications \nIf ship is ionized, Nien Nunb’s ability **does** make the white [[Straight] 1] maneuver green.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -3690,7 +3728,7 @@
     "markdown": "### “Night Beast” \n![“Night Beast”](/static/images/pilots/night-beast.png)\n#### Card Clarifications \nIf “Night Beast” is stressed before he executes a green maneuver, he can perform a free focus action since the free action is granted after the stressed is removed while executing the maneuver.\n\nIf “Night Beast” executes a maneuver that causes him to overlap another ship, he can still perform a free focus action.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3709,7 +3747,7 @@
         "page": null
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       },
       {
@@ -3801,7 +3839,7 @@
     "markdown": "### Omega Leader \n![Omega Leader](/static/images/pilots/omega-leader.png)\n#### Card Clarifications \nIf “Omega Leader” has an enemy ship locked, and Emperor Palpatine is equipped to a different enemy ship, the ship with Emperor Palpatine equipped may modify one of the locked ship’s dice.\n\nIf a ship locked by “Omega Leader” attacks “Omega Leader” with a Heavy Laser Cannon, it does not change its [Critical Hit] results to [Hit] results.\n\nAdding or subtracting dice (i.e. Jan Ors) and canceling die results (i.e. Crack Shot) do not count as modifying dice. However, added die results (C-3P0, Advanced Targeting Computer, Accuracy Corrector, etc.) do count as modifying dice and cannot be used.\n\nIf “Omega Leader” has an enemy ship locked, when that ship attacks or defends against “Omega Leader,” that ship cannot resolve abilities that would modify dice, even 0 dice, such as Keyan Farlander’s ability. Additionally, that ship cannot resolve abilities that cause “Omega Leader” to reroll his dice (such as R7 Astromech or Elusiveness), as these are abilities that modify dice.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -3816,7 +3854,7 @@
     "markdown": "### Open, derived, and hidden information \n- Open information is any information about the game, game state, or ships that is available to all players. This includes faceup damage cards, any relevant tokens, rules concerning a particular bomb or other munition, discarded upgrade cards, and any other information continuously available to all players.\n\n    All players are entitled access to open information and cannot hide open information from an opponent or omit specific details. A player must allow his or her opponent to discover the information themselves if they attempt to do so.\n\n- Derived information is any information about the game, game state, or ships all players have had the opportunity to learn through card/game effects or through the process of deduction using open information. This includes a player’s current score, how many Direct Hit damage cards might remain in a damage deck, which ship a dial belongs to, etc.\n\n    Derived information may be marked with the use of a token or other indicator so that players remember the information. A player cannot misrepresent derived information or hide the open information necessary to discover derived information.\n\n    If derived information is dependent on a player’s previous decision or action, he or she must answer truthfully when asked about that decision or action. For example, Steph chooses to use Corran Horn’s ability during the End phase. During the following Planning phase, Bryan forgets whether Corran Horn used his ability or not and asks Steph. Steph must answer honestly that Corran Horn did use his ability the previous turn.\n\n- Hidden information is any information about the game, game state, or ships unavailable to one or more players. This includes facedown damage cards, facedown maneuver dials, cards within the damage deck, etc.\n\n    A player cannot learn hidden information without the aid of a game effect, rule, or another player verbally communicating the information. However, if a player that has access to hidden information about the game or a card and chooses to verbally share it with his or her opponent, that player is not required to tell the truth.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -3831,7 +3869,7 @@
     "markdown": "### Outmaneuver \n![Outmaneuver](/static/images/upgrades/outmaneuver.png)\n#### Card Clarifications \nA ship with a turret weapon (including a ship with a 360-degree primary turret) is affected by Outmaneuver **unless** it is defending against a ship that is inside the printed, shaded firing arc on their ship token, and **only** gains the benefit of Outmaneuver when attacking a ship inside the printed, shaded firing arc on its ship token.\n\nAll firing arcs (including special, auxiliary, mobile, and primary firing arcs) are included for this ability.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -3846,7 +3884,7 @@
     "markdown": "### Overlapping in-line ships \nSometimes a round will end with two ships touching each other, parallel, and facing the same direction. After both ships execute a maneuver of the same speed or perform the same boost or barrel roll action, they are not touching even if their bases are still in physical contact (unless they overlapped).",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -3926,7 +3964,7 @@
     "markdown": "### Parallel ships and attacking \nIf an attacking ship is perfectly parallel to the defender such that there are multiple “closest points” on the defender’s base or the closest point cannot be accurately determined, the attacker chooses where to draw the closest point to closest point line.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -3946,7 +3984,7 @@
     "markdown": "### Performing a barrel roll \nWhen performing a barrel roll, a player must first declare from which side of the ship’s base the action will be performed. Then, he measures to see if the ship is able to perform a barrel roll action to any legal area on the declared side, moving the template as necessary. If the ship can perform the barrel roll action on the declared side, it must do so. If the ship cannot perform the barrel roll action, the player may declare a barrel roll in the other direction, or he may declare a different action.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -3966,7 +4004,7 @@
     "markdown": "### Performing a boost \nWhen performing a boost, a player must declare which maneuver template and direction he will use. Then, he measures to see if the ship is able to perform a boost action with the declared template in the desired direction. If the ship can perform the boost action, it must do so. If the ship cannot perform the boost action, the player may declare a different maneuver template or direction to use, or he may declare a different action.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -4134,7 +4172,7 @@
     "markdown": "### Prince Xizor \n![Prince Xizor](/static/images/pilots/prince-xizor.png)\n#### Card Clarifications \nPrince Xizor’s ability triggers when he is hit by an attack. A ship that suffers damage from Prince Xizor’s ability is not considered hit by an attack.\n\nIf Prince Xizor is hit by an attack with an effect that triggers upon being hit and cancels dice results (such Ion Cannon), he cannot use his ability and must suffer the effect of that card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -4173,11 +4211,11 @@
     "markdown": "### Proximity Mines \n![Proximity Mines original card](/static/images/upgrades/proximity-mines-original.png)\nOriginal card\n\n![Proximity Mines corrected card](/static/images/upgrades/proximity-mines-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“**Action:** Discard this card to drop 1 proximity mine token. When a ship’s base or maneuver template overlaps this token, this token **detonates.**”\n\nNote that a Proximity Mine token that is dropped on a ship is placed under the ship’s base and does immediately detonate. A ship is also considered to be overlapping a Proximity Mine token when it executes a maneuver, decloaks, or performs a boost or barrel roll.\n\n#### Card Clarifications \nIf a ship executes a maneuver in which its maneuver template and/or base overlaps multiple proximity mine tokens, all of the proximity mine tokens detonate, even if the ship is destroyed by the first token it overlaps.\n\nIf a ship drops a Proximity Mine so that it overlaps multiple ships, the player dropping the bomb chooses which ship suffers the effects of the Proximity Mine detonating.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -4201,7 +4239,7 @@
         "page": null
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       }
     ],
@@ -4225,7 +4263,7 @@
     "markdown": "### Push the Limit \n![Push the Limit](/static/images/upgrades/push-the-limit.png)\n#### Card Clarifications \nSee Experimental Interface. Free actions, such as a free action granted from Squad Leader, can trigger Push the Limit. This can result in an action interrupting another effect, causing that effect to finish resolving later. For example, if a ship performs a free barrel roll action granted by Expert Handling, it could use that action as a trigger for Push the Limit. After Push the Limit resolves, Expert Handling finishes resolving.\n\nAdditionally, the free action granted from Push the Limit can itself trigger other abilities that occur after performing an action. Those abilities resolve before the ship receives the stress token from Push the Limit. For example, a ship also equipped with TIE/v1 can boost, use Push the Limit to target lock, then perform the free evade from TIE/v1 before receiving the stress from Push the Limit.\n\nIf a player uses Push the Limit to attempt an action he is unable to perform (such as attempting to Target Lock a ship that is out of range), he may perform a different action **or** decide not to use Push the Limit at all.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 18
       }
     ],
@@ -4240,7 +4278,7 @@
     "markdown": "### \"Quickdraw\" \n![\"Quickdraw\"](/static/images/pilots/quickdraw.png)\n#### Card Clarifications \nIf \"Quickdraw\" loses a shield token during an attack, the ability triggers during step 9 of the \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 13
       }
     ],
@@ -4255,7 +4293,7 @@
     "markdown": "### R2 Astromech \n![R2 Astromech](/static/images/upgrades/r2-astromech.png)\n#### Card Clarifications \nA ship equipped with R2 Astromech that has Damaged Engine assigned to it treats all of its turn maneuvers [[Turn Left] and [Turn Right]] as red maneuvers, including the 1- and 2-speed turn maneuvers.\n\nIf ship is ionized, R2 Astromech’s ability does make the white [[Straight] 1] maneuver green.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -4270,7 +4308,7 @@
     "markdown": "### R2-D2 ([Astromech]) \n![R2-D2](/static/images/upgrades/r2-d2.png)\n#### Card Clarifications \nIf a ship equipped with R2-D2 executes a green maneuver and its base or maneuver template overlaps a proximity mine token, **that ship must roll for damage before it recovers 1 shield.**\n\nIf a ship equipped with R2-D2 executes a green maneuver and its base or maneuver template overlaps an obstacle token or its base overlaps a ship equipped with Anti-Pursuit Lasers, **that ship recovers 1 shield before rolling for damage**.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -4285,7 +4323,7 @@
     "markdown": "### R2-D2 ([Crew]) \n![R2-D2](/static/images/upgrades/r2-d2-crew.png)\n#### Card Clarifications \nIf R2-D2 is equipped to a Huge ship with multiple sections, he affects only the section he is equipped to. For example, if R2-D2 is equipped to the fore section, and the fore section has no shields remaining, R2-D2 can be used to recover one shield on that section (even if the aft section has shields remaining).\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -4300,7 +4338,7 @@
     "markdown": "### R3-A2 \n![R3-A2](/static/images/upgrades/r3-a2.png)\n#### Card Clarifications \nIf a ship equipped with R3-A2 performs a secondary weapon attack that says “perform this attack twice,” this ability can only be used on the first attack because the target is not declared again during the second attack.\n\nR3-A2's ability triggers at the end of the \"Declare Target\" step.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -4315,7 +4353,7 @@
     "markdown": "### R4 Agromech \n![R4 Agromech](/static/images/upgrades/r4-argomech.png)\n#### Card Clarifications \nTarget locks acquired using R4 Agromech’s ability may be used during that attack.\n\nIf a ship equipped with R4 Agromech is attacking with a secondary weapon that requires the ship to spend a focus token (such as a Blaster Turret or any weapon used with Deadeye), that ship cannot acquire a target lock on the defender because the enemy ship becomes the defender after the cost for the attack is paid. See \"Timing chart for performing an attack\".\n\nYou may spend 1 focus token to change all [Focus] results to [Hit] results only once during the \"Modify Attack\" dice step. See \"Spending tokens\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -4330,7 +4368,7 @@
     "markdown": "### R5-X3 \n![R5-X3](/static/images/upgrades/r5-x3.png)\n#### Card Clarifications \nSince the attacker determines whether an attack is obstructed, if a ship discards R5-X3 before it reveals its dial, during that round, obstacles do not obstruct that ship's attacks. Additionally, obstacles can still obstruct attacks targeting that ship.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -4345,7 +4383,7 @@
     "markdown": "### R7-T1 \n![R7-T1](/static/images/upgrades/r7-t1.png)\n#### Card Clarifications \nIf a ship equipped with R7-T1 is at Range 1–2 and inside the firing arc of an enemy ship, the following sequence occurs: the ship equipped with R7-T1 **may** acquire a target lock on the enemy ship. Then, the ship equipped with R7-T1 **may** perform a free boost action, even if it did not acquire a target lock on the enemy ship\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -4360,7 +4398,7 @@
     "markdown": "### Rage \n![Rage](/static/images/upgrades/rage.png)\n#### Card Clarifications \nWhen a ship receives 2 stress tokens at the same time, it counts as receiving 1 stress token after receiving 1 stress token. For example, if Soontir Fel uses Rage, he would receive 2 focus tokens after receiving 2 stress tokens.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -4479,8 +4517,46 @@
     "markdown": "### Rebel Captive \n![Rebel Captive](/static/images/upgrades/rebel-captive.png)\n#### Card Clarifications \nRebel Captive triggers during step 1iii of the \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 263,
+    "name": "Recover",
+    "type": "rule",
+    "huge_ship_rule": true,
+    "expansion_rule": false,
+    "markdown": "### Recover [Epic] \n![Recover icon](/static/images/actions/recover.svg)\nRecover icon\n\nShips with the action [Recover] icon in their action bar may perform the **Recover** action.\n\nTo do so, remove **all** energy tokens from the corresponding Ship card.\n\nFor each energy token removed, that ship recovers one shield.\n\nFor ships with multiple Ship cards, for each energy token removed, the ship recovers one shield on either of its section.\n\nA huge ship cannot exceed a ship card’s shield value with a recover action.",
+    "references": [
+      {
+        "code": "SWX.HSR.V3",
+        "page": 2
+      }
+    ],
+    "related_rules": []
+  },
+  {
+    "id": 265,
+    "name": "Reinforce",
+    "type": "rule",
+    "huge_ship_rule": false,
+    "expansion_rule": false,
+    "markdown": "### Reinforce \n![Reinforce icon](/static/images/actions/reinforce.svg)\nReinforce icon\n\n#### Small and Large Ships\n\nA ship with the [Reinforce] icon can perform the **Reinforce** action.\n\nWhen a small or large ship performs a reinforce action, choose either the fore or aft side of a double-sided reinforce token and place the token with that side faceup near its ship token.\n\nWhen a small or large ship with a reinforce token is defending, resolve the following effects:\n\n- If the fore side of the token is faceup and the attacker is inside the defender’s firing arc, add 1 [Evade] result.\n\n- If the aft side of the token is faceup and the attacker is not inside the defender’s firing arc, add 1 [Evade] result.\n\nThis effect does not spend the reinforce token.\n\nDuring the End phase, remove all reinforce tokens.\n\n#### Huge Ships\n\nShips with the [Reinforce] action icon in their action bar may perform the **Reinforce** action.\n\nTo perform this action, place one reinforce token next to either the fore or aft section of the ship.\n\nWhen a ship with a reinforce token is defending, the reinforce token adds one [Evade] result to its defense roll, but only if that token is assigned to the targeted section.\n\nThis effect does not spend the reinforce token; thus, a reinforce token can provide this effect for multiple attacks during a single round.\n\nDuring the End phase, remove all reinforce tokens along with focus and evade tokens.",
+    "references": [
+      {
+        "code": "REINFORCEACTION",
+        "page": null
+      },
+      {
+        "code": "SWX.HSR.V3",
+        "page": 2
+      },
+      {
+        "code": "SWX.HSR.V3",
+        "page": null
       }
     ],
     "related_rules": []
@@ -4494,11 +4570,11 @@
     "markdown": "### Reinforced Deflectors \n![Reinforced Deflectors original card](/static/images/upgrades/reinforced-deflectors-original.png)\nOriginal card\n\n![Reinforced Deflectors corrected card](/static/images/upgrades/reinforced-deflectors-corrected.png)\nCorrected card\n#### Card errata \nThe first sentence should read:\n\n“After defending, if you suffered a combination of 3 or more damage and critical damage during the attack, recover 1 shield (up to your shield value).”\n\n#### Card Clarifications \nIf a ship is dealt a Direct Hit! Damage card during an attack, it counts as having suffered 1 critical damage (even though Direct Hit! counts as 2 damage against its hull value).\n\nWhen a ship equipped with Reinforced Deflectors is hit by Plasma Torpedoes, the additional shield token removed by Plasma Torpedoes does not count as suffering damage. If this attack causes that ship to suffer 3 or more damage, it recovers 1 shield after Plasma Torpedoes resolves.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -4513,7 +4589,7 @@
     "markdown": "### Resolving large ship collisions \nIt can sometimes be difficult to precisely resolve collisions. This is especially true for a large ship attempting to perform a turn maneuver that overlaps another ship. To accurately resolve these collisions, set the turn template in place to mark the position of the large ship, remove the ship from the play area temporarily, and place a [[Straight]] template on each end of the turn template. Then, resolve the collision as normal, moving the ship backward along the template until it no longer overlaps another ship. Use the [[Straight]] templates as a visual reference while moving the ship, adjusting the ship so that the front and rear guides remain centered over the templates.\n\n**Large Ship Collision Example:** ![Large ship collision example](/static/images/rules/large-ship-collision-example.png)\n\nBoba Fett attempts to execute a [[Turn Left] 1] turn maneuver that causes it to overlap Rookie Pilot. The Imperial player backs Boba Fett along the template until it is no longer overlapping. He keeps the center of the front and back guides centered over the straight templates.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -4533,7 +4609,7 @@
     "markdown": "### Resolving simultaneous effects \nIf an effect simultaneously resolves against multiple ships, the player controlling the effect chooses the order in which the ships are affected. For example, the effects of Assault Missiles and \"Chopper\" (ship) are resolved in the order of their controlling player against multiple targets.\n\nIf a player has simultaneous effects that resolve from the same trigger, that player resolves the entirety of one effect (and any subsequent effects from that trigger) before resolving the others. For example, if a ship overlaps multiple cluster mine tokens at the same time, the controlling player resolves one of the cluster mines (rolling for damage and removing it) before resolving any remaining effects (even if the ship was already destroyed).",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -4548,7 +4624,7 @@
     "markdown": "### Revealing red maneuvers \nWhen a player reveals a red maneuver for a stressed ship, the only card effects he may resolve are those that change the maneuver to a different one (Adrenaline Rush, Navigator, etc.). After resolving these effects, if the ship would still be executing a red maneuver, the owner moves the ship as if it were assigned a white [[Straight] 2] maneuver instead. The speed, bearing, and difficulty of this maneuver cannot be changed.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -4580,7 +4656,7 @@
     "markdown": "### Rexler Brath \n![Rexler Brath](/static/images/pilots/rexler-brath.png)\n#### Card Clarifications \nRexler Brath must choose to use his pilot ability **after** resolving any faceup damage cards dealt by his attack.\n\nAny faceup damage cards that have been resolved and flipped facedown **and** any additional Damage cards dealt by the Minor Explosion Damage cards are also flipped faceup when Rexler Brath uses his ability.\n\nRexler Brath may only use his pilot ability once per attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -4595,7 +4671,7 @@
     "markdown": "### Rolling dice \nWhen a player is required to roll attack or defense dice, if he rolls too many dice, he must pick up all of his dice and reroll them. If he rolls too few dice, he must leave the roll intact and roll the required number of additional dice, adding the new results to the original roll.\n\nWhen a player is instructed to reroll a number of dice, he must choose all of the dice that he will reroll before rerolling any.\n\nIf a rolled die is cocked (not level), it must be rerolled.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
@@ -4669,7 +4745,7 @@
     "markdown": "### Saboteur \n![Saboteur](/static/images/upgrades/saboteur.png)\n#### Card Clarifications \nIf Saboteur flips a Damage card that causes the targeted ship to be unable to resolve a maneuver (such as Thrust Control Fire before a ship attempts a red maneuver, or Damaged Engine on a stressed ship before the ship attempts a turn), the stressed ship executes a white [[Straight] 2] when it activates during the Activation phase.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -4684,7 +4760,7 @@
     "markdown": "### Salvaged Astromech \n![Salvaged Astromech original card](/static/images/upgrades/salvaged-astromech-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“When you are dealt a faceup Damage card with the Ship trait, you may immediately discard that card (before resolving its effect). Then, discard this Upgrade card.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],
@@ -4839,7 +4915,7 @@
     "markdown": "### Shaken Pilot \n![Shaken Pilot](/static/images/damage/tfa-shaken-pilot.png)\n#### Card Clarifications \nIf a ship with Shaken Pilot reveals a straight ([Straight]) maneuver, the opposing player chooses any nonstraight maneuver on that ship’s dial for that ship to execute. If the ship is also stressed, the opposing player chooses any non-red, non-straight maneuver on that ship’s dial for that ship to execute\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -4934,7 +5010,7 @@
     "markdown": "### Simultaneous attack rule \nDuring the Combat phase, all ships with a pilot skill value equal to the active ship have the opportunity to attack before being destroyed. If a ship would be destroyed and if it has the same pilot skill value as the active ship but has **not** activated during the Combat phase, it is not destroyed. Instead, it retains its Damage cards and continues to function as normal, suffering any effects on its Damage cards. After it has activated during the Combat phase, it is destroyed and removed from the play area.\n\n- Even if a ship did not have a valid target for an attack, it is removed after it activates.\n\n- While the Simultaneous Attack Rule keeps a ship in the play area, that ship’s abilities and Damage cards remain active.\n\n- After a ship has activated during the Combat phase, before it is destroyed, it can resolve any abilities that trigger after performing an attack.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 3
       },
       {
@@ -4963,11 +5039,11 @@
   },
   {
     "id": 116,
-    "name": "Slam action",
+    "name": "SLAM",
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": true,
-    "markdown": "### Slam action † \n![SLAM icon](/static/images/actions/slam.svg)\nSLAM icon\n\nShips with the [Slam] icon in their action bar may perform a SLAM (SubLight Acceleration Motor) action.\n\nTo SLAM, choose and execute a maneuver on the ship’s dial. The chosen maneuver must be the same speed as the maneuver that ship executed this round. Then assign that ship a weapons disabled token.\n\nA ship with a weapons disabled token assigned to it **cannot** perform attacks. Weapons disabled tokens are removed during the End phase along with focus and evade tokens.\n\nPerforming a SLAM counts as executing a maneuver.\n\n- A ship **cannot** perform SLAM as a free action.\n\n**Weapons Disabled Token:** ![Weapons Disabled Token](/static/images/tokens/cant-attack-token.png)",
+    "markdown": "### SLAM † \n![SLAM icon](/static/images/actions/slam.svg)\nSLAM icon\n\nShips with the [Slam] icon in their action bar may perform a SLAM (SubLight Acceleration Motor) action.\n\nTo SLAM, choose and execute a maneuver on the ship’s dial. The chosen maneuver must be the same speed as the maneuver that ship executed this round. Then assign that ship a weapons disabled token.\n\nA ship with a weapons disabled token assigned to it **cannot** perform attacks. Weapons disabled tokens are removed during the End phase along with focus and evade tokens.\n\nPerforming a SLAM counts as executing a maneuver.\n\n- A ship **cannot** perform SLAM as a free action.\n\n**Weapons Disabled Token:** ![Weapons Disabled Token](/static/images/tokens/cant-attack-token.png)",
     "references": [
       {
         "code": "SLAMACTION",
@@ -4981,51 +5057,51 @@
       },
       {
         "id": 117,
-        "name": "Slam timing"
+        "name": "SLAM timing"
       },
       {
         "id": 118,
-        "name": "Slam while ionized"
+        "name": "SLAM while ionized"
       }
     ]
   },
   {
     "id": 117,
-    "name": "Slam timing",
+    "name": "SLAM timing",
     "type": "rule-clarification",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Slam timing \nIf an effect triggers \"after performing an action\" or \"after executing a maneuver,\" these effects occur at the same time after a ship performs a SLAM action.",
+    "markdown": "### SLAM timing \nIf an effect triggers \"after performing an action\" or \"after executing a maneuver,\" these effects occur at the same time after a ship performs a SLAM action.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 6
       }
     ],
     "related_rules": [
       {
         "id": 116,
-        "name": "Slam action"
+        "name": "SLAM"
       }
     ]
   },
   {
     "id": 118,
-    "name": "Slam while ionized",
+    "name": "SLAM while ionized",
     "type": "rule-clarification",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Slam while ionized \nAn ionized ship with SLAM in its action bar can perform a SLAM action after executing the white [[Straight] 1] from being ionized. The player chooses a maneuver on the ship’s dial that is a 1-speed maneuver.",
+    "markdown": "### SLAM while ionized \nAn ionized ship with SLAM in its action bar can perform a SLAM action after executing the white [[Straight] 1] from being ionized. The player chooses a maneuver on the ship’s dial that is a 1-speed maneuver.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 7
       }
     ],
     "related_rules": [
       {
         "id": 116,
-        "name": "Slam action"
+        "name": "SLAM"
       }
     ]
   },
@@ -5118,7 +5194,7 @@
     "markdown": "### Spending tokens \nWhen attacking, players may spend target locks and choose to reroll 0 attack dice. Additionally, players may spend a focus token even if they do not roll any [Focus] results. When defending, players may spend focus tokens even if they do not roll any [Focus] results and may spend evade tokens to add evade results in excess of the number of hit and critical hit results.\n\nFocus, evade, and target lock tokens cannot be spent for their normal effect more than once during the \"Modify Attack Dice\" and \"Modify Defense Dice\" steps. For example, a ship cannot spend 2 evade tokens to add 2 evade results. However, a ship can spend more than 1 of each token on different effects, such as spending 1 focus token as the cost for Calculation and another focus token for its inherent effect.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 7
       }
     ],
@@ -5262,11 +5338,11 @@
     "markdown": "### Stay on Target \n![Stay on Target original card](/static/images/upgrades/stay-on-target-original.png)\nOriginal card\n\n![Stay on Target corrected card](/static/images/upgrades/stay-on-target-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed. Treat your maneuver as a red maneuver.”\n\n#### Card Clarifications \nEven if the chosen maneuver is changed by an ability such as Navigator, the maneuver that the ship executes is always a red maneuver.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 19
       }
     ],
@@ -5281,7 +5357,7 @@
     "markdown": "### Stealth Device \n![Stealth Device](/static/images/upgrades/sealth-device.png)\n#### Card Clarifications \nA ship equipped with Stealth Device only discards Stealth Device if it defends against an attack and is hit. Damage suffered from other game effects (such as Seismic Charge, asteroids, Feedback Array, or damage received for being at Range 1 of a ship hit by Assault Missiles) does not cause a ship to discard Stealth Device.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5296,7 +5372,7 @@
     "markdown": "### Stress \nA ship is stressed while it has a stress token assigned to it. A stressed ship cannot execute red maneuvers or perform actions, even free actions. A ship receives one stress token when it executes a red maneuver and removes one stress token when it executes a green maneuver.\n\n- A ship can have more than one stress token assigned to it.\n\n- Stress tokens are not removed during the End phase.\n\n- When a ship executes a green maneuver, it removes one stress token from itself even if it moves through or overlaps an obstacle or another ship.\n\n- A stressed ship cannot execute red maneuvers or perform actions. If a stressed ship reveals a red maneuver (and cannot use a game effect to rotate its dial or execute a non-red maneuver instead), the owner moves the ship as if it were a white [[Straight] 2] maneuver instead. The speed, bearing, and difficulty of this maneuver cannot be changed.\n\n**Stress tokens:** ![Stress tokens](/static/images/tokens/stress-tokens.png)",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       },
       {
@@ -5352,7 +5428,7 @@
     "markdown": "### Stunned Pilot \n![Stunned Pilot](/static/images/damage/core-stunned-pilot.png)\n#### Card Clarifications \nDamage suffered from Stunned Pilot is in addition to any damage suffered from overlapping an obstacle.\n\nIf a ship with Stunned Pilot assigned to it executes a maneuver in which the maneuver template overlaps a ship or obstacle token, but the ship’s final position does not overlap a ship or obstacle token, the effect of Stunned Pilot does not resolve.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 9
       }
     ],
@@ -5367,7 +5443,7 @@
     "markdown": "### Stygium Particle Accelerator \n![Stygium Particle Accelerator](/static/images/upgrades/stygium-particle-accelerator.png)\n#### Card Clarifications \nWhen used with Cloaking Device, if you are forced to decloak at the end of the round and choose to perform the free evade action from Stygium Particle Accelerator, the evade token is not discarded.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5397,11 +5473,11 @@
     "markdown": "### Swarm Tactics \n![Swarm Tactics original card](/static/images/upgrades/swarm-tactics-original.png)\nOriginal card\n\n![Swarm Tactics corrected card](/static/images/upgrades/swarm-tactics-corrected.png)\nCorrected card\n#### Card errata \nThis card should read:\n\n“At the start of the Combat phase, you may choose 1 friendly ship at Range 1. Until the end of this phase, treat the chosen ship as if its pilot skill were equal to your pilot skill.”\n\n#### Card Clarifications \nSee “Altered pilot skill”.\n\nMultiple ships that have Swarm Tactics equipped may use it in sequence to give multiple ships the same high pilot skill value. For example, Howlrunner equipped with Swarm Tactics may pass her pilot skill of 8 to a Black Squadron Pilot equipped with Swarm Tactics, who may then pass a pilot skill value of 8 to an Academy Pilot.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5416,11 +5492,11 @@
     "markdown": "### Tactician \n![Tactician original card](/static/images/upgrades/tactician-original.png)\nOriginal card\n#### Card errata \nThe text on this card should be preceded by the keyword:\n\n“*LIMITED.*”\n\n#### Card Clarifications \nIf a ship is equipped with both Gunner and Tactician, and the first attack misses, the defender still receives 1 stress token from the attack.\n\nSee \"Inside firing arc at range X\".\n\nIf a ship equipped with Tactician performs a secondary weapon attack that says “perform this attack twice,” Tactician triggers only once and only after the second attack. See \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       },
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5498,7 +5574,7 @@
     "markdown": "### Tel Trevura \n![Tel Trevura](/static/images/pilots/tel-trevura.png)\n#### Card Clarifications \nTel Trevura’s ability triggers at the end of the “Deal Damage” step and before any “after attacking” or “after defending” abilities trigger.\n\nIf Tel Trevura has the Damaged Cockpit Damage card and is destroyed (for the first time) causing him to return to his normal pilot skill value, if the activation window for his pilot skill has passed, he does not become the active ship during this Combat phase. See \"Altered pilot skill\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -5513,7 +5589,7 @@
     "markdown": "### Ten Numb \n![Ten Numb](/static/images/pilots/ten-numb.png)\n#### Card Clarifications \nEvade tokens, C-3PO, and other game abilities that add [Evade] results cannot be used to cancel Ten Numb’s [Critical Hit] result, as these added results count as defense dice results.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -5528,7 +5604,7 @@
     "markdown": "### Tetran Cowall \n![Tetran Cowall](/static/images/pilots/tetran-cowall.png)\n#### Card Clarifications \nIf Tetran Cowall is equipped with the Stay On Target Upgrade card and reveals a [Koiogran Turn] maneuver, he may first treat the speed of that maneuver as “1,” “3,” or “5”, then use Stay on Target rotate his dial to another maneuver of that chosen speed. He may also reveal a maneuver, use Stay On Target to rotate his dial to a [Koiogran Turn] maneuver, then treat the speed of that [Koiogran Turn] maneuver as “1,” “3,” or “5.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -5543,11 +5619,31 @@
     "markdown": "### The Inquisitor \n![The Inquisitor](/static/images/pilots/the-inquisitor.png)\n#### Card Clarifications \nWhen the Inquisitor attacks with his primary weapon, he rolls an additional attack die. If the defender is at Range 3, the defender does not roll an additional defense die.\n\nOnly the range of the attack is treated as Range 1. Any abilities that reference the range of ships, such as Carnor Jax or Concord Dawn Protector, are not affected by The Inquisitor’s ability.\n\nAutothrusters does not trigger against The Inquisitor’s primary weapon attack.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
     "related_rules": []
+  },
+  {
+    "id": 262,
+    "name": "Thermal detonators token",
+    "type": "rule",
+    "huge_ship_rule": false,
+    "expansion_rule": false,
+    "markdown": "### Thermal detonators token \n![Thermal Detonators Token](/static/images/tokens/thermal-detonator-token.png)\n\nWhen this bomb toke detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token. Then discard this token.",
+    "references": [
+      {
+        "code": "BOMBTOKENS05",
+        "page": null
+      }
+    ],
+    "related_rules": [
+      {
+        "id": 11,
+        "name": "Bombs"
+      }
+    ]
   },
   {
     "id": 253,
@@ -5558,7 +5654,7 @@
     "markdown": "### TIE/v1 \n![TIE/v1](/static/images/upgrades/tie-v1.png)\n#### Card Clarifications \nDarth Vader cannot be equipped with the TIE/v1 Upgrade card.\n\nTIE Advanced ships cannot be equipped with the TIE/v1 Upgrade card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5573,7 +5669,7 @@
     "markdown": "### TIE/x1 \n![TIE/x1](/static/images/upgrades/tie-x1.png)\n#### Card Clarifications \nDarth Vader can be equipped with the TIE/x1 Upgrade card.\n\nTIE Adv. Prototype ships cannot be equipped with the TIE/x1 Upgrade card.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 20
       }
     ],
@@ -5588,7 +5684,7 @@
     "markdown": "### TIE/x7 \n![TIE/x7 original card](/static/images/upgrades/tie-x7-original.png)\nOriginal card\n#### Card errata \nThe second sentence should read:\n\n“After executing a 3-, 4-, or 5-speed maneuver, if you did not overlap an obstacle or ship, you may perform a free evade action.\"\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],
@@ -5603,7 +5699,7 @@
     "markdown": "### Timing chart for performing an attack \n![Timing Chart for Performing an Attack](/static/images/rules/timing-chart-for-performing-and-attack.png)",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 8
       }
     ],
@@ -5691,7 +5787,7 @@
     "markdown": "### Touching and barrel rolls \nThe state of touching occurs after a ship performs a maneuver where its base overlaps another ship and that ship moves backward along its movement template. If a ship performs a barrel roll, it cannot end that action overlapping another ship and therefore it cannot be touching another ship.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 7
       }
     ],
@@ -5715,7 +5811,7 @@
     "markdown": "### Touching and stationary maneuvers \nIf a ship begins its activation touching another ship and executes a [[Stationary] 0] maneuver (or executes a maneuver that does not move the ship away), the ships are still touching. Ships that are touching remain touching until either ship moves away (so that the bases are no longer physically adjacent).",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 7
       }
     ],
@@ -5739,7 +5835,7 @@
     "markdown": "### Touching multiple ships \nA ship can end its maneuver touching multiple ships. If a ship overlaps two ships, and its own base ends its maneuver touching both ships it has overlapped after moving backwards along the template, the overlapping ship is considered to be touching both overlapped ships, and both overlapped ships are touching it.\n\n**Touching Multiple Ships Example:** ![Touching Multiple Ships Example](/static/images/rules/touching-multiple-ships-example.png)\n\nRookie Pilot attempts to execute a [[Straight] 2] maneuver that causes it to overlap both Boba Fett and Obsidian Squadron Pilot.\n\nThe Rebel player moves Rookie Pilot backward along the template and determines that, because the Imperial ships are aligned, he must end his maneuver touching both ships.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 7
       }
     ],
@@ -5760,11 +5856,15 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Tracking tokens \nTracking tokens are used to track the number of rounds played during a game. When tracking rounds, the players place one tracking token next to the play area during setup and at the end of each round. The number of tracking tokens next to the play area indicates the current round number.\n\n- Tracking tokens are not used unless the players are using the “Round Limit” optional rule or playing a mission that requires the number of rounds to be tracked.\n\n- Some missions may specify that tracking tokens are used for purposes other than tracking rounds.",
+    "markdown": "### Tracking tokens \n**Tracking token:** ![Tracking Token](/static/images/tokens/tracking-token.png)\n\nTracking tokens are used to track the number of rounds played during a game. When tracking rounds, the players place one tracking token next to the play area during setup and at the end of each round. The number of tracking tokens next to the play area indicates the current round number.\n\n- Tracking tokens are not used unless the players are using the “Round Limit” optional rule or playing a mission that requires the number of rounds to be tracked.\n\n- Some missions may specify that tracking tokens are used for purposes other than tracking rounds.",
     "references": [
       {
         "code": "TFARR",
         "page": 19
+      },
+      {
+        "code": "TFARR",
+        "page": null
       }
     ],
     "related_rules": [
@@ -5787,7 +5887,7 @@
     "markdown": "### Tractor Beam \n![Tractor Beam](/static/images/upgrades/tractor-beam.png)\n#### Card Clarifications \nIf a ship equipped with Ruthlessness uses Tractor Beam to attack an enemy small ship and hits, that ship must first boost or barrel roll the enemy ship, then trigger Ruthlessness.\n\nIf a ship is equipped with both Tractor Beam and Tactician, the tractor beam token is resolved as part of the attack, then the distance is measured for Tactician.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -5807,7 +5907,7 @@
     "markdown": "### Tractor beam token † \n![Tractor beam tokens](/static/images/tokens/tractor-beam-tokens.png)\n\nA ship with at least one tractor beam token assigned to it follows special rules during these phases:\n\n- **Combat Phase:** The agility value of that ship is reduced by 1 for each tractor beam token, to a minimum of 0.\n\n- **End Phase:** Remove all tractor beam tokens from the ship.\n\nThe first time a **small** ship receives a tractor beam token each round, the **opposing** player may choose **one** of the following effects:\n\n- Perform a barrel roll using the [[Straight] 1] maneuver template. The **opposing** player selects the direction of the barrel roll and the final position of the ship.\n\n- Perform a boost using the [[Straight] 1] maneuver template.\n\nThis is not an action or a maneuver, and **can** cause the ship to overlap obstacles (but not other ships). The ship suffers the effect of any obstacle it overlaps.",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 2
       },
       {
@@ -5875,7 +5975,7 @@
     "markdown": "### Turr Phennir \n![Turr Phennir](/static/images/pilots/turr-phennir.png)\n#### Card Clarifications \nIf the player controlling Turr Phennir has initiative and Turr Phennir attacks an enemy ship of the same pilot skill, he may use his ability before the enemy ship attacks. If Turr Phennir is no longer a valid target after resolving his ability, the enemy ship cannot attack Turr Phennir.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -5890,7 +5990,7 @@
     "markdown": "### Twin Laser Turret \n![Twin Laser Turret](/static/images/upgrades/twin-laser-turret.png)\n#### Card Clarifications \nSee \"Timing chart for performing an attack\".\n\nIf a VCX-100 is equipped with the *Ghost* title, has a docked Attack Shuttle equipped with the *Phantom* title, and performs an attack with a Twin Laser Turret at the end of the Combat phase, that ship can perform the second attack with Twin Laser Turret.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -5926,7 +6026,7 @@
     "type": "rule",
     "huge_ship_rule": false,
     "expansion_rule": false,
-    "markdown": "### Upgrade cards \nWhen building a squad, a player can field upgrades for his ships by paying their squad point cost, which is listed in the lower-right corner of each Upgrade card. The upgrade bar along the bottom of a Ship card displays icons that represent which upgrades that ship can equip. For each icon shown in the upgrade bar, the ship can equip one Upgrade card with the matching icon.\n\nSome Upgrade cards have one or more of the following traits in their card text:\n\n- **Modification:** These upgrades can be equipped to any ship, but a ship is limited to one modification.\n\n- **Title:** These upgrades can be equipped to any ship, but a ship is limited to one title.\n\n- **Limited:** A ship cannot equip more than one copy of the **same** card with this trait.\n\n- **Rebel/Imperial/Scum only:** This upgrade can only be equipped to a ship of the specified faction.\n\n- **Small/Large/Huge ship only:** This upgrade can only be equipped to a ship of the specified size.\n\n- **Ship-type only:** This upgrade can only be equipped to a ship of the specified type. If the ship’s type includes the entirety of the restricted type, it can equip that upgrade. For example, a TIE/fo fighter can equip an Upgrade card restricted to “TIE Fighter only.”\n\n- When an Upgrade card is discarded, it is flipped facedown. The card is out of play for all purposes except when determining the total squad point cost of the ship to which it was equipped. If an Upgrade card is flipped faceup by a game effect, it returns to play equipped to the same ship.",
+    "markdown": "### Upgrade cards \nWhen building a squad, a player can field upgrades for his ships by paying their squad point cost, which is listed in the lower-right corner of each Upgrade card. The upgrade bar along the bottom of a Ship card displays icons that represent which upgrades that ship can equip. For each icon shown in the upgrade bar, the ship can equip one Upgrade card with the matching icon.\n\nSome Upgrade cards have one or more of the following traits in their card text:\n\n- **Modification:** These upgrades can be equipped to any ship, but a ship is limited to one modification.\n\n- **Title:** These upgrades can be equipped to any ship, but a ship is limited to one title.\n\n- **Limited:** A ship cannot equip more than one copy of the **same** card with this trait.\n\n- **Rebel/Imperial/Scum only:** This upgrade can only be equipped to a ship of the specified faction.\n\n- **Small/Large/Huge ship only:** This upgrade can only be equipped to a ship of the specified size.\n\n- **Ship-Type only:** This upgrade can only be equipped to a ship of the specified type. If the ship’s type includes the entirety of the restricted type, it can equip that upgrade. For example, a TIE/fo fighter can equip an Upgrade card restricted to “TIE Fighter only.”\n\n- When an Upgrade card is discarded, it is flipped facedown. The card is out of play for all purposes except when determining the total squad point cost of the ship to which it was equipped. If an Upgrade card is flipped faceup by a game effect, it returns to play equipped to the same ship.",
     "references": [
       {
         "code": "TFARR",
@@ -6077,7 +6177,7 @@
     "markdown": "### Valen Rudor \n![Valen Rudor](/static/images/pilots/valen-rudor.png)\n#### Card Clarifications \nIf the player controlling Valen Rudor has initiative and uses Valen Rudor’s ability to move (such as from a boost or barrel roll action), if the attacker has the ability to perform another attack (such as from Gunner), range is measured and firing arc is checked again. This can prevent the attacker from performing the second attack.\n\nWhen defending against a secondary weapon that says “perform this attack twice,” the player controlling Valen Rudor can use his ability only once, and only after the second attack.\n\nSee \"Timing chart for performing an attack\".\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -6092,7 +6192,7 @@
     "markdown": "### Veteran Instincts \n![Veteran Instincts](/static/images/upgrades/veteran-instincts.png)\n#### Card Clarifications \nSee “Altered pilot skill”.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -6107,7 +6207,7 @@
     "markdown": "### “Wampa” \n![“Wampa” original card](/static/images/pilots/wampa-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“When attacking, at the start of the ‘Compare Results’ step, you may cancel all dice results. If you cancel a [Critical Hit] result, deal 1 facedown Damage card to the defender.”\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],
@@ -6154,7 +6254,7 @@
     "markdown": "### Wes Janson \n![Wes Janson](/static/images/pilots/wes-janson.png)\n#### Card Clarifications \nWhen a ship is defending against Wes Janson, it may use focus, evade, and target lock tokens during the attack. Wes Janson’s ability does not remove a token until after the attack has been fully resolved.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -6169,7 +6269,7 @@
     "markdown": "### Wingman \n![Wingman](/static/images/upgrades/wingman.png)\n#### Card Clarifications \nThe ship with Wingman equipped is the ship that is removing the stress token. Therefore, if a ship with Wingman removes a stress token from another friendly ship that is equipped with Kyle Katarn (crew), that ship is not assigned a focus token from Kyle's ability\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -6212,7 +6312,7 @@
     "markdown": "### “Youngster” \n![“Youngster”](/static/images/pilots/youngster.png)\n#### Card Clarifications \n“Youngster” can use his ability in conjunction with TIE fighters, TIE/fo fighters, and TIE/sf fighters.\n\n“Youngster’s” ability can be used only if his equipped [Elite] Upgrade card has the “**Action:**” header.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 14
       }
     ],
@@ -6227,7 +6327,7 @@
     "markdown": "### Ysanne Isard \n![Ysanne Isard](/static/images/upgrades/ysanne-isard.png)\n#### Card Clarifications \nA ship that has the Damaged Sensor Array Damage card (original Damage deck) assigned to it **cannot** use Ysanne Isard to perform a free evade action if it has the evade action listed in its action bar.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -6242,7 +6342,7 @@
     "markdown": "### “Zeb” Orrelios \n![“Zeb” Orrelios](/static/images/upgrades/zeb-orrelios.png)\n#### Card Clarifications \nZeb’s ability triggers when the ship equipped with Zeb or an enemy ship that is touching it becomes the active ship during the Combat phase. Zeb’s ability does not trigger for any attack performed outside of this time, such as the attack at the end of the Combat phase generated from the *Phantom* title card or Corran Horn’s ability.\n\nIf a ship equipped with Zeb attacks Dengar, Zeb’s ability applies for Dengar’s attack, because this attack happens while the ship equipped with Zeb is the active ship.\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 21
       }
     ],
@@ -6257,7 +6357,7 @@
     "markdown": "### Zuckuss \n![Zuckuss original card](/static/images/upgrades/zuckuss-original.png)\nOriginal card\n#### Card errata \nThis card should read:\n\n“*SCUM ONLY*.\n\nWhen attacking, if you are not stressed, you may receive any number of stress tokens to choose an equal number of defense dice. The defender must reroll those dice.\"\n",
     "references": [
       {
-        "code": "SWXFV.4.3.2",
+        "code": "SWX.F.V4.3.2",
         "page": 4
       }
     ],

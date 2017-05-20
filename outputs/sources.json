@@ -135,6 +135,14 @@
     ]
   },
   {
+    "name": "Huge Ship Rules v3.0",
+    "type": "M",
+    "code": "SWX.HSR.V3",
+    "date": "2015-03-25",
+    "release_date": "2015-03-25",
+    "sources": []
+  },
+  {
     "name": "SLAM Action",
     "type": "RC",
     "code": "SLAMACTION",
@@ -239,27 +247,6 @@
     ]
   },
   {
-    "name": "Auxiliary Firing Arc",
-    "type": "RC",
-    "code": "AUXILIARYFIRINGARC",
-    "date": null,
-    "release_date": "2016-09-22",
-    "sources": [
-      "ARC-170 Expansion Pack",
-      "Special Forces TIE Expansion Pack"
-    ]
-  },
-  {
-    "name": "Debris Cloud Tokens",
-    "type": "RC",
-    "code": "DEBRISCLOUDTOKENS",
-    "date": null,
-    "release_date": "2016-09-22",
-    "sources": [
-      "Shadow Caster Expansion Pack"
-    ]
-  },
-  {
     "name": "Tallon Roll",
     "type": "RC",
     "code": "TALLONROLL",
@@ -280,9 +267,30 @@
     ]
   },
   {
-    "name": "Decloak (Corrected)",
+    "name": "Debris Cloud Tokens",
     "type": "RC",
-    "code": "DECLOAK-2",
+    "code": "DEBRISCLOUDTOKENS",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "Shadow Caster Expansion Pack"
+    ]
+  },
+  {
+    "name": "Auxiliary Firing Arc",
+    "type": "RC",
+    "code": "AUXILIARYFIRINGARC",
+    "date": null,
+    "release_date": "2016-09-22",
+    "sources": [
+      "ARC-170 Expansion Pack",
+      "Special Forces TIE Expansion Pack"
+    ]
+  },
+  {
+    "name": "Bomb Tokens #04 (Corrected)",
+    "type": "RC",
+    "code": "BOMBTOKENS04-2",
     "date": "2016-10-24",
     "release_date": "2016-10-24",
     "sources": []
@@ -296,17 +304,9 @@
     "sources": []
   },
   {
-    "name": "Bomb Tokens #06 (Corrected)",
+    "name": "Decloak (Corrected)",
     "type": "RC",
-    "code": "BOMBTOKENS06-2",
-    "date": "2016-10-24",
-    "release_date": "2016-10-24",
-    "sources": []
-  },
-  {
-    "name": "Bomb Tokens #04 (Corrected)",
-    "type": "RC",
-    "code": "BOMBTOKENS04-2",
+    "code": "DECLOAK-2",
     "date": "2016-10-24",
     "release_date": "2016-10-24",
     "sources": []
@@ -315,6 +315,14 @@
     "name": "Boost Action (Corrected)",
     "type": "RC",
     "code": "BOOSTACTION-2",
+    "date": "2016-10-24",
+    "release_date": "2016-10-24",
+    "sources": []
+  },
+  {
+    "name": "Bomb Tokens #06 (Corrected)",
+    "type": "RC",
+    "code": "BOMBTOKENS06-2",
     "date": "2016-10-24",
     "release_date": "2016-10-24",
     "sources": []
@@ -330,9 +338,9 @@
     ]
   },
   {
-    "name": "X-Wing v4.3.0",
+    "name": "X-Wing v4.3.2",
     "type": "FAQ",
-    "code": "SWXFV.4.3.0",
+    "code": "SWX.F.V4.3.2",
     "date": "2017-03-17",
     "release_date": "2017-03-17",
     "sources": []

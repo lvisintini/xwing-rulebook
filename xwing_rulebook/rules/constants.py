@@ -2,23 +2,27 @@ class CLAUSE_TYPES:
     TEXT = 'text'
     UNORDERED_ITEM = 'item:ul'
     ORDERED_ITEM = 'item:ol'
+    HEADER = 'header'
 
     as_choices = (
         (TEXT, 'Text'),
         (UNORDERED_ITEM, 'Unordered Item'),
         (ORDERED_ITEM, 'Ordered Item'),
+        (HEADER, 'Header')
     )
 
     as_list = [
         TEXT,
         UNORDERED_ITEM,
         ORDERED_ITEM,
+        HEADER,
     ]
 
     MARKDOWN_PREFIX_TYPE_MAPPING = {
         TEXT: '',
         UNORDERED_ITEM: '- ',
         ORDERED_ITEM: '1. ',
+        HEADER: '{header_level}# ',
     }
 
 

@@ -74,9 +74,11 @@ class ClauseInline(NestedTabularInline):
 
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'name', 'type', 'release_date', 'precedence', 'processed')
+    list_display = (
+        '__str__', 'name', 'type', 'release_date', 'precedence', 'processed', 'display_notes'
+    )
     search_fields = ['name', ]
-    readonly_fields = ['release_date', 'precedence']
+    readonly_fields = ['release_date', 'precedence', 'display_notes']
     list_filter = ('processed', 'type')
 
     def release_date(self, obj):
@@ -86,6 +88,11 @@ class SourceAdmin(admin.ModelAdmin):
     def precedence(self, obj):
         return obj.precedence
     precedence.admin_order_field = 'precedence'
+
+    def display_notes(self, obj):
+        return mark_safe('<br/>'.join(word_sensitive_grouper(escape(obj.notes), 50)))
+    display_notes.short_description = 'Notes'
+    display_notes.admin_order_field = 'notes'
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)

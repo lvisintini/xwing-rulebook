@@ -16,7 +16,7 @@ class Command(BaseCommand):
         qs = Source.objects.all()
         qs = qs.annotate(
             release_date=models.Case(
-                models.When(date=None, then=models.Min('product__release_date', distinct=True)),
+                models.When(date=None, then=models.Min('products__release_date', distinct=True)),
                 default='date'
             )
         )
@@ -29,7 +29,7 @@ class Command(BaseCommand):
                 ('code', source.code),
                 ('date', source.date.isoformat() if source.date else None),
                 ('release_date', source.release_date.isoformat() if source.release_date else None),
-                ('sources', list(source.product_set.values_list('name', flat=True)))
+                ('sources', list(source.products.values_list('name', flat=True)))
             ])
             sources.append(s)
         self.stdout.write(json.dumps(sources, indent=2, ensure_ascii=False))

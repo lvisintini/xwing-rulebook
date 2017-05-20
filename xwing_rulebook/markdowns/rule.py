@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.utils.functional import cached_property
 
 from contents.constants import CONTENT_TYPES
 from markdowns.base import MarkdownBase
@@ -19,6 +20,7 @@ class Rule2MarkdownBase(MarkdownBase):
             content.title, '†' if clause.expansion_related else ''
         )
 
+    @cached_property
     def rule_markdown(self):
         return '{rule_title}\n{rule_content}{card_errata}{card_clarification}'.format(
             rule_title=self.rule_title(),
@@ -26,16 +28,15 @@ class Rule2MarkdownBase(MarkdownBase):
                 CLAUSE_GROUPS.MAIN,
                 CLAUSE_GROUPS.IMAGES,
             ]),
-            card_errata=self.card_errata_clauses_markdown(),
-            card_clarification=self.card_clarification_clauses_markdown(),
+            card_errata=self.card_errata_clauses_markdown,
+            card_clarification=self.card_clarification_clauses_markdown,
         )
 
     def rule_title(self):
-        template = '{header_level} {rule_name}{expansion_rule} {anchor}'
+        template = '{header_level} {rule_name} {anchor}'
         return template.format(
             header_level='#' * self.header_level,
-            rule_name=self.rule.name,
-            expansion_rule='' if not self.rule.expansion_rule else ' †',
+            rule_name=self.rule.decorated_name,
             anchor='' if not self.anchored else self.render_attrs(
                 ids=[self.rule.anchor_id, ],
                 classes=[],
@@ -61,7 +62,9 @@ class Rule2MarkdownBase(MarkdownBase):
 
             md = template.format(
                 indentation='    ' * clause.indentation,
-                prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[clause.type],
+                prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[clause.type].format(
+                    header_level='#' * self.header_level,
+                ),
                 clause_content=clause_md,
             )
 
@@ -69,12 +72,15 @@ class Rule2MarkdownBase(MarkdownBase):
 
         return '\n\n'.join(clauses_mds)
 
+    @cached_property
     def main_clauses_markdown(self):
         return self.rule_clauses(group=CLAUSE_GROUPS.MAIN)
 
+    @cached_property
     def image_clauses_markdown(self):
         return self.rule_clauses(group=CLAUSE_GROUPS.IMAGES)
 
+    @cached_property
     def card_errata_clauses_markdown(self):
         template = "\n{header_level} Card errata \n{card_errata_md}\n"
 
@@ -89,6 +95,7 @@ class Rule2MarkdownBase(MarkdownBase):
             )
         return card_errata_md
 
+    @cached_property
     def card_clarification_clauses_markdown(self):
         template = "\n{header_level} Card Clarifications \n{card_clarification_md}\n"
         if self.rule.type != RULE_TYPES.CARD:
@@ -113,12 +120,15 @@ class Rule2MarkdownBase(MarkdownBase):
                 [clause.indentation * '    ' + c.strip() for c in clause_content.splitlines()]
             )
 
-        template = '{title}{clause_content}{anchor}'
+        template = '{title}{clause_content}'
+        if self.anchored:
+            template = '{title}{clause_content}{anchor_separation}{anchor}'
 
         md = template.format(
             title=self.render_clause_title(clause, content),
             clause_content=clause_content,
-            anchor='' if not self.anchored else '\n' + self.render_attrs(
+            anchor_separation='\n' if clause.type != CLAUSE_TYPES.HEADER else ' ',
+            anchor='' if not self.anchored else self.render_attrs(
                 ids=[clause.anchor_id, ],
                 data={
                     'anchor-id': clause.anchor_id,
@@ -236,6 +246,7 @@ class Rule2MarkdownBase(MarkdownBase):
 
         return references
 
+    @cached_property
     def related_topics_as_references(self):
         filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE)
         related_topics_md = self.related_rules_as_references(filtered_rules)
@@ -245,6 +256,7 @@ class Rule2MarkdownBase(MarkdownBase):
             )
         return related_topics_md
 
+    @cached_property
     def rule_clarifications_as_references(self):
         filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.RULE_CLARIFICATION)
         rule_clarifications_md = self.related_rules_as_references(filtered_rules)
@@ -254,6 +266,7 @@ class Rule2MarkdownBase(MarkdownBase):
             )
         return rule_clarifications_md
 
+    @cached_property
     def related_cards_as_references(self):
         filtered_rules = self.rule.related_rules.filter(type=RULE_TYPES.CARD)
         related_cards_md = self.related_rules_as_references(filtered_rules)
@@ -297,16 +310,18 @@ class Rule2Markdown(Rule2MarkdownBase):
                 )
             )
 
+    @cached_property
     def rule_clarifications(self):
         return [
             helper for helper in self.related_rules_helpers
             if helper.rule.type == RULE_TYPES.RULE_CLARIFICATION
         ]
 
+    @cached_property
     def rule_clarifications_as_content(self):
         template = "\n{header_level} Rule Clarifications \n{rule_clarifications_mds}\n"
 
-        rule_clarifications = self.rule_clarifications()
+        rule_clarifications = self.rule_clarifications
 
         if not rule_clarifications:
             return ''
@@ -319,6 +334,7 @@ class Rule2Markdown(Rule2MarkdownBase):
         )
         return rule_clarifications_mds
 
+    @cached_property
     def rule_related_faqs(self):
         template = "\n{header_level} Related FAQs \n{related_faqs_md}\n"
 
