@@ -22,12 +22,21 @@ class Rule2MarkdownBase(MarkdownBase):
 
     @cached_property
     def rule_markdown(self):
-        return '{rule_title}\n{rule_content}{card_errata}{card_clarification}'.format(
+        template = (
+            '{rule_title}\n'
+            '{rule_content}'
+            '{huge_ship_related}'
+            '{card_errata}'
+            '{card_clarification}'
+        )
+
+        return template.format(
             rule_title=self.rule_title(),
             rule_content=self.rule_clauses(group__in=[
                 CLAUSE_GROUPS.MAIN,
                 CLAUSE_GROUPS.IMAGES,
             ]),
+            huge_ship_related=self.huge_ship_related_clauses_markdown,
             card_errata=self.card_errata_clauses_markdown,
             card_clarification=self.card_clarification_clauses_markdown,
         )
@@ -108,6 +117,20 @@ class Rule2MarkdownBase(MarkdownBase):
                 card_clarification_md=card_clarification_md
             )
         return card_clarification_md
+
+    @cached_property
+    def huge_ship_related_clauses_markdown(self):
+        template = "\n{header_level} Huge Ships \n{huge_ships_md}\n"
+        if self.rule.type == RULE_TYPES.CARD:
+            return ''
+
+        huge_ships_md = self.rule_clauses(group=CLAUSE_GROUPS.HUGE_SHIP_RELATED)
+        if huge_ships_md:
+            huge_ships_md = template.format(
+                header_level='#' * (self.header_level + 1),
+                huge_ships_md=huge_ships_md
+            )
+        return huge_ships_md
 
     def text_content_markdown(self, clause, content):
         file = content.image.static_url if content.image else ''

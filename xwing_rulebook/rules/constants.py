@@ -79,12 +79,14 @@ class CLAUSE_GROUPS:
     IMAGES = 2
     CARD_ERRATA = 3
     CARD_CLARIFICATION = 4
+    HUGE_SHIP_RELATED = 5
 
     as_choices = (
         (MAIN, 'Main'),
         (IMAGES, 'Images'),
         (CARD_ERRATA, 'Card Errata'),
         (CARD_CLARIFICATION, 'Card Clarification'),
+        (HUGE_SHIP_RELATED, 'Huge Ship Related'),
     )
 
     as_list = [
@@ -92,6 +94,7 @@ class CLAUSE_GROUPS:
         IMAGES,
         CARD_ERRATA,
         CARD_CLARIFICATION,
+        HUGE_SHIP_RELATED,
     ]
 
 

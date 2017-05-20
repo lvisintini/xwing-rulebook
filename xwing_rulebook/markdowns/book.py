@@ -84,9 +84,9 @@ class Book2Markdown:
 
                 rules.append(
                     rule_template.format(
-                        title_and_rule=md_helper.rule_markdown(),
-                        related_topics=md_helper.related_topics_as_references(),
-                        rule_clarifications=md_helper.rule_clarifications_as_references(),
+                        title_and_rule=md_helper.rule_markdown,
+                        related_topics=md_helper.related_topics_as_references,
+                        rule_clarifications=md_helper.rule_clarifications_as_references,
                     )
                 )
 
