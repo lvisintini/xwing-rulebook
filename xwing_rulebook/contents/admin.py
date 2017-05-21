@@ -34,6 +34,9 @@ class ImageAdminForm(forms.ModelForm):
                 if f not in loaded_images
             ])
 
+        if self.instance.id:
+            choices.append((self.instance.file, ) * 2)
+
         self.fields['file'].choices = sorted(choices)
 
 
