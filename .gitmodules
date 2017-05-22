@@ -1,10 +1,3 @@
-[submodule "xwing_rulebook/external/xwing-data"]
-	path = xwing_rulebook/external/xwing-data
-	url = https://github.com/lvisintini/xwing-data.git
-	branch = master
-[submodule "xwing_rulebook/external/xwing-data-integration"]
-	path = xwing_rulebook/external/xwing-data-integration
-	url = https://github.com/lvisintini/xwing-data-integration.git
 [submodule "xwing_rulebook/external/xwing-miniatures-font"]
 	path = xwing_rulebook/external/xwing-miniatures-font
 	url = git@github.com:geordanr/xwing-miniatures-font.git

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 
-from integrations.constants import DATA, DAMAGE_DECK_TYPES
+from integrations.constants import XWING_DATA, DAMAGE_DECK_TYPES
 
 
 class JSONMixin:
@@ -12,7 +12,7 @@ class JSONMixin:
     @property
     def json(self):
         if not hasattr(self, '_json'):
-            self._json = next((p for p in DATA[self.data_key] if p['id'] == self.id), None)
+            self._json = next((p for p in XWING_DATA[self.data_key] if p['id'] == self.id), None)
         return self._json
 
     def __str__(self):
@@ -56,7 +56,10 @@ class DamageDeck(models.Model):
     @property
     def json(self):
         if not hasattr(self, '_json'):
-            self._json = next((p for p in DATA[self.data_key] if p['name'] == self.name), None)
+            self._json = next(
+                (p for p in XWING_DATA[self.data_key] if p['name'] == self.name),
+                None
+            )
         return self._json
 
     def __str__(self):
