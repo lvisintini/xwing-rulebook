@@ -1,6 +1,0 @@
-[submodule "xwing_rulebook/external/xwing-miniatures-font"]
-	path = xwing_rulebook/external/xwing-miniatures-font
-	url = git@github.com:geordanr/xwing-miniatures-font.git
-[submodule "xwing_rulebook/external/skel"]
-	path = xwing_rulebook/external/skel
-	url = git@github.com:ajlkn/skel.git
