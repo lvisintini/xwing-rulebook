@@ -57,3 +57,6 @@ node_modules/
 # Others
 tmp/*
 backups/*
+xwing_rulebook/static/scripts/lib/*
+xwing_rulebook/static/styles/lib/*
+xwing_rulebook/static/fonts/lib/*

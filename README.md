@@ -25,9 +25,11 @@ $ python xwing_rulebook/manage.py sources_json > outputs/sources.json
 
 $ python xwing_rulebook/manage.py load_from_xwing_data
 
-& git submodule update --recursive --remote
+$ python manage.py download_libs
 
 $ python xwing_rulebook/manage.py book_alpha_order URR-SWX
+
+$ pdfimages -png x-wing_faq_v432_high_res.pdf ./images/
 
 $ git tag -a AlanTuring-20170301 -m "Release rc_20170227"
 $ git push origin AlanTuring-20170301
