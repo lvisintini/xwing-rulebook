@@ -343,7 +343,6 @@ class Rule2Markdown(Rule2MarkdownBase):
     @cached_property
     def rule_clarifications_as_content(self):
         template = "\n{header_level} Rule Clarifications \n{rule_clarifications_mds}\n"
-
         rule_clarifications = self.rule_clarifications
 
         if not rule_clarifications:
@@ -352,7 +351,7 @@ class Rule2Markdown(Rule2MarkdownBase):
         rule_clarifications_mds = template.format(
             header_level='#' * (self.header_level + 1),
             rule_clarifications_mds='\n\n'.join(
-                [helper.rule_markdown() for helper in rule_clarifications]
+                [helper.rule_markdown for helper in rule_clarifications]
             )
         )
         return rule_clarifications_mds
