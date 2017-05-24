@@ -245,10 +245,10 @@ class Rule2MarkdownBase(MarkdownBase):
             return ''
 
         templates = {
-            (False, False): '{rule}{expansion_icon}',
-            (True, False): '[{rule}{expansion_icon}]({anchor})',
-            (False, True): '[{rule}{expansion_icon}]({relative_url})',
-            (True, True): '[{rule}{expansion_icon}]({relative_url}{anchor})',
+            (False, False): '{rule}',
+            (True, False): '[{rule}]({anchor})',
+            (False, True): '[{rule}]({relative_url})',
+            (True, True): '[{rule}]({relative_url}{anchor})',
         }
 
         template = templates[(self.anchored_links, self.linked)]
@@ -257,8 +257,7 @@ class Rule2MarkdownBase(MarkdownBase):
 
         references = ', '.join([
             template.format(
-                rule=r.name,
-                expansion_icon='' if not r.expansion_rule else '†',
+                rule=r.decorated_name,
                 relative_url=reverse(
                     self.url_name, kwargs=dict([('rule_slug', r.slug)] + url_params)
                 ),
