@@ -32,7 +32,7 @@ class Rule2MarkdownBase(MarkdownBase):
 
         return template.format(
             rule_title=self.rule_title(),
-            rule_content=self.rule_clauses(group__in=[
+            rule_content=self.rule_clauses(0, group__in=[
                 CLAUSE_GROUPS.MAIN,
                 CLAUSE_GROUPS.IMAGES,
             ]),
@@ -55,7 +55,7 @@ class Rule2MarkdownBase(MarkdownBase):
             ),
         )
 
-    def rule_clauses(self, **filters):
+    def rule_clauses(self, header_offset, **filters):
         template = '{indentation}{prefix}{clause_content}'
 
         clauses_mds = []
@@ -72,7 +72,7 @@ class Rule2MarkdownBase(MarkdownBase):
             md = template.format(
                 indentation='    ' * clause.indentation,
                 prefix=CLAUSE_TYPES.MARKDOWN_PREFIX_TYPE_MAPPING[clause.type].format(
-                    header_level='#' * self.header_level,
+                    header_level='#' * (self.header_level + header_offset),
                 ),
                 clause_content=clause_md,
             )
@@ -83,11 +83,11 @@ class Rule2MarkdownBase(MarkdownBase):
 
     @cached_property
     def main_clauses_markdown(self):
-        return self.rule_clauses(group=CLAUSE_GROUPS.MAIN)
+        return self.rule_clauses(0, group=CLAUSE_GROUPS.MAIN)
 
     @cached_property
     def image_clauses_markdown(self):
-        return self.rule_clauses(group=CLAUSE_GROUPS.IMAGES)
+        return self.rule_clauses(0, group=CLAUSE_GROUPS.IMAGES)
 
     @cached_property
     def card_errata_clauses_markdown(self):
@@ -96,7 +96,7 @@ class Rule2MarkdownBase(MarkdownBase):
         if self.rule.type != RULE_TYPES.CARD:
             return ''
 
-        card_errata_md = self.rule_clauses(group=CLAUSE_GROUPS.CARD_ERRATA)
+        card_errata_md = self.rule_clauses(1, group=CLAUSE_GROUPS.CARD_ERRATA)
         if card_errata_md:
             card_errata_md = template.format(
                 header_level='#' * (self.header_level + 1),
@@ -110,7 +110,7 @@ class Rule2MarkdownBase(MarkdownBase):
         if self.rule.type != RULE_TYPES.CARD:
             return ''
 
-        card_clarification_md = self.rule_clauses(group=CLAUSE_GROUPS.CARD_CLARIFICATION)
+        card_clarification_md = self.rule_clauses(1, group=CLAUSE_GROUPS.CARD_CLARIFICATION)
         if card_clarification_md:
             card_clarification_md = template.format(
                 header_level='#' * (self.header_level + 1),
@@ -124,7 +124,7 @@ class Rule2MarkdownBase(MarkdownBase):
         if self.rule.type == RULE_TYPES.CARD:
             return ''
 
-        huge_ships_md = self.rule_clauses(group=CLAUSE_GROUPS.HUGE_SHIP_RELATED)
+        huge_ships_md = self.rule_clauses(1, group=CLAUSE_GROUPS.HUGE_SHIP_RELATED)
         if huge_ships_md:
             huge_ships_md = template.format(
                 header_level='#' * (self.header_level + 1),

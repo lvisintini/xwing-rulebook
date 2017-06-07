@@ -166,6 +166,6 @@ class RuleAdmin(NestedModelAdmin):
 
 @admin.register(Clause)
 class ClauseAdmin(NestedModelAdmin):
-    list_display = ('__str__', 'needs_revision')
+    list_display = ('id', '__str__', 'needs_revision')
     list_filter = ['needs_revision', 'type', 'group']
     inlines = (ClauseContentInline, )
