@@ -93,9 +93,6 @@ class Rule2MarkdownBase(MarkdownBase):
     def card_errata_clauses_markdown(self):
         template = "\n{header_level} Card errata \n{card_errata_md}\n"
 
-        if self.rule.type != RULE_TYPES.CARD:
-            return ''
-
         card_errata_md = self.rule_clauses(1, group=CLAUSE_GROUPS.CARD_ERRATA)
         if card_errata_md:
             card_errata_md = template.format(
@@ -107,8 +104,6 @@ class Rule2MarkdownBase(MarkdownBase):
     @cached_property
     def card_clarification_clauses_markdown(self):
         template = "\n{header_level} Card Clarifications \n{card_clarification_md}\n"
-        if self.rule.type != RULE_TYPES.CARD:
-            return ''
 
         card_clarification_md = self.rule_clauses(1, group=CLAUSE_GROUPS.CARD_CLARIFICATION)
         if card_clarification_md:
@@ -121,8 +116,6 @@ class Rule2MarkdownBase(MarkdownBase):
     @cached_property
     def huge_ship_related_clauses_markdown(self):
         template = "\n{header_level} Huge Ships \n{huge_ships_md}\n"
-        if self.rule.type == RULE_TYPES.CARD:
-            return ''
 
         huge_ships_md = self.rule_clauses(1, group=CLAUSE_GROUPS.HUGE_SHIP_RELATED)
         if huge_ships_md:
