@@ -30,12 +30,14 @@ class SOURCE_TYPES:
     MANUAL = 'M'
     REFERENCE_CARD = 'RC'
     RULES_REFERENCE = 'RR'
+    RULES_BOOKLET = 'RB'
     FAQ = 'FAQ'
     OTHER = 'OTHER'
 
     PRECEDENCE = [
         FAQ,
         RULES_REFERENCE,
+        RULES_BOOKLET,
         REFERENCE_CARD,
         MANUAL,
         OTHER,
@@ -43,6 +45,7 @@ class SOURCE_TYPES:
 
     as_choices = (
         (MANUAL, 'Manual'),
+        (RULES_BOOKLET, 'Rules Booklet'),
         (REFERENCE_CARD, 'Reference Card'),
         (RULES_REFERENCE, 'Rules Reference'),
         (FAQ, 'FAQ'),
@@ -50,6 +53,7 @@ class SOURCE_TYPES:
     as_list = [
         MANUAL,
         REFERENCE_CARD,
+        RULES_BOOKLET,
         RULES_REFERENCE,
         FAQ,
         OTHER,

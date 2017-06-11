@@ -185,6 +185,10 @@ class Clause(models.Model):
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
                 ),
                 models.When(
+                    source__type=SOURCE_TYPES.RULES_BOOKLET,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_BOOKLET)
+                ),
+                models.When(
                     source__type=SOURCE_TYPES.MANUAL,
                     then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
                 ),
