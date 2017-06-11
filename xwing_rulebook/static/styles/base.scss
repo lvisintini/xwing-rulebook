@@ -5,12 +5,14 @@ body {
   margin: 0;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
   font-family: Kimberley;
-}
-
-h2 {
-  font-family: BankGothic;
 }
 
 ol,
@@ -33,6 +35,8 @@ ul {
   }
 }
 
-a {
+a, a:visited  {
   cursor: pointer;
+  text-decoration: underline dotted gray;
+  color: black;
 }

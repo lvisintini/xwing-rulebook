@@ -4,6 +4,7 @@
   "description": "A package to handle all the build dependencies of the xwing-rulebook project",
   "main": "index.js",
   "dependencies": {
+    "chokidar-cli": "^1.2.0",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.16.0",
@@ -13,10 +14,12 @@
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
     "moment": "^2.13.0",
-    "node-sass": "^4.1.1",
-    "nodemon": "^1.11.0",
+    "node-sass": "^4.5.3",
+    "node-sass-chokidar": "^0.0.2",
     "node-sass-import": "^1.1.1",
     "normalize.css":"^5.0.0",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0",
     "raven-js": "^3.8.0",
     "react": "^15.1.0",
     "react-day-picker": "^2.2.0",
@@ -32,10 +35,14 @@
   },
   "scripts": {
     "test": "mocha ./xwing_rulebook/static/scripts/tests",
-    "build-js": "webpack --progress --colors",
+
     "watch-js": "webpack --progress --colors --watch",
-    "build-css": "node-sass --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
-    "watch-css": "nodemon -e ./xwing_rulebook/static/styles -x \"npm run build-css\""
+    "watch-css": "chokidar './xwing_rulebook/static/styles/**/*.*' -c 'npm run build-css'",
+
+    "build-js": "webpack --progress --colors",
+    "build-css": "node-sass-chokidar --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
+
+    "build": "npm-run-all -p build-*"
   },
   "author": "Luis Visintini",
   "license": "ISC"

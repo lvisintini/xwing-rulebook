@@ -1054,11 +1054,13 @@ body {
   font-size: 16px;
   margin: 0; }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Kimberley; }
-
-h2 {
-  font-family: BankGothic; }
 
 ol,
 ul {
@@ -1075,8 +1077,10 @@ ul {
   ul ul {
     list-style-type: circle; }
 
-a {
-  cursor: pointer; }
+a, a:visited {
+  cursor: pointer;
+  text-decoration: underline dotted gray;
+  color: black; }
 
 .u-text-left {
   text-align: right; }
