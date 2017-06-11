@@ -2,18 +2,136 @@
   font-family: BankGothic;
   src: url("../fonts/Bank-Gothic-Medium-BT.ttf");
 }
-
 @font-face {
   font-family: Eurostile;
   src: url("../fonts/EurostileLTStd.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
 }
-
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-BoldCn.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: condensed;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-BoldEx2.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: expanded;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-BoldOblique.otf");
+  font-weight: bold;
+  font-style: oblique;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-Cn.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: condensed;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-Demi.otf");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-DemiOblique.otf");
+  font-weight: 600;
+  font-style: oblique;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-Ex2.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: expanded;
+}
+@font-face {
+  font-family: Eurostile;
+  src: url("../fonts/EurostileLTStd-Oblique.otf");
+  font-weight: normal;
+  font-style: oblique;
+  font-stretch: normal;
+}
 @font-face {
   font-family: Kimberley;
   src: url("../fonts/kimberley-bl.ttf");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
 }
-
 @font-face {
   font-family: XWing;
   src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWing;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures.ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWing;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures.ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWing;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures.ttf");
+  font-weight: bold;
+  font-style: italic;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWingShip;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures-ships.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWingShip;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures-ships.ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWingShip;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures-ships.ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: XWingShip;
+  src: url("../fonts/lib/xwing-miniatures-font/xwing-miniatures-ships.ttf");
+  font-weight: bold;
+  font-style: italic;
+  font-stretch: normal;
 }
