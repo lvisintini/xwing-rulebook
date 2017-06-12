@@ -37,22 +37,27 @@ ul {
 
 a {
   cursor: pointer;
-  color: black;
+  color: red;
   text-decoration: none;
+  border-bottom: 1px dotted red;
 
   &:link {
-
+    color: red;
   }
+
   &:visited {
-
+    color: green;
   }
+
   &:hover {
-
+    color: hotpink;
   }
+
   &:focus {
-
+    color: blue;
   }
-  &:active {
 
+  &:active {
+    color: gray;
   }
 }

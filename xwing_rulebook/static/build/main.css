@@ -903,7 +903,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
     color: #FFFFFF; }
   .Section__Inner--manual {
     box-shadow: 0px 0px 50px black;
-    background: white url("../images/background/manual-background.jpg") repeat-y center top;
+    background: transparent url("../images/background/manual-background.jpg") repeat-y center top;
     padding: 1.5em 1em; }
 
 @font-face {
@@ -1074,8 +1074,19 @@ ul {
 
 a {
   cursor: pointer;
-  color: black;
-  text-decoration: none; }
+  color: red;
+  text-decoration: none;
+  border-bottom: 1px dotted red; }
+  a:link {
+    color: red; }
+  a:visited {
+    color: green; }
+  a:hover {
+    color: hotpink; }
+  a:focus {
+    color: blue; }
+  a:active {
+    color: gray; }
 
 .u-text-left {
   text-align: right; }
