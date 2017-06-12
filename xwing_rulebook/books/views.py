@@ -1,10 +1,19 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import user_passes_test
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
+from books.constants import DEFAULT_BOOK_SLUG
 from books.models import Book, Section, SectionRule
 from markdowns.book import BookRule2Markdown, Book2Markdown
 
 
-def book(request, book_slug, section_slug=None, rule_slug=None):
+def book(request, book_slug=None, section_slug=None, rule_slug=None):
+    if book_slug is None:
+        return HttpResponseRedirect(reverse('books:book', args=[
+            slug for slug in [DEFAULT_BOOK_SLUG, section_slug, rule_slug] if slug
+        ]))
+
     book = get_object_or_404(Book, slug=book_slug)
 
     if not section_slug and not rule_slug:
@@ -29,7 +38,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 linked=True,
                 anchored_links=False,
                 header_level=3,
-                url_name='books:rule',
+                url_name='books:book',
                 book_slug=book.slug,
                 section_slug=section.slug,
 
@@ -57,7 +66,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 linked=True,
                 anchored_links=False,
                 header_level=3,
-                url_name='books:rule',
+                url_name='books:book',
                 book_slug=book.slug,
                 section_slug=section.slug,
 
@@ -84,7 +93,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
                 linked=True,
                 anchored_links=False,
                 header_level=3,
-                url_name='books:rule',
+                url_name='books:book',
                 book_slug=book.slug,
                 section_slug=section.slug,
 
@@ -100,6 +109,7 @@ def book(request, book_slug, section_slug=None, rule_slug=None):
             )
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def single_page_book(request):
     rulebook = Book.objects.first()
     helper = Book2Markdown(

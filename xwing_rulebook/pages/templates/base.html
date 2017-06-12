@@ -20,14 +20,16 @@
     {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">
       <div class="PageWrapper__Header">
-        {% block header %}{% endblock %}
+        {% block header %}
+          {% include 'includes/_header.html' %}
+        {% endblock %}
       </div>
       <div class="PageWrapper__Content">
         {% block content %}{% endblock %}
       </div>
       <div class="PageWrapper__Footer">
         {% block footer %}
-          {% include 'includes/_paypal.html' %}
+          {% include 'includes/_footer.html' %}
         {% endblock %}
       </div>
 

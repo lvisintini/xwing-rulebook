@@ -14,6 +14,7 @@
 
   margin: 0 auto;
   min-height: 100vh;
+  background-color: val($palette, bg-dark);
 
   &--breakpoints {
     @include breakpoint(xlarge) {
@@ -39,19 +40,26 @@
     width: val($sizes, normal-content-width);
   }
 
-  &__Content {
-    @include vendor('flex', '1');
-  }
+  &__Content {}
 }
 
 .Section {
-  @include vendor('display', 'flex');
-  @include vendor('justify-content', 'center');
-
   &__Inner {
-    width: val($sizes, normal-content-width);;
+    background-color: val($palette, bg-light);
+    color: val($palette, fg-dark);
 
-    &--padded {
+    &--shadow{
+      @include vendor('box-shadow', '0px 0px 50px black');
+    }
+
+    &--no-background {
+      background: none;
+      color: val($palette, fg-light);
+    }
+
+    &--manual {
+      @include vendor('box-shadow', '0px 0px 50px black');
+      background: white url("../images/background/manual-background.jpg") repeat-y center top;
       padding: val($padding, large) val($padding, normal);
     }
   }

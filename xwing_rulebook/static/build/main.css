@@ -873,7 +873,8 @@ i.xwing-miniatures-ship-z95headhunter:before {
   -ms-align-items: center;
   align-items: center;
   margin: 0 auto;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-color: #3F3F3F; }
   @media screen and (max-width: 1680px) {
     .PageWrapper--breakpoints {
       background-color: red; } }
@@ -891,25 +892,19 @@ i.xwing-miniatures-ship-z95headhunter:before {
       background-color: orange; } }
   .PageWrapper__Header, .PageWrapper__Content, .PageWrapper__Footer {
     width: 60em; }
-  .PageWrapper__Content {
-    -moz-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1; }
 
-.Section {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center; }
-  .Section__Inner {
-    width: 60em; }
-    .Section__Inner--padded {
-      padding: 1.5em 1em; }
+.Section__Inner {
+  background-color: #C3C3C3;
+  color: #242424; }
+  .Section__Inner--shadow {
+    box-shadow: 0px 0px 50px black; }
+  .Section__Inner--no-background {
+    background: none;
+    color: #FFFFFF; }
+  .Section__Inner--manual {
+    box-shadow: 0px 0px 50px black;
+    background: white url("../images/background/manual-background.jpg") repeat-y center top;
+    padding: 1.5em 1em; }
 
 @font-face {
   font-family: BankGothic;
@@ -1077,10 +1072,10 @@ ul {
   ul ul {
     list-style-type: circle; }
 
-a, a:visited {
+a {
   cursor: pointer;
-  text-decoration: underline dotted gray;
-  color: black; }
+  color: black;
+  text-decoration: none; }
 
 .u-text-left {
   text-align: right; }
@@ -1123,19 +1118,19 @@ a, a:visited {
 .u-float-right {
   float: right; }
 
-.u-background-dark {
-  background-color: #3F3F3F; }
+.u-padded {
+  padding: 1.5em 1em; }
 
-.u-background-light {
-  background-color: #C3C3C3; }
+.Styleguide > h1,
+.Styleguide > h2,
+.Styleguide > h3,
+.Styleguide > p {
+  color: white; }
 
 .Book {
   box-shadow: 0px 0px 50px black;
   background: white url("../images/background/manual-background.jpg") repeat-y center top;
   width: 60em; }
-  .Book .xwing-miniatures-font,
-  .Book .xwing-miniatures-ship {
-    font-weight: normal; }
   .Book__Inner--columns {
     columns: 2 400px;
     column-gap: 3em;

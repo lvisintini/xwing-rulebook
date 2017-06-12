@@ -58,4 +58,4 @@ def rules_index(request):
     context = {
         'rules_by_type': rules_by_type,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'rules_index.html', context)

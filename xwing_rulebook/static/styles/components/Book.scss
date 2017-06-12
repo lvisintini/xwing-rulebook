@@ -3,11 +3,6 @@
   background: white url("../images/background/manual-background.jpg") repeat-y center top;
   width: val($sizes, normal-content-width);
 
-  .xwing-miniatures-font,
-    .xwing-miniatures-ship {
-      font-weight: normal;
-    }
-
   &__Inner {
 
     &--columns {

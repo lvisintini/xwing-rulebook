@@ -71,13 +71,7 @@
     }
   }
 
-
-  &-background {
-    &-dark {
-      background-color: val($palette, bg-dark);
-    }
-    &-light {
-      background-color: val($palette, bg-light);
-    }
+  &-padded {
+    padding: val($padding, large) val($padding, normal);
   }
 }

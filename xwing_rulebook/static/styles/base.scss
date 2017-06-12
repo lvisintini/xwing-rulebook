@@ -35,8 +35,24 @@ ul {
   }
 }
 
-a, a:visited  {
+a {
   cursor: pointer;
-  text-decoration: underline dotted gray;
   color: black;
+  text-decoration: none;
+
+  &:link {
+
+  }
+  &:visited {
+
+  }
+  &:hover {
+
+  }
+  &:focus {
+
+  }
+  &:active {
+
+  }
 }

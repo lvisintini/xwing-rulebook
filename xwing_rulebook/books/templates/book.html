@@ -15,7 +15,7 @@
 
       {% for section in book.section_set.all %}
         <h2>
-          <a href="{% url 'books:section' book_slug=book.slug section_slug=section.slug %}">
+          <a href="{% url 'books:book' book_slug=book.slug section_slug=section.slug %}">
             {{ section.title }}
           </a>
         </h2>
@@ -23,7 +23,7 @@
         <ul>
           {% for section_rule in section.sectionrule_set.all %}
             <li>
-              <a href="{% url 'books:rule' book_slug=book.slug section_slug=section.slug rule_slug=section_rule.rule.slug %}">
+              <a href="{% url 'books:book' book_slug=book.slug section_slug=section.slug rule_slug=section_rule.rule.slug %}">
                 {{ section_rule.rule.name }}
               </a>
             </li>
