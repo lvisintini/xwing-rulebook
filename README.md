@@ -1,14 +1,16 @@
 
 Useful commands
 ```
-sudo apt-get install postgresql postgresql-client virtualwrapper
-mkvirtualenv --python=/usr/bin/python3 xwing-rulebook
-git clone git@github.com:lvisintini/xwing-rulebook.git
-cd xwing-rulebook
-pip install -r requirements.txt
-sudo su - postgres
-psql
-create database rulebookdb;
+$ sudo apt-get install postgresql postgresql-client virtualwrapper
+$ mkvirtualenv --python=/usr/bin/python3 xwing-rulebook
+$ git clone git@github.com:lvisintini/xwing-rulebook.git
+$ cd xwing-rulebook
+$ python manage.py download_libs
+$ pip install -r requirements.txt
+$ npm install yarn
+$ yarn
+$ sudo su - postgres
+$ createdb rulebookdb;
 
 
 $ sudo su - postgres
