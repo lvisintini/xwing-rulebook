@@ -31,7 +31,14 @@ LIBS = [
             "Font-Awesome-master/fonts/*.*": "fonts",
             "Font-Awesome-master/scss/*.*": "styles",
         }
-    }
+    },
+    {
+        "name": "normalize.css",
+        "url": "https://github.com/necolas/normalize.css/archive/master.zip",
+        "mapping": {
+            "normalize.css-master/normalize.css": "styles",
+        }
+    },
 ]
 
 
