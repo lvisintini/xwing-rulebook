@@ -43,10 +43,15 @@ $sizes: (
 );
 
 $palette: (
-  bg-light: #C3C3C3,
-  bg-dark: #3F3F3F,
-  fg-light: #FFFFFF,
-  fg-dark: #242424,
+  bg-light: rgb(232, 237, 241),
+  bg-dark: rgb(63, 63, 63),
+  fg-light: rgb(255, 255, 255),
+  fg-dark: rgb(36, 36, 36),
+  color1: rgb(4, 18, 45),
+  color2: rgb(28, 88, 166),
+  color3: rgb(20, 99, 138),
+  color4: rgb(74, 135, 165),
+  color5: rgb(47, 168, 230),
 );
 
 $duration: (
@@ -55,5 +60,4 @@ $duration: (
   medium: 1s,
   long: 3s,
   x-long: 4s
-
 );
