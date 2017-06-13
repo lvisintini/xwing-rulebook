@@ -23,6 +23,14 @@ LIBS = [
             "xwing-miniatures-font-master/dist/*.ttf": "fonts",
             "xwing-miniatures-font-master/dist/*.css": "styles",
         }
+    },
+    {
+        "name": "font-awesome",
+        "url": "https://github.com/FortAwesome/Font-Awesome/archive/master.zip",
+        "mapping": {
+            "Font-Awesome-master/fonts/*.*": "fonts",
+            "Font-Awesome-master/scss/*.*": "styles",
+        }
     }
 ]
 

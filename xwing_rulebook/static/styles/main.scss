@@ -1,8 +1,10 @@
-@import "normalize.css/normalize.css";
 @import "./lib/skel/_skel.scss";
-@import "./lib/xwing-miniatures-font/xwing-miniatures.css";
-
 @import "vars.scss";
+
+@import "normalize.css/normalize.css";
+@import "./lib/xwing-miniatures-font/xwing-miniatures.css";
+@import "./lib/font-awesome/font-awesome.scss";
+
 @import "layout.scss";
 @import "fontface.scss";
 @import "base.scss";
