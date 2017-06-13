@@ -903,8 +903,8 @@ i.xwing-miniatures-ship-z95headhunter:before {
     color: #FFFFFF; }
   .Section__Inner--manual {
     box-shadow: 0px 0px 50px black;
-    background: transparent url("../images/background/manual-background.jpg") repeat-y center top;
-    padding: 1.5em 1em; }
+    padding: 1.5em 1em;
+    background: url("../images/background/corner-top-left.png") no-repeat left -27px top -27px, url("../images/background/corner-top-right.png") no-repeat right -27px top -27px, url("../images/background/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/background/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/background/border-top.png") repeat-x left 40px top -15px, url("../images/background/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/background/border-left.png") repeat-y left -15px top 90px, url("../images/background/border-right.png") repeat-y right -15px top 90px, url("../images/background/manual-background.jpg") repeat-y center top, transparent; }
 
 @font-face {
   font-family: BankGothic;
@@ -1072,21 +1072,28 @@ ul {
   ul ul {
     list-style-type: circle; }
 
-a {
+a,
+a:link {
   cursor: pointer;
   color: red;
-  text-decoration: none;
-  border-bottom: 1px dotted red; }
-  a:link {
-    color: red; }
-  a:visited {
-    color: green; }
-  a:hover {
-    color: hotpink; }
-  a:focus {
-    color: blue; }
-  a:active {
-    color: gray; }
+  border-bottom: 1px dotted red;
+  text-decoration: none; }
+  a:visited,
+  a:link:visited {
+    color: green;
+    border-bottom-color: green; }
+  a:hover,
+  a:link:hover {
+    color: hotpink;
+    border-bottom-color: hotpink; }
+  a:focus,
+  a:link:focus {
+    color: blue;
+    border-bottom-color: blue; }
+  a:active,
+  a:link:active {
+    color: gray;
+    border-bottom-color: gray; }
 
 .u-text-left {
   text-align: right; }
