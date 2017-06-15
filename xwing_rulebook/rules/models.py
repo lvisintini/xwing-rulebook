@@ -107,9 +107,10 @@ class Rule(models.Model):
         template = '{rule_name}{expansion_rule}{huge_ship}'
         return template.format(
             rule_name=self.name,
-            expansion_rule='' if not self.expansion_rule else ' †',
-            huge_ship='' if not self.huge_ship_rule else ' [Epic]',
+            expansion_rule='' if not self.expansion_rule else ' ^†^',
+            huge_ship='' if not self.huge_ship_rule else ' ^[Epic]^',
         )
+
 
     @cached_property
     def related_faqs(self):

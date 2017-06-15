@@ -3219,7 +3219,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
     color: white; }
   .Section__Inner--manual {
     box-shadow: 0px 0px 50px black;
-    padding: 1.5em 1.5em;
+    padding: 2.5em 3em;
     background: url("../images/background/corner-top-left.png") no-repeat left -27px top -27px, url("../images/background/corner-top-right.png") no-repeat right -27px top -27px, url("../images/background/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/background/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/background/border-top.png") repeat-x left 40px top -15px, url("../images/background/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/background/border-left.png") repeat-y left -15px top 90px, url("../images/background/border-right.png") repeat-y right -15px top 90px, url("../images/background/manual-background.jpg") repeat-y center top, transparent; }
 
 @font-face {
@@ -3371,7 +3371,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Kimberley; }
+  font-family: Kimberley;
+  text-shadow: -1px -1px 0 #e8edf1, 1px -1px 0 #e8edf1, -1px 1px 0 #e8edf1, 1px 1px 0 #e8edf1; }
 
 ol,
 ul {
@@ -3381,12 +3382,30 @@ ul {
 ol {
   list-style-type: decimal; }
   ol ol {
-    list-style-type: lower-alpha; }
+    list-style-type: upper-alpha; }
+    ol ol ol {
+      list-style-type: upper-roman; }
+      ol ol ol ol {
+        list-style-type: lower-alpha; }
+        ol ol ol ol ol {
+          list-style-type: lower-roman; }
 
 ul {
   list-style-type: disc; }
   ul ul {
     list-style-type: circle; }
+    ul ul ul {
+      list-style-type: square; }
+      ul ul ul ul {
+        list-style-type: circle; }
+        ul ul ul ul ul {
+          list-style-type: disc; }
+
+li {
+  margin: 0.5em 0; }
+
+p {
+  margin: 1.5em 0; }
 
 button,
 .button {
@@ -3402,43 +3421,44 @@ button,
   user-select: none;
   cursor: pointer;
   padding: 0.5em 1em;
-  background: #1c58a6;
+  background: #0f35a0;
   color: white;
-  border: solid 1px #14638a;
+  border: solid 1px #25606d;
   text-shadow: 0 -1px 0 rgba(36, 36, 36, 0.6); }
   button:hover,
   .button:hover {
-    background: #184c90;
-    border: solid 1px #115374;
+    background: #0c2d89;
+    border: solid 1px #1e4f5a;
     text-decoration: none; }
   button:active,
   .button:active {
     box-shadow: inset 0 1px 4px rgba(36, 36, 36, 0.4);
-    background: #15417a;
-    border: solid 1px #0e435d; }
+    background: #0a2571;
+    border: solid 1px #183e47; }
 
 a,
 a:link {
   cursor: pointer;
-  color: red;
-  border-bottom: 1px dotted red;
+  color: #154ce6;
+  border-bottom: 1px dotted #154ce6;
   text-decoration: none; }
   a:visited,
   a:link:visited {
-    color: green;
-    border-bottom-color: green; }
+    color: #3892a6;
+    border-bottom-color: #3892a6; }
   a:hover,
   a:link:hover {
-    color: hotpink;
-    border-bottom-color: hotpink; }
+    color: #04002d;
+    border-bottom-color: #04002d; }
   a:focus,
   a:link:focus {
-    color: blue;
-    border-bottom-color: blue; }
+    color: #04002d;
+    border-bottom-color: #04002d; }
   a:active,
   a:link:active {
-    color: gray;
-    border-bottom-color: gray; }
+    text-shadow: 0 0 1px rgba(4, 0, 45, 0.6);
+    color: #04002d;
+    border-bottom: 1px solid #04002d; }
 
 .u-text-left {
   text-align: right; }
@@ -3484,9 +3504,6 @@ a:link {
 .u-padded {
   padding: 1.5em 1em; }
 
-.Styleguide > h1,
-.Styleguide > h2,
-.Styleguide > h3,
 .Styleguide > p {
   color: white; }
 

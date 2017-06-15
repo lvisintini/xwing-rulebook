@@ -25,7 +25,11 @@
           <ul>
               {% for r in rules %}
                 <li>
-                  <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.decorated_name | xwing_icons }}</a>
+                  <a href="{% url 'rules:rule' rule_slug=r.slug  %}">
+                    {{ r.name | xwing_icons }}
+                    {% if r.expansion_rule %} <sup>†</sup>{% endif %}
+                    {% if r.huge_ship_rule %} <sup>{{ '[Epic]' | xwing_icons  }}</sup>{% endif %}
+                  </a>
                 </li>
               {% endfor %}
           </ul>

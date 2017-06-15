@@ -59,7 +59,7 @@
 
     &--manual {
       @include vendor('box-shadow', '0px 0px 50px black');
-      padding: val($padding, large) val($padding, large);
+      padding: val($padding, xx-large) val($padding, xxx-large);
 
       background:
               url("../images/background/corner-top-left.png") no-repeat left -27px top -27px,

@@ -5,10 +5,13 @@ $misc: (
 );
 
 $padding: (
+  x-small: 0.25em,
   small: 0.5em,
   normal: 1em,
   large: 1.5em,
-  x-large: 2em
+  x-large: 2em,
+  xx-large: 2.5em,
+  xxx-large: 3em
 );
 
 $font-size: (
@@ -47,11 +50,11 @@ $palette: (
   bg-dark: rgb(63, 63, 63),
   fg-light: rgb(255, 255, 255),
   fg-dark: rgb(36, 36, 36),
-  color1: rgb(4, 18, 45),
-  color2: rgb(28, 88, 166),
-  color3: rgb(20, 99, 138),
-  color4: rgb(74, 135, 165),
-  color5: rgb(47, 168, 230),
+  color1: rgb(4, 0, 45),
+  color2: rgb(21, 76, 230),
+  color3: rgb(56, 146, 166),
+  color4: rgb(218, 49, 47),
+  color5: rgb(236, 164, 0)
 );
 
 $duration: (

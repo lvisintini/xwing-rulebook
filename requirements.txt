@@ -3,5 +3,6 @@ django-nested-admin==3.0.12
 ipdb==0.10.1
 ipython==5.3.0
 Markdown==2.6.8
+MarkdownSuperscript==2.0.0
 psycopg2==2.7.1
 requests==2.14.2
