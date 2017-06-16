@@ -6,6 +6,44 @@ from django.utils.functional import cached_property
 from rules.constants import CLAUSE_TYPES, SOURCE_TYPES, RULE_TYPES, CLAUSE_GROUPS, CARD_TYPES
 
 
+class EnrichedSourceManager(models.Manager):
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.prefetch_related('products')
+
+        qs = qs.annotate(content_count=models.Count('contents'))
+
+        qs = qs.annotate(
+            release_date=models.Case(
+                models.When(date=None, then=models.Min('products__release_date', distinct=True)),
+                default='date'
+            )
+        )
+        qs = qs.annotate(
+            precedence=models.Case(
+                models.When(
+                    type=SOURCE_TYPES.FAQ,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
+                ),
+                models.When(
+                    type=SOURCE_TYPES.RULES_REFERENCE,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
+                ),
+                models.When(
+                    type=SOURCE_TYPES.REFERENCE_CARD,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
+                ),
+                models.When(
+                    type=SOURCE_TYPES.MANUAL,
+                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
+                ),
+                default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
+                output_field=models.IntegerField()
+            )
+        )
+        return qs
+
+
 class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField(blank=True, null=True)
@@ -17,6 +55,9 @@ class Source(models.Model):
     missing = models.BooleanField(default=True)
     notes = models.CharField(max_length=250, default='', blank=True)
 
+    objects = models.Manager()
+    enriched = EnrichedSourceManager()
+
     def __str__(self):
         return '{}-{}'.format(self.type, self.code)
 
@@ -24,6 +65,9 @@ class Source(models.Model):
 class RuleManager(models.Manager):
     def get_queryset(self):
         qs = super().get_queryset()
+
+        qs = qs.annotate(content_count=models.Count('contents'))
+
         qs = qs.annotate(
             type_order=models.Case(
                 models.When(

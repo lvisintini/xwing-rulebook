@@ -134,38 +134,10 @@ class SourceAdmin(admin.ModelAdmin):
     content_count.admin_order_field = 'content_count'
 
     def get_queryset(self, request):
-        qs = super().get_queryset(request)
-
-        qs = qs.annotate(content_count=models.Count('contents'))
-
-        qs = qs.annotate(
-            release_date=models.Case(
-                models.When(date=None, then=models.Min('products__release_date', distinct=True)),
-                default='date'
-            )
-        )
-        qs = qs.annotate(
-            precedence=models.Case(
-                models.When(
-                    type=SOURCE_TYPES.FAQ,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.RULES_REFERENCE,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.REFERENCE_CARD,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.MANUAL,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
-                ),
-                default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
-                output_field=models.IntegerField()
-            )
-        )
+        qs = self.model.enriched.get_queryset()
+        ordering = self.get_ordering(request)
+        if ordering:
+            qs = qs.order_by(*ordering)
 
         return qs
 
