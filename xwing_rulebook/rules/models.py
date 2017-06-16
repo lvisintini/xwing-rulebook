@@ -14,6 +14,7 @@ class Source(models.Model):
         max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
     )
     processed = models.BooleanField(default=False)
+    missing = models.BooleanField(default=True)
     notes = models.CharField(max_length=250, default='', blank=True)
 
     def __str__(self):

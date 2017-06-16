@@ -15,9 +15,6 @@ class JSONMixin:
             self._json = next((p for p in XWING_DATA[self.data_key] if p['id'] == self.id), None)
         return self._json
 
-    def __str__(self):
-        return '[{}] {}'.format(self.slug, self.name)
-
 
 class Product(models.Model, JSONMixin):
     name = models.CharField(max_length=125)
@@ -29,6 +26,9 @@ class Product(models.Model, JSONMixin):
 
     class Meta:
         ordering = ['release_date', 'sku']
+
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)
 
     @property
     def slug(self):
@@ -78,11 +78,17 @@ class Pilot(JSONMixin, models.Model):
             self.json.get('xws', self.name),
         ]))
 
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)
+
 
 class Ship(JSONMixin, models.Model):
     name = models.CharField(max_length=125)
 
     data_key = 'ships'
+
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)
 
 
 class Upgrade(JSONMixin, models.Model):
@@ -90,9 +96,14 @@ class Upgrade(JSONMixin, models.Model):
 
     data_key = 'upgrades'
 
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)
+
 
 class Condition(JSONMixin, models.Model):
     name = models.CharField(max_length=125)
 
     data_key = 'conditions'
 
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)

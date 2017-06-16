@@ -26,7 +26,7 @@
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
     "webpack": "^1.13.1",
-    "xwing-data": "^0.30.0",
+    "xwing-data": "^0.38.0",
     "yarn": "^0.24.5"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
   "scripts": {
     "test": "mocha ./xwing_rulebook/static/scripts/tests",
     "watch-js": "webpack --progress --colors --watch",
-    "watch-css": "chokidar './xwing_rulebook/static/styles/**/*.*' -c 'npm run build-css'",
+    "watch-css": "npm run build-css; chokidar './xwing_rulebook/static/styles/**/*.*' -c 'npm run build-css'",
     "build-js": "webpack --progress --colors",
     "build-css": "node-sass-chokidar --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
     "build": "npm-run-all -p build-*"

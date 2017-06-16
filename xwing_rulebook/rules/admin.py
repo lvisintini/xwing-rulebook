@@ -72,14 +72,42 @@ class ClauseInline(NestedTabularInline):
     extra = 0
 
 
+class ContentCountFilter(admin.SimpleListFilter):
+    title = "Content count"
+    parameter_name = "content_count"
+
+    def lookups(self, request, model_admin):
+        return (
+            ('0', '0 contents'),
+            ('1+', '1+ contents'),
+
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == '0':
+            return queryset.filter(content_count=0)
+        if self.value() == '1+':
+            return queryset.filter(content_count__gte=1)
+        return queryset
+
+
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
     list_display = (
-        '__str__', 'name', 'type', 'release_date', 'precedence', 'processed', 'display_notes'
+        '__str__',
+        'name',
+        'type',
+        'products_display',
+        'release_date',
+        'precedence',
+        'processed',
+        'missing',
+        'content_count',
+        'display_notes',
     )
     search_fields = ['name', ]
-    readonly_fields = ['release_date', 'precedence', 'display_notes']
-    list_filter = ('processed', 'type')
+    readonly_fields = ['release_date', 'precedence', 'display_notes', 'products_display', 'content_count']
+    list_filter = ('processed', 'type', 'missing', ContentCountFilter)
 
     def release_date(self, obj):
         return obj.release_date
@@ -94,8 +122,22 @@ class SourceAdmin(admin.ModelAdmin):
     display_notes.short_description = 'Notes'
     display_notes.admin_order_field = 'notes'
 
+    def products_display(self, obj):
+        return mark_safe('<br/>'.join([
+            "<a href={}>{}</a>".format(reverse('admin:integrations_product_change', args=[p.id, ]), p)
+            for p in obj.products.all().order_by('sku')
+        ]))
+    products_display.short_description = 'Products'
+
+    def content_count(self, obj):
+        return obj.content_count
+    content_count.admin_order_field = 'content_count'
+
     def get_queryset(self, request):
         qs = super().get_queryset(request)
+
+        qs = qs.annotate(content_count=models.Count('contents'))
+
         qs = qs.annotate(
             release_date=models.Case(
                 models.When(date=None, then=models.Min('products__release_date', distinct=True)),
