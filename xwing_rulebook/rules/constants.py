@@ -60,6 +60,34 @@ class SOURCE_TYPES:
     ]
 
 
+class SOURCE_STATUS:
+    NOT_RELEASED = 0
+    PROCESSED = 1
+    PENDING = 2
+    MISSING = 3
+
+    as_admin_choices = (
+        (NOT_RELEASED, 'Not released yet'),
+        (PROCESSED, 'Processed'),
+        (PENDING, 'Pending'),
+        (MISSING, 'Missing source'),
+    )
+
+    as_user_choices = (
+        (NOT_RELEASED, 'Not released yet'),
+        (PROCESSED, 'Added to project'),
+        (MISSING, 'File/data needed'),
+        (PENDING, 'Processing ...'),
+    )
+
+    as_list = [
+        NOT_RELEASED,
+        PROCESSED,
+        PENDING,
+        MISSING,
+    ]
+
+
 class RULE_TYPES:
     RULE = 'rule'
     RULE_CLARIFICATION = 'rule-clarification'

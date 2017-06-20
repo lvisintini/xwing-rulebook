@@ -100,14 +100,13 @@ class SourceAdmin(admin.ModelAdmin):
         'products_display',
         'release_date',
         'precedence',
-        'processed',
-        'missing',
         'content_count',
+        'status',
         'display_notes',
     )
     search_fields = ['name', ]
     readonly_fields = ['release_date', 'precedence', 'display_notes', 'products_display', 'content_count']
-    list_filter = ('processed', 'type', 'missing', ContentCountFilter)
+    list_filter = ('status', 'type', ContentCountFilter)
 
     def release_date(self, obj):
         return obj.release_date
@@ -130,7 +129,14 @@ class SourceAdmin(admin.ModelAdmin):
     products_display.short_description = 'Products'
 
     def content_count(self, obj):
-        return obj.content_count
+        if not obj.content_count:
+            return obj.content_count
+
+        return mark_safe('<a href="{}?source_id={}">{}</a>'.format(
+            reverse('admin:contents_content_changelist'),
+            obj.id,
+            obj.content_count
+        ))
     content_count.admin_order_field = 'content_count'
 
     def get_queryset(self, request):

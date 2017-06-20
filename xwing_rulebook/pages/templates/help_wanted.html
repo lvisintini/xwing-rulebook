@@ -1,10 +1,31 @@
 {% extends 'base.html' %}
-{% load markdown %}
-{% load xwing_icons %}
+{% load order_by %}
 
 {% block meta-title %}Help Wanted{{ block.super }}{% endblock %}
 
 {% block content %}
-
-
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>Found in:</th>
+        <th>First released on:</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for source in sources %}
+       <tr>
+         <td>{{ source.name }} {{ source.get_type_display }}</td>
+         <td>{{ source.products.all|order_by:'-sku'|join:'<br/>' }}</td>
+         <td>{{ source.readable_status }}</td>
+         <td>{{ source.release_date|date:"d" }}<sup>{{ source.release_date|date:"S" }}</sup> {{ source.release_date|date:"F Y" }}</td>
+         <td>
+           nothing for now
+         </td>
+       </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

@@ -3,7 +3,7 @@ import re
 from django.db import models
 from django.utils.functional import cached_property
 
-from rules.constants import CLAUSE_TYPES, SOURCE_TYPES, RULE_TYPES, CLAUSE_GROUPS, CARD_TYPES
+from rules.constants import CLAUSE_TYPES, SOURCE_TYPES, RULE_TYPES, CLAUSE_GROUPS, CARD_TYPES, SOURCE_STATUS
 
 
 class EnrichedSourceManager(models.Manager):
@@ -21,26 +21,34 @@ class EnrichedSourceManager(models.Manager):
         )
         qs = qs.annotate(
             precedence=models.Case(
-                models.When(
-                    type=SOURCE_TYPES.FAQ,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.RULES_REFERENCE,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.REFERENCE_CARD,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
-                ),
-                models.When(
-                    type=SOURCE_TYPES.MANUAL,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
-                ),
+                *[
+                    models.When(
+                        type=st,
+                        then=SOURCE_TYPES.PRECEDENCE.index(st)
+                    )
+                    for st in SOURCE_TYPES.PRECEDENCE
+                    if st != SOURCE_TYPES.OTHER
+                ],
                 default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
                 output_field=models.IntegerField()
             )
         )
+
+        qs = qs.annotate(
+            readable_status=models.Case(
+                *[
+                    models.When(
+                        status=ss,
+                        then=models.Value(dict(SOURCE_STATUS.as_user_choices)[ss])
+                    )
+                    for ss in SOURCE_STATUS.as_list
+                ],
+                default=models.Value(''),
+                output_field=models.CharField()
+            )
+         )
+
+        qs = qs.order_by('-release_date', 'precedence')
         return qs
 
 
@@ -48,11 +56,10 @@ class Source(models.Model):
     name = models.CharField(max_length=125)
     date = models.DateField(blank=True, null=True)
     code = models.CharField(max_length=50, default='', unique=True)
+    status = models.IntegerField(choices=SOURCE_STATUS.as_admin_choices, default=SOURCE_STATUS.MISSING)
     type = models.CharField(
         max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
     )
-    processed = models.BooleanField(default=False)
-    missing = models.BooleanField(default=True)
     notes = models.CharField(max_length=250, default='', blank=True)
 
     objects = models.Manager()
@@ -70,18 +77,13 @@ class RuleManager(models.Manager):
 
         qs = qs.annotate(
             type_order=models.Case(
-                models.When(
-                    type=RULE_TYPES.RULE,
-                    then=RULE_TYPES.as_list.index(RULE_TYPES.RULE)
-                ),
-                models.When(
-                    type=RULE_TYPES.RULE_CLARIFICATION,
-                    then=RULE_TYPES.as_list.index(RULE_TYPES.RULE)
-                ),
-                models.When(
-                    type=RULE_TYPES.CARD,
-                    then=RULE_TYPES.as_list.index(RULE_TYPES.CARD)
-                ),
+                *[
+                    models.When(
+                        type=rt,
+                        then=RULE_TYPES.as_list.index(rt)
+                    )
+                    for rt in RULE_TYPES.as_list
+                ],
                 default=100,
                 output_field=models.IntegerField()
             )
@@ -89,30 +91,13 @@ class RuleManager(models.Manager):
 
         qs = qs.annotate(
             card_type_order=models.Case(
-                models.When(
-                    card_type=CARD_TYPES.NOT_APPLICABLE,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.NOT_APPLICABLE)
-                ),
-                models.When(
-                    card_type=CARD_TYPES.DAMAGE_ORG,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.DAMAGE_ORG)
-                ),
-                models.When(
-                    card_type=CARD_TYPES.DAMAGE_TFA,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.DAMAGE_TFA)
-                ),
-                models.When(
-                    card_type=CARD_TYPES.CONDITION,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.CONDITION)
-                ),
-                models.When(
-                    card_type=CARD_TYPES.PILOT,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.PILOT)
-                ),
-                models.When(
-                    card_type=CARD_TYPES.UPGRADE,
-                    then=CARD_TYPES.as_list.index(CARD_TYPES.UPGRADE)
-                ),
+                *[
+                    models.When(
+                        type=ct,
+                        then=CARD_TYPES.as_list.index(ct)
+                    )
+                    for ct in CARD_TYPES.as_list
+                ],
                 default=100,
                 output_field=models.IntegerField()
             )
@@ -155,7 +140,6 @@ class Rule(models.Model):
             expansion_rule='' if not self.expansion_rule else ' ^†^',
             huge_ship='' if not self.huge_ship_rule else ' ^[Epic]^',
         )
-
 
     @cached_property
     def related_faqs(self):
@@ -218,26 +202,14 @@ class Clause(models.Model):
         )
         qs = qs.annotate(
             precedence=models.Case(
-                models.When(
-                    source__type=SOURCE_TYPES.FAQ,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.FAQ)
-                ),
-                models.When(
-                    source__type=SOURCE_TYPES.RULES_REFERENCE,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_REFERENCE)
-                ),
-                models.When(
-                    source__type=SOURCE_TYPES.REFERENCE_CARD,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.REFERENCE_CARD)
-                ),
-                models.When(
-                    source__type=SOURCE_TYPES.RULES_BOOKLET,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.RULES_BOOKLET)
-                ),
-                models.When(
-                    source__type=SOURCE_TYPES.MANUAL,
-                    then=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.MANUAL)
-                ),
+                *[
+                    models.When(
+                        source__type=st,
+                        then=SOURCE_TYPES.PRECEDENCE.index(st)
+                    )
+                    for st in SOURCE_TYPES.PRECEDENCE
+                    if st != SOURCE_TYPES.OTHER
+                ],
                 default=SOURCE_TYPES.PRECEDENCE.index(SOURCE_TYPES.OTHER),
                 output_field=models.IntegerField()
             )

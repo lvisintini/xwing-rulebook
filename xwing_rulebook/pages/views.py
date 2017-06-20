@@ -18,5 +18,5 @@ def help_wanted(request):
     sources = Source.enriched.all()
 
     return render(request, 'help_wanted.html', {
-
+        'sources': sources
     })
