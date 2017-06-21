@@ -4,44 +4,45 @@
 
 {% block meta-title %}Styleguide{{ block.super }}{% endblock %}
 
+{% block page_wrapper_class %}PageWrapper--breakpoints{% endblock %}
 {% block content %}
   <div class="Styleguide">
-    <h1>Layout</h1>
+    <h2>Layout</h2>
 
-    <h2>Sections</h2>
+    <h3>Sections</h3>
     <p>Sections are containers should be used to separate the main content in chunks.</p>
     <p>The wrapper ".Section" does not have any style on it's own, but could be overridden to present the
       ".Section__Inner" element(s) with different sub-layouts</p>
 
-    <h3>.Section__Inner</h3>
+    <h4>.Section__Inner</h4>
     <section class="Section">
       <div class="Section__Inner">
         {% lorem 3 p %}
       </div>
     </section>
 
-    <h3>+ .Section__Inner--shadow</h3>
+    <h4>+ .Section__Inner--shadow</h4>
     <section class="Section">
       <div class="Section__Inner Section__Inner--shadow">
         {% lorem 3 p %}
       </div>
     </section>
 
-    <h3>+ .u-padded</h3>
+    <h4>+ .Section__Inner--unpadded</h4>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner Section__Inner--unpadded">
         {% lorem 3 p %}
       </div>
     </section>
 
-    <h3>+ .Section__Inner--no-background</h3>
+    <h4>+ .Section__Inner--no-background</h4>
     <section class="Section">
       <div class="Section__Inner Section__Inner--no-background">
         {% lorem 3 p %}
       </div>
     </section>
 
-    <h3>+ .Section__Inner--manual</h3>
+    <h4>+ .Section__Inner--manual</h4>
     <section class="Section">
       <div class="Section__Inner Section__Inner--manual">
         <h1>H1 header</h1>
@@ -51,10 +52,10 @@
       </div>
     </section>
 
-    <h1>Text</h1>
-    <h2>Headers</h2>
+    <h2>Text</h2>
+    <h3>Headers</h3>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner">
         <h1>H1 header</h1>
         <h2>H2 Header</h2>
         <h3>H3 Header</h3>
@@ -65,9 +66,9 @@
       </div>
     </section>
 
-    <h2>Font</h2>
+    <h3>Fonts</h3>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner">
         <p>
           Lorem ipsum dolor sit <b>amet</b>, consectetur <strong>adipisicing elit, sed</strong> do eiusmod tempor
           incididunt ut <i>labore et dolore magna aliqua.</i> Ut enim ad minim <em>veniam, quis nostrud</em>
@@ -79,9 +80,9 @@
       </div>
     </section>
 
-    <h2>Links and Buttons</h2>
+    <h3>Links and Buttons</h3>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner">
         <p>
           <a href="/" target="_blank">This is a link</a>
           <br />
@@ -91,10 +92,10 @@
       </div>
     </section>
 
-    <h2>Lists</h2>
-    <h2>Ordered</h2>
+    <h3>Lists</h3>
+    <h4>Ordered</h4>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner">
         <ol>
           <li>Item</li>
           <li>Item</li>
@@ -134,9 +135,9 @@
       </div>
     </section>
 
-    <h2>Unordered</h2>
+    <h4>Unordered</h4>
     <section class="Section">
-      <div class="Section__Inner u-padded">
+      <div class="Section__Inner">
         <ul>
           <li>Item</li>
           <li>Item</li>
@@ -173,6 +174,43 @@
           <li>Item</li>
           <li>Item</li>
         </ul>
+      </div>
+    </section>
+
+    <h3>Tables</h3>
+    <section class="Section">
+      <div class="Section__Inner">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
     </section>
 

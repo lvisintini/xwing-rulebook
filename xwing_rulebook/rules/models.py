@@ -34,20 +34,6 @@ class EnrichedSourceManager(models.Manager):
             )
         )
 
-        qs = qs.annotate(
-            readable_status=models.Case(
-                *[
-                    models.When(
-                        status=ss,
-                        then=models.Value(dict(SOURCE_STATUS.as_user_choices)[ss])
-                    )
-                    for ss in SOURCE_STATUS.as_list
-                ],
-                default=models.Value(''),
-                output_field=models.CharField()
-            )
-         )
-
         qs = qs.order_by('-release_date', 'precedence')
         return qs
 
@@ -64,6 +50,14 @@ class Source(models.Model):
 
     objects = models.Manager()
     enriched = EnrichedSourceManager()
+
+    @property
+    def status_readable(self):
+        return dict(SOURCE_STATUS.as_user_choices)[self.status]
+
+    @property
+    def status_icon(self):
+        return dict(SOURCE_STATUS.as_user_icons).get(self.status, 'fa-question')
 
     def __str__(self):
         return '{}-{}'.format(self.type, self.code)

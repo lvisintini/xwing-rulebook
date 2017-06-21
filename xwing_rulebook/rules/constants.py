@@ -75,9 +75,16 @@ class SOURCE_STATUS:
 
     as_user_choices = (
         (NOT_RELEASED, 'Not released yet'),
-        (PROCESSED, 'Added to project'),
+        (PROCESSED, 'Done'),
         (MISSING, 'File/data needed'),
-        (PENDING, 'Processing ...'),
+        (PENDING, 'Processing'),
+    )
+
+    as_user_icons = (
+        (NOT_RELEASED, 'fa-calendar'),
+        (PROCESSED, 'fa-check u-text-color-green'),
+        (MISSING, 'fa-search u-text-color-red'),
+        (PENDING, 'fa-cog fa-spin'),
     )
 
     as_list = [

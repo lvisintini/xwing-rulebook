@@ -42,7 +42,8 @@ $breakpoints: (
 );
 
 $sizes: (
-  normal-content-width: 60em,
+  narrow-content-width: 60em,
+  regular-content-width: 90em,
 );
 
 $palette: (
@@ -54,7 +55,8 @@ $palette: (
   color2: rgb(21, 76, 230),
   color3: rgb(56, 146, 166),
   color4: rgb(218, 49, 47),
-  color5: rgb(236, 164, 0)
+  color5: rgb(236, 164, 0),
+  color6: rgb(10, 220, 10)
 );
 
 $duration: (

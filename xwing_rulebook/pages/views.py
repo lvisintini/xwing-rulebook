@@ -17,6 +17,18 @@ def styleguide(request):
 def help_wanted(request):
     sources = Source.enriched.all()
 
-    return render(request, 'help_wanted.html', {
+    return render(request, 'resources.html', {
         'sources': sources
     })
+
+
+def contact(request):
+    return render(request, 'contact.html', {})
+
+
+def wall_of_fame(request):
+    return render(request, 'wall_of_fame.html', {})
+
+
+def about(request):
+    return render(request, 'about.html', {})

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load order_by %}
+
+{% block meta-title %}Rule Sources{{ block.super }}{% endblock %}
+
+{% block page_wrapper_class %}PageWrapper--breakpoints{% endblock %}
+
+{% block content %}
+  <section class="Section">
+    <div class="Section__Inner u-padded">
+      <h1>Resources</h1>
+      <p>
+        The following is a list of all the different rule sources available in the <b>XWing Miniatures Game</b>.
+      </p>
+
+      <p>
+         Here you can also see which ones have been included into the rules collected in this website.
+      </p>
+
+      <p>
+        Obviously, some of these are provided by <b>FFG</b>, but most are available only by buying the game's products.
+      </p>
+
+      <p>
+        Because I can't afford to get them all, We need you to help us get our dirty hands on digital copies of the ones
+        that are marked as <span class="u-text-bold u-text-color-red"><i class="fa fa-search" aria-hidden="true"></i>
+        File/data needed</span> so that they can be added to this website.
+      </p>
+
+      <p>
+        High Res Scans of the manuals/cards are the best, but we'll also take nice photos were the text is readable and
+        the page numbers are visible.
+      </p>
+
+      <p>
+        Get in touch using the <a href="{% url 'pages:contact' %}">Contact page</a> to help out.
+      </p>
+
+      <p>
+        Any useful contributions will get your name in the <a href="{% url 'pages:wall-of-fame' %}">Wall of Fame</a>.
+      </p>
+
+
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Found in:</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for s in sources %}
+           <tr>
+             <td>{{ s.name }} {{ s.get_type_display }}</td>
+             <td>{{ s.products.all|order_by:'-sku'|join:'<br/>' }}</td>
+             <td class="u-text-bold{% if s.status == SOURCE_STATUS.MISSING %} u-text-color-red{% endif %}">
+               <i class="fa {{ s.status_icon }}" aria-hidden="true"></i> {{ s.status_readable }}
+             </td>
+             <td>
+               nothing for now
+             </td>
+           </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+{% endblock %}

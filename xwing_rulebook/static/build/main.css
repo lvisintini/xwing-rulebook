@@ -3176,51 +3176,54 @@ i.xwing-miniatures-ship-z95headhunter:before {
   clip: auto; }
 
 .PageWrapper {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  margin: 0 auto;
   min-height: 100vh;
   background-color: #3f3f3f; }
-  @media screen and (max-width: 1680px) {
-    .PageWrapper--breakpoints {
-      background-color: red; } }
-  @media screen and (max-width: 1280px) {
-    .PageWrapper--breakpoints {
-      background-color: yellow; } }
-  @media screen and (max-width: 980px) {
-    .PageWrapper--breakpoints {
-      background-color: green; } }
-  @media screen and (max-width: 850px) {
-    .PageWrapper--breakpoints {
-      background-color: blue; } }
-  @media screen and (max-width: 480px) {
-    .PageWrapper--breakpoints {
-      background-color: orange; } }
-  .PageWrapper__Header, .PageWrapper__Content, .PageWrapper__Footer {
-    width: 60em; }
+  .PageWrapper--breakpoints {
+    background-color: darkcyan; }
+    @media screen and (max-width: 1680px) {
+      .PageWrapper--breakpoints {
+        background-color: red; } }
+    @media screen and (max-width: 1280px) {
+      .PageWrapper--breakpoints {
+        background-color: yellow; } }
+    @media screen and (max-width: 980px) {
+      .PageWrapper--breakpoints {
+        background-color: green; } }
+    @media screen and (max-width: 850px) {
+      .PageWrapper--breakpoints {
+        background-color: blue; } }
+    @media screen and (max-width: 480px) {
+      .PageWrapper--breakpoints {
+        background-color: orange; } }
 
 .Section__Inner {
+  margin: 0 auto;
+  max-width: calc(90em - 2*1em);
+  padding: 1.5em 1em;
   background-color: #e8edf1;
   color: #242424; }
   .Section__Inner--shadow {
     box-shadow: 0px 0px 50px black; }
+    @media screen and (max-width: 850px) {
+      .Section__Inner--shadow {
+        box-shadow: none; } }
+  .Section__Inner--unpadded {
+    max-width: 90em;
+    padding: 0; }
   .Section__Inner--no-background {
     background: none;
     color: white; }
   .Section__Inner--manual {
     box-shadow: 0px 0px 50px black;
+    max-width: calc(60em - 2*3em);
     padding: 2.5em 3em;
     background: url("../images/background/corner-top-left.png") no-repeat left -27px top -27px, url("../images/background/corner-top-right.png") no-repeat right -27px top -27px, url("../images/background/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/background/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/background/border-top.png") repeat-x left 40px top -15px, url("../images/background/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/background/border-left.png") repeat-y left -15px top 90px, url("../images/background/border-right.png") repeat-y right -15px top 90px, url("../images/background/manual-background.jpg") repeat-y center top, transparent; }
+    @media screen and (max-width: 850px) {
+      .Section__Inner--manual {
+        box-shadow: none;
+        background: url("../images/background/manual-background.jpg") repeat-y center top;
+        max-width: calc(90em - 2*1em);
+        padding: 1.5em 1em; } }
 
 @font-face {
   font-family: BankGothic;
@@ -3472,6 +3475,18 @@ a:link {
 .u-text-bold {
   font-weight: bold; }
 
+.u-text-color-red {
+  color: #da312f; }
+
+.u-text-color-yellow {
+  color: #eca400; }
+
+.u-text-color-green {
+  color: #0adc0a; }
+
+.u-text-color-blue {
+  color: #154ce6; }
+
 .u-flex {
   display: flex; }
   .u-flex-left {
@@ -3504,13 +3519,27 @@ a:link {
 .u-padded {
   padding: 1.5em 1em; }
 
+.u-bg-color-red {
+  color: #da312f; }
+
+.u-bg-color-yellow {
+  color: #eca400; }
+
+.u-bg-color-green {
+  color: #0adc0a; }
+
+.u-bg-color-blue {
+  color: #154ce6; }
+
+.Styleguide > p, .Styleguide > h1, .Styleguide > h2, .Styleguide > h3, .Styleguide > h4, .Styleguide > h5, .Styleguide > h6 {
+  text-align: center; }
+
 .Styleguide > p {
   color: white; }
 
 .Book {
   box-shadow: 0px 0px 50px black;
-  background: white url("../images/background/manual-background.jpg") repeat-y center top;
-  width: 60em; }
+  background: white url("../images/background/manual-background.jpg") repeat-y center top; }
   .Book__Inner--columns {
     columns: 2 400px;
     column-gap: 3em;

@@ -1,7 +1,7 @@
 .Book {
   @include vendor('box-shadow', '0px 0px 50px black');
   background: white url("../images/background/manual-background.jpg") repeat-y center top;
-  width: val($sizes, normal-content-width);
+  width: val($sizes, manual-content-width);
 
   &__Inner {
 
