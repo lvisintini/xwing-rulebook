@@ -66,9 +66,6 @@ class Source(models.Model):
 class RuleManager(models.Manager):
     def get_queryset(self):
         qs = super().get_queryset()
-
-        qs = qs.annotate(content_count=models.Count('contents'))
-
         qs = qs.annotate(
             type_order=models.Case(
                 *[
