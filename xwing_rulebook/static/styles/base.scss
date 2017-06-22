@@ -1,7 +1,27 @@
+html {
+  font-size: val($base-font-size, default);
+
+  @include breakpoint(xlarge) {
+    font-size: val($base-font-size, xlarge);
+  }
+  @include breakpoint(large) {
+    font-size: val($base-font-size, large);
+  }
+  @include breakpoint(medium) {
+    font-size: val($base-font-size, medium);
+  }
+  @include breakpoint(small) {
+    font-size: val($base-font-size, small);
+  }
+  @include breakpoint(xsmall) {
+    font-size: val($base-font-size, xsmall);
+  }
+}
+
 body {
   font-family: Eurostile;
   font-style: normal;
-  font-size: val($font-size, base-size);
+  font-size: val($font-size, normal);
   margin: 0;
 }
 

@@ -4,6 +4,23 @@ $misc: (
   z-index-base: 10000
 );
 
+$base-font-size: (
+  default: 18px,
+  xlarge: 18px,
+  large: 18px,
+  medium: 18px,
+  small: 16px,
+  xsmall: 16px
+);
+
+$breakpoint-limits: (
+  xlarge: 1680px,
+  large: 1280px,
+  medium: 980px,
+  small: 850px,
+  xsmall: 480px
+);
+
 $padding: (
   x-small: 0.25em,
   small: 0.5em,
@@ -15,7 +32,6 @@ $padding: (
 );
 
 $font-size: (
-  base-size: 16px,
   x-small: 0.5em,
   small: 0.75em,
   normal: 1em,
@@ -33,17 +49,11 @@ $line-heights: (
   x-large: 5em
 );
 
-$breakpoints: (
-  xlarge: 1680px,
-  large: 1280px,
-  medium: 980px,
-  small: 850px,
-  xsmall: 480px
-);
+
 
 $sizes: (
   narrow-content-width: 60em,
-  regular-content-width: 90em,
+  regular-content-width: 80em,
 );
 
 $palette: (

@@ -3198,7 +3198,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
 
 .Section__Inner {
   margin: 0 auto;
-  max-width: calc(90em - 2*1em);
+  max-width: calc(80em - 2*1em);
   padding: 1.5em 1em;
   background-color: #e8edf1;
   color: #242424; }
@@ -3208,7 +3208,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
       .Section__Inner--shadow {
         box-shadow: none; } }
   .Section__Inner--unpadded {
-    max-width: 90em;
+    max-width: 80em;
     padding: 0; }
   .Section__Inner--no-background {
     background: none;
@@ -3222,7 +3222,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
       .Section__Inner--manual {
         box-shadow: none;
         background: url("../images/background/manual-background.jpg") repeat-y center top;
-        max-width: calc(90em - 2*1em);
+        max-width: calc(80em - 2*1em);
         padding: 1.5em 1em; } }
 
 @font-face {
@@ -3362,10 +3362,28 @@ i.xwing-miniatures-ship-z95headhunter:before {
   font-style: italic;
   font-stretch: normal; }
 
+html {
+  font-size: 18px; }
+  @media screen and (max-width: 1680px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (max-width: 1280px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (max-width: 980px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (max-width: 850px) {
+    html {
+      font-size: 16px; } }
+  @media screen and (max-width: 480px) {
+    html {
+      font-size: 16px; } }
+
 body {
   font-family: Eurostile;
   font-style: normal;
-  font-size: 16px;
+  font-size: 1em;
   margin: 0; }
 
 h1,
@@ -3530,6 +3548,26 @@ a:link {
 
 .u-bg-color-blue {
   color: #154ce6; }
+
+@media screen and (max-width: 480px) {
+  .u-hide-xsmall {
+    display: none; } }
+
+@media screen and (max-width: 850px) {
+  .u-hide-small {
+    display: none; } }
+
+@media screen and (max-width: 980px) {
+  .u-hide-medium {
+    display: none; } }
+
+@media screen and (max-width: 1280px) {
+  .u-hide-large {
+    display: none; } }
+
+@media screen and (max-width: 1680px) {
+  .u-hide-xlarge {
+    display: none; } }
 
 .Styleguide > p, .Styleguide > h1, .Styleguide > h2, .Styleguide > h3, .Styleguide > h4, .Styleguide > h5, .Styleguide > h6 {
   text-align: center; }

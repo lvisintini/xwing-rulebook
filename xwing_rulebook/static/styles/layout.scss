@@ -1,9 +1,9 @@
 @include skel-breakpoints((
-  xlarge: '(max-width: ' + val($breakpoints, xlarge) + ')',
-  large: '(max-width: ' + val($breakpoints, large) + ')',
-  medium: '(max-width: ' + val($breakpoints, medium) + ')',
-  small: '(max-width: ' + val($breakpoints, small) + ')',
-  xsmall: '(max-width: ' + val($breakpoints, xsmall) + ')',
+  xlarge: '(max-width: ' + val($breakpoint-limits, xlarge) + ')',
+  large: '(max-width: ' + val($breakpoint-limits, large) + ')',
+  medium: '(max-width: ' + val($breakpoint-limits, medium) + ')',
+  small: '(max-width: ' + val($breakpoint-limits, small) + ')',
+  xsmall: '(max-width: ' + val($breakpoint-limits, xsmall) + ')',
 ));
 
 
