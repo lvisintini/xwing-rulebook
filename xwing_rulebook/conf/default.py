@@ -35,15 +35,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
-    'nested_admin',
-    'integrations.apps.IntegrationsConfig',
-    'rules.apps.RulesConfig',
     'books.apps.BooksConfig',
-    'pages.apps.PagesConfig',
-    'utils.apps.UtilsConfig',
     'contents.apps.ContentsConfig',
     'faqs.apps.FaqsConfig',
+    'integrations.apps.IntegrationsConfig',
+    'nested_admin',
+    'pages.apps.PagesConfig',
+    'rules.apps.RulesConfig',
+    'utils.apps.UtilsConfig',
+    'robots',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 ]
 
 ROOT_URLCONF = 'urls'
@@ -79,6 +83,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wsgi.application'
 
+SITE_ID = 1  # Setting required by 'django.contrib.sites'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -142,3 +147,7 @@ EXTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, "external")
 ENVIRONMENT = ENVIRONMENTS.DEVELOPMENT
 
 GOOGLE_TAG_MANAGER_ID = ''
+
+# django-robots settings
+ROBOTS_SITEMAP_VIEW_NAME = 'pages:django.contrib.sitemaps.views.sitemap'
+ROBOTS_CACHE_TIMEOUT = 60*60*24
