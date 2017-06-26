@@ -33,29 +33,12 @@ def rule(request, rule_slug=None):
 def rules_index(request):
     qs = Rule.objects.order_by('type_order', 'card_type_order', 'name')
 
-    grouped_rules = groupby(
-        qs.all(),
-        key=lambda r: (
-            (
-                r.type if r.type != RULE_TYPES.RULE_CLARIFICATION else RULE_TYPES.RULE,
-                dict(RULE_TYPES.as_choices)[
-                    r.type if r.type != RULE_TYPES.RULE_CLARIFICATION else RULE_TYPES.RULE
-                ]
-            ),
-            (
-                r.card_type_order,
-                dict(CARD_TYPES.as_choices)[r.card_type],
-            )
-        )
-    )
-
-    rules_by_type = OrderedDict()
-    for key, group in grouped_rules:
-        if key[0] not in rules_by_type:
-            rules_by_type[key[0]] = OrderedDict()
-        rules_by_type[key[0]][key[1]] = list(group)
-
     context = {
-        'rules_by_type': rules_by_type,
+        'rules': qs.filter(type__in=[RULE_TYPES.RULE, RULE_TYPES.RULE_CLARIFICATION]),
+        'pilots': qs.filter(type=RULE_TYPES.CARD, card_type=CARD_TYPES.PILOT),
+        'damage_org': qs.filter(type=RULE_TYPES.CARD, card_type=CARD_TYPES.DAMAGE_ORG),
+        'damage_tfa': qs.filter(type=RULE_TYPES.CARD, card_type=CARD_TYPES.DAMAGE_TFA),
+        'upgrades': qs.filter(type=RULE_TYPES.CARD, card_type=CARD_TYPES.UPGRADE),
+        'conditions': qs.filter(type=RULE_TYPES.CARD, card_type=CARD_TYPES.CONDITION),
     }
     return render(request, 'rules_index.html', context)

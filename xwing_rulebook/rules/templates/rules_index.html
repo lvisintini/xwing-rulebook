@@ -17,24 +17,63 @@
 
       <h1>Rules index</h1>
 
-      {% for type_key, rules_by_card_type in rules_by_type.items %}
-        <h2>{{ type_key.1 }}s</h2>
+      <h2>Rules</h2>
+      <ul>
+          {% for r in rules %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">
+                {{ r.name | xwing_icons }}
+                {% if r.expansion_rule %} <sup>†</sup>{% endif %}
+                {% if r.huge_ship_rule %} <sup>{{ '[Epic]' | xwing_icons  }}</sup>{% endif %}
+              </a>
+            </li>
+          {% endfor %}
+      </ul>
 
-        {% for card_type_key, rules in rules_by_card_type.items %}
-          {% if card_type_key.0 != CARD_TYPES.NOT_APPLICABLE %}<h3>{{ card_type_key.1 }}</h3>{% endif %}
-          <ul>
-              {% for r in rules %}
-                <li>
-                  <a href="{% url 'rules:rule' rule_slug=r.slug  %}">
-                    {{ r.name | xwing_icons }}
-                    {% if r.expansion_rule %} <sup>†</sup>{% endif %}
-                    {% if r.huge_ship_rule %} <sup>{{ '[Epic]' | xwing_icons  }}</sup>{% endif %}
-                  </a>
-                </li>
-              {% endfor %}
-          </ul>
-        {% endfor %}
-      {% endfor %}
+      <h3>Pilots</h3>
+      <ul>
+          {% for r in pilots %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+
+      <h3>Upgrades</h3>
+      <ul>
+          {% for r in upgrades %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+
+      <h3>Damage card (Original core set)</h3>
+      <ul>
+          {% for r in damage_org %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+
+      <h3>Damage card (TFA core set)</h3>
+      <ul>
+          {% for r in damage_tfa %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+
+      <h3>Conditions</h3>
+      <ul>
+          {% for r in conditions %}
+            <li>
+              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+            </li>
+          {% endfor %}
+      </ul>
     </div>
   </div>
 {% endblock %}
