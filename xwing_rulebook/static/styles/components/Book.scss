@@ -44,7 +44,7 @@
     color: white;
     right: -20em;
     font-size: val($font-size, small);
-    line-height: val($line-heights, small);
+    line-height: $line-height;
     padding: val($padding, small);
     font-weight: normal;
 }

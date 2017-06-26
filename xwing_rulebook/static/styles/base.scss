@@ -22,7 +22,33 @@ body {
   font-family: Eurostile;
   font-style: normal;
   font-size: val($font-size, normal);
+  line-height: $line-height;
   margin: 0;
+}
+
+h1 {
+  font-size: val($font-size, xxx-large);
+  line-height: $line-height;
+}
+h2 {
+  font-size: val($font-size, xx-large);
+  line-height: $line-height;
+}
+h3 {
+  font-size: val($font-size, x-large);
+  line-height: $line-height;
+}
+h4 {
+  font-size: val($font-size, large);
+  line-height: $line-height;
+}
+h5 {
+  font-size: val($font-size, medium);
+  line-height: $line-height;
+}
+h6 {
+  font-size: val($font-size, normal);
+  line-height: $line-height;
 }
 
 h1,
@@ -153,5 +179,78 @@ a:link {
     @include vendor('text-shadow', '0 0 1px ' + transparentize(val($palette, color1), 0.4));
     color: val($palette, color1);
     border-bottom: 1px solid val($palette, color1);
+  }
+}
+
+table {
+  border-collapse: collapse;
+  margin: val($padding, large) 0;
+
+  thead, tfoot {
+    th {
+      background-color: darken(val($palette, bg-light), 40);
+      color: val($palette, fg-light);
+      font-weight: bold;
+    }
+  }
+
+  td, th {
+    text-align: left;
+    vertical-align: top;
+  }
+
+  &.Table {
+    &--bordered {
+      td, th {
+        border: 1px solid lighten(val($palette, fg-dark), 50);
+      }
+    }
+
+    &--padded {
+      td, th {
+        padding: val($padding, small);
+      }
+    }
+
+    &--extra-padded {
+      th {
+        padding: val($padding, small) val($padding, large);
+      }
+      td {
+        padding: val($padding, large);
+      }
+    }
+
+    &--expanded {
+      width: 100%;
+    }
+
+    &--odd-even-rows {
+      tr:nth-child(2n+0) td {
+          background-color: darken(val($palette, bg-light), 5)
+      }
+      tr:nth-child(2n+1) td {
+          background-color: darken(val($palette, bg-light), 15)
+      }
+    }
+
+    &--hover-rows {
+      tr:hover td {
+        background-color: darken(val($palette, bg-light), 25)
+      }
+    }
+
+    &--hover-odd-even-rows {
+      tr:nth-child(2n+0) td {
+          background-color: darken(val($palette, bg-light), 5)
+      }
+      tr:nth-child(2n+1) td {
+          background-color: darken(val($palette, bg-light), 15)
+      }
+
+      tr:hover td {
+          background-color: darken(val($palette, bg-light), 25)
+      }
+    }
   }
 }

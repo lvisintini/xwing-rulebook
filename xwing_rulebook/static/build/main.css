@@ -3384,7 +3384,32 @@ body {
   font-family: Eurostile;
   font-style: normal;
   font-size: 1em;
+  line-height: 1.5em;
   margin: 0; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.5em; }
+
+h2 {
+  font-size: 2.66em;
+  line-height: 1.5em; }
+
+h3 {
+  font-size: 2.33em;
+  line-height: 1.5em; }
+
+h4 {
+  font-size: 2em;
+  line-height: 1.5em; }
+
+h5 {
+  font-size: 1.5em;
+  line-height: 1.5em; }
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em; }
 
 h1,
 h2,
@@ -3480,6 +3505,39 @@ a:link {
     text-shadow: 0 0 1px rgba(4, 0, 45, 0.6);
     color: #04002d;
     border-bottom: 1px solid #04002d; }
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0; }
+  table thead th, table tfoot th {
+    background-color: #698aa4;
+    color: white;
+    font-weight: bold; }
+  table td, table th {
+    text-align: left;
+    vertical-align: top; }
+  table.Table--bordered td, table.Table--bordered th {
+    border: 1px solid #a4a4a4; }
+  table.Table--padded td, table.Table--padded th {
+    padding: 0.5em; }
+  table.Table--extra-padded th {
+    padding: 0.5em 1.5em; }
+  table.Table--extra-padded td {
+    padding: 1.5em; }
+  table.Table--expanded {
+    width: 100%; }
+  table.Table--odd-even-rows tr:nth-child(2n+0) td {
+    background-color: #d8e1e7; }
+  table.Table--odd-even-rows tr:nth-child(2n+1) td {
+    background-color: #b8c8d4; }
+  table.Table--hover-rows tr:hover td {
+    background-color: #99afc1; }
+  table.Table--hover-odd-even-rows tr:nth-child(2n+0) td {
+    background-color: #d8e1e7; }
+  table.Table--hover-odd-even-rows tr:nth-child(2n+1) td {
+    background-color: #b8c8d4; }
+  table.Table--hover-odd-even-rows tr:hover td {
+    background-color: #99afc1; }
 
 .u-text-left {
   text-align: right; }
