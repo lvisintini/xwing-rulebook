@@ -20,19 +20,19 @@
   <body>
     {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">
-      <div class="PageWrapper__Header">
+      <header class="PageWrapper__Header">
         {% block header %}
           {% include 'includes/_header.html' %}
         {% endblock %}
-      </div>
+      </header>
       <div class="PageWrapper__Content">
         {% block content %}{% endblock %}
       </div>
-      <div class="PageWrapper__Footer">
+      <footer class="PageWrapper__Footer">
         {% block footer %}
           {% include 'includes/_footer.html' %}
         {% endblock %}
-      </div>
+      </footer>
 
     </div>
 
