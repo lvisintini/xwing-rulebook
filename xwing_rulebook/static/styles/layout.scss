@@ -31,13 +31,22 @@
     }
   }
 
-  &__Header,
-  &__Content,
-  &__Footer {
+  &__Header {
+    height: 200px;
+    background:
+          url("../images/background/red-stripe.png") repeat-x center bottom 0,
+          url("../images/background/header.png") no-repeat center top 0;
+  }
+  &__Content {
 
   }
+  &__Footer {
+    height: 200px;
+    background:
+              url("../images/background/red-stripe.png") repeat-x center top 0,
+              url("../images/background/footer.png") no-repeat center top 0;
+  }
 
-  &__Content {}
 }
 
 .Section {

@@ -3195,6 +3195,12 @@ i.xwing-miniatures-ship-z95headhunter:before {
     @media screen and (max-width: 480px) {
       .PageWrapper--breakpoints {
         background-color: orange; } }
+  .PageWrapper__Header {
+    height: 200px;
+    background: url("../images/background/red-stripe.png") repeat-x center bottom 0, url("../images/background/header.png") no-repeat center top 0; }
+  .PageWrapper__Footer {
+    height: 200px;
+    background: url("../images/background/red-stripe.png") repeat-x center top 0, url("../images/background/footer.png") no-repeat center top 0; }
 
 .Section__Inner {
   margin: 0 auto;

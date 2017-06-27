@@ -14,4 +14,6 @@ urlpatterns = [
 
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': {}}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^robots\.txt', include('robots.urls')),
+    url(r'^manifest\.json', views.manifest, name='manifest.json'),
+    url(r'^browserconfig\.xml', views.browser_config, name='browserconfig.xml'),
 ]
