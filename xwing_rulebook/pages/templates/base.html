@@ -4,35 +4,30 @@
 <html>
   <head>
     <title>{% block meta-title %} | X-Wing Rulebook{% endblock %}</title>
-    <meta name="description" content="{% block meta-description %}{% endblock %}">
     {% block meta %}
+      <meta name="description" content="{% block meta-description %}{% endblock %}">
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <!--<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">-->
+      {% include 'includes/_favicon.html' %}
     {% endblock %}
 
     {% block styles %}
       <link rel="stylesheet" href="{% static 'build/main.css' %}">
     {% endblock %}
-    {% include 'includes/_favicon.html' %}
     {% include 'includes/_google_tag_manager.html' %}
   </head>
   <body>
     {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">
-      <header class="PageWrapper__Header">
-        {% block header %}
-          {% include 'includes/_header.html' %}
-        {% endblock %}
-      </header>
-      <div class="PageWrapper__Content">
-        {% block content %}{% endblock %}
-      </div>
-      <footer class="PageWrapper__Footer">
-        {% block footer %}
-          {% include 'includes/_footer.html' %}
-        {% endblock %}
-      </footer>
+      {% block header %}
+        {% include 'includes/_header.html' %}
+      {% endblock %}
+
+      {% block content %}{% endblock %}
+
+      {% block footer %}
+        {% include 'includes/_footer.html' %}
+      {% endblock %}
 
     </div>
 

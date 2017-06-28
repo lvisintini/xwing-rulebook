@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: val($font-size, normal);
   line-height: $line-height;
@@ -57,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Kimberley;
+  font-family: Kimberley, Arial, Helvetica, sans-serif;
   @include vendor('text-shadow',
     val($palette, bg-light) + ' 3px 0px 0px, ' +
     val($palette, bg-light) + ' 2.83487px 0.981584px 0px, ' +

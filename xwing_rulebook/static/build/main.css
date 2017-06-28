@@ -3195,12 +3195,6 @@ i.xwing-miniatures-ship-z95headhunter:before {
     @media screen and (max-width: 480px) {
       .PageWrapper--breakpoints {
         background-color: orange; } }
-  .PageWrapper__Header {
-    height: 200px;
-    background: url("../images/background/red-stripe.png") repeat-x center bottom 0, url("../images/background/header.png") no-repeat center top 0; }
-  .PageWrapper__Footer {
-    height: 200px;
-    background: url("../images/background/red-stripe.png") repeat-x center top 0, url("../images/background/footer.png") no-repeat center top 0; }
 
 .Section__Inner {
   margin: 0 auto;
@@ -3223,11 +3217,11 @@ i.xwing-miniatures-ship-z95headhunter:before {
     box-shadow: 0px 0px 50px black;
     max-width: calc(60em - 2*3em);
     padding: 2.5em 3em;
-    background: url("../images/background/corner-top-left.png") no-repeat left -27px top -27px, url("../images/background/corner-top-right.png") no-repeat right -27px top -27px, url("../images/background/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/background/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/background/border-top.png") repeat-x left 40px top -15px, url("../images/background/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/background/border-left.png") repeat-y left -15px top 90px, url("../images/background/border-right.png") repeat-y right -15px top 90px, url("../images/background/manual-background.jpg") repeat-y center top, transparent; }
+    background: url("../images/site/corner-top-left.png") no-repeat left -27px top -27px, url("../images/site/corner-top-right.png") no-repeat right -27px top -27px, url("../images/site/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/site/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/site/border-top.png") repeat-x left 40px top -15px, url("../images/site/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/site/border-left.png") repeat-y left -15px top 90px, url("../images/site/border-right.png") repeat-y right -15px top 90px, url("../images/site/manual-background.jpg") repeat-y center top, transparent; }
     @media screen and (max-width: 850px) {
       .Section__Inner--manual {
         box-shadow: none;
-        background: url("../images/background/manual-background.jpg") repeat-y center top;
+        background: url("../images/site/manual-background.jpg") repeat-y center top;
         max-width: calc(80em - 2*1em);
         padding: 1.5em 1em; } }
 
@@ -3387,7 +3381,7 @@ html {
       font-size: 16px; } }
 
 body {
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-size: 1em;
   line-height: 1.5em;
@@ -3423,7 +3417,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Kimberley;
+  font-family: Kimberley, Arial, Helvetica, sans-serif;
   text-shadow: #e8edf1 3px 0px 0px, #e8edf1 2.83487px 0.981584px 0px, #e8edf1 2.35766px 1.85511px 0px, #e8edf1 1.62091px 2.52441px 0px, #e8edf1 0.705713px 2.91581px 0px, #e8edf1 -0.287171px 2.98622px 0px, #e8edf1 -1.24844px 2.72789px 0px, #e8edf1 -2.07227px 2.16926px 0px, #e8edf1 -2.66798px 1.37182px 0px, #e8edf1 -2.96998px 0.42336px 0px, #e8edf1 -2.94502px -0.571704px 0px, #e8edf1 -2.59586px -1.50383px 0px, #e8edf1 -1.96093px -2.27041px 0px, #e8edf1 -1.11013px -2.78704px 0px, #e8edf1 -0.137119px -2.99686px 0px, #e8edf1 0.850987px -2.87677px 0px, #e8edf1 1.74541px -2.43999px 0px, #e8edf1 2.44769px -1.73459px 0px, #e8edf1 2.88051px -0.838247px 0px; }
 
 ol,
@@ -3638,6 +3632,70 @@ table {
 
 .Styleguide > p {
   color: white; }
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background: url("../images/site/header.png") no-repeat center top 0; }
+  @media screen and (max-width: 980px) {
+    .Header {
+      background: #3892a6; } }
+  .Header__LogoWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50vw;
+    padding: 1em 1em 1em 1.5em;
+    background: linear-gradient(90deg, #3892a6, #3892a6 50%, transparent); }
+    @media screen and (max-width: 980px) {
+      .Header__LogoWrapper {
+        background: none; } }
+    .Header__LogoWrapper > * {
+      margin-right: 1em; }
+  .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+    display: block;
+    border: none;
+    text-decoration: none;
+    height: 100px;
+    max-height: 100px;
+    width: 100px;
+    max-width: 100px;
+    background-color: white;
+    border-radius: 100%; }
+    @media screen and (max-width: 1280px) {
+      .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+        height: 80px;
+        max-height: 80px;
+        width: 80px;
+        max-width: 80px; } }
+    @media screen and (max-width: 980px) {
+      .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+        height: 60px;
+        max-height: 60px;
+        width: 60px;
+        max-width: 60px; } }
+    .Header__Logo:hover img, .Header__Logo:visited img, .Header__Logo:active img, .Header__Logo:link img, .Header__Logo:focus img {
+      height: 80%;
+      padding: 10%;
+      width: auto; }
+  .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
+    border-bottom: none;
+    text-shadow: none;
+    text-decoration: none;
+    font-family: Kimberley, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 2.25em;
+    line-height: 1.5em; }
+    @media screen and (max-width: 1280px) {
+      .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
+        font-size: 1.75em; } }
+    @media screen and (max-width: 980px) {
+      .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
+        font-size: 1.25em; } }
+
+.Footer {
+  background: url("../images/site/footer.png") no-repeat center top 0; }
 
 .Book {
   box-shadow: 0px 0px 50px black;

@@ -31,22 +31,6 @@
     }
   }
 
-  &__Header {
-    height: 200px;
-    background:
-          url("../images/background/red-stripe.png") repeat-x center bottom 0,
-          url("../images/background/header.png") no-repeat center top 0;
-  }
-  &__Content {
-
-  }
-  &__Footer {
-    height: 200px;
-    background:
-              url("../images/background/red-stripe.png") repeat-x center top 0,
-              url("../images/background/footer.png") no-repeat center top 0;
-  }
-
 }
 
 .Section {
@@ -82,20 +66,20 @@
       padding: val($padding, xx-large) val($padding, xxx-large);
 
       background:
-              url("../images/background/corner-top-left.png") no-repeat left -27px top -27px,
-              url("../images/background/corner-top-right.png") no-repeat right -27px top -27px,
-              url("../images/background/corner-bottom-left.png") no-repeat left -27px bottom -27px,
-              url("../images/background/corner-bottom-right.png") no-repeat right -27px bottom -27px,
-              url("../images/background/border-top.png") repeat-x left 40px top -15px,
-              url("../images/background/border-bottom.png") repeat-x left 40px bottom -15px,
-              url("../images/background/border-left.png") repeat-y left -15px top 90px,
-              url("../images/background/border-right.png") repeat-y right -15px top 90px,
-              url("../images/background/manual-background.jpg") repeat-y center top,
+              url("../images/site/corner-top-left.png") no-repeat left -27px top -27px,
+              url("../images/site/corner-top-right.png") no-repeat right -27px top -27px,
+              url("../images/site/corner-bottom-left.png") no-repeat left -27px bottom -27px,
+              url("../images/site/corner-bottom-right.png") no-repeat right -27px bottom -27px,
+              url("../images/site/border-top.png") repeat-x left 40px top -15px,
+              url("../images/site/border-bottom.png") repeat-x left 40px bottom -15px,
+              url("../images/site/border-left.png") repeat-y left -15px top 90px,
+              url("../images/site/border-right.png") repeat-y right -15px top 90px,
+              url("../images/site/manual-background.jpg") repeat-y center top,
               transparent;
 
       @include breakpoint(small) {
         @include vendor('box-shadow', 'none');
-        background: url("../images/background/manual-background.jpg") repeat-y center top;
+        background: url("../images/site/manual-background.jpg") repeat-y center top;
         max-width: calc(#{val($sizes, regular-content-width)} - 2*#{val($padding, normal)});
         padding: val($padding, large) val($padding, normal);
       }
