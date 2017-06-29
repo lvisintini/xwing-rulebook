@@ -1,7 +1,7 @@
 $fa-font-path: '../fonts/lib/font-awesome/';
 
-$misc: (
-  z-index-base: 10000
+$z-index: (
+  header: 100,
 );
 
 $base-font-size: (
@@ -22,24 +22,24 @@ $breakpoint-limits: (
 );
 
 $padding: (
-  x-small: 0.25em,
+  xsmall: 0.25em,
   small: 0.5em,
   normal: 1em,
   large: 1.5em,
-  x-large: 2em,
-  xx-large: 2.5em,
-  xxx-large: 3em
+  xlarge: 2em,
+  xxlarge: 2.5em,
+  xxxlarge: 3em
 );
 
 $font-size: (
-  x-small: 0.5em,
+  xsmall: 0.5em,
   small: 0.75em,
   normal: 1em,
   medium: 1.25em,
   large: 1.75em,
-  x-large: 2.25em,
-  xx-large: 2.75em,
-  xxx-large: 3.25em
+  xlarge: 2.25em,
+  xxlarge: 2.75em,
+  xxxlarge: 3.25em
 );
 
 $line-height: 1.5em;
@@ -63,9 +63,9 @@ $palette: (
 );
 
 $duration: (
-  x-short: 0.2s,
+  xshort: 0.2s,
   short: 0.5s,
   medium: 1s,
   long: 3s,
-  x-long: 4s
+  xlong: 4s
 );

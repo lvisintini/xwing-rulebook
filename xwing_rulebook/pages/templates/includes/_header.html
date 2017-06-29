@@ -1,9 +1,11 @@
 {% load staticfiles %}
-<header class="Header">
-  <div class="Header__LogoWrapper">
-    <a class="Header__Logo" href="{% url 'pages:index' %}">
-      <img src="{% static "images/site/logo.svg" %}" />
-    </a>
-    <a class="Header__Title" href="{% url 'pages:index' %}">XWing Rulebook</a>
-  </div>
-</header>
+<div class="HeaderWrapper">
+  <header class="Header">
+    <div class="Header__LogoWrapper">
+      <a class="Header__Logo" href="{% url 'pages:index' %}">
+        <img src="{% static "images/site/logo.svg" %}" />
+      </a>
+      <a title="XWing Rulebook" href="{% url 'pages:index' %}">XWing Rulebook</a>
+    </div>
+  </header>
+</div>

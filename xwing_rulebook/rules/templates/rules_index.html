@@ -7,8 +7,9 @@
 {% block page_wrapper_class %} u-background-dark{% endblock %}
 
 {% block content %}
-  <div class="Book">
-    <div class="Book__Inner Book__Inner--fancy-border">
+
+  <section class="Section Section">
+    <div class="Section__Inner Section__Inner--shadow">
 
       <div class="u-flex u-flex-space-between">
         <a href="{% url 'admin:rules_rule_changelist' %}">&uarr; Go to admin</a>
@@ -19,61 +20,64 @@
 
       <h2>Rules</h2>
       <ul>
-          {% for r in rules %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">
-                {{ r.name | xwing_icons }}
-                {% if r.expansion_rule %} <sup>†</sup>{% endif %}
-                {% if r.huge_ship_rule %} <sup>{{ '[Epic]' | xwing_icons  }}</sup>{% endif %}
-              </a>
-            </li>
-          {% endfor %}
+        {% for r in rules %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">
+              {{ r.name | xwing_icons }}
+              {% if r.expansion_rule %} <sup>†</sup>{% endif %}
+              {% if r.huge_ship_rule %} <sup>{{ '[Epic]' | xwing_icons  }}</sup>{% endif %}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
 
       <h3>Pilots</h3>
       <ul>
-          {% for r in pilots %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
-            </li>
-          {% endfor %}
+        {% for r in pilots %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+          </li>
+        {% endfor %}
       </ul>
 
       <h3>Upgrades</h3>
       <ul>
-          {% for r in upgrades %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
-            </li>
-          {% endfor %}
+        {% for r in upgrades %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+          </li>
+        {% endfor %}
       </ul>
 
       <h3>Damage card (Original core set)</h3>
       <ul>
-          {% for r in damage_org %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
-            </li>
-          {% endfor %}
+        {% for r in damage_org %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+          </li>
+        {% endfor %}
       </ul>
 
       <h3>Damage card (TFA core set)</h3>
       <ul>
-          {% for r in damage_tfa %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
-            </li>
-          {% endfor %}
+        {% for r in damage_tfa %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+          </li>
+        {% endfor %}
       </ul>
 
       <h3>Conditions</h3>
       <ul>
-          {% for r in conditions %}
-            <li>
-              <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
-            </li>
-          {% endfor %}
+        {% for r in conditions %}
+          <li>
+            <a href="{% url 'rules:rule' rule_slug=r.slug  %}">{{ r.name | xwing_icons }}</a>
+          </li>
+        {% endfor %}
       </ul>
+
     </div>
-  </div>
+  </section>
+
+
 {% endblock %}

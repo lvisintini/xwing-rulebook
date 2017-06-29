@@ -3177,7 +3177,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
 
 .PageWrapper {
   min-height: 100vh;
-  background-color: #3f3f3f; }
+  background-color: #328193; }
   .PageWrapper--breakpoints {
     background-color: darkcyan; }
     @media screen and (max-width: 1680px) {
@@ -3633,10 +3633,16 @@ table {
 .Styleguide > p {
   color: white; }
 
+.HeaderWrapper {
+  padding-bottom: 2px;
+  background: white;
+  z-index: 100;
+  position: relative; }
+
 .Header {
   display: flex;
   justify-content: space-between;
-  background: url("../images/site/header.png") no-repeat center top 0; }
+  background: url("../images/site/header.png") no-repeat right center black; }
   @media screen and (max-width: 980px) {
     .Header {
       background: #3892a6; } }
@@ -3649,57 +3655,71 @@ table {
     background: linear-gradient(90deg, #3892a6, #3892a6 50%, transparent); }
     @media screen and (max-width: 980px) {
       .Header__LogoWrapper {
+        width: auto; } }
+    @media screen and (max-width: 980px) {
+      .Header__LogoWrapper {
         background: none; } }
     .Header__LogoWrapper > * {
-      margin-right: 1em; }
-  .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+      margin-right: 0.25em; }
+    .Header__LogoWrapper a,
+    .Header__LogoWrapper a:hover,
+    .Header__LogoWrapper a:visited,
+    .Header__LogoWrapper a:active,
+    .Header__LogoWrapper a:link,
+    .Header__LogoWrapper a:focus {
+      text-shadow: none;
+      border: none;
+      text-decoration: none;
+      font-family: Kimberley, Arial, Helvetica, sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: 2.25em;
+      line-height: 1.5em; }
+      @media screen and (max-width: 1280px) {
+        .Header__LogoWrapper a,
+        .Header__LogoWrapper a:hover,
+        .Header__LogoWrapper a:visited,
+        .Header__LogoWrapper a:active,
+        .Header__LogoWrapper a:link,
+        .Header__LogoWrapper a:focus {
+          font-size: 1.75em; } }
+      @media screen and (max-width: 980px) {
+        .Header__LogoWrapper a,
+        .Header__LogoWrapper a:hover,
+        .Header__LogoWrapper a:visited,
+        .Header__LogoWrapper a:active,
+        .Header__LogoWrapper a:link,
+        .Header__LogoWrapper a:focus {
+          font-size: 1.25em; } }
+  .Header__Logo {
     display: block;
-    border: none;
-    text-decoration: none;
     height: 100px;
     max-height: 100px;
     width: 100px;
-    max-width: 100px;
-    background-color: white;
-    border-radius: 100%; }
+    max-width: 100px; }
     @media screen and (max-width: 1280px) {
-      .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+      .Header__Logo {
         height: 80px;
         max-height: 80px;
         width: 80px;
         max-width: 80px; } }
     @media screen and (max-width: 980px) {
-      .Header__Logo:hover, .Header__Logo:visited, .Header__Logo:active, .Header__Logo:link, .Header__Logo:focus {
+      .Header__Logo {
         height: 60px;
         max-height: 60px;
         width: 60px;
         max-width: 60px; } }
-    .Header__Logo:hover img, .Header__Logo:visited img, .Header__Logo:active img, .Header__Logo:link img, .Header__Logo:focus img {
+    .Header__Logo img {
       height: 80%;
       padding: 10%;
       width: auto; }
-  .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
-    border-bottom: none;
-    text-shadow: none;
-    text-decoration: none;
-    font-family: Kimberley, Arial, Helvetica, sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 2.25em;
-    line-height: 1.5em; }
-    @media screen and (max-width: 1280px) {
-      .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
-        font-size: 1.75em; } }
-    @media screen and (max-width: 980px) {
-      .Header__Title:hover, .Header__Title:visited, .Header__Title:active, .Header__Title:link, .Header__Title:focus {
-        font-size: 1.25em; } }
 
 .Footer {
   background: url("../images/site/footer.png") no-repeat center top 0; }
 
 .Book {
   box-shadow: 0px 0px 50px black;
-  background: white url("../images/background/manual-background.jpg") repeat-y center top; }
+  background: white url("../images/site/manual-background.jpg") repeat-y center top; }
   .Book__Inner--columns {
     columns: 2 400px;
     column-gap: 3em;

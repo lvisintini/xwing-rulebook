@@ -27,15 +27,15 @@ body {
 }
 
 h1 {
-  font-size: val($font-size, xxx-large);
+  font-size: val($font-size, xxxlarge);
   line-height: $line-height;
 }
 h2 {
-  font-size: val($font-size, xx-large);
+  font-size: val($font-size, xxlarge);
   line-height: $line-height;
 }
 h3 {
-  font-size: val($font-size, x-large);
+  font-size: val($font-size, xlarge);
   line-height: $line-height;
 }
 h4 {
@@ -84,7 +84,7 @@ h6 {
 ol,
 ul {
   margin: 0;
-  padding: 0 0 0 val($padding, x-large);
+  padding: 0 0 0 val($padding, xlarge);
 }
 
 ol {
@@ -131,7 +131,7 @@ button,
 .button {
   @include vendor('border-radius', '4px');
   @include vendor('box-shadow', 'inset 0 1px 0 ' + transparentize(val($palette, fg-light), 0.4) + ', 0 1px 1px ' + transparentize(val($palette, fg-dark), 0.2));
-  @include vendor('transition-duration', '' + val($duration, x-short));
+  @include vendor('transition-duration', '' + val($duration, xshort));
   @include vendor('user-select', 'none');
   cursor: pointer;
   padding: val($padding, small) val($padding, normal);
