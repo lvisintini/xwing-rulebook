@@ -9,7 +9,11 @@
 
 .PageWrapper {
   min-height: 100vh;
-  background-color: darken(val($palette, color3), 5);
+  background-color: val($palette, bg-dark);
+
+  &--bg-light {
+    background-color: darken(val($palette, color3), 5);
+  }
 
   &--breakpoints {
     background-color: darkcyan;
@@ -63,6 +67,7 @@
       @include vendor('box-shadow', '0px 0px 50px black');
       max-width: calc(#{val($sizes, narrow-content-width)} - 2*#{val($padding, xxxlarge)});
       padding: val($padding, xxlarge) val($padding, xxxlarge);
+      margin: val($padding, xlarge) auto;
 
       background:
               url("../images/site/corner-top-left.png") no-repeat left -27px top -27px,

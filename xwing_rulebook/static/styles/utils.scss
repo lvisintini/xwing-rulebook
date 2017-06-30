@@ -92,16 +92,19 @@
 
   &-bg-color {
     &-red {
-      color: val($palette, color4);
+      background-color: val($palette, color4);
     }
+
     &-yellow {
-      color: val($palette, color5);
+      background-color: val($palette, color5);
     }
+
     &-green {
-      color: val($palette, color6);
+      background-color: val($palette, color6);
     }
+
     &-blue {
-      color: val($palette, color2);
+      background-color: val($palette, color2);
     }
   }
 

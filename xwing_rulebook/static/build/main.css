@@ -3177,7 +3177,9 @@ i.xwing-miniatures-ship-z95headhunter:before {
 
 .PageWrapper {
   min-height: 100vh;
-  background-color: #328193; }
+  background-color: #3f3f3f; }
+  .PageWrapper--bg-light {
+    background-color: #328193; }
   .PageWrapper--breakpoints {
     background-color: darkcyan; }
     @media screen and (max-width: 1680px) {
@@ -3217,6 +3219,7 @@ i.xwing-miniatures-ship-z95headhunter:before {
     box-shadow: 0px 0px 50px black;
     max-width: calc(60em - 2*3em);
     padding: 2.5em 3em;
+    margin: 2em auto;
     background: url("../images/site/corner-top-left.png") no-repeat left -27px top -27px, url("../images/site/corner-top-right.png") no-repeat right -27px top -27px, url("../images/site/corner-bottom-left.png") no-repeat left -27px bottom -27px, url("../images/site/corner-bottom-right.png") no-repeat right -27px bottom -27px, url("../images/site/border-top.png") repeat-x left 40px top -15px, url("../images/site/border-bottom.png") repeat-x left 40px bottom -15px, url("../images/site/border-left.png") repeat-y left -15px top 90px, url("../images/site/border-right.png") repeat-y right -15px top 90px, url("../images/site/manual-background.jpg") repeat-y center top, transparent; }
     @media screen and (max-width: 850px) {
       .Section__Inner--manual {
@@ -3596,16 +3599,16 @@ table {
   padding: 1.5em 1em; }
 
 .u-bg-color-red {
-  color: #da312f; }
+  background-color: #da312f; }
 
 .u-bg-color-yellow {
-  color: #eca400; }
+  background-color: #eca400; }
 
 .u-bg-color-green {
-  color: #0adc0a; }
+  background-color: #0adc0a; }
 
 .u-bg-color-blue {
-  color: #154ce6; }
+  background-color: #154ce6; }
 
 @media screen and (max-width: 480px) {
   .u-hide-xsmall {

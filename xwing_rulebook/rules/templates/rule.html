@@ -3,12 +3,11 @@
 
 {% block meta-title  %}{{ rule.name_as_title }}{{ block.super }}{% endblock %}
 
-{% block page_wrapper_class %} u-background-dark{% endblock %}
+{% block page_wrapper_class %}{% endblock %}
 
 {% block content %}
-  <div class="Book">
-    <div class="Book__Inner Book__Inner--fancy-border">
-
+  <section class="Section">
+    <div class="Section__Inner Section__Inner--manual">
       <div class="u-flex u-flex-space-between">
         <a href="{% url 'admin:rules_rule_change' rule.id %}">&uarr; Go to admin</a>
         <a href="{% url 'rules:index' %}">&larr; Back to index</a>
@@ -20,5 +19,5 @@
 
       {{ '[Epic]' | xwing_icons  }}
     </div>
-  </div>
+  </section>
 {% endblock %}
