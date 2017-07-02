@@ -1,21 +1,11 @@
 {% load static %}
-
+{% load metadata %}
 <!DOCTYPE HTML>
 <html>
   <head>
     <title>{% block meta-title %} | X-Wing Rulebook{% endblock %}</title>
     {% block meta %}
-      <meta name="author" content="Luis Visintini" />
-      <meta name="description" content="XWing Rulebook: {% block meta-description %}{{ meta.description }}{% endblock %}" />
-      <meta property="og:image" content="">
-      <meta property="og:description" content="">
-      <meta property="og:title" content="Mozilla Developer Network">
-      <meta name="twitter:title" content="Mozilla Developer Network">
-
-      <meta name="keywords" content="{% block meta-description %}{{ meta.description }}{% endblock %}" />
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      {% include 'includes/_favicon.html' %}
+      {% include 'includes/_meta.html' %}
     {% endblock %}
 
     {% block styles %}
