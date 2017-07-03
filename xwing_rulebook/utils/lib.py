@@ -1,3 +1,4 @@
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
 from django.template import Context, loader
 from itertools import zip_longest
@@ -51,3 +52,10 @@ def list_url_names(urlpatterns, namespaces=None):
             view_path = pattern.name or view_path
 
             yield ':'.join([x for x in namespaces if x] + [view_path, ])
+
+
+def site_url_from_request(request):
+    current_site = get_current_site(request)
+    domain = current_site.domain
+    protocol = 'https' if request.is_secure() else 'http'
+    return '{}://{}'.format(protocol, domain)
