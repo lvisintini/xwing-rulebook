@@ -3,10 +3,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>{% block meta-title %} | X-Wing Rulebook{% endblock %}</title>
-    {% block meta %}
-      {% include 'includes/_meta.html' %}
-    {% endblock %}
+    {% block meta %}{% metadata %}{% endblock %}
 
     {% block styles %}
       <link rel="stylesheet" href="{% static 'build/main.css' %}">

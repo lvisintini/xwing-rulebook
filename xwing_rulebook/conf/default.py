@@ -151,3 +151,6 @@ GOOGLE_TAG_MANAGER_ID = ''
 # django-robots settings
 ROBOTS_SITEMAP_VIEW_NAME = 'pages:django.contrib.sitemaps.views.sitemap'
 ROBOTS_CACHE_TIMEOUT = 60*60*24
+
+
+BRAND_COLOR = '#3892A6'

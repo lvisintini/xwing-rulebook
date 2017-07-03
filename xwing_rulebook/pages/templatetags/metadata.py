@@ -1,13 +1,13 @@
 from django.template import Library
-from pages.metadata import get_view_metadata
+from django.utils.safestring import mark_safe
+
+from pages.metadata import METADATA_MAPPING, DefaultMetaData
 
 register = Library()
 
 
-@register.inclusion_tag('includes/_meta.html', takes_context=True)
-def address(context):
+@register.simple_tag(takes_context=True)
+def metadata(context):
     view_name = context['request'].resolver_match.view_name
-
-    metadata = get_view_metadata(view_name)(context)
-
-    return {'metadata': metadata}
+    metadata_class = METADATA_MAPPING.get(view_name, DefaultMetaData)
+    return mark_safe(str(metadata_class(context)))

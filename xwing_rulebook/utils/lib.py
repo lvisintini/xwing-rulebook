@@ -1,3 +1,4 @@
+from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
 from django.template import Context, loader
 from itertools import zip_longest
 
@@ -28,3 +29,25 @@ def word_sensitive_grouper(content, length=100):
         res = [chunk, ]
         res.extend(word_sensitive_grouper(reminder, length))
         return res
+
+
+def list_url_names(urlpatterns, namespaces=None):
+    if namespaces is None:
+        namespaces = []
+
+    for pattern in urlpatterns:
+        if isinstance(pattern, RegexURLResolver):
+            for view_name in list_url_names(pattern.url_patterns, namespaces=namespaces + [pattern.namespace, ]):
+                yield view_name
+        elif isinstance(pattern, RegexURLPattern):
+
+            if not hasattr(pattern.callback, '__name__'):
+                # A class-based view
+                view_path = pattern.callback.__class__.__module__ + '.' + pattern.callback.__class__.__name__
+            else:
+                # A function-based view
+                view_path = pattern.callback.__module__ + '.' + pattern.callback.__name__
+
+            view_path = pattern.name or view_path
+
+            yield ':'.join([x for x in namespaces if x] + [view_path, ])
