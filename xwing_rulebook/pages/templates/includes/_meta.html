@@ -1,0 +1,121 @@
+{% autoescape on %}
+
+{% if metadata.title %}
+    <title>{{ metadata.title }}</title>
+{% endif %}
+
+{% if metadata.description %}
+    <meta name="description" content="{{ metadata.description }}" />
+{% endif %}
+
+{% if metadata.keywords %}
+    <meta name="keywords" content="{{ metadata.keywords }}" />
+{% endif %}
+
+{% if metadata.charset %}
+    <meta charset="{{ metadata.charset }}" />
+{% endif %}
+
+{% if metadata.author %}
+    <meta name="author" content="{{ metadata.author }}" />
+{% endif %}
+
+{% if metadata.robots %}
+    <meta name="robots" content="{{ metadata.robots }}" />
+{% endif %}
+
+{% if metadata.viewport %}
+    <meta name="viewport" content="{{ metadata.viewport }}" />
+{% endif %}
+
+{% if metadata.og_title %}
+    <meta property="og:title" content="{{ metadata.og_title }}" />
+{% endif %}
+
+{% if metadata.og_description %}
+    <meta property="og:description" content="{{ metadata.og_description }}" />
+{% endif %}
+
+{% if metadata.og_type %}
+    <meta property="og:type" content="{{ metadata.og_type }}" />
+{% endif %}
+
+{% if metadata.og_image %}
+    <meta property="og:image" content="{{ metadata.og_image.url }}" />
+    <meta property="og:image:secure_url" content="{{ metadata.og_image.secure_url }}" />
+    <meta property="og:image:type" content="{{ metadata.og_image.type }}" />
+    <meta property="og:image:width" content="{{ metadata.og_image.width }}" />
+    <meta property="og:image:height" content="{{ metadata.og_image.height }}" />
+{% endif %}
+
+{% if metadata.og_url %}
+    <meta property="og:url" content="{{ metadata.og_url }}" />
+{% endif %}
+
+{% if metadata.twitter_card %}
+    <meta name="twitter:card" content="{{ metadata.twitter_card }}" />
+{% endif %}
+
+{% if metadata.twitter_site %}
+      <meta name="twitter:site" content="{{ metadata.twitter_site }}" />
+{% endif %}
+
+{% if metadata.twitter_creator %}
+    <meta name="twitter:creator" content="{{ metadata.twitter_creator }}" />
+{% endif %}
+
+{% if metadata.twitter_title %}
+    <meta name="twitter:title" content="{{ metadata.twitter_title }}" />
+{% endif %}
+
+{% if metadata.twitter_description %}
+    <meta name="twitter:description" content="{{ metadata.twitter_description }}" />
+{% endif %}
+
+{% if metadata.twitter_image %}
+    <meta name="twitter:image" content="{{ metadata.twitter_image }}" />
+{% endif %}
+
+{% if metadata.msapplication_TileColor %}
+    <meta name="msapplication-TileColor" content="{{ metadata.msapplication_TileColor }}" />
+{% endif %}
+
+{% if metadata.msapplication_TileImage %}
+    <meta name="msapplication-TileImage" content="{{ metadata.msapplication_TileImage }}" />
+{% endif %}
+
+{% if metadata.msapplication_config %}
+    <meta name="msapplication-config" content="{{ metadata.msapplication_config }}" />
+{% endif %}
+
+{% if metadata.theme_color %}
+    <meta name="theme-color" content="{{ metadata.theme_color }}" />
+{% endif %}
+
+{% if metadata.apple_touch_icon %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.apple_touch_icon }}" />
+{% endif %}
+
+{% if metadata.icon %}
+  {% for size, location in metadata.icon %}
+    <link rel="icon" type="image/png" sizes="{{ size }}" href="{{ location }}" />
+  {% endfor %}
+{% endif %}
+
+{% if metadata.manifest %}
+    <link rel="manifest" href="{{ metadata.manifest }}" />
+{% endif %}
+
+{% if metadata.mask_icon %}
+    <link rel="mask-icon" href="{{ metadata.mask_icon.url }}" color="{{ metadata.mask_icon.color }}" />
+{% endif %}
+
+{% if metadata.shortcut_icon %}
+    <link rel="shortcut icon" href="{{ metadata.shortcut_icon }}" />
+{% endif %}
+
+{% if metadata.canonical %}
+    <link rel="canonical" href="{{ metadata.canonical }}" />
+{% endif %}
+
+{% endautoescape %}
