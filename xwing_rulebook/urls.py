@@ -5,7 +5,7 @@ urlpatterns = [
     url(r'^', include('pages.urls')),
     url(r'^books/', include('books.urls')),
     url(r'^rules/', include('rules.urls')),
-    url(r'^faqs/', include('faqs.urls')),
+    url(r'^rules-faq/', include('faqs.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^nested_admin/', include('nested_admin.urls')),

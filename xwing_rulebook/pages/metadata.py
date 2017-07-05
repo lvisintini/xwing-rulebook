@@ -17,7 +17,7 @@ class Metadata:
 
 
 class DefaultMetaData(Metadata):
-    default_title = ["X-Wing Rulebook", ]
+    default_title = "X-Wing Rulebook"
     default_description = 'A consolidated and complete list of all the rules for the XWing Miniatures Game.'
     default_keywords = [
         'X-Wing Miniatures Game',
@@ -32,14 +32,14 @@ class DefaultMetaData(Metadata):
     default_og_type = "website"
     default_site_twitter_handle = None
 
-    def title(self):
-        return self.default_title[0]
+    def title(self, *args):
+        return self.separator.join(list(args) + [self.default_title, ])
 
     def description(self):
         return self.default_description
 
-    def keywords(self):
-        return ','.join(self.default_keywords)
+    def keywords(self, *args):
+        return ','.join(list(args) + self.default_keywords)
 
     def charset(self):
         return "utf-8"
@@ -53,8 +53,8 @@ class DefaultMetaData(Metadata):
     def viewport(self):
         return "width=device-width, initial-scale=1, user-scalable=no"
 
-    def og_title(self):
-        return self.default_title[0]
+    def og_title(self, *args):
+        return self.separator.join([self.default_title, ] + list(args))
 
     def og_description(self):
         return self.default_description
@@ -83,8 +83,8 @@ class DefaultMetaData(Metadata):
     def twitter_creator(self):
         return "@lvisintini"
 
-    def twitter_title(self):
-        return self.default_title[0]
+    def twitter_title(self, *args):
+        return self.separator.join([self.default_title, ] + list(args))
 
     def twitter_description(self):
         return self.default_description
@@ -131,22 +131,16 @@ class DefaultMetaData(Metadata):
 
 class RulesIndexMetaData(DefaultMetaData):
     def title(self):
-        return self.separator.join(['Rules', ] + self.default_title)
+        return super().title('Rules')
 
     def keywords(self):
-        return ','.join(['rule index', ] + self.default_keywords)
+        return super().keywords('rule index')
 
     def og_title(self):
-        return self.separator.join(self.default_title + ['Rules index', ])
-
-    def og_url(self):
-        return self.absolute_url(self.context['request'].path)
+        return super().og_title('Rules index')
 
     def twitter_title(self):
-        return self.separator.join(self.default_title + ['Rules index', ])
-
-    def twitter_description(self):
-        return self.default_description
+        return super().twitter_title('Rules index')
 
 
 class RulesPageMetaData(DefaultMetaData):
@@ -165,38 +159,148 @@ class RulesPageMetaData(DefaultMetaData):
             )
 
     def title(self):
-        return self.separator.join([self.context['rule'].name, ] + self.default_title)
+        return super().title(self.context['rule'].name)
 
     def description(self):
         return self.rule_description
 
     def keywords(self):
-        return ','.join(
-            [self.context['rule'].name, dict(RULE_TYPES.as_choices)[self.context['rule'].type]] + self.default_keywords
+        return super().keywords(
+            self.context['rule'].name,
+            dict(RULE_TYPES.as_choices)[self.context['rule'].type]
         )
 
     def og_title(self):
-        return self.separator.join(self.default_title + [self.context['rule'].name, ])
+        return super().og_title(self.context['rule'].name)
 
     def og_description(self):
         return self.rule_description
 
     def twitter_title(self):
-        return self.separator.join(self.default_title + [self.context['rule'].name, ])
+        return super().twitter_title(self.context['rule'].name)
 
     def twitter_description(self):
         return self.rule_description
 
 
+class StyleGuideMetaData(DefaultMetaData):
+    def title(self):
+        return super().title('Styleguide')
+
+    def description(self):
+        return None
+
+    def keywords(self):
+        return None
+
+    def robots(self):
+        return "noindex, nofollow, noarchive, nocache, nosnippet, noydir, noodp"
+
+    def og_title(self):
+        return None
+
+    def og_description(self):
+        return None
+
+    def twitter_site(self):
+        return self.default_site_twitter_handle
+
+    def twitter_title(self):
+        return None
+
+    def twitter_description(self):
+        return None
+
+
+class RuleFaqsMetaData(DefaultMetaData):
+    default_description = 'The rules FAQ, as listed on the X-Wing FAQ pdf document published by FFG.'
+
+    def title(self):
+        return super().title('Rules FAQ')
+
+    def keywords(self):
+        return super().keywords('FAQ', 'faq', 'rules faq')
+
+    def og_title(self):
+        return super().og_title('Rules FAQ')
+
+    def twitter_title(self):
+        return super().twitter_title('Rules FAQ')
+
+
+class ResourcesPageMetaData(DefaultMetaData):
+    default_description = 'List of the sources compiled and added into X-Wing Rulebook.'
+
+    def title(self):
+        return super().title('Rule Resources')
+
+    def keywords(self):
+        return super().keywords('resources', 'sources', 'manuals')
+
+    def og_title(self):
+        return super().og_title('Rule Resources')
+
+    def twitter_title(self):
+        return super().twitter_title('Rule Resources')
+
+
+class ContactPageMetaData(DefaultMetaData):
+    default_description = 'Contact page for X-Wing Rulebook.'
+
+    def title(self):
+        return super().title('Contact page')
+
+    def keywords(self):
+        return super().keywords('Contact', 'email')
+
+    def og_title(self):
+        return super().og_title('Contact page')
+
+    def twitter_title(self):
+        return super().twitter_title('Contact page')
+
+
+class WallOfFameMetaData(DefaultMetaData):
+    default_description = 'Wall of fame for X-Wing Rulebook.'
+
+    def title(self):
+        return super().title('Wall of Fame')
+
+    def keywords(self):
+        return super().keywords('Wall of Fame', 'contributors')
+
+    def og_title(self):
+        return super().og_title('Wall of Fame')
+
+    def twitter_title(self):
+        return super().twitter_title('Wall of Fame')
+
+
+class AboutPageMetaData(DefaultMetaData):
+    default_description = 'About us page for X-Wing Rulebook.'
+
+    def title(self):
+        return super().title('About us')
+
+    def keywords(self):
+        return super().keywords('About us')
+
+    def og_title(self):
+        return super().og_title('About us')
+
+    def twitter_title(self):
+        return super().twitter_title('About us')
+
+
 METADATA_MAPPING = {
     "pages:index": RulesIndexMetaData,
-    #"pages:styleguide": None,
-    #"pages:resources": None,
-    #"pages:contact": None,
-    #"pages:wall-of-fame": None,
-    #"pages:about": None,
+    "pages:styleguide": StyleGuideMetaData,
+    "pages:resources": ResourcesPageMetaData,
+    "pages:contact": ContactPageMetaData,
+    "pages:wall-of-fame": WallOfFameMetaData,
+    "pages:about": AboutPageMetaData,
     #"books:book": None,
     "rules:index": RulesIndexMetaData,
     "rules:rule": RulesPageMetaData,
-    #"faqs:index": None,
+    "faqs:index": RuleFaqsMetaData,
 }
