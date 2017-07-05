@@ -32,6 +32,9 @@ class DefaultMetaData(Metadata):
     default_og_type = "website"
     default_site_twitter_handle = None
 
+    def charset(self):
+        return "UTF-8"
+
     def title(self, *args):
         return self.separator.join(list(args) + [self.default_title, ])
 
@@ -40,9 +43,6 @@ class DefaultMetaData(Metadata):
 
     def keywords(self, *args):
         return ','.join(list(args) + self.default_keywords)
-
-    def charset(self):
-        return "utf-8"
 
     def author(self):
         return "Luis Visintini"

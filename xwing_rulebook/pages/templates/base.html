@@ -1,15 +1,17 @@
 {% load static %}
 {% load metadata %}
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-  <head>
+  <head>{% spaceless %}
     {% block meta %}{% metadata %}{% endblock %}
 
     {% block styles %}
       <link rel="stylesheet" href="{% static 'build/main.css' %}">
     {% endblock %}
     {% include 'includes/_google_tag_manager.html' %}
-  </head>
+
+  {% endspaceless %}</head>
+
   <body>
     {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">

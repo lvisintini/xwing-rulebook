@@ -1,5 +1,9 @@
 {% autoescape on %}
 
+{% if metadata.charset %}
+    <meta charset="{{ metadata.charset }}" />
+{% endif %}
+
 {% if metadata.title %}
     <title>{{ metadata.title }}</title>
 {% endif %}
@@ -10,10 +14,6 @@
 
 {% if metadata.keywords %}
     <meta name="keywords" content="{{ metadata.keywords }}" />
-{% endif %}
-
-{% if metadata.charset %}
-    <meta charset="{{ metadata.charset }}" />
 {% endif %}
 
 {% if metadata.author %}

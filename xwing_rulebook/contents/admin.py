@@ -44,7 +44,7 @@ class ContentAdminForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['source'].queryset = Source.objects.order_by('processed', 'type', 'name')
+        self.fields['source'].queryset = Source.objects.order_by('-status', 'type', 'name')
 
     def has_changed(self):
         return True
