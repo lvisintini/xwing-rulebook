@@ -43,7 +43,7 @@
         <thead>
           <tr>
             <th>Source</th>
-            <th>Found in:</th>
+            <th class="u-hide-large">Found in:</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -52,12 +52,12 @@
          {% for s in sources %}
            <tr>
              <td>{{ s.name }} {{ s.get_type_display }}</td>
-             <td>{{ s.products.all|order_by:'-sku'|join:'<br/>' }}</td>
+             <td class="u-hide-large">{{ s.products.all|order_by:'-sku'|join:'<br/>' }}</td>
              <td class="u-text-bold{% if s.status == SOURCE_STATUS.MISSING %} u-text-color-red{% endif %}">
                <i class="fa {{ s.status_icon }}" aria-hidden="true"></i> {{ s.status_readable }}
              </td>
              <td>
-               nothing for now
+               <a href="{{ s.file }}">Download</a>
              </td>
            </tr>
         {% endfor %}

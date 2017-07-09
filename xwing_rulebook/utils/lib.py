@@ -1,7 +1,8 @@
+from itertools import takewhile, zip_longest
+
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
 from django.template import Context, loader
-from itertools import zip_longest
 
 
 def render_template(template, context):
@@ -59,3 +60,13 @@ def site_url_from_request(request):
     domain = current_site.domain
     protocol = 'https' if request.is_secure() else 'http'
     return '{}://{}'.format(protocol, domain)
+
+
+def find_common_root_path(*paths):
+    return '/'.join(
+        x[0]
+        for x in takewhile(
+            lambda f: all(n == f[0] for n in f[1:]),
+            zip(*[p.split('/') for p in paths])
+        )
+    )

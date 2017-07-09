@@ -135,11 +135,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-XWING_DATA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../node_modules/xwing-data'))
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(XWING_DATA_ROOT, "images"),
 ]
 
 EXTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, "external")

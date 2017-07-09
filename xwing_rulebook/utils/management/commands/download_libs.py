@@ -1,11 +1,15 @@
 import fnmatch
 import os
-from io import BytesIO
 import requests
+import shutil
+from io import BytesIO
 from zipfile import ZipFile
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
+
+from utils.lib import find_common_root_path
+
 
 LIBS = [
     {
@@ -39,11 +43,25 @@ LIBS = [
             "normalize.css-master/normalize.css": "styles",
         }
     },
+    {
+        "name": "xwing-data",
+        "url": "https://github.com/guidokessels/xwing-data/archive/master.zip",
+        "mapping": {
+            "xwing-data-master/images/*.*": "images",
+        },
+        "normalize": True,
+    },
 ]
 
 
 class Command(BaseCommand):
     help = 'Provides complete markdown for a book'
+
+    @staticmethod
+    def normalize_path(path):
+        path = path.lower()
+        path = path.replace(' ', '-')
+        return path
 
     def handle(self, *args, **options):
         destination_template = os.path.abspath(
@@ -56,21 +74,45 @@ class Command(BaseCommand):
             zip_names = zipfile.namelist()
 
             for pattern, lib_type in lib['mapping'].items():
+                destination = destination_template.format(
+                    lib_type=lib_type,
+                    lib_name=lib['name']
+                )
+                if not os.path.exists(destination):
+                    os.makedirs(destination)
+                else:
+                    shutil.rmtree(destination)
+                    os.makedirs(destination)
+
+                common_root = find_common_root_path(
+                    '/'.join(pattern.split('/')[:-1]),
+                    *fnmatch.filter(zip_names, pattern)
+                )
 
                 for file_path in fnmatch.filter(zip_names, pattern):
-                    file_name = os.path.split(file_path)[1]
-                    destination = destination_template.format(
-                        lib_type=lib_type,
-                        lib_name=lib['name']
-                    )
+                    zip_path, file_name = os.path.split(file_path)
+                    relative_path = zip_path.replace(common_root, '')
 
-                    if not os.path.exists(destination):
-                        os.makedirs(destination)
+                    if not file_name:
+                        # This means a directory was matched and we will ignore it.
+                        continue
 
                     extracted_file = zipfile.open(file_path)
-                    with open(os.path.join(destination, file_name), 'wb') as f:
+
+                    final_folder_path = destination + relative_path
+                    if lib.get('normalize'):
+                        final_folder_path = self.normalize_path(final_folder_path)
+
+                    if not os.path.exists(final_folder_path):
+                        os.makedirs(final_folder_path)
+
+                    final_file_path = os.path.join(final_folder_path, file_name)
+                    if lib.get('normalize'):
+                        final_file_path = self.normalize_path(final_file_path)
+
+                    with open(final_file_path, 'wb') as f:
                         f.write(extracted_file.read())
 
                     self.stdout.write(self.style.SUCCESS(
-                        "Download OK: {}".format(os.path.join(destination, file_name))
+                        "Download OK: {}".format(final_file_path)
                     ))

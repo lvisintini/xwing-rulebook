@@ -1,19 +1,35 @@
+import fnmatch
+import json
+import os
+import requests
+from collections import OrderedDict
 from datetime import datetime
+from io import BytesIO
+from zipfile import ZipFile
 
 from django.core.management.base import BaseCommand
 
-from integrations.models import (
-    Product, DamageDeck, Pilot, Upgrade, Ship, Condition
-)
-from integrations.constants import XWING_DATA, DAMAGE_DECK_TYPES
+from integrations.models import Product, DamageDeck, Pilot, Upgrade, Ship, Condition
+from integrations.constants import DAMAGE_DECK_TYPES
 
 
 class Command(BaseCommand):
-    help = 'Provides complete markdown for a book'
+    help = 'Downloads and updates xwing-data content.'
 
     def handle(self, *args, **options):
+        data = {}
+        url = requests.get('https://github.com/guidokessels/xwing-data/archive/master.zip')
+        zipfile = ZipFile(BytesIO(url.content))
+        zip_names = zipfile.namelist()
+        for file_path in fnmatch.filter(zip_names, 'xwing-data-master/data/*.*'):
+            extracted_file = zipfile.open(file_path)
+            file_name = os.path.split(file_path)[1]
+            data[file_name.split('.')[0]] = json.loads(
+                extracted_file.read().decode('utf-8'),
+                object_pairs_hook=OrderedDict
+            )
 
-        for d in XWING_DATA[Product.data_key]:
+        for d in data[Product.data_key]:
             rd = None
             if 'release_date' in d:
                 rd = datetime.strptime(d['release_date'], "%Y-%m-%d").date()
@@ -25,7 +41,7 @@ class Command(BaseCommand):
             ).save()
 
         for dd_type in DAMAGE_DECK_TYPES.as_list:
-            for d in XWING_DATA['damage-deck-{}'.format(dd_type)]:
+            for d in data['damage-deck-{}'.format(dd_type)]:
                 try:
                     dd = DamageDeck.objects.get(name=d['name'], type=dd_type)
                 except DamageDeck.DoesNotExist:
@@ -36,7 +52,7 @@ class Command(BaseCommand):
                 dd.save()
 
         for model_class in [Pilot, Ship, Upgrade, Condition]:
-            for d in XWING_DATA[model_class.data_key]:
+            for d in data[model_class.data_key]:
                 model_class(
                     id=d['id'],
                     name=d['name'],
