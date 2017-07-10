@@ -2,7 +2,6 @@ import fnmatch
 import json
 import os
 import requests
-from collections import OrderedDict
 from datetime import datetime
 from io import BytesIO
 from zipfile import ZipFile
@@ -24,10 +23,7 @@ class Command(BaseCommand):
         for file_path in fnmatch.filter(zip_names, 'xwing-data-master/data/*.*'):
             extracted_file = zipfile.open(file_path)
             file_name = os.path.split(file_path)[1]
-            data[file_name.split('.')[0]] = json.loads(
-                extracted_file.read().decode('utf-8'),
-                object_pairs_hook=OrderedDict
-            )
+            data[file_name.split('.')[0]] = json.loads(extracted_file.read().decode('utf-8'))
 
         for d in data[Product.data_key]:
             rd = None
@@ -38,6 +34,7 @@ class Command(BaseCommand):
                 name=d['name'],
                 release_date=rd,
                 sku=d['sku'],
+                data=d,
             ).save()
 
         for dd_type in DAMAGE_DECK_TYPES.as_list:
@@ -49,6 +46,7 @@ class Command(BaseCommand):
 
                 dd.name = d['name']
                 dd.type = dd_type
+                dd.data = d
                 dd.save()
 
         for model_class in [Pilot, Ship, Upgrade, Condition]:
@@ -56,4 +54,5 @@ class Command(BaseCommand):
                 model_class(
                     id=d['id'],
                     name=d['name'],
+                    data=d
                 ).save()

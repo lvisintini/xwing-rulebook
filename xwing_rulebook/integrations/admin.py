@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib import admin
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+from django.utils.html import escape
 
 from integrations.models import Product, Ship, Pilot, Upgrade, DamageDeck, Condition
 from rules.constants import SOURCE_TYPES
@@ -30,17 +31,31 @@ class SourceCountFilter(admin.SimpleListFilter):
         return queryset
 
 
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'sku', 'release_date', 'sources_display', 'source_count')
-    search_fields = ['name', 'sku']
-    readonly_fields = ['json', 'source_count', 'sources_display']
-    filter_horizontal = ['sources', ]
-    list_filter = [SourceCountFilter, ]
+class ModelWithJSON(admin.ModelAdmin):
+    list_display = ('name', 'id')
+    search_fields = ['name', ]
+    readonly_fields = ['data', 'display_data', 'id']
     save_on_top = True
 
-    def json(self, obj):
-        return mark_safe("<br/><pre>{}</pre>".format(obj.json))
+    def display_data(self, obj):
+        return mark_safe("<br/><pre>{}</pre>".format(escape(json.dumps(obj.data, indent=2))))
+    display_data.short_description = 'Data'
+
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = super().get_fieldsets(request, obj)
+        fieldsets[0][1]['fields'].remove('data')
+        fieldsets[0][1]['fields'].remove('id')
+        fieldsets[0][1]['fields'].insert(0, 'id')
+        return fieldsets
+
+
+@admin.register(Product)
+class ProductAdmin(ModelWithJSON):
+    list_display = ('name', 'sku', 'release_date', 'sources_display', 'source_count')
+    search_fields = ['name', 'sku']
+    readonly_fields = ['data', 'display_data', 'source_count', 'sources_display', 'id']
+    filter_horizontal = ['sources', ]
+    list_filter = [SourceCountFilter, ]
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -60,16 +75,6 @@ class ProductAdmin(admin.ModelAdmin):
             for s in obj.sources.all()
         ]))
     sources_display.short_description = 'Sources'
-
-
-class ModelWithJSON(admin.ModelAdmin):
-    list_display = ('name', 'id')
-    search_fields = ['name', ]
-    readonly_fields = ['json', ]
-    save_on_top = True
-
-    def json(self, obj):
-        return mark_safe("<br/><pre>{}</pre>".format(json.dumps(obj.json, indent=2)))
 
 
 @admin.register(Ship)

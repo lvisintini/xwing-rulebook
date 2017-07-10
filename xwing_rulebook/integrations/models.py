@@ -1,26 +1,22 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.postgres.fields import JSONField
 
-from integrations.constants import XWING_DATA, DAMAGE_DECK_TYPES
+from integrations.constants import DAMAGE_DECK_TYPES
 
 
-class JSONMixin:
+class XWingDataMixin:
     @property
     def slug(self):
-        return slugify(self.json.get('xws', self.name))
-
-    @property
-    def json(self):
-        if not hasattr(self, '_json'):
-            self._json = next((p for p in XWING_DATA[self.data_key] if p['id'] == self.id), None)
-        return self._json
+        return slugify(self.data.get('xws', self.name))
 
 
-class Product(models.Model, JSONMixin):
+class Product(models.Model, XWingDataMixin):
     name = models.CharField(max_length=125)
     sku = models.CharField(max_length=125)
     release_date = models.DateField(blank=True, null=True)
     sources = models.ManyToManyField('rules.Source', blank=True, related_name='products')
+    data = JSONField(default=dict)
 
     data_key = 'sources'
 
@@ -41,6 +37,7 @@ class DamageDeck(models.Model):
         max_length=25, choices=DAMAGE_DECK_TYPES.as_choices, null=False, blank=False,
         default=DAMAGE_DECK_TYPES.CORE
     )
+    data = JSONField(default=dict)
 
     class Meta:
         unique_together = ('name', 'type')
@@ -53,37 +50,30 @@ class DamageDeck(models.Model):
     def slug(self):
         return slugify(self.type + ' ' + self.name)
 
-    @property
-    def json(self):
-        if not hasattr(self, '_json'):
-            self._json = next(
-                (p for p in XWING_DATA[self.data_key] if p['name'] == self.name),
-                None
-            )
-        return self._json
-
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Pilot(JSONMixin, models.Model):
+class Pilot(XWingDataMixin, models.Model):
     name = models.CharField(max_length=125)
+    data = JSONField(default=dict)
 
     data_key = 'pilots'
 
     @property
     def slug(self):
         return slugify(' '.join([
-            self.json['faction'],
-            self.json.get('xws', self.name),
+            self.data['faction'],
+            self.data.get('xws', self.name),
         ]))
 
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Ship(JSONMixin, models.Model):
+class Ship(XWingDataMixin, models.Model):
     name = models.CharField(max_length=125)
+    data = JSONField(default=dict)
 
     data_key = 'ships'
 
@@ -91,8 +81,9 @@ class Ship(JSONMixin, models.Model):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Upgrade(JSONMixin, models.Model):
+class Upgrade(XWingDataMixin, models.Model):
     name = models.CharField(max_length=125)
+    data = JSONField(default=dict)
 
     data_key = 'upgrades'
 
@@ -100,8 +91,9 @@ class Upgrade(JSONMixin, models.Model):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Condition(JSONMixin, models.Model):
+class Condition(XWingDataMixin, models.Model):
     name = models.CharField(max_length=125)
+    data = JSONField(default=dict)
 
     data_key = 'conditions'
 
