@@ -1,5 +1,6 @@
 import re
 
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 from django.utils.functional import cached_property
 
@@ -46,6 +47,7 @@ class Source(models.Model):
     type = models.CharField(
         max_length=50, choices=SOURCE_TYPES.as_choices, default=SOURCE_TYPES.REFERENCE_CARD
     )
+    file = models.CharField(max_length=255, null=True, blank=True)
     notes = models.CharField(max_length=250, default='', blank=True)
 
     objects = models.Manager()
@@ -61,6 +63,12 @@ class Source(models.Model):
 
     def __str__(self):
         return '{}-{}'.format(self.type, self.code)
+
+    @cached_property
+    def static_file(self):
+        if self.file:
+            return static(self.file)
+        return None
 
 
 class RuleManager(models.Manager):

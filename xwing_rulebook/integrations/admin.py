@@ -84,7 +84,11 @@ class ShipAdmin(ModelWithJSON):
 
 @admin.register(Pilot)
 class PilotAdmin(ModelWithJSON):
-    pass
+
+
+    def display_data(self, obj):
+        return mark_safe("<br/><pre>{}</pre>".format(escape(json.dumps(obj.data, indent=2))))
+    display_data.short_description = 'Data'
 
 
 @admin.register(Upgrade)

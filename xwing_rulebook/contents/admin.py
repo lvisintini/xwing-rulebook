@@ -162,7 +162,6 @@ class ContentAdmin(admin.ModelAdmin):
     display_content.admin_order_field = 'joined_content'
 
 
-
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('file', 'caption', 'alt_text')

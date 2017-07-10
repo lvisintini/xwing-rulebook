@@ -10,6 +10,7 @@ from django.core.management.base import BaseCommand
 
 from integrations.models import Product, DamageDeck, Pilot, Upgrade, Ship, Condition
 from integrations.constants import DAMAGE_DECK_TYPES
+from integrations.normalizers import normalize
 
 
 class Command(BaseCommand):
@@ -24,6 +25,8 @@ class Command(BaseCommand):
             extracted_file = zipfile.open(file_path)
             file_name = os.path.split(file_path)[1]
             data[file_name.split('.')[0]] = json.loads(extracted_file.read().decode('utf-8'))
+
+        data = normalize(data)
 
         for d in data[Product.data_key]:
             rd = None

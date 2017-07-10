@@ -8,7 +8,7 @@ from zipfile import ZipFile
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from utils.lib import find_common_root_path
+from utils.lib import find_common_root_path, normalize_static_file_path
 
 
 LIBS = [
@@ -59,9 +59,7 @@ class Command(BaseCommand):
 
     @staticmethod
     def normalize_path(path):
-        path = path.lower()
-        path = path.replace(' ', '-')
-        return path
+        return normalize_static_file_path(path)
 
     def handle(self, *args, **options):
         destination_template = os.path.abspath(

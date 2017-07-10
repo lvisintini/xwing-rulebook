@@ -70,3 +70,8 @@ def find_common_root_path(*paths):
             zip(*[p.split('/') for p in paths])
         )
     )
+
+def normalize_static_file_path(path):
+    path = path.lower()
+    path = path.replace(' ', '-')
+    return path

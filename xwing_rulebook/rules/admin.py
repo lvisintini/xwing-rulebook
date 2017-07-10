@@ -1,14 +1,17 @@
+import os
+from itertools import chain
+
 from django import forms
 from django.contrib import admin
+from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.db import models
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import escape
 from nested_admin import NestedTabularInline, NestedModelAdmin
 
 from contents.constants import CONTENT_TYPES
 from rules.models import Clause, ClauseContent, Rule, Source
-from rules.constants import SOURCE_TYPES, RULE_TYPES, CARD_TYPES
+from rules.constants import RULE_TYPES, CARD_TYPES
 from utils.lib import word_sensitive_grouper
 
 
@@ -91,6 +94,37 @@ class ContentCountFilter(admin.SimpleListFilter):
         return queryset
 
 
+class SourceAdminForm(forms.ModelForm):
+    file = forms.ChoiceField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        choices = []
+
+        walker = chain(
+            os.walk(os.path.join(settings.STATICFILES_DIRS[0], 'assets')),
+            os.walk(os.path.join(settings.STATICFILES_DIRS[0], 'images', 'lib',)),
+        )
+
+        for dir_path, _, filenames in walker:
+            file_paths = [
+                os.path.join(dir_path, f).replace(settings.STATICFILES_DIRS[0], '')
+                for f in filenames
+            ]
+
+            choices.extend([
+                (f, ) * 2
+                for f in file_paths
+            ])
+
+        if self.instance.file:
+            choices.insert(0, (self.instance.file, ) * 2)
+        else:
+            choices.insert(0, ('', '---'))
+
+        self.fields['file'].choices = sorted(choices)
+
+
 @admin.register(Source)
 class SourceAdmin(admin.ModelAdmin):
     list_display = (
@@ -103,9 +137,11 @@ class SourceAdmin(admin.ModelAdmin):
         'content_count',
         'status',
         'display_notes',
+        'open_file',
     )
+    form = SourceAdminForm
     search_fields = ['name', ]
-    readonly_fields = ['release_date', 'precedence', 'display_notes', 'products_display', 'content_count']
+    readonly_fields = ['release_date', 'precedence', 'display_notes', 'products_display', 'content_count', 'open_file']
     list_filter = ('status', 'type', ContentCountFilter)
 
     def release_date(self, obj):
@@ -123,10 +159,18 @@ class SourceAdmin(admin.ModelAdmin):
 
     def products_display(self, obj):
         return mark_safe('<br/>'.join([
-            "<a href={}>{}</a>".format(reverse('admin:integrations_product_change', args=[p.id, ]), p)
+            '<a href="{}">{}</a>'.format(reverse('admin:integrations_product_change', args=[p.id, ]), p)
             for p in obj.products.all().order_by('sku')
         ]))
     products_display.short_description = 'Products'
+
+    def open_file(self, obj):
+        if obj.file:
+            return mark_safe(
+                '<a target="_blank" href="{}">{}</a>'.format(obj.static_file, obj.static_file.split('/')[-1])
+            )
+        return None
+    open_file.short_description = 'File'
 
     def content_count(self, obj):
         if not obj.content_count:

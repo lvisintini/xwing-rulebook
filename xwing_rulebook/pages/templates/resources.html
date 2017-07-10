@@ -57,7 +57,9 @@
                <i class="fa {{ s.status_icon }}" aria-hidden="true"></i> {{ s.status_readable }}
              </td>
              <td>
-               <a href="{{ s.file }}">Download</a>
+               {% if s.static_file %}
+                <a target="_blank" href="{{ s.static_file }}">Download</a>
+               {% endif %}
              </td>
            </tr>
         {% endfor %}

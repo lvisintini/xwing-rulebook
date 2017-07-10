@@ -20,7 +20,6 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=125)),
                 ('type', models.CharField(choices=[('core', 'Core set'), ('core-tfa', 'The Force Awakens core set')], default='core', max_length=25)),
             ],
-            bases=(models.Model, integrations.models.XWingDataMixin),
         ),
         migrations.CreateModel(
             name='Pilot',
@@ -28,7 +27,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=125)),
             ],
-            bases=(models.Model, integrations.models.XWingDataMixin),
         ),
         migrations.CreateModel(
             name='Ship',
@@ -36,7 +34,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=125)),
             ],
-            bases=(models.Model, integrations.models.XWingDataMixin),
         ),
         migrations.CreateModel(
             name='Upgrade',
@@ -44,7 +41,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=125)),
             ],
-            bases=(models.Model, integrations.models.XWingDataMixin),
         ),
         migrations.AlterUniqueTogether(
             name='damagedeck',

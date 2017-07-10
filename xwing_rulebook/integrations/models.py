@@ -1,17 +1,12 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.postgres.fields import JSONField
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 from integrations.constants import DAMAGE_DECK_TYPES
 
 
-class XWingDataMixin:
-    @property
-    def slug(self):
-        return slugify(self.data.get('xws', self.name))
-
-
-class Product(models.Model, XWingDataMixin):
+class Product(models.Model):
     name = models.CharField(max_length=125)
     sku = models.CharField(max_length=125)
     release_date = models.DateField(blank=True, null=True)
@@ -29,6 +24,14 @@ class Product(models.Model, XWingDataMixin):
     @property
     def slug(self):
         return self.sku
+
+    @property
+    def thumb_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['thumb']) if 'thumb' in self.data else None
+
+    @property
+    def image_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
 
 
 class DamageDeck(models.Model):
@@ -48,13 +51,21 @@ class DamageDeck(models.Model):
 
     @property
     def slug(self):
-        return slugify(self.type + ' ' + self.name)
+        return slugify(' '.join([
+            'damage-deck',
+            self.type,
+            self.name,
+        ]))
 
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
+    @property
+    def image_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
 
-class Pilot(XWingDataMixin, models.Model):
+
+class Pilot(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
@@ -63,15 +74,20 @@ class Pilot(XWingDataMixin, models.Model):
     @property
     def slug(self):
         return slugify(' '.join([
+            'pilot',
             self.data['faction'],
             self.data.get('xws', self.name),
         ]))
+
+    @property
+    def image_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
 
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Ship(XWingDataMixin, models.Model):
+class Ship(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
@@ -81,7 +97,7 @@ class Ship(XWingDataMixin, models.Model):
         return '[{}] {}'.format(self.slug, self.name)
 
 
-class Upgrade(XWingDataMixin, models.Model):
+class Upgrade(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
@@ -90,8 +106,19 @@ class Upgrade(XWingDataMixin, models.Model):
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
+    @property
+    def slug(self):
+        return slugify(' '.join([
+            'upgrade',
+            self.data.get('xws', self.name),
+        ]))
 
-class Condition(XWingDataMixin, models.Model):
+    @property
+    def image_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
+
+
+class Condition(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
@@ -99,3 +126,14 @@ class Condition(XWingDataMixin, models.Model):
 
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
+
+    @property
+    def image_static_url(self):
+        return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
+
+    @property
+    def slug(self):
+        return slugify(' '.join([
+            'condition',
+            self.data.get('xws', self.name),
+        ]))
