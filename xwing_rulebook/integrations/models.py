@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields.jsonb import KeyTransform, KeyTextTransform
 from django.contrib.staticfiles.templatetags.staticfiles import static
-
+from django.utils.functional import cached_property
 from integrations.constants import DAMAGE_DECK_TYPES
 
 
@@ -65,11 +66,35 @@ class DamageDeck(models.Model):
         return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
 
 
+class Ship(models.Model):
+    name = models.CharField(max_length=125)
+    data = JSONField(default=dict)
+
+    data_key = 'ships'
+
+    def __str__(self):
+        return '[{}] {}'.format(self.slug, self.name)
+
+    @property
+    def slug(self):
+        return slugify(self.name)
+
+
+class PilotManager(models.Manager):
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.annotate(ship_id=KeyTransform("ship' -> 'ship_id", 'data'))
+        qs = qs.annotate(ship_name=KeyTransform("ship' ->> 'name", 'data'))
+        return qs
+
+
 class Pilot(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
     data_key = 'pilots'
+
+    objects = PilotManager()
 
     @property
     def slug(self):
@@ -86,15 +111,9 @@ class Pilot(models.Model):
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)
 
-
-class Ship(models.Model):
-    name = models.CharField(max_length=125)
-    data = JSONField(default=dict)
-
-    data_key = 'ships'
-
-    def __str__(self):
-        return '[{}] {}'.format(self.slug, self.name)
+    @cached_property
+    def ship(self):
+        return Ship.objects.get(id=self.ship_id) if self.ship_id else None
 
 
 class Upgrade(models.Model):

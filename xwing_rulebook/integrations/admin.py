@@ -8,6 +8,7 @@ from django.utils.html import escape
 
 from integrations.models import Product, Ship, Pilot, Upgrade, DamageDeck, Condition
 from rules.constants import SOURCE_TYPES
+from integrations.templatetags.maneuvers import maneuvers_html
 
 
 class SourceCountFilter(admin.SimpleListFilter):
@@ -28,6 +29,20 @@ class SourceCountFilter(admin.SimpleListFilter):
             return queryset.filter(source_count=1)
         if self.value() == '2+':
             return queryset.filter(source_count__gte=2)
+        return queryset
+
+
+class ShipFilter(admin.SimpleListFilter):
+    title = "Ship"
+    parameter_name = "ship_name"
+
+    def lookups(self, request, model_admin):
+        return ((s.id, s.name) for s in Ship.objects.all().order_by('id'))
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        if value is not None:
+            return queryset.filter(ship_id=int(value))
         return queryset
 
 
@@ -68,7 +83,7 @@ class ProductAdmin(ModelWithJSON):
 
     def sources_display(self, obj):
         return mark_safe('<br/>'.join([
-            "<a href={}>{}</a>".format(
+            '<a href="{}">{}</a>'.format(
                 reverse('admin:rules_source_change', args=[s.id, ]),
                 '[{}] {} {}'.format(s, s.name, dict(SOURCE_TYPES.as_choices)[s.type])
             )
@@ -84,11 +99,29 @@ class ShipAdmin(ModelWithJSON):
 
 @admin.register(Pilot)
 class PilotAdmin(ModelWithJSON):
+    list_display = ('name', 'id', 'ship_link')
 
+    readonly_fields = ['data', 'display_data', 'id', 'ship_link', 'maneuvers_table']
+
+    list_filter = [ShipFilter, ]
+
+    def ship_link(self, obj):
+        return mark_safe('<a href="{}">{}</a>'.format(
+            reverse('admin:integrations_ship_change', args=[obj.ship_id, ]),
+            obj.ship_name
+        ))
+    ship_link.short_description = 'Ship'
+    ship_link.admin_order_field = 'ship_name'
 
     def display_data(self, obj):
         return mark_safe("<br/><pre>{}</pre>".format(escape(json.dumps(obj.data, indent=2))))
     display_data.short_description = 'Data'
+
+    def maneuvers_table(self, obj):
+        if obj.id is not None and obj.ship:
+            return maneuvers_html(obj)
+        return None
+
 
 
 @admin.register(Upgrade)
