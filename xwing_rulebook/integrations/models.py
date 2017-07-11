@@ -66,11 +66,20 @@ class DamageDeck(models.Model):
         return static('images/lib/xwing-data/' + self.data['image']) if 'image' in self.data else None
 
 
+class ShipManager(models.Manager):
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.annotate(size=KeyTextTransform('size', 'data'))
+        return qs
+
+
 class Ship(models.Model):
     name = models.CharField(max_length=125)
     data = JSONField(default=dict)
 
     data_key = 'ships'
+
+    objects = ShipManager()
 
     def __str__(self):
         return '[{}] {}'.format(self.slug, self.name)

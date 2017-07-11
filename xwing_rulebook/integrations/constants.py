@@ -11,7 +11,8 @@ class DAMAGE_DECK_TYPES:
         CORE, CORE_TFA
     ]
 
-class MANEUVERS:
+
+class MANEUVERS_TYPES:
   TURN_LEFT = "[Turn Left]"
   BANK_LEFT = "[Bank Left]"
   STRAIGHT = "[Straight]"
@@ -30,7 +31,23 @@ class MANEUVERS:
   IG88D_SEGNORS_LOOP_LEFT = "[IG88D Segnor's Loop Left]"
   IG88D_SEGNORS_LOOP_RIGHT = "[IG88D Segnor's Loop Right]"
 
-  as_list = [
+  speed_zero = [
+      TURN_LEFT,
+      BANK_LEFT,
+      STATIONARY,
+      BANK_RIGHT,
+      TURN_RIGHT,
+      KOIOGRAN_TURN,
+      SEGNORS_LOOP_LEFT,
+      SEGNORS_LOOP_RIGHT,
+      TALLON_ROLL_RIGHT,
+      TALLON_ROLL_LEFT,
+      REVERSE_STRAIGHT,
+      REVERSE_BANK_LEFT,
+      REVERSE_BANK_RIGHT
+  ]
+
+  small_and_large = [
       TURN_LEFT,
       BANK_LEFT,
       STRAIGHT,
@@ -44,6 +61,14 @@ class MANEUVERS:
       REVERSE_STRAIGHT,
       REVERSE_BANK_LEFT,
       REVERSE_BANK_RIGHT
+  ]
+
+  huge = [
+      TURN_LEFT,
+      BANK_LEFT,
+      STRAIGHT,
+      BANK_RIGHT,
+      TURN_RIGHT,
   ]
 
 

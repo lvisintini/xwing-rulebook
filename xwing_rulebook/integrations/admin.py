@@ -32,7 +32,7 @@ class SourceCountFilter(admin.SimpleListFilter):
         return queryset
 
 
-class ShipFilter(admin.SimpleListFilter):
+class PilotShipFilter(admin.SimpleListFilter):
     title = "Ship"
     parameter_name = "ship_name"
 
@@ -43,6 +43,24 @@ class ShipFilter(admin.SimpleListFilter):
         value = self.value()
         if value is not None:
             return queryset.filter(ship_id=int(value))
+        return queryset
+
+
+class ShipSizeFilter(admin.SimpleListFilter):
+    title = "Size"
+    parameter_name = "size"
+
+    def lookups(self, request, model_admin):
+        return (
+            ('small', 'Small'),
+            ('large', 'Large'),
+            ('huge', 'Huge'),
+        )
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        if value is not None:
+            return queryset.filter(size=value)
         return queryset
 
 
@@ -94,7 +112,7 @@ class ProductAdmin(ModelWithJSON):
 
 @admin.register(Ship)
 class ShipAdmin(ModelWithJSON):
-    pass
+    list_filter = [ShipSizeFilter, ]
 
 
 @admin.register(Pilot)
@@ -103,7 +121,7 @@ class PilotAdmin(ModelWithJSON):
 
     readonly_fields = ['data', 'display_data', 'id', 'ship_link', 'maneuvers_table']
 
-    list_filter = [ShipFilter, ]
+    list_filter = [PilotShipFilter, ]
 
     def ship_link(self, obj):
         return mark_safe('<a href="{}">{}</a>'.format(
