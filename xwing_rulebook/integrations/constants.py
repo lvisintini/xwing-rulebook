@@ -21,15 +21,13 @@ class MANEUVERS_TYPES:
   KOIOGRAN_TURN = "[Koiogran Turn]"
   SEGNORS_LOOP_LEFT = "[Segnor's Loop Left]"
   SEGNORS_LOOP_RIGHT = "[Segnor's Loop Right]"
-  TALLON_ROLL_RIGHT = "[Tallon Roll Right]"
   TALLON_ROLL_LEFT = "[Tallon Roll Left]"
-  REVERSE_STRAIGHT = "[Reverse Straight]"
+  TALLON_ROLL_RIGHT = "[Tallon Roll Right]"
   REVERSE_BANK_LEFT = "[Reverse Bank Left]"
+  REVERSE_STRAIGHT = "[Reverse Straight]"
   REVERSE_BANK_RIGHT = "[Reverse Bank Right]"
 
   STATIONARY = "[Stationary]"
-  IG88D_SEGNORS_LOOP_LEFT = "[IG88D Segnor's Loop Left]"
-  IG88D_SEGNORS_LOOP_RIGHT = "[IG88D Segnor's Loop Right]"
 
   NON_EXISTANT = None
 
@@ -58,10 +56,10 @@ class MANEUVERS_TYPES:
       KOIOGRAN_TURN,
       SEGNORS_LOOP_LEFT,
       SEGNORS_LOOP_RIGHT,
-      TALLON_ROLL_RIGHT,
       TALLON_ROLL_LEFT,
-      REVERSE_STRAIGHT,
+      TALLON_ROLL_RIGHT,
       REVERSE_BANK_LEFT,
+      REVERSE_STRAIGHT,
       REVERSE_BANK_RIGHT
   ]
 
