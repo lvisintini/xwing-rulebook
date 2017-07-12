@@ -1,42 +1,3 @@
-@include skel-breakpoints((
-  xlarge: '(max-width: ' + val($breakpoint-limits, xlarge) + ')',
-  large: '(max-width: ' + val($breakpoint-limits, large) + ')',
-  medium: '(max-width: ' + val($breakpoint-limits, medium) + ')',
-  small: '(max-width: ' + val($breakpoint-limits, small) + ')',
-  xsmall: '(max-width: ' + val($breakpoint-limits, xsmall) + ')',
-));
-
-
-.PageWrapper {
-  min-height: 100vh;
-  background-color: val($palette, bg-dark);
-
-  &--bg-light {
-    background-color: darken(val($palette, color3), 5);
-  }
-
-  &--breakpoints {
-    background-color: darkcyan;
-
-    @include breakpoint(xlarge) {
-      background-color: red;
-    }
-    @include breakpoint(large) {
-      background-color: yellow;
-    }
-    @include breakpoint(medium) {
-      background-color: green;
-    }
-    @include breakpoint(small) {
-      background-color: blue;
-    }
-    @include breakpoint(xsmall) {
-      background-color: orange;
-    }
-  }
-
-}
-
 .Section {
   &__Inner {
     margin: 0 auto;
@@ -50,7 +11,6 @@
       @include breakpoint(small) {
         @include vendor('box-shadow', 'none');
       }
-
     }
 
     &--unpadded {

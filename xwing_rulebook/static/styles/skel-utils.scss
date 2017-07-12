@@ -1,0 +1,30 @@
+
+.u {
+  &-hide {
+    &-xsmall {
+      @include breakpoint(xsmall) {
+        display: none;
+      }
+    }
+    &-small {
+      @include breakpoint(small) {
+        display: none;
+      }
+    }
+    &-medium {
+      @include breakpoint(medium) {
+        display: none;
+      }
+    }
+    &-large {
+      @include breakpoint(large) {
+        display: none;
+      }
+    }
+    &-xlarge {
+      @include breakpoint(xlarge) {
+        display: none;
+      }
+    }
+  }
+}

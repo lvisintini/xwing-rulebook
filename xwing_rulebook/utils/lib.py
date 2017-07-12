@@ -2,13 +2,12 @@ from itertools import takewhile, zip_longest
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
-from django.template import Context, loader
+from django.template import loader
 
 
 def render_template(template, context):
     t = loader.get_template(template)
-    c = Context(context)
-    return t.render(c)
+    return t.render(context)
 
 
 def grouper(iterable, n, fillvalue=None):

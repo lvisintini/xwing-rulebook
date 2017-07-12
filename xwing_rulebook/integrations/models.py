@@ -122,7 +122,7 @@ class Pilot(models.Model):
 
     @cached_property
     def ship(self):
-        return Ship.objects.get(id=self.ship_id) if self.ship_id else None
+        return Ship.objects.get(id=self.ship_id) if self.ship_id is not None else None
 
 
 class Upgrade(models.Model):

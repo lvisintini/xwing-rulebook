@@ -1,17 +1,25 @@
-@import "./lib/skel/_skel.scss";
 @import "vars.scss";
+
+@import "./lib/skel/_skel.scss";
+@import "skel-config.scss";
+@import "skel-utils.scss";
 
 @import "./lib/normalize.css/normalize.css";
 @import "./lib/xwing-miniatures-font/xwing-miniatures.css";
 @import "./lib/font-awesome/font-awesome.scss";
 
-@import "layout.scss";
 @import "fontface.scss";
-@import "base.scss";
-@import "utils.scss";
 
-@import "./components/Styleguide.scss";
-@import "./components/Header.scss";
-@import "./components/Footer.scss";
-@import "./components/Book.scss";
-@import "./components/Rule.scss";
+@import "base.scss";
+
+@import "./structure/PageWrapper.scss";
+@import "./structure/Header.scss";
+@import "./structure/Footer.scss";
+@import "./structure/Section.scss";
+
+
+@import "./pages/Styleguide.scss";
+@import "./pages/Book.scss";
+@import "./pages/Rule.scss";
+
+@import "utils.scss";

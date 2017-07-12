@@ -114,6 +114,17 @@ class ProductAdmin(ModelWithJSON):
 class ShipAdmin(ModelWithJSON):
     list_filter = [ShipSizeFilter, ]
 
+    readonly_fields = ['maneuvers_table', 'data', 'display_data', 'id' ]
+
+    def maneuvers_table(self, obj):
+        if obj.id is not None and obj:
+            return mark_safe('<br/>' + maneuvers_html(obj))
+        return None
+
+    class Media:
+        css = {
+             'all': ('build/admin.css',)
+        }
 
 @admin.register(Pilot)
 class PilotAdmin(ModelWithJSON):
@@ -137,9 +148,13 @@ class PilotAdmin(ModelWithJSON):
 
     def maneuvers_table(self, obj):
         if obj.id is not None and obj.ship:
-            return maneuvers_html(obj)
+            return mark_safe('<br/>' + maneuvers_html(obj))
         return None
 
+    class Media:
+        css = {
+             'all': ('build/admin.css',)
+        }
 
 
 @admin.register(Upgrade)

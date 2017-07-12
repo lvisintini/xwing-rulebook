@@ -31,20 +31,22 @@ class MANEUVERS_TYPES:
   IG88D_SEGNORS_LOOP_LEFT = "[IG88D Segnor's Loop Left]"
   IG88D_SEGNORS_LOOP_RIGHT = "[IG88D Segnor's Loop Right]"
 
+  NON_EXISTANT = None
+
   speed_zero = [
-      TURN_LEFT,
-      BANK_LEFT,
+      NON_EXISTANT,
+      NON_EXISTANT,
       STATIONARY,
-      BANK_RIGHT,
-      TURN_RIGHT,
-      KOIOGRAN_TURN,
-      SEGNORS_LOOP_LEFT,
-      SEGNORS_LOOP_RIGHT,
-      TALLON_ROLL_RIGHT,
-      TALLON_ROLL_LEFT,
-      REVERSE_STRAIGHT,
-      REVERSE_BANK_LEFT,
-      REVERSE_BANK_RIGHT
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT,
+      NON_EXISTANT
   ]
 
   small_and_large = [
@@ -73,7 +75,13 @@ class MANEUVERS_TYPES:
 
 
 class MANEUVERS_DIFFICULTY:
-    GREEN = 2
-    RED = 3
-    WHITE = 1
+    EASY = 2
+    DIFFICULT = 3
+    NORMAL = 1
     UNAVAILABLE = 0
+
+    as_classes = {
+        EASY: 'Maneuver--easy',
+        DIFFICULT: 'Maneuver--difficult',
+        NORMAL: 'Maneuver--normal',
+    }

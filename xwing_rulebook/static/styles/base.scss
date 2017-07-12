@@ -58,6 +58,8 @@ h4,
 h5,
 h6 {
   font-family: Kimberley, Arial, Helvetica, sans-serif;
+
+  /* http://owumaro.github.io/text-stroke-generator/ */
   @include vendor('text-shadow',
     val($palette, bg-light) + ' 3px 0px 0px, ' +
     val($palette, bg-light) + ' 2.83487px 0.981584px 0px, ' +

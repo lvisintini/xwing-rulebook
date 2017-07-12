@@ -38,7 +38,7 @@
     "watch-js": "webpack --progress --colors --watch",
     "watch-css": "npm run build-css; chokidar './xwing_rulebook/static/styles/**/*.*' -c 'npm run build-css'",
     "build-js": "webpack --progress --colors",
-    "build-css": "node-sass-chokidar --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css",
+    "build-css": "node-sass-chokidar --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/main.css.map ./xwing_rulebook/static/styles/main.scss ./xwing_rulebook/static/build/main.css; node-sass-chokidar --importer node_modules/node-sass-import --source-map ./xwing_rulebook/static/build/admin.css.map ./xwing_rulebook/static/styles/admin.scss ./xwing_rulebook/static/build/admin.css",
     "build": "npm-run-all -p build-*"
   },
   "author": "Luis Visintini",
