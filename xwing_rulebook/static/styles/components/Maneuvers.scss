@@ -1,4 +1,6 @@
 .Maneuvers {
+  width: auto !important;
+
   th {
     color: transparentize(val($palette, fg-dark), 0.6);
   }
@@ -16,8 +18,7 @@
       val($palette, fg-dark) + ' 0.283662px -0.958924px 0px, ' +
       val($palette, fg-dark) + ' 0.96017px -0.279415px 0px'
     );
-
-
+    
     .xwing-miniatures-font-energy {
       font-size: val($font-size, xsmall);
       color: val($palette, fg-light);
@@ -33,7 +34,6 @@
         val($palette, color3) + ' 0.96017px -0.279415px 0px'
       );
     }
-
 
     &--easy {
       color: val($palette, color6);

@@ -77,8 +77,13 @@ class ModelWithJSON(admin.ModelAdmin):
     def get_fieldsets(self, request, obj=None):
         fieldsets = super().get_fieldsets(request, obj)
         fieldsets[0][1]['fields'].remove('data')
+        fieldsets[0][1]['fields'].remove('display_data')
         fieldsets[0][1]['fields'].remove('id')
         fieldsets[0][1]['fields'].insert(0, 'id')
+        fieldsets.append(('Data', {
+            'fields': ['display_data', ],
+            'classes': ('collapse', )
+        }))
         return fieldsets
 
 
@@ -112,14 +117,19 @@ class ProductAdmin(ModelWithJSON):
 
 @admin.register(Ship)
 class ShipAdmin(ModelWithJSON):
+    list_display = ('id', 'name', 'size')
     list_filter = [ShipSizeFilter, ]
 
-    readonly_fields = ['maneuvers_table', 'data', 'display_data', 'id' ]
+    readonly_fields = ['maneuvers_table', 'data', 'display_data', 'id', 'size']
 
     def maneuvers_table(self, obj):
         if obj.id is not None and obj:
             return mark_safe('<br/>' + maneuvers_html(obj))
         return None
+
+    def size(self, obj):
+        return obj.size.capitalize()
+    size.admin_order_field = 'size'
 
     class Media:
         css = {

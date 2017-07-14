@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['xwing-rulebook.com', ]
 # Application definition
 
 INSTALLED_APPS = [
-    'polymorphic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
