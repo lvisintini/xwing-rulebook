@@ -3700,6 +3700,25 @@ https://nodejs.org/docs/v0.7.7/api/url.html
 .Rule__ImageTitle, .Rule__Image, .Rule__ImageCaption {
   text-align: center; }
 
+.Maneuvers {
+  width: auto !important; }
+  .Maneuvers th {
+    color: rgba(36, 36, 36, 0.4); }
+  .Maneuvers .Maneuver {
+    /* http://owumaro.github.io/text-stroke-generator/ */
+    text-shadow: #242424 1px 0px 0px, #242424 0.540302px 0.841471px 0px, #242424 -0.416147px 0.909297px 0px, #242424 -0.989992px 0.14112px 0px, #242424 -0.653644px -0.756802px 0px, #242424 0.283662px -0.958924px 0px, #242424 0.96017px -0.279415px 0px; }
+    .Maneuvers .Maneuver .xwing-miniatures-font-energy {
+      font-size: 0.5em;
+      color: white;
+      /* http://owumaro.github.io/text-stroke-generator/ */
+      text-shadow: #3892a6 1px 0px 0px, #3892a6 0.540302px 0.841471px 0px, #3892a6 -0.416147px 0.909297px 0px, #3892a6 -0.989992px 0.14112px 0px, #3892a6 -0.653644px -0.756802px 0px, #3892a6 0.283662px -0.958924px 0px, #3892a6 0.96017px -0.279415px 0px; }
+    .Maneuvers .Maneuver--easy {
+      color: #0adc0a; }
+    .Maneuvers .Maneuver--normal {
+      color: white; }
+    .Maneuvers .Maneuver--difficult {
+      color: #da312f; }
+
 .u-text-left {
   text-align: right; }
 
@@ -3736,6 +3755,10 @@ https://nodejs.org/docs/v0.7.7/api/url.html
     justify-content: center; }
   .u-flex-columns {
     flex-direction: column; }
+  .u-flex-stretch {
+    align-items: stretch; }
+  .u-flex-wrap {
+    flex-wrap: wrap; }
   .u-flex-half {
     flex: 0 1 75%; }
   .u-flex-third {

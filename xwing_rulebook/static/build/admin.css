@@ -2957,6 +2957,10 @@ i.xwing-miniatures-ship-z95headhunter:before {
     justify-content: center; }
   .u-flex-columns {
     flex-direction: column; }
+  .u-flex-stretch {
+    align-items: stretch; }
+  .u-flex-wrap {
+    flex-wrap: wrap; }
   .u-flex-half {
     flex: 0 1 75%; }
   .u-flex-third {

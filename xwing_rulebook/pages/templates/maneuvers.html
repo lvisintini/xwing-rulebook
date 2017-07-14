@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load order_by %}
+{% load maneuvers %}
+
+{% block content %}
+  <section class="Section">
+    <div class="Section__Inner u-padded">
+      <h1>Ship Maneuvers</h1>
+
+      <div class="u-flex u-flex-three-quarters u-flex-wrap u-flex-stretch">
+        {% for ship in ships %}
+          <div class="u-flex u-flex-columns">
+            {{ ship | maneuvers_html }}
+            <div class="u-text-center">{{ ship.name }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}

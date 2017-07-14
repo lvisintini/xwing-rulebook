@@ -3,6 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
+from integrations.models import Ship
 from rules.views import rules_index
 from rules.models import Source
 
@@ -57,6 +58,11 @@ def manifest(request):
     }
 
     return JsonResponse(data)
+
+
+def manuevers(request):
+    ships = Ship.objects.all()
+    return render(request, 'maneuvers.html', {'ships': ships})
 
 
 def browser_config(request):

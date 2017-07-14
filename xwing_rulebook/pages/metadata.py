@@ -292,6 +292,22 @@ class AboutPageMetaData(DefaultMetaData):
         return super().twitter_title('About us')
 
 
+class ManeuversPageMetaData(DefaultMetaData):
+    default_description = 'A list of all maneuver tables for all the ships in the game.'
+
+    def title(self):
+        return super().title('Maneuvers')
+
+    def keywords(self):
+        return super().keywords('all ship maneuvers', 'maneuver dials', 'maneuver tables')
+
+    def og_title(self):
+        return super().og_title('Maneuvers')
+
+    def twitter_title(self):
+        return super().twitter_title('Maneuvers')
+
+
 METADATA_MAPPING = {
     "pages:index": RulesIndexMetaData,
     "pages:styleguide": StyleGuideMetaData,
@@ -299,6 +315,7 @@ METADATA_MAPPING = {
     "pages:contact": ContactPageMetaData,
     "pages:wall-of-fame": WallOfFameMetaData,
     "pages:about": AboutPageMetaData,
+    "pages:maneuvers": ManeuversPageMetaData,
     #"books:book": None,
     "rules:index": RulesIndexMetaData,
     "rules:rule": RulesPageMetaData,

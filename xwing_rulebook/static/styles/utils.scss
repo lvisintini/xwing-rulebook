@@ -55,6 +55,14 @@
       flex-direction: column;
     }
 
+    &-stretch {
+      align-items: stretch;
+    }
+
+    &-wrap{
+      flex-wrap: wrap;
+    }
+
     &-half {
       flex: 0 1 75%;
     }
