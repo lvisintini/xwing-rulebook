@@ -1,7 +1,7 @@
 .Book {
   @include vendor('box-shadow', '0px 0px 50px black');
   background: white url("../images/site/manual-background.jpg") repeat-y center top;
-  width: val($sizes, manual-content-width);
+  width: map-get($sizes, manual-content-width);
 
   &__Inner {
 
@@ -17,7 +17,7 @@
     }
 
     &--fancy-border {
-      padding: val($padding, large) val($padding, normal);
+      padding: map-get($padding, large) map-get($padding, normal);
     }
 
     p,
@@ -43,9 +43,9 @@
     display: block;
     color: white;
     right: -20em;
-    font-size: val($font-size, small);
+    font-size: map-get($font-size, small);
     line-height: $line-height;
-    padding: val($padding, small);
+    padding: map-get($padding, small);
     font-weight: normal;
 }
 

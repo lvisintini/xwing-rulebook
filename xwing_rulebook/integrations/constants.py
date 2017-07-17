@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 class DAMAGE_DECK_TYPES:
     CORE = 'core'
     CORE_TFA = 'core-tfa'
@@ -10,6 +13,35 @@ class DAMAGE_DECK_TYPES:
     as_list = [
         CORE, CORE_TFA
     ]
+
+
+class FACTIONS:
+    REBEL_ALLIANCE = "Rebel Alliance"
+    RESISTANCE = "Resistance"
+    GALACTIC_EMPIRE = "Galactic Empire"
+    FIRST_ORDER = "First Order"
+    SCUM_AND_VILLAINY = "Scum and Villainy"
+
+    rebel_factions = [
+        REBEL_ALLIANCE,
+        RESISTANCE
+    ]
+
+    empire_factions = [
+        GALACTIC_EMPIRE,
+        FIRST_ORDER
+    ]
+
+    scum_factions = [
+        SCUM_AND_VILLAINY,
+    ]
+
+
+class MANEUVERS_DIFFICULTY:
+    EASY = 2
+    DIFFICULT = 3
+    NORMAL = 1
+    UNAVAILABLE = 0
 
 
 class MANEUVERS_TYPES:
@@ -29,22 +61,22 @@ class MANEUVERS_TYPES:
 
   STATIONARY = "[Stationary]"
 
-  NON_EXISTANT = None
+  NON_EXISTENT = None
 
   speed_zero = [
-      NON_EXISTANT,
-      NON_EXISTANT,
+      NON_EXISTENT,
+      NON_EXISTENT,
       STATIONARY,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT,
-      NON_EXISTANT
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT,
+      NON_EXISTENT
   ]
 
   small_and_large = [
@@ -64,22 +96,21 @@ class MANEUVERS_TYPES:
   ]
 
   huge = [
-      TURN_LEFT,
+      NON_EXISTENT,
       BANK_LEFT,
       STRAIGHT,
       BANK_RIGHT,
-      TURN_RIGHT,
+      NON_EXISTENT,
   ]
 
 
-class MANEUVERS_DIFFICULTY:
-    EASY = 2
-    DIFFICULT = 3
-    NORMAL = 1
-    UNAVAILABLE = 0
+class SHIP_SIZES:
+    SMALL = 'small'
+    LARGE = 'large'
+    HUGE = 'huge'
 
-    as_classes = {
-        EASY: 'Maneuver--easy',
-        DIFFICULT: 'Maneuver--difficult',
-        NORMAL: 'Maneuver--normal',
-    }
+    as_list = [
+        SMALL,
+        LARGE,
+        HUGE
+    ]

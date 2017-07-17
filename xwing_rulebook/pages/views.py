@@ -60,8 +60,8 @@ def manifest(request):
     return JsonResponse(data)
 
 
-def manuevers(request):
-    ships = Ship.objects.all()
+def maneuvers(request):
+    ships = Ship.objects.order_by('size_order', 'id', 'name').exclude(name__endswith='(Aft)')
     return render(request, 'maneuvers.html', {'ships': ships})
 
 

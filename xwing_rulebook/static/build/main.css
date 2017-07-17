@@ -3653,6 +3653,14 @@ table {
 .Styleguide > p {
   color: white; }
 
+.Maneuvers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap; }
+  .Maneuvers > * {
+    padding: 1em; }
+
 .Book {
   box-shadow: 0px 0px 50px black;
   background: white url("../images/site/manual-background.jpg") repeat-y center top; }
@@ -3700,24 +3708,496 @@ https://nodejs.org/docs/v0.7.7/api/url.html
 .Rule__ImageTitle, .Rule__Image, .Rule__ImageCaption {
   text-align: center; }
 
-.Maneuvers {
+.ManeuversTable {
   width: auto !important; }
-  .Maneuvers th {
-    color: rgba(36, 36, 36, 0.4); }
-  .Maneuvers .Maneuver {
-    /* http://owumaro.github.io/text-stroke-generator/ */
-    text-shadow: #242424 1px 0px 0px, #242424 0.540302px 0.841471px 0px, #242424 -0.416147px 0.909297px 0px, #242424 -0.989992px 0.14112px 0px, #242424 -0.653644px -0.756802px 0px, #242424 0.283662px -0.958924px 0px, #242424 0.96017px -0.279415px 0px; }
-    .Maneuvers .Maneuver .xwing-miniatures-font-energy {
-      font-size: 0.5em;
-      color: white;
-      /* http://owumaro.github.io/text-stroke-generator/ */
-      text-shadow: #3892a6 1px 0px 0px, #3892a6 0.540302px 0.841471px 0px, #3892a6 -0.416147px 0.909297px 0px, #3892a6 -0.989992px 0.14112px 0px, #3892a6 -0.653644px -0.756802px 0px, #3892a6 0.283662px -0.958924px 0px, #3892a6 0.96017px -0.279415px 0px; }
-    .Maneuvers .Maneuver--easy {
-      color: #0adc0a; }
-    .Maneuvers .Maneuver--normal {
-      color: white; }
-    .Maneuvers .Maneuver--difficult {
-      color: #da312f; }
+  .ManeuversTable th {
+    color: rgba(36, 36, 36, 0.4);
+    vertical-align: middle; }
+  .ManeuversTable tr td, .ManeuversTable tr th {
+    border-bottom: 1px solid rgba(36, 36, 36, 0.1); }
+  .ManeuversTable .Maneuver,
+  .ManeuversTable .HugeManeuver {
+    display: block; }
+  .ManeuversTable .Maneuver--icon-stationary-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 0% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-left-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 7.14286% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-left-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 14.28571% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-straight-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 21.42857% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-right-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 28.57143% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-right-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 35.71429% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-koiogran-turn-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 42.85714% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-left-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 50% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-right-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 57.14286% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-left-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 64.28571% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-right-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 71.42857% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-left-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 78.57143% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-straight-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 85.71429% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-right-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 92.85714% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-non-existent-normal {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: -7.14286% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-stationary-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 0% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-left-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 7.14286% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-left-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 14.28571% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-straight-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 21.42857% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-right-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 28.57143% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-right-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 35.71429% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-koiogran-turn-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 42.85714% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-left-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 50% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-right-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 57.14286% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-left-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 64.28571% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-right-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 71.42857% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-left-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 78.57143% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-straight-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 85.71429% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-right-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 92.85714% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-non-existent-easy {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: -7.14286% 33.33333%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-stationary-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 0% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-left-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 7.14286% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-left-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 14.28571% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-straight-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 21.42857% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-right-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 28.57143% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-right-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 35.71429% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-koiogran-turn-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 42.85714% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-left-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 50% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-right-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 57.14286% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-left-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 64.28571% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-right-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 71.42857% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-left-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 78.57143% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-straight-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 85.71429% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-right-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 92.85714% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-non-existent-difficult {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: -7.14286% 66.66667%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-stationary-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 0% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-left-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 7.14286% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-left-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 14.28571% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-straight-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 21.42857% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-bank-right-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 28.57143% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-turn-right-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 35.71429% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-koiogran-turn-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 42.85714% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-left-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 50% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-segnors-loop-right-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 57.14286% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-left-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 64.28571% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-tallon-roll-right-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 71.42857% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-left-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 78.57143% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-straight-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 85.71429% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-reverse-bank-right-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: 92.85714% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .Maneuver--icon-non-existent-unavailable {
+    background-image: url("../images/site/maneuvers.svg");
+    background-position: -7.14286% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 160px; }
+  .ManeuversTable .HugeManeuver--icon-bank-left-e0 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 0% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-straight-e0 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 33.33333% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-right-e0 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 66.66667% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-non-existent-e0 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: -33.33333% 0%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-left-e1 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 0% 25%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-straight-e1 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 33.33333% 25%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-right-e1 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 66.66667% 25%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-non-existent-e1 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: -33.33333% 25%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-left-e2 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 0% 50%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-straight-e2 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 33.33333% 50%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-right-e2 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 66.66667% 50%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-non-existent-e2 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: -33.33333% 50%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-left-e3 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 0% 75%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-straight-e3 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 33.33333% 75%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-right-e3 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 66.66667% 75%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-non-existent-e3 {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: -33.33333% 75%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-left-unavailable {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 0% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-straight-unavailable {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 33.33333% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-bank-right-unavailable {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: 66.66667% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
+  .ManeuversTable .HugeManeuver--icon-non-existent-unavailable {
+    background-image: url("../images/site/maneuvers-huge.svg");
+    background-position: -33.33333% 100%;
+    height: 40px;
+    width: 40px;
+    background-size: auto 200px; }
 
 .u-text-left {
   text-align: right; }
@@ -3745,30 +4225,12 @@ https://nodejs.org/docs/v0.7.7/api/url.html
 
 .u-flex {
   display: flex; }
-  .u-flex-left {
-    justify-content: flex-start; }
-  .u-flex-right {
-    justify-content: flex-end; }
   .u-flex-space-between {
     justify-content: space-between; }
-  .u-flex-center {
-    justify-content: center; }
   .u-flex-columns {
     flex-direction: column; }
-  .u-flex-stretch {
-    align-items: stretch; }
   .u-flex-wrap {
     flex-wrap: wrap; }
-  .u-flex-half {
-    flex: 0 1 75%; }
-  .u-flex-third {
-    flex: 0 1 33.33%; }
-  .u-flex-two-thirds {
-    flex: 0 1 66.66%; }
-  .u-flex-one-quarter {
-    flex: 0 1 25%; }
-  .u-flex-three-quarters {
-    flex: 0 1 75%; }
 
 .u-float-left {
   float: left; }

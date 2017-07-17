@@ -7,12 +7,42 @@
     <div class="Section__Inner u-padded">
       <h1>Ship Maneuvers</h1>
 
-      <div class="u-flex u-flex-three-quarters u-flex-wrap u-flex-stretch">
+      <h2>Rebels</h2>
+
+      <div class="Maneuvers">
         {% for ship in ships %}
-          <div class="u-flex u-flex-columns">
-            {{ ship | maneuvers_html }}
-            <div class="u-text-center">{{ ship.name }}</div>
-          </div>
+          {% if FACTIONS.REBEL_ALLIANCE in ship.factions or FACTIONS.RESISTANCE in ship.factions %}
+            <div class="u-flex u-flex-columns">
+              {{ ship | maneuvers_html }}
+              <div class="u-text-center">{{ ship.name }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h2>Empire</h2>
+
+      <div class="Maneuvers">
+        {% for ship in ships %}
+          {% if FACTIONS.GALACTIC_EMPIRE in ship.factions or FACTIONS.FIRST_ORDER in ship.factions %}
+            <div class="u-flex u-flex-columns">
+              {{ ship | maneuvers_html }}
+              <div class="u-text-center">{{ ship.name }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h2>Scum</h2>
+
+      <div class="Maneuvers">
+        {% for ship in ships %}
+          {% if FACTIONS.SCUM_AND_VILLAINY in ship.factions %}
+            <div class="u-flex u-flex-columns">
+              {{ ship | maneuvers_html }}
+              <div class="u-text-center">{{ ship.name }}</div>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
 

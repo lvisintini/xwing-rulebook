@@ -1,53 +1,53 @@
 html {
-  font-size: val($base-font-size, default);
+  font-size: map-get($base-font-size, default);
 
   @include breakpoint(xlarge) {
-    font-size: val($base-font-size, xlarge);
+    font-size: map-get($base-font-size, xlarge);
   }
   @include breakpoint(large) {
-    font-size: val($base-font-size, large);
+    font-size: map-get($base-font-size, large);
   }
   @include breakpoint(medium) {
-    font-size: val($base-font-size, medium);
+    font-size: map-get($base-font-size, medium);
   }
   @include breakpoint(small) {
-    font-size: val($base-font-size, small);
+    font-size: map-get($base-font-size, small);
   }
   @include breakpoint(xsmall) {
-    font-size: val($base-font-size, xsmall);
+    font-size: map-get($base-font-size, xsmall);
   }
 }
 
 body {
   font-family: Eurostile, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-size: val($font-size, normal);
+  font-size: map-get($font-size, normal);
   line-height: $line-height;
   margin: 0;
 }
 
 h1 {
-  font-size: val($font-size, xxxlarge);
+  font-size: map-get($font-size, xxxlarge);
   line-height: $line-height;
 }
 h2 {
-  font-size: val($font-size, xxlarge);
+  font-size: map-get($font-size, xxlarge);
   line-height: $line-height;
 }
 h3 {
-  font-size: val($font-size, xlarge);
+  font-size: map-get($font-size, xlarge);
   line-height: $line-height;
 }
 h4 {
-  font-size: val($font-size, large);
+  font-size: map-get($font-size, large);
   line-height: $line-height;
 }
 h5 {
-  font-size: val($font-size, medium);
+  font-size: map-get($font-size, medium);
   line-height: $line-height;
 }
 h6 {
-  font-size: val($font-size, normal);
+  font-size: map-get($font-size, normal);
   line-height: $line-height;
 }
 
@@ -61,32 +61,32 @@ h6 {
 
   /* http://owumaro.github.io/text-stroke-generator/ */
   @include vendor('text-shadow',
-    val($palette, bg-light) + ' 3px 0px 0px, ' +
-    val($palette, bg-light) + ' 2.83487px 0.981584px 0px, ' +
-    val($palette, bg-light) + ' 2.35766px 1.85511px 0px, ' +
-    val($palette, bg-light) + ' 1.62091px 2.52441px 0px, ' +
-    val($palette, bg-light) + ' 0.705713px 2.91581px 0px, ' +
-    val($palette, bg-light) + ' -0.287171px 2.98622px 0px, ' +
-    val($palette, bg-light) + ' -1.24844px 2.72789px 0px, ' +
-    val($palette, bg-light) + ' -2.07227px 2.16926px 0px, ' +
-    val($palette, bg-light) + ' -2.66798px 1.37182px 0px, ' +
-    val($palette, bg-light) + ' -2.96998px 0.42336px 0px, ' +
-    val($palette, bg-light) + ' -2.94502px -0.571704px 0px, ' +
-    val($palette, bg-light) + ' -2.59586px -1.50383px 0px, ' +
-    val($palette, bg-light) + ' -1.96093px -2.27041px 0px, ' +
-    val($palette, bg-light) + ' -1.11013px -2.78704px 0px, ' +
-    val($palette, bg-light) + ' -0.137119px -2.99686px 0px, ' +
-    val($palette, bg-light) + ' 0.850987px -2.87677px 0px, ' +
-    val($palette, bg-light) + ' 1.74541px -2.43999px 0px, ' +
-    val($palette, bg-light) + ' 2.44769px -1.73459px 0px, ' +
-    val($palette, bg-light) + ' 2.88051px -0.838247px 0px'
+    map-get($palette, bg-light) + ' 3px 0px 0px, ' +
+    map-get($palette, bg-light) + ' 2.83487px 0.981584px 0px, ' +
+    map-get($palette, bg-light) + ' 2.35766px 1.85511px 0px, ' +
+    map-get($palette, bg-light) + ' 1.62091px 2.52441px 0px, ' +
+    map-get($palette, bg-light) + ' 0.705713px 2.91581px 0px, ' +
+    map-get($palette, bg-light) + ' -0.287171px 2.98622px 0px, ' +
+    map-get($palette, bg-light) + ' -1.24844px 2.72789px 0px, ' +
+    map-get($palette, bg-light) + ' -2.07227px 2.16926px 0px, ' +
+    map-get($palette, bg-light) + ' -2.66798px 1.37182px 0px, ' +
+    map-get($palette, bg-light) + ' -2.96998px 0.42336px 0px, ' +
+    map-get($palette, bg-light) + ' -2.94502px -0.571704px 0px, ' +
+    map-get($palette, bg-light) + ' -2.59586px -1.50383px 0px, ' +
+    map-get($palette, bg-light) + ' -1.96093px -2.27041px 0px, ' +
+    map-get($palette, bg-light) + ' -1.11013px -2.78704px 0px, ' +
+    map-get($palette, bg-light) + ' -0.137119px -2.99686px 0px, ' +
+    map-get($palette, bg-light) + ' 0.850987px -2.87677px 0px, ' +
+    map-get($palette, bg-light) + ' 1.74541px -2.43999px 0px, ' +
+    map-get($palette, bg-light) + ' 2.44769px -1.73459px 0px, ' +
+    map-get($palette, bg-light) + ' 2.88051px -0.838247px 0px'
   );
 }
 
 ol,
 ul {
   margin: 0;
-  padding: 0 0 0 val($padding, xlarge);
+  padding: 0 0 0 map-get($padding, xlarge);
 }
 
 ol {
@@ -122,76 +122,76 @@ ul {
 }
 
 li {
-  margin: val($padding, small) 0;
+  margin: map-get($padding, small) 0;
 }
 
 p {
-  margin: val($padding, large) 0;
+  margin: map-get($padding, large) 0;
 }
 
 button,
 .button {
   @include vendor('border-radius', '4px');
-  @include vendor('box-shadow', 'inset 0 1px 0 ' + transparentize(val($palette, fg-light), 0.4) + ', 0 1px 1px ' + transparentize(val($palette, fg-dark), 0.2));
-  @include vendor('transition-duration', '' + val($duration, xshort));
+  @include vendor('box-shadow', 'inset 0 1px 0 ' + transparentize(map-get($palette, fg-light), 0.4) + ', 0 1px 1px ' + transparentize(map-get($palette, fg-dark), 0.2));
+  @include vendor('transition-duration', '' + map-get($duration, xshort));
   @include vendor('user-select', 'none');
   cursor: pointer;
-  padding: val($padding, small) val($padding, normal);
-  background: darken(val($palette, color2), 15);
-  color: val($palette, fg-light);
-  border: solid 1px darken(val($palette, color3), 15);
-  text-shadow: 0 -1px 0 transparentize(val($palette, fg-dark), 0.4);
+  padding: map-get($padding, small) map-get($padding, normal);
+  background: darken(map-get($palette, color2), 15);
+  color: map-get($palette, fg-light);
+  border: solid 1px darken(map-get($palette, color3), 15);
+  text-shadow: 0 -1px 0 transparentize(map-get($palette, fg-dark), 0.4);
 
   &:hover {
-    background: darken(val($palette, color2), 20);
-    border: solid 1px darken(val($palette, color3), 20);
+    background: darken(map-get($palette, color2), 20);
+    border: solid 1px darken(map-get($palette, color3), 20);
     text-decoration: none;
   }
 
   &:active {
-    @include vendor('box-shadow', 'inset 0 1px 4px ' + transparentize(val($palette, fg-dark), 0.6));
-    background: darken(val($palette, color2), 25);
-    border: solid 1px darken(val($palette, color3), 25);
+    @include vendor('box-shadow', 'inset 0 1px 4px ' + transparentize(map-get($palette, fg-dark), 0.6));
+    background: darken(map-get($palette, color2), 25);
+    border: solid 1px darken(map-get($palette, color3), 25);
   }
 }
 
 a,
 a:link {
   cursor: pointer;
-  color: val($palette, color2);
-  border-bottom: 1px dotted val($palette, color2);
+  color: map-get($palette, color2);
+  border-bottom: 1px dotted map-get($palette, color2);
   text-decoration: none;
 
   &:visited {
-    color: val($palette, color3);
-    border-bottom-color: val($palette, color3);
+    color: map-get($palette, color3);
+    border-bottom-color: map-get($palette, color3);
   }
 
   &:hover {
-    color: val($palette, color1);
-    border-bottom-color: val($palette, color1);
+    color: map-get($palette, color1);
+    border-bottom-color: map-get($palette, color1);
   }
 
   &:focus {
-    color: val($palette, color1);
-    border-bottom-color: val($palette, color1);
+    color: map-get($palette, color1);
+    border-bottom-color: map-get($palette, color1);
   }
 
   &:active {
-    @include vendor('text-shadow', '0 0 1px ' + transparentize(val($palette, color1), 0.4));
-    color: val($palette, color1);
-    border-bottom: 1px solid val($palette, color1);
+    @include vendor('text-shadow', '0 0 1px ' + transparentize(map-get($palette, color1), 0.4));
+    color: map-get($palette, color1);
+    border-bottom: 1px solid map-get($palette, color1);
   }
 }
 
 table {
   border-collapse: collapse;
-  margin: val($padding, large) 0;
+  margin: map-get($padding, large) 0;
 
   thead, tfoot {
     th {
-      background-color: darken(val($palette, bg-light), 40);
-      color: val($palette, fg-light);
+      background-color: darken(map-get($palette, bg-light), 40);
+      color: map-get($palette, fg-light);
       font-weight: bold;
     }
   }
@@ -204,22 +204,22 @@ table {
   &.Table {
     &--bordered {
       td, th {
-        border: 1px solid lighten(val($palette, fg-dark), 50);
+        border: 1px solid lighten(map-get($palette, fg-dark), 50);
       }
     }
 
     &--padded {
       td, th {
-        padding: val($padding, small);
+        padding: map-get($padding, small);
       }
     }
 
     &--extra-padded {
       th {
-        padding: val($padding, small) val($padding, large);
+        padding: map-get($padding, small) map-get($padding, large);
       }
       td {
-        padding: val($padding, large);
+        padding: map-get($padding, large);
       }
     }
 
@@ -229,29 +229,29 @@ table {
 
     &--odd-even-rows {
       tr:nth-child(2n+0) td {
-          background-color: darken(val($palette, bg-light), 5)
+          background-color: darken(map-get($palette, bg-light), 5)
       }
       tr:nth-child(2n+1) td {
-          background-color: darken(val($palette, bg-light), 15)
+          background-color: darken(map-get($palette, bg-light), 15)
       }
     }
 
     &--hover-rows {
       tr:hover td {
-        background-color: darken(val($palette, bg-light), 25)
+        background-color: darken(map-get($palette, bg-light), 25)
       }
     }
 
     &--hover-odd-even-rows {
       tr:nth-child(2n+0) td {
-          background-color: darken(val($palette, bg-light), 5)
+          background-color: darken(map-get($palette, bg-light), 5)
       }
       tr:nth-child(2n+1) td {
-          background-color: darken(val($palette, bg-light), 15)
+          background-color: darken(map-get($palette, bg-light), 15)
       }
 
       tr:hover td {
-          background-color: darken(val($palette, bg-light), 25)
+          background-color: darken(map-get($palette, bg-light), 25)
       }
     }
   }

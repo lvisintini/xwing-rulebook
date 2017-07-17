@@ -18,16 +18,16 @@
 
     &-color {
       &-red {
-        color: val($palette, color4);
+        color: map-get($palette, color4);
       }
       &-yellow {
-        color: val($palette, color5);
+        color: map-get($palette, color5);
       }
       &-green {
-        color: val($palette, color6);
+        color: map-get($palette, color6);
       }
       &-blue {
-        color: val($palette, color2);
+        color: map-get($palette, color2);
       }
     }
   }
@@ -35,52 +35,16 @@
   &-flex {
     display: flex;
 
-    &-left {
-      justify-content: flex-start;
-    }
-
-    &-right {
-      justify-content: flex-end;
-    }
-
     &-space-between {
       justify-content: space-between;
-    }
-
-    &-center {
-      justify-content: center;
     }
 
     &-columns {
       flex-direction: column;
     }
 
-    &-stretch {
-      align-items: stretch;
-    }
-
     &-wrap{
       flex-wrap: wrap;
-    }
-
-    &-half {
-      flex: 0 1 75%;
-    }
-
-    &-third {
-      flex: 0 1 33.33%;
-    }
-
-    &-two-thirds {
-      flex: 0 1 66.66%;
-    }
-
-    &-one-quarter {
-      flex: 0 1 25%;
-    }
-
-    &-three-quarters {
-      flex: 0 1 75%;
     }
   }
 
@@ -95,24 +59,24 @@
   }
 
   &-padded {
-    padding: val($padding, large) val($padding, normal);
+    padding: map-get($padding, large) map-get($padding, normal);
   }
 
   &-bg-color {
     &-red {
-      background-color: val($palette, color4);
+      background-color: map-get($palette, color4);
     }
 
     &-yellow {
-      background-color: val($palette, color5);
+      background-color: map-get($palette, color5);
     }
 
     &-green {
-      background-color: val($palette, color6);
+      background-color: map-get($palette, color6);
     }
 
     &-blue {
-      background-color: val($palette, color2);
+      background-color: map-get($palette, color2);
     }
   }
 }

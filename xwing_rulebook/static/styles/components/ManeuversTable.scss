@@ -1,0 +1,25 @@
+.ManeuversTable {
+  width: auto !important;
+
+  th {
+    color: transparentize(map-get($palette, fg-dark), 0.6);
+    vertical-align: middle;
+  }
+
+  tr {
+    td, th {
+      border-bottom: 1px solid  transparentize(map-get($palette, fg-dark), 0.9);
+    }
+
+
+  }
+
+  .Maneuver,
+  .HugeManeuver {
+    display: block;
+  }
+
+  @include loadSpriteClasses($maneuver-sprite, "Maneuver--icon", 40px);
+  @include loadSpriteClasses($maneuver-huge-sprite, "HugeManeuver--icon", 40px);
+
+}

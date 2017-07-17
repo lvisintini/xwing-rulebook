@@ -1,13 +1,13 @@
 .HeaderWrapper {
   padding-bottom: 2px;
-  background: val($palette, fg-light);
-  z-index: val($z-index, header);
+  background: map-get($palette, fg-light);
+  z-index: map-get($z-index, header);
   position: relative;
 }
 
 .Header {
   @include breakpoint(medium) {
-    background: val($palette, color3);
+    background: map-get($palette, color3);
   }
 
   display: flex;
@@ -27,11 +27,11 @@
     justify-content: flex-start;
     align-items: center;
     width: 50vw;
-    padding:  val($padding, normal) val($padding, normal) val($padding, normal) val($padding, large);
-    background: linear-gradient(90deg, val($palette, color3), val($palette, color3) 50%, rgba(0, 0, 0, 0));
+    padding:  map-get($padding, normal) map-get($padding, normal) map-get($padding, normal) map-get($padding, large);
+    background: linear-gradient(90deg, map-get($palette, color3), map-get($palette, color3) 50%, rgba(0, 0, 0, 0));
 
     & > * {
-      margin-right: val($padding, xsmall);
+      margin-right: map-get($padding, xsmall);
     }
 
     a,
@@ -41,11 +41,11 @@
     a:link,
     a:focus {
       @include breakpoint(large) {
-        font-size: val($font-size, large);
+        font-size: map-get($font-size, large);
       }
 
       @include breakpoint(medium) {
-        font-size: val($font-size, medium);
+        font-size: map-get($font-size, medium);
       }
 
       @include vendor('text-shadow', 'none');
@@ -53,9 +53,9 @@
       border: none;
       text-decoration: none;
       font-family: Kimberley, Arial, Helvetica, sans-serif;
-      color: val($palette, fg-light);
+      color: map-get($palette, fg-light);
       font-weight: bold;
-      font-size: val($font-size, xlarge);
+      font-size: map-get($font-size, xlarge);
       line-height: $line-height;
     }
   }

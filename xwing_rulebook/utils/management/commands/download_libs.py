@@ -51,11 +51,27 @@ LIBS = [
         },
         "normalize": True,
     },
+    {
+        "name": "sprite-sass",
+        "url": "https://gist.github.com/lvisintini/c04ffac154d43b7ad8de9891bc6a3ceb/archive/"
+               "58a347ca5d29687f18d2c219e5d529a40b783efb.zip",
+        "mapping": {
+            "c04ffac154d43b7ad8de9891bc6a3ceb-58a347ca5d29687f18d2c219e5d529a40b783efb/*.scss": 'styles',
+        }
+    }
 ]
 
 
 class Command(BaseCommand):
     help = 'Provides complete markdown for a book'
+
+    def add_arguments(self, parser):
+        parser.add_argument(
+            'lib',
+            type=str,
+            default='',
+            nargs='?'
+        )
 
     @staticmethod
     def normalize_path(path):
@@ -67,6 +83,9 @@ class Command(BaseCommand):
         )
 
         for lib in LIBS:
+            if options['lib'] and lib['name'] != options['lib']:
+                continue
+
             url = requests.get(lib['url'])
             zipfile = ZipFile(BytesIO(url.content))
             zip_names = zipfile.namelist()

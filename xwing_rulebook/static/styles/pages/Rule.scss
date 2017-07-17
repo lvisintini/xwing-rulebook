@@ -3,7 +3,7 @@
   &__Image {
     img {
       vertical-align: middle;
-      margin: 0 val($padding, small);
+      margin: 0 map-get($padding, small);
       max-width: 100%;
     }
   }

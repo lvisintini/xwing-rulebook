@@ -1,4 +1,4 @@
-<table class="Maneuvers">
+<table class="ManeuversTable">
   <tbody>
     {% for speed, speed_maneuvers in maneuvers.items reversed %}
       <tr>
@@ -7,9 +7,7 @@
         </th>
           {% for maneuver in speed_maneuvers %}
             <td>
-              <span class="Maneuver {{ maneuver.difficulty_class }}">
-                {{ maneuver }} {% if maneuver.energy %}{{ maneuver.energy_tokens }}{% endif %}
-              </span>
+              <span class="Maneuver {{ maneuver.html_class_name }}"></span>
             </td>
           {% endfor %}
       </tr>

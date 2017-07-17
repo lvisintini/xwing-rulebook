@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import JSONField
 from django.contrib.postgres.fields.jsonb import KeyTransform, KeyTextTransform
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.utils.functional import cached_property
-from integrations.constants import DAMAGE_DECK_TYPES
+from integrations.constants import DAMAGE_DECK_TYPES, SHIP_SIZES
 
 
 class Product(models.Model):
@@ -70,6 +70,21 @@ class ShipManager(models.Manager):
     def get_queryset(self):
         qs = super().get_queryset()
         qs = qs.annotate(size=KeyTextTransform('size', 'data'))
+
+        qs = qs.annotate(
+            size_order=models.Case(
+                *[
+                    models.When(
+                        size=s,
+                        then=SHIP_SIZES.as_list.index(s)
+                    )
+                    for s in SHIP_SIZES.as_list
+                ],
+                default=100,
+                output_field=models.IntegerField()
+            )
+        )
+
         return qs
 
 
@@ -87,6 +102,10 @@ class Ship(models.Model):
     @property
     def slug(self):
         return slugify(self.name)
+
+    @cached_property
+    def factions(self):
+        return self.data.get('factions', [])
 
 
 class PilotManager(models.Manager):

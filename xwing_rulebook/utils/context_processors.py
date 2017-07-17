@@ -1,5 +1,6 @@
 from django.conf import settings as django_settings
 
+from integrations.constants import FACTIONS
 from rules.constants import RULE_TYPES, CARD_TYPES, SOURCE_STATUS
 from utils.constants import ENVIRONMENTS
 
@@ -10,6 +11,7 @@ def constants(request):
         "RULE_TYPES": RULE_TYPES,
         "CARD_TYPES": CARD_TYPES,
         "SOURCE_STATUS": SOURCE_STATUS,
+        "FACTIONS": FACTIONS,
     }
 
 

@@ -1,9 +1,9 @@
 .PageWrapper {
   min-height: 100vh;
-  background-color: val($palette, bg-dark);
+  background-color: map-get($palette, bg-dark);
 
   &--bg-light {
-    background-color: darken(val($palette, color3), 5);
+    background-color: darken(map-get($palette, color3), 5);
   }
 
   &--breakpoints {

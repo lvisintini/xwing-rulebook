@@ -5,8 +5,9 @@
 
 @import "./lib/xwing-miniatures-font/xwing-miniatures.css";
 @import "./lib/font-awesome/font-awesome.scss";
+@import "./lib/sprite-sass/sprite-sass.scss";
 
 @import "fontface.scss";
 
 @import "utils.scss";
-@import "components/Maneuvers.scss";
+@import "components/ManeuversTable.scss";

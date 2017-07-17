@@ -1,0 +1,10 @@
+.Maneuvers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  & > * {
+    padding: map_get($padding, normal);
+  }
+}
