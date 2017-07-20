@@ -7,7 +7,7 @@ class ManeuverNormalizer(Normalizer):
     min_maneuvers_override = 13
     min_speed_override = 6
 
-    def __init__(self, data):
+    def __init__(self, data, **kwargs):
         self.filtered_max_speed = 0
         self.filtered_min_speed = 1000
         self.max_speed = 0
@@ -17,7 +17,7 @@ class ManeuverNormalizer(Normalizer):
         self.max_maneuvers = 0
         self.min_maneuvers = 1000
         self.types = set()
-        super().__init__(data)
+        super().__init__(data, **kwargs)
 
     def filter(self, model):
         raise NotImplementedError
@@ -34,8 +34,8 @@ class ManeuverNormalizer(Normalizer):
         self.types = set()
         for model in self.data[self.source_key]:
             if self.filter(model):
-                if 'maneuvers' not in model:
-                    print(model['name'])
+                if 'maneuvers' not in model and self.verbose:
+                    print('"{}" does not have any maneuvers'.format(model['name']))
                     continue
 
                 speed = len(
@@ -58,17 +58,17 @@ class ManeuverNormalizer(Normalizer):
                         self.types.add(None)
                     else:
                         self.types = self.types.union(speed)
+        if self.verbose:
+            print('Max Speed', self.max_speed)
+            print('Filtered Max Speed', self.filtered_max_speed)
+            print('Min Speed', self.min_speed)
+            print('Filtered Min Speed', self.filtered_min_speed)
 
-        print('Max Speed', self.max_speed)
-        print('Filtered Max Speed', self.filtered_max_speed)
-        print('Min Speed', self.min_speed)
-        print('Filtered Min Speed', self.filtered_min_speed)
-
-        print('Types', list(self.types))
-        print('Max Maneuvers', self.max_maneuvers)
-        print('Filtered Max Maneuvers', self.filtered_max_maneuvers)
-        print('Min Maneuvers', self.min_maneuvers)
-        print('Filtered Min Maneuvers', self.filtered_min_maneuvers)
+            print('Types', list(self.types))
+            print('Max Maneuvers', self.max_maneuvers)
+            print('Filtered Max Maneuvers', self.filtered_max_maneuvers)
+            print('Min Maneuvers', self.min_maneuvers)
+            print('Filtered Min Maneuvers', self.filtered_min_maneuvers)
 
     def normalize(self):
         for model in self.data[self.source_key]:

@@ -92,7 +92,7 @@ class ProductAdmin(ModelWithJSON):
     list_display = ('name', 'sku', 'release_date', 'sources_display', 'source_count')
     search_fields = ['name', 'sku']
     readonly_fields = ['data', 'display_data', 'source_count', 'sources_display', 'id']
-    filter_horizontal = ['sources', ]
+    filter_horizontal = ['sources', 'ships']
     list_filter = [SourceCountFilter, ]
 
     def get_queryset(self, request):
@@ -117,10 +117,13 @@ class ProductAdmin(ModelWithJSON):
 
 @admin.register(Ship)
 class ShipAdmin(ModelWithJSON):
-    list_display = ('id', 'name', 'size')
+    list_display = ('id', 'name', 'size', 'release_date')
     list_filter = [ShipSizeFilter, ]
+    readonly_fields = ['maneuvers_table', 'data', 'display_data', 'id', 'size', 'release_date']
 
-    readonly_fields = ['maneuvers_table', 'data', 'display_data', 'id', 'size']
+    def release_date(self, obj):
+        return obj.release_date
+    release_date.admin_order_field = 'release_date'
 
     def maneuvers_table(self, obj):
         if obj.id is not None and obj:
@@ -135,6 +138,7 @@ class ShipAdmin(ModelWithJSON):
         css = {
              'all': ('build/admin.css',)
         }
+
 
 @admin.register(Pilot)
 class PilotAdmin(ModelWithJSON):

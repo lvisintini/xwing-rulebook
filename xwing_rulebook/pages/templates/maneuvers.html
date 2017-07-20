@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load order_by %}
+{% load cleanup %}
 {% load maneuvers %}
 
 {% block content %}
@@ -14,7 +14,7 @@
           {% if FACTIONS.REBEL_ALLIANCE in ship.factions or FACTIONS.RESISTANCE in ship.factions %}
             <div class="u-flex u-flex-columns">
               {{ ship | maneuvers_html }}
-              <div class="u-text-center">{{ ship.name }}</div>
+              <div class="u-text-center">{{ ship.name|clean_string }}</div>
             </div>
           {% endif %}
         {% endfor %}
@@ -27,7 +27,7 @@
           {% if FACTIONS.GALACTIC_EMPIRE in ship.factions or FACTIONS.FIRST_ORDER in ship.factions %}
             <div class="u-flex u-flex-columns">
               {{ ship | maneuvers_html }}
-              <div class="u-text-center">{{ ship.name }}</div>
+              <div class="u-text-center">{{ ship.name|clean_string }}</div>
             </div>
           {% endif %}
         {% endfor %}
@@ -40,7 +40,7 @@
           {% if FACTIONS.SCUM_AND_VILLAINY in ship.factions %}
             <div class="u-flex u-flex-columns">
               {{ ship | maneuvers_html }}
-              <div class="u-text-center">{{ ship.name }}</div>
+              <div class="u-text-center">{{ ship.name|clean_string }}</div>
             </div>
           {% endif %}
         {% endfor %}

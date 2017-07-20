@@ -59,3 +59,11 @@ class Command(BaseCommand):
                     name=d['name'],
                     data=d
                 ).save()
+
+        for p in Product.objects.all():
+            for s in Ship.objects.filter(id__in=[
+                ship_data['ship_id']
+                for ship_data in p.data.get('contents', {}).get('ships', [])
+            ]):
+                p.ships.add(s)
+            p.save()

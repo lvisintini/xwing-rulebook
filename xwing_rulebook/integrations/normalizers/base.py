@@ -3,7 +3,8 @@ class Normalizer:
     root = None
     data = []
 
-    def __init__(self, data):
+    def __init__(self, data, verbose=False):
+        self.verbose = verbose
         self.data = data
         self.analise()
 
@@ -14,7 +15,8 @@ class Normalizer:
         raise NotImplementedError
 
     def run(self):
-        print(self.__class__.__name__ + '=' * 20)
+        if self.verbose:
+            print(self.__class__.__name__ + '=' * 20)
         self.normalize()
         self.analise()
         return self.data
@@ -26,11 +28,12 @@ class ForeignKeyNormalizer(Normalizer):
     pk_name = None
 
     def analise(self):
-        print('Models in fk data', len(self.data[self.fk_source_key]))
-        print('Max id in fk data', max([fkd.get('id', 0) for fkd in self.data[self.fk_source_key]]))
-        print('Models with no id in fk data', [
-            fkd['name'] for fkd in self.data[self.fk_source_key] if 'id' not in fkd
-        ])
+        if self.verbose:
+            print('Models in fk data', len(self.data[self.fk_source_key]))
+            print('Max id in fk data', max([fkd.get('id', 0) for fkd in self.data[self.fk_source_key]]))
+            print('Models with no id in fk data', [
+                fkd['name'] for fkd in self.data[self.fk_source_key] if 'id' not in fkd
+            ])
 
     def get_fk_field(self, model):
         fk = model

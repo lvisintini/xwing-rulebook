@@ -127,11 +127,6 @@ class Rule(models.Model):
         return '-'.join(self.name.lower().split())
 
     @property
-    def name_as_title(self):
-        automata = re.compile(r' ?\(.*?\)')
-        return automata.sub('', self.name)
-
-    @property
     def decorated_name(self):
         template = '{rule_name}{expansion_rule}{huge_ship}'
         return template.format(

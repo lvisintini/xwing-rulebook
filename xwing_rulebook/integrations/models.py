@@ -12,6 +12,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=125)
     release_date = models.DateField(blank=True, null=True)
     sources = models.ManyToManyField('rules.Source', blank=True, related_name='products')
+    ships = models.ManyToManyField('integrations.Ship', blank=True, related_name='products')
     data = JSONField(default=dict)
 
     data_key = 'sources'
@@ -71,6 +72,8 @@ class ShipManager(models.Manager):
         qs = super().get_queryset()
         qs = qs.annotate(size=KeyTextTransform('size', 'data'))
 
+        qs = qs.annotate(release_date=models.Min('products__release_date', distinct=True))
+
         qs = qs.annotate(
             size_order=models.Case(
                 *[
@@ -97,7 +100,7 @@ class Ship(models.Model):
     objects = ShipManager()
 
     def __str__(self):
-        return '[{}] {}'.format(self.slug, self.name)
+        return self.name
 
     @property
     def slug(self):
