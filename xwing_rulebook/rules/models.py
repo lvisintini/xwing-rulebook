@@ -1,5 +1,3 @@
-import re
-
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 from django.utils.functional import cached_property
