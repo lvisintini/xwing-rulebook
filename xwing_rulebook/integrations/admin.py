@@ -65,7 +65,7 @@ class ShipSizeFilter(admin.SimpleListFilter):
 
 
 class ModelWithJSON(admin.ModelAdmin):
-    list_display = ('name', 'id')
+    list_display = ('name', 'id', 'card_rule')
     search_fields = ['name', ]
     readonly_fields = ['data', 'display_data', 'id']
     save_on_top = True
@@ -142,7 +142,7 @@ class ShipAdmin(ModelWithJSON):
 
 @admin.register(Pilot)
 class PilotAdmin(ModelWithJSON):
-    list_display = ('name', 'id', 'ship_link')
+    list_display = ('name', 'id', 'ship_link', 'card_rule')
 
     readonly_fields = ['data', 'display_data', 'id', 'ship_link', 'maneuvers_table']
 
@@ -185,3 +185,5 @@ class ConditionAdmin(ModelWithJSON):
 class DamageDeckAdmin(ModelWithJSON):
     list_display = ('name', 'type')
     search_fields = ['name', 'type']
+
+    list_filter = ('type',)

@@ -1,3 +1,5 @@
+from itertools import chain
+
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 from django.utils.functional import cached_property
@@ -154,6 +156,18 @@ class Rule(models.Model):
                 clauses = clauses | clarification.clauses.all()
 
         return clauses
+
+    @cached_property
+    def card(self):
+        if len(self.cards) > 1:
+            return None
+        return next(self.cards, None)
+
+    @cached_property
+    def cards(self):
+        return list(
+            chain(*[getattr(self, r).iterator() for r in ['conditions', 'damage_decks', 'pilots', 'upgrades']])
+        )
 
     def __str__(self):
         return '[{}] {}'.format(dict(RULE_TYPES.as_choices).get(self.type, self.type), self.name)

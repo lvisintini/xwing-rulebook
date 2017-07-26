@@ -42,6 +42,7 @@ class DamageDeck(models.Model):
         max_length=25, choices=DAMAGE_DECK_TYPES.as_choices, null=False, blank=False,
         default=DAMAGE_DECK_TYPES.CORE
     )
+    card_rule = models.ForeignKey('rules.Rule', blank=True, null=True, related_name='damage_decks')
     data = JSONField(default=dict)
 
     class Meta:
@@ -121,6 +122,7 @@ class PilotManager(models.Manager):
 
 class Pilot(models.Model):
     name = models.CharField(max_length=125)
+    card_rule = models.ForeignKey('rules.Rule', blank=True, null=True, related_name='pilots')
     data = JSONField(default=dict)
 
     data_key = 'pilots'
@@ -149,6 +151,7 @@ class Pilot(models.Model):
 
 class Upgrade(models.Model):
     name = models.CharField(max_length=125)
+    card_rule = models.ForeignKey('rules.Rule', blank=True, null=True, related_name='upgrades')
     data = JSONField(default=dict)
 
     data_key = 'upgrades'
@@ -170,6 +173,7 @@ class Upgrade(models.Model):
 
 class Condition(models.Model):
     name = models.CharField(max_length=125)
+    card_rule = models.ForeignKey('rules.Rule', blank=True, null=True, related_name='conditions')
     data = JSONField(default=dict)
 
     data_key = 'conditions'

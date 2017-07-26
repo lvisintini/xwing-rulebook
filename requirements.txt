@@ -7,3 +7,4 @@ Markdown==2.6.8
 MarkdownSuperscript==2.0.0
 psycopg2==2.7.1
 requests==2.14.2
+tqdm==4.15.0

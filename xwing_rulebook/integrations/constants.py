@@ -1,17 +1,18 @@
-from collections import OrderedDict
-
-
 class DAMAGE_DECK_TYPES:
     CORE = 'core'
     CORE_TFA = 'core-tfa'
+    REBEL_TRANSPORT = 'rebel-transport'
 
     as_choices = (
         (CORE, 'Core set'),
         (CORE_TFA, 'The Force Awakens core set'),
+        (REBEL_TRANSPORT, 'Rebel Transport')
     )
 
     as_list = [
-        CORE, CORE_TFA
+        CORE,
+        CORE_TFA,
+        REBEL_TRANSPORT
     ]
 
 

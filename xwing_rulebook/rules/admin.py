@@ -195,7 +195,7 @@ class SourceAdmin(admin.ModelAdmin):
 @admin.register(Rule)
 class RuleAdmin(NestedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ('id', 'name', 'link_to_rule', 'type', 'card_type')
+    list_display = ('id', 'name', 'link_to_rule', 'type', 'card_type', 'cards_display')
     fieldsets = (
         ('Basic', {
             'fields': (
@@ -204,6 +204,7 @@ class RuleAdmin(NestedModelAdmin):
                 'preserve_name_case',
                 'type',
                 'card_type',
+                'cards_display'
                 'additional_keywords',
                 'link_to_rule',
                 'expansion_rule',
@@ -218,7 +219,18 @@ class RuleAdmin(NestedModelAdmin):
     list_filter = ['type', 'card_type']
     save_on_top = True
     search_fields = ['name', ]
-    readonly_fields = ['link_to_rule']
+    readonly_fields = ['link_to_rule', 'cards_display']
+
+    def cards_display(self, obj):
+        links = [
+            '<a href="{}">[{}] {}</a>'.format(
+                reverse('admin:integrations_{}_change'.format(c.__class__.__name__.lower()), args=[c.id]),
+                c.__class__.__name__,
+                c.name
+            )
+            for c in obj.cards
+        ]
+        return mark_safe('<br/>'.join(links))
 
     def link_to_rule(self, obj):
         if not obj.slug:
