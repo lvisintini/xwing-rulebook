@@ -1,9 +1,14 @@
 {% load markdown %}
+{% load maneuvers %}
 
-{% if helper.image_clauses_markdown %}
+{% if helper.image_clauses_markdown or helper.rule.card_type == CARD_TYPES.PILOT %}
   <div class="u-flex u-flex-space-between">
     <div class="u-flex-third">
       {{ helper.image_clauses_markdown | md2html }}
+      {% if helper.rule.card_type == CARD_TYPES.PILOT %}
+        {{ helper.rule.card | maneuvers_html }}
+        <div class="u-text-center u-text-bold">Ship Maneuvers</div>
+      {% endif %}
     </div>
     <div class="u-flex-two-thirds">
       {{ helper.rule_title | md2html }}
@@ -22,6 +27,7 @@
 
       {{ helper.related_cards_as_references | md2html }}
       {{ helper.related_topics_as_references | md2html }}
+
     </div>
   </div>
 {% else %}
@@ -35,4 +41,5 @@
 
   {{ helper.related_cards_as_references | md2html }}
   {{ helper.related_topics_as_references | md2html }}
+
 {% endif %}

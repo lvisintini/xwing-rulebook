@@ -161,7 +161,7 @@ class Rule(models.Model):
     def card(self):
         if len(self.cards) > 1:
             return None
-        return next(self.cards, None)
+        return next(iter(self.cards), None)
 
     @cached_property
     def cards(self):
