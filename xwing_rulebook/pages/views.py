@@ -17,7 +17,7 @@ def styleguide(request):
     return render(request, 'styleguide.html', {})
 
 
-def help_wanted(request):
+def resources(request):
     sources = Source.enriched.all()
 
     return render(request, 'resources.html', {

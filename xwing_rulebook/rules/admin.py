@@ -210,6 +210,7 @@ class RuleAdmin(NestedModelAdmin):
                 'expansion_rule',
                 'huge_ship_rule',
                 'related_rules',
+                'last_updated'
             )
         }),
     )
@@ -219,7 +220,7 @@ class RuleAdmin(NestedModelAdmin):
     list_filter = ['type', 'card_type']
     save_on_top = True
     search_fields = ['name', ]
-    readonly_fields = ['link_to_rule', 'cards_display']
+    readonly_fields = ['link_to_rule', 'cards_display', 'last_updated']
 
     def cards_display(self, obj):
         links = [

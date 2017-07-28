@@ -116,6 +116,7 @@ class Rule(models.Model):
     )
     related_rules = models.ManyToManyField('self', blank=True)
     additional_keywords = models.CharField(max_length=250, default='', blank=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     objects = RuleManager()
 
