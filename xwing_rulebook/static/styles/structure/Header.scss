@@ -6,61 +6,31 @@
 }
 
 .Header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 136px; /* background image's size */
+
+  @include breakpoint(large) {
+    height: 116px;
+  }
+
+  @include breakpoint(medium) {
+    height: 96px;
+  }
+
+
+  background: linear-gradient(90deg, map-get($palette, color3), map-get($palette, color3) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0)),
+              url("../images/site/header.png") no-repeat right center black;
+
   @include breakpoint(medium) {
     background: map-get($palette, color3);
   }
 
-  display: flex;
-  justify-content: space-between;
-  background: url("../images/site/header.png") no-repeat right center black;
-
-  &__LogoWrapper {
-    @include breakpoint(medium) {
-      width: auto;
-    }
-
-    @include breakpoint(medium) {
-      background: none;
-    }
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50vw;
-    padding:  map-get($padding, normal) map-get($padding, normal) map-get($padding, normal) map-get($padding, large);
-    background: linear-gradient(90deg, map-get($palette, color3), map-get($palette, color3) 50%, rgba(0, 0, 0, 0));
-
-    & > * {
-      margin-right: map-get($padding, xsmall);
-    }
-
-    a,
-    a:hover,
-    a:visited,
-    a:active,
-    a:link,
-    a:focus {
-      @include breakpoint(large) {
-        font-size: map-get($font-size, large);
-      }
-
-      @include breakpoint(medium) {
-        font-size: map-get($font-size, medium);
-      }
-
-      @include vendor('text-shadow', 'none');
-
-      border: none;
-      text-decoration: none;
-      font-family: Kimberley, Arial, Helvetica, sans-serif;
-      color: map-get($palette, fg-light);
-      font-weight: bold;
-      font-size: map-get($font-size, xlarge);
-      line-height: $line-height;
-    }
-  }
 
   &__Logo {
+    margin-left: map-get($padding, large);
     display: block;
     height: 100px;
     max-height: 100px;
@@ -87,4 +57,42 @@
       width: auto;
     }
   }
+
+  &__Logo,
+  &__Title {
+    a,
+    a:hover,
+    a:visited,
+    a:active,
+    a:link,
+    a:focus {
+      @include breakpoint(large) {
+        font-size: map-get($font-size, large);
+      }
+
+      @include breakpoint(medium) {
+        font-size: map-get($font-size, medium);
+      }
+
+      @include vendor('text-shadow', 'none');
+
+      border: none;
+      text-decoration: none;
+      font-family: Kimberley, Arial, Helvetica, sans-serif;
+      color: map-get($palette, fg-light);
+      font-weight: bold;
+      font-size: map-get($font-size, xlarge);
+      line-height: $line-height;
+    }
+  }
+
+  &__Title {
+    margin-left: map-get($padding, normal);
+  }
+
+  &__ToolBox {
+    margin-left: auto;
+    margin-right: map-get($padding, large);
+  }
+
 }

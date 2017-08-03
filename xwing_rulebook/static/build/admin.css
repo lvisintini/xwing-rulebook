@@ -2933,6 +2933,12 @@ i.xwing-miniatures-ship-z95headhunter:before {
 .u-text-bold {
   font-weight: bold; }
 
+.u-text-color-dark {
+  color: #242424; }
+
+.u-text-color-light {
+  color: white; }
+
 .u-text-color-red {
   color: #da312f; }
 

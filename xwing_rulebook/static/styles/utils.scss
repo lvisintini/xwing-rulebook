@@ -17,6 +17,12 @@
     }
 
     &-color {
+      &-dark {
+        color: map-get($palette, fg-dark);
+      }
+      &-light {
+        color: map-get($palette, fg-light);
+      }
       &-red {
         color: map-get($palette, color4);
       }

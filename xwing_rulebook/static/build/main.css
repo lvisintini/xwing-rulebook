@@ -3541,57 +3541,22 @@ table {
 
 .Header {
   display: flex;
-  justify-content: space-between;
-  background: url("../images/site/header.png") no-repeat right center black; }
+  justify-content: flex-start;
+  align-items: center;
+  height: 136px;
+  /* background image's size */
+  background: linear-gradient(90deg, #3892a6, #3892a6 40%, transparent 60%, transparent), url("../images/site/header.png") no-repeat right center black; }
+  @media screen and (max-width: 1280px) {
+    .Header {
+      height: 116px; } }
+  @media screen and (max-width: 980px) {
+    .Header {
+      height: 96px; } }
   @media screen and (max-width: 980px) {
     .Header {
       background: #3892a6; } }
-  .Header__LogoWrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50vw;
-    padding: 1em 1em 1em 1.5em;
-    background: linear-gradient(90deg, #3892a6, #3892a6 50%, transparent); }
-    @media screen and (max-width: 980px) {
-      .Header__LogoWrapper {
-        width: auto; } }
-    @media screen and (max-width: 980px) {
-      .Header__LogoWrapper {
-        background: none; } }
-    .Header__LogoWrapper > * {
-      margin-right: 0.25em; }
-    .Header__LogoWrapper a,
-    .Header__LogoWrapper a:hover,
-    .Header__LogoWrapper a:visited,
-    .Header__LogoWrapper a:active,
-    .Header__LogoWrapper a:link,
-    .Header__LogoWrapper a:focus {
-      text-shadow: none;
-      border: none;
-      text-decoration: none;
-      font-family: Kimberley, Arial, Helvetica, sans-serif;
-      color: white;
-      font-weight: bold;
-      font-size: 2.25em;
-      line-height: 1.5em; }
-      @media screen and (max-width: 1280px) {
-        .Header__LogoWrapper a,
-        .Header__LogoWrapper a:hover,
-        .Header__LogoWrapper a:visited,
-        .Header__LogoWrapper a:active,
-        .Header__LogoWrapper a:link,
-        .Header__LogoWrapper a:focus {
-          font-size: 1.75em; } }
-      @media screen and (max-width: 980px) {
-        .Header__LogoWrapper a,
-        .Header__LogoWrapper a:hover,
-        .Header__LogoWrapper a:visited,
-        .Header__LogoWrapper a:active,
-        .Header__LogoWrapper a:link,
-        .Header__LogoWrapper a:focus {
-          font-size: 1.25em; } }
   .Header__Logo {
+    margin-left: 1.5em;
     display: block;
     height: 100px;
     max-height: 100px;
@@ -3613,6 +3578,56 @@ table {
       height: 80%;
       padding: 10%;
       width: auto; }
+  .Header__Logo a,
+  .Header__Logo a:hover,
+  .Header__Logo a:visited,
+  .Header__Logo a:active,
+  .Header__Logo a:link,
+  .Header__Logo a:focus, .Header__Title a,
+  .Header__Title a:hover,
+  .Header__Title a:visited,
+  .Header__Title a:active,
+  .Header__Title a:link,
+  .Header__Title a:focus {
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+    font-family: Kimberley, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 2.25em;
+    line-height: 1.5em; }
+    @media screen and (max-width: 1280px) {
+      .Header__Logo a,
+      .Header__Logo a:hover,
+      .Header__Logo a:visited,
+      .Header__Logo a:active,
+      .Header__Logo a:link,
+      .Header__Logo a:focus, .Header__Title a,
+      .Header__Title a:hover,
+      .Header__Title a:visited,
+      .Header__Title a:active,
+      .Header__Title a:link,
+      .Header__Title a:focus {
+        font-size: 1.75em; } }
+    @media screen and (max-width: 980px) {
+      .Header__Logo a,
+      .Header__Logo a:hover,
+      .Header__Logo a:visited,
+      .Header__Logo a:active,
+      .Header__Logo a:link,
+      .Header__Logo a:focus, .Header__Title a,
+      .Header__Title a:hover,
+      .Header__Title a:visited,
+      .Header__Title a:active,
+      .Header__Title a:link,
+      .Header__Title a:focus {
+        font-size: 1.25em; } }
+  .Header__Title {
+    margin-left: 1em; }
+  .Header__ToolBox {
+    margin-left: auto;
+    margin-right: 1.5em; }
 
 .Footer {
   background: url("../images/site/footer.png") no-repeat center top 0; }
@@ -4210,6 +4225,12 @@ https://nodejs.org/docs/v0.7.7/api/url.html
 
 .u-text-bold {
   font-weight: bold; }
+
+.u-text-color-dark {
+  color: #242424; }
+
+.u-text-color-light {
+  color: white; }
 
 .u-text-color-red {
   color: #da312f; }
