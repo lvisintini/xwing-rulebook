@@ -1,16 +1,14 @@
 {% load staticfiles %}
-<div class="HeaderWrapper">
-  <header class="Header">
-    <div class="Header__Logo">
-      <a href="{% url 'pages:index' %}">
-        <img src="{% static "images/site/logo.svg" %}" />
-      </a>
-    </div>
-    <div class="Header__Title">
-      <a title="X-Wing Rulebook" href="{% url 'pages:index' %}">X-Wing Rulebook</a>
-    </div>
-    <div class="Header__ToolBox">
-      <i class="u-text-color-light fa fa-bars" aria-hidden="true"></i>
-    </div>
-  </header>
-</div>
+<header class="Header">
+  <div class="Header__Logo">
+    <a href="{% url 'pages:index' %}">
+      <img src="{% static "images/site/logo.svg" %}" />
+    </a>
+  </div>
+  <div class="Header__Title">
+    <a title="X-Wing Rulebook" href="{% url 'pages:index' %}">X-Wing Rulebook</a>
+  </div>
+  <div class="Header__ToolBox">
+    <i class="u-text-color-light fa fa-bars" aria-hidden="true"></i>
+  </div>
+</header>

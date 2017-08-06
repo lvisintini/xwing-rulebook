@@ -1,4 +1,5 @@
 .HeaderWrapper {
+  height: 136px; /* background image's size */
   padding-bottom: 2px;
   background: map-get($palette, fg-light);
   z-index: map-get($z-index, header);
@@ -9,8 +10,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 100%;
 
-  height: 136px; /* background image's size */
 
   @include breakpoint(large) {
     height: 116px;

@@ -15,15 +15,21 @@
   <body>
     {% include 'includes/_google_tag_manager_no_script.html' %}
     <div class="PageWrapper {% block page_wrapper_class %}{% endblock %}">
-      {% block header %}
-        {% include 'includes/_header.html' %}
-      {% endblock %}
+      <div class="HeaderWrapper">
+        {% block header %}
+          {% include 'includes/_header.html' %}
+        {% endblock %}
+      </div>
 
-      {% block content %}{% endblock %}
+      <div class="ContentWrapper">
+        {% block content %}{% endblock %}
+      </div>
 
-      {% block footer %}
-        {% include 'includes/_footer.html' %}
-      {% endblock %}
+      <div class="FooterWrapper">
+        {% block footer %}
+          {% include 'includes/_footer.html' %}
+        {% endblock %}
+      </div>
 
     </div>
 
