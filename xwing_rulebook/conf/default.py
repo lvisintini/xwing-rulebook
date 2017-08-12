@@ -138,8 +138,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-EXTERNAL_ASSETS_DIR = os.path.join(BASE_DIR, "external")
-
 ENVIRONMENT = ENVIRONMENTS.DEVELOPMENT
 
 GOOGLE_TAG_MANAGER_ID = ''
