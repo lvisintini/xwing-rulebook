@@ -3662,8 +3662,6 @@ table {
         background-color: orange; } }
 
 .HeaderWrapper {
-  height: 136px;
-  /* background image's size */
   padding-bottom: 2px;
   background: white;
   z-index: 100;
@@ -3673,7 +3671,8 @@ table {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
+  height: 136px;
+  /* background image's size */
   background: linear-gradient(90deg, #3892a6, #3892a6 40%, transparent 60%, transparent), url("../images/site/header.png") no-repeat right center black; }
   @media screen and (max-width: 1280px) {
     .Header {
@@ -3760,10 +3759,16 @@ table {
 
 .FooterWrapper {
   margin-top: auto;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding-top: 2px;
+  background-color: #e8edf1; }
 
 .Footer {
-  background: url("../images/site/footer.png") no-repeat center top 0; }
+  color: white;
+  text-align: center;
+  background-color: #3f3f3f; }
+  .Footer p {
+    font-size: 0.5em; }
 
 .Section__Inner {
   margin: 0 auto;

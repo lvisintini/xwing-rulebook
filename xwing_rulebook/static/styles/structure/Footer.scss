@@ -1,8 +1,17 @@
 .FooterWrapper {
   margin-top: auto;
   margin-bottom: 0;
+
+  padding-top: 2px;
+  background-color: map-get($palette, bg-light);
 }
 
 .Footer {
-  background: url("../images/site/footer.png") no-repeat center top 0;
+  color: map-get($palette, fg-light);
+  text-align: center;
+  background-color: map-get($palette, bg-dark);
+
+  p {
+    font-size: map-get($font-size, xsmall);
+  }
 }
