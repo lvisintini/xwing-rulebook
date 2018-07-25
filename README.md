@@ -12,14 +12,14 @@ $ yarn
 $ sudo su - postgres
 $ createdb rulebookdb;
 
-
+$ ssh #########  'pg_dump -O -F c -n public postgres://<user>:<password>@<location-or-domain>:5432/rulebookdb' > ~/Downloads/latest.dump
 $ sudo su - postgres
-$ pg_dump -U postgres rulebookdb -f rulebookdb-`date -u +"%Y-%m-%dT%H:%M:%SZ"`.sql
+$ pg_dump -O -F c -n public postgres://<user>:<password>@<location-or-domain>:5432/rulebookdb -f rulebookdb-`date -u +"%Y-%m-%dT%H:%M:%SZ"`.dump
 $ exit
 $ sudo mv /var/lib/postgresql/rulebookdb-201 /home/lvisintini/src/xwing-rulebook/backups/
 $ sudo chown lvisintini:lvisintini /home/lvisintini/src/xwing-rulebook/backups/*
 
-$ psql rulebookdb < /home/lvisintini/src/xwing-rulebook/backups/rulebookdb-2017-03-13T12\:20\:00Z.sql
+$ pg_restore -d zegop /home/lvisintini/Downloads/latest.dump
 
 $ python xwing_rulebook/manage.py book_markdown URR-SWX > outputs/urr-swx.md
 $ python xwing_rulebook/manage.py rules_json > outputs/rules.json
